@@ -10,36 +10,44 @@ META_FILE = "Bypass_Shortlinks.meta.js"
 ICON_URL = "https://cdn-icons-png.flaticon.com/512/14025/14025295.png"
 
 
-def extract_version(file_path):
+def extract_version(our_output_file, upstream_file='upstream_patched.user.js'):
+    """
+    Version scheme: {upstream_version}.b{our_build_counter}
+    Example:  96.5-patch0.1.8.b3
+              ^^^^^^^^^^^^^^^^^^  from gongchandang49 (always in sync)
+                                ^^ our own build counter (increments each build)
+
+    - upstream_version is read fresh from upstream_patched.user.js every build.
+      If upstream bumps from 0.1.8 to 0.1.9, our version automatically follows.
+    - our build counter is read from our current output file and incremented.
+      Starts at b1 on first build.
+    """
+    # Read upstream version
+    upstream_ver = "96.5-patch0.0.1"  # fallback
     try:
-        with open(file_path, 'r', encoding='utf-8') as f:
+        with open(upstream_file, 'r', encoding='utf-8') as f:
             content = f.read()
+        m = re.search(r'@version\s+([\d\.]+-patch[\d\.]+)', content)
+        if m:
+            upstream_ver = m.group(1)
     except FileNotFoundError:
-        print(f"Version file not found, using fallback version.")
-        return "96.5-patch0.0.1"
+        pass
 
-    match = re.search(r'@version\s+([\d\.]+)(?:-patch([\d\.]+))?', content)
-    if not match:
-        print("No version found, using fallback.")
-        return "96.5-patch0.0.1"
+    # Read our current build counter from output file
+    our_build = 0
+    try:
+        with open(our_output_file, 'r', encoding='utf-8') as f:
+            content = f.read()
+        # Match format like 96.5-patch0.1.8.b3
+        m = re.search(r'@version\s+[\d\.]+-patch[\d\.]+(\.[bB](\d+))?', content)
+        if m and m.group(2):
+            our_build = int(m.group(2))
+    except FileNotFoundError:
+        pass
 
-    base = match.group(1)
-    patch = match.group(2) or "0.0.0"
-
-    parts = list(map(int, patch.split('.')))
-    if parts[2] < 9:
-        parts[2] += 1
-    elif parts[1] < 9:
-        parts[2] = 0
-        parts[1] += 1
-    else:
-        parts[2] = 0
-        parts[1] = 0
-        parts[0] += 1
-
-    new_patch = '.'.join(map(str, parts))
-    new_version = f"{base}-patch{new_patch}"
-    print(f"Version: {base}-patch{patch} -> {new_version}")
+    our_build += 1
+    new_version = f"{upstream_ver}.b{our_build}"
+    print(f"Version: {upstream_ver} -> {new_version}")
     return new_version
 
 
@@ -362,7 +370,7 @@ def extract_metadata(input_file, output_file):
 
 
 def main():
-    new_version = extract_version(OUTPUT_FILE)
+    new_version = extract_version(OUTPUT_FILE, upstream_file='upstream_patched.user.js')
     build_script(
         input_path='upstream_patched.user.js',
         includes_path='includes.txt',
