@@ -1,0 +1,78 @@
+name: Daily Reference Check
+
+# Checks all 49 repos in REFERENCES.md for new commits, releases, or script changes.
+# Writes reference_activity.log to the repo.
+# If bypass scripts changed, writes upstream/update-prompt.md with review guidance.
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run — check only, do not commit'
+        type: boolean
+        default: false
+
+  schedule:
+    # Every day at 03:30 UTC (30 min after the main build)
+    - cron: '30 3 * * *'
+
+permissions:
+  contents: write
+
+jobs:
+  check-references:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Check all reference repos
+        id: check
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DRY_RUN: ${{ github.event.inputs.dry_run }}
+        run: |
+          set +e
+          python check_references.py
+          EXIT=$?
+          set -e
+          if [ "$EXIT" -eq 1 ]; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Commit activity log and prompt files
+        if: github.event.inputs.dry_run != 'true'
+        run: |
+          git add reference_activity.log \
+                  upstream/ref-tracker.json \
+                  upstream/update-prompt.md \
+                  upstream/change-report.md 2>/dev/null || true
+          git diff --staged --quiet && echo "Nothing to commit." || (
+            git commit -m "chore: daily reference check [skip ci]" &&
+            git push
+          )
+
+      - name: Log result
+        run: |
+          if [ "${{ steps.check.outputs.changed }}" = "true" ]; then
+            echo "Changes detected. Review upstream/update-prompt.md."
+          else
+            echo "All references up to date."
+          fi
