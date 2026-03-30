@@ -1,0 +1,80 @@
+name: Daily Build
+
+on:
+  workflow_dispatch:
+    inputs:
+      force_refetch:
+        description: 'Force re-download upstream'
+        required: false
+        default: 'false'
+
+  schedule:
+    - cron: '0 2 * * *'
+
+  push:
+    branches:
+      - main
+    paths:
+      - '1_download_and_patch.py'
+      - '2_generate_includes.py'
+      - '3_patch.py'
+      - '4_add_extra_bypasses.py'
+      - 'scripts/obfuscate.py'
+      - 'extra_bypasses/**'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Clear cached upstream
+        if: github.event.inputs.force_refetch == 'true'
+        run: rm -f upstream_gongchandang49.user.js
+
+      - name: Step 1 — Sync from upstream and apply fixes
+        run: python 1_download_and_patch.py
+
+      - name: Step 2 — Generate match/include rules
+        run: python 2_generate_includes.py
+
+      - name: Step 3 — Debloat and set version
+        run: python 3_patch.py
+
+      - name: Step 4 — Merge extra bypasses
+        run: python 4_add_extra_bypasses.py
+
+      - name: Step 5 — Hardening pass
+        run: python scripts/obfuscate.py
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Commit updated files
+        run: |
+          git add Bypass_Shortlinks.user.js \
+                  Bypass_Shortlinks.meta.js \
+                  supported_sites.txt \
+                  match_rules.txt \
+                  include_rules.txt
+          git diff --staged --quiet && echo "No changes." || (
+            git commit -m "build: update script [skip ci]" &&
+            git push
+          )
