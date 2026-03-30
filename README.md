@@ -65,7 +65,19 @@ To report a broken site or request a new one:
 
 ## Credits
 
-- [gongchandang49](https://github.com/gongchandang49/bypass-all-shortlinks-debloated) — primary upstream
-- [Amm0ni4](https://codeberg.org/Amm0ni4/bypass-all-shortlinks-debloated) — debloat foundation
+This project is built on top of the work of several developers.
+
+**Core upstream:**
+- [gongchandang49](https://github.com/gongchandang49/bypass-all-shortlinks-debloated) — primary base script, synced daily
+- [Amm0ni4](https://codeberg.org/Amm0ni4/bypass-all-shortlinks-debloated) — original debloat fork
 - [BloggerPemula](https://greasyfork.org/scripts/431691) — original script
-- [bypass.city](https://bypass.city/) / [adbypass.org](https://adbypass.org/) — API fallback
+
+**APIs used:**
+- [bypass.city](https://bypass.city/) / [adbypass.org](https://adbypass.org/) — free bypass API for linkvertise and admaven
+
+**Techniques and patterns:**
+- [dessant/buster](https://github.com/dessant/buster) — reCAPTCHA audio bypass technique
+- [reek/anti-adblock-killer](https://github.com/reek/anti-adblock-killer) — anti-adblock detection patterns
+- [FastForwardTeam/FastForward](https://github.com/FastForwardTeam/FastForward) — redirect bypass rules
+
+Full reference list: [REFERENCES.md](REFERENCES.md)
