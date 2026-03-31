@@ -13,8 +13,8 @@ on:
         default: false
 
   schedule:
-    # Every day at 03:30 UTC (30 min after the main build)
-    - cron: '0 9 * * *'
+    # Every day at 09:00 (30 min after the main build)
+    - cron: '30 9 * * *'
     
 permissions:
   contents: write
