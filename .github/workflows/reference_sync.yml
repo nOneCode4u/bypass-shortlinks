@@ -14,7 +14,7 @@ on:
 
   schedule:
     # Every day at 09:00 (30 min after the main build)
-    - cron: '30 9 * * *'
+    - cron: '0 7 * * *'
     
 permissions:
   contents: write
