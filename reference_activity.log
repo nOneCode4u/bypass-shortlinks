@@ -1,4 +1,4 @@
-Daily reference check — 2026-04-06 08:19 UTC
+Daily reference check — 2026-04-07 08:07 UTC
 ============================================================
 
   ★ CHANGED: gorhill/uBlock: first check → release 1.70.0 (2026-03-11)
@@ -20,12 +20,12 @@ Daily reference check — 2026-04-06 08:19 UTC
   ★ CHANGED: NopeCHALLC/nopecha-extension: first check → release 0.5.5 (2026-01-23)
   ★ CHANGED: QIN2DIM/hcaptcha-challenger: first check → commit 6bfe7815 (2026-01-27)
   ★ CHANGED: sarperavci/GoogleRecaptchaBypass: first check → commit beb0a9a8 (2026-04-01)
-  ★ CHANGED: Skyvern-AI/skyvern: first check → commit f422c37d (2026-04-05)
+  ★ CHANGED: Skyvern-AI/skyvern: first check → commit bced984d (2026-04-07)
   ★ CHANGED: Vinyzu/recognizer: first check → commit 8a002c45 (2026-03-29)
   ★ CHANGED: 2captcha/2captcha-cpp: first check → commit debc4cbd (2026-04-02)
-  ★ CHANGED: 2captcha/2captcha-csharp: first check → commit 52f75b5d (2026-04-01)
+  ★ CHANGED: 2captcha/2captcha-csharp: first check → commit fda7b820 (2026-04-06)
   ★ CHANGED: 2captcha/2captcha-go: first check → commit 62da9656 (2026-03-25)
-  ★ CHANGED: 2captcha/2captcha-java: first check → commit 07e05b06 (2026-04-03)
+  ★ CHANGED: 2captcha/2captcha-java: first check → commit 315ad501 (2026-04-06)
   ★ CHANGED: 2captcha/2captcha-javascript: first check → commit 885bfc29 (2026-04-03)
   ★ CHANGED: 2captcha/2captcha-php: first check → commit d49e1fd3 (2026-04-02)
   ★ CHANGED: 2captcha/2captcha-python: first check → commit 59a4f3a8 (2026-04-03)
@@ -50,7 +50,7 @@ Daily reference check — 2026-04-06 08:19 UTC
   ★ CHANGED: greasyfork #442019 — UploadHEaven: first check → v1.4 (updated 2023-04-19)
   ★ CHANGED: greasyfork #522735 — Bypass FREEdlink countdown: first check → v1.4.3 (updated 2025-09-03)
   ★ CHANGED: everywall/ladder: first check → commit e08e336e (2024-10-02)
-  ★ CHANGED: magnolia1234/bypass-paywalls-clean-filters: first check → v4.3.4.1 (sha f6c42e93)
+  ★ CHANGED: magnolia1234/bypass-paywalls-clean-filters: first check → v4.3.4.1 (sha 66a3b072)
 
 ============================================================
 Total: 50 changed, 0 unchanged.
