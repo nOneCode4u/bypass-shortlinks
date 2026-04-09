@@ -1,4 +1,4 @@
-Daily reference check — 2026-04-08 08:08 UTC
+Daily reference check — 2026-04-09 08:15 UTC
 ============================================================
 
   ★ CHANGED: gorhill/uBlock: first check → release 1.70.0 (2026-03-11)
@@ -15,12 +15,12 @@ Daily reference check — 2026-04-08 08:08 UTC
   ★ CHANGED: altcha-org/altcha-lib-py: first check → commit 773051d5 (2026-04-07)
   ★ CHANGED: altcha-org/altcha-lib-rb: first check → commit 06b7ea85 (2026-04-07)
   ★ CHANGED: aydinnyunus/ai-captcha-bypass: first check → commit 4bc10900 (2026-01-16)
-  ★ CHANGED: browser-use/browser-use: first check → commit 8de903df (2026-04-07)
+  ★ CHANGED: browser-use/browser-use: first check → commit eeb767ef (2026-04-09)
   ★ CHANGED: dessant/buster: first check → release v3.1.1 (2026-04-01)
   ★ CHANGED: NopeCHALLC/nopecha-extension: first check → release 0.5.5 (2026-01-23)
   ★ CHANGED: QIN2DIM/hcaptcha-challenger: first check → commit 6bfe7815 (2026-01-27)
   ★ CHANGED: sarperavci/GoogleRecaptchaBypass: first check → commit beb0a9a8 (2026-04-01)
-  ★ CHANGED: Skyvern-AI/skyvern: first check → commit b168f769 (2026-04-08)
+  ★ CHANGED: Skyvern-AI/skyvern: first check → commit 994dce04 (2026-04-09)
   ★ CHANGED: Vinyzu/recognizer: first check → commit 8a002c45 (2026-03-29)
   ★ CHANGED: 2captcha/2captcha-cpp: first check → commit debc4cbd (2026-04-02)
   ★ CHANGED: 2captcha/2captcha-csharp: first check → commit fda7b820 (2026-04-06)
@@ -50,7 +50,7 @@ Daily reference check — 2026-04-08 08:08 UTC
   ★ CHANGED: greasyfork #442019 — UploadHEaven: first check → v1.4 (updated 2023-04-19)
   ★ CHANGED: greasyfork #522735 — Bypass FREEdlink countdown: first check → v1.4.3 (updated 2025-09-03)
   ★ CHANGED: everywall/ladder: first check → commit e08e336e (2024-10-02)
-  ★ CHANGED: magnolia1234/bypass-paywalls-clean-filters: first check → v4.3.4.1 (sha 66a3b072)
+  ★ CHANGED: magnolia1234/bypass-paywalls-clean-filters: first check → v4.3.4.3 (sha ef3b5883)
 
 ============================================================
 Total: 50 changed, 0 unchanged.
