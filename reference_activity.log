@@ -1,4 +1,4 @@
-Daily reference check — 2026-04-13 08:58 UTC
+Daily reference check — 2026-04-14 08:23 UTC
 ============================================================
 
   ★ CHANGED: gorhill/uBlock: first check → release 1.70.0 (2026-03-11)
@@ -15,12 +15,12 @@ Daily reference check — 2026-04-13 08:58 UTC
   ★ CHANGED: altcha-org/altcha-lib-py: first check → commit 773051d5 (2026-04-07)
   ★ CHANGED: altcha-org/altcha-lib-rb: first check → commit 06b7ea85 (2026-04-07)
   ★ CHANGED: aydinnyunus/ai-captcha-bypass: first check → commit 4bc10900 (2026-01-16)
-  ★ CHANGED: browser-use/browser-use: first check → commit 5970007d (2026-04-12)
+  ★ CHANGED: browser-use/browser-use: first check → commit ef32ed70 (2026-04-14)
   ★ CHANGED: dessant/buster: first check → release v3.1.1 (2026-04-01)
   ★ CHANGED: NopeCHALLC/nopecha-extension: first check → release 0.5.5 (2026-01-23)
   ★ CHANGED: QIN2DIM/hcaptcha-challenger: first check → commit 6bfe7815 (2026-01-27)
   ★ CHANGED: sarperavci/GoogleRecaptchaBypass: first check → commit beb0a9a8 (2026-04-01)
-  ★ CHANGED: Skyvern-AI/skyvern: first check → commit 603b6bbb (2026-04-13)
+  ★ CHANGED: Skyvern-AI/skyvern: first check → commit ad297714 (2026-04-14)
   ★ CHANGED: Vinyzu/recognizer: first check → commit 8a002c45 (2026-03-29)
   ★ CHANGED: 2captcha/2captcha-cpp: first check → commit debc4cbd (2026-04-02)
   ★ CHANGED: 2captcha/2captcha-csharp: first check → commit fda7b820 (2026-04-06)
@@ -41,7 +41,7 @@ Daily reference check — 2026-04-13 08:58 UTC
   ★ CHANGED: solvercaptcha/solvecaptcha-php: first check → commit 0c0df881 (2026-03-05)
   ★ CHANGED: solvercaptcha/solvecaptcha-python: first check → commit 1cce37a6 (2025-09-23)
   ★ CHANGED: solvercaptcha/solvecaptcha-ruby: first check → commit b66d1b35 (2025-09-23)
-  ★ CHANGED: adsbypasser/adsbypasser: first check → commit dc7a5427 (2026-04-12)
+  ★ CHANGED: adsbypasser/adsbypasser: first check → commit 14587f61 (2026-04-13)
   ★ CHANGED: amitsingh-007/bypass-links: first check → commit 132f5802 (2026-04-03)
   ★ CHANGED: bypass-vip/userscript: first check → commit 0ff73040 (2025-10-29)
   ★ CHANGED: gongchandang49/bypass-all-shortlinks-debloated (PRIMARY): first check → commit bca774ef (2026-02-27)
@@ -49,7 +49,7 @@ Daily reference check — 2026-04-13 08:58 UTC
   ★ CHANGED: greasyfork #431691 — Bypass All Shortlinks: first check → v96.7 (updated 2026-04-12)
   ★ CHANGED: greasyfork #442019 — UploadHEaven: first check → v1.4 (updated 2023-04-19)
   ★ CHANGED: greasyfork #522735 — Bypass FREEdlink countdown: first check → v1.4.3 (updated 2025-09-03)
-  ★ CHANGED: everywall/ladder: first check → commit 0d3ffaef (2026-04-11)
+  ★ CHANGED: everywall/ladder: first check → commit 6fe683d5 (2026-04-14)
   ★ CHANGED: magnolia1234/bypass-paywalls-clean-filters: first check → v4.3.4.5 (sha 53a61712)
 
 ============================================================
