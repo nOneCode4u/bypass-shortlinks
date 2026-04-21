@@ -1,4 +1,4 @@
-Daily reference check — 2026-04-20 09:04 UTC
+Daily reference check — 2026-04-21 08:28 UTC
 ============================================================
 
   ★ CHANGED: gorhill/uBlock: first check → release 1.70.0 (2026-03-11)
@@ -15,12 +15,12 @@ Daily reference check — 2026-04-20 09:04 UTC
   ★ CHANGED: altcha-org/altcha-lib-py: first check → commit 773051d5 (2026-04-07)
   ★ CHANGED: altcha-org/altcha-lib-rb: first check → commit 06b7ea85 (2026-04-07)
   ★ CHANGED: aydinnyunus/ai-captcha-bypass: first check → commit 8edfe68d (2026-04-14)
-  ★ CHANGED: browser-use/browser-use: first check → commit 702b7352 (2026-04-15)
+  ★ CHANGED: browser-use/browser-use: first check → commit 1da2d3ff (2026-04-21)
   ★ CHANGED: dessant/buster: first check → release v3.1.2 (2026-04-19)
-  ★ CHANGED: NopeCHALLC/nopecha-extension: first check → release 0.5.5 (2026-01-23)
+  ★ CHANGED: NopeCHALLC/nopecha-extension: first check → release 0.5.6 (2026-04-20)
   ★ CHANGED: QIN2DIM/hcaptcha-challenger: first check → commit 6bfe7815 (2026-01-27)
   ★ CHANGED: sarperavci/GoogleRecaptchaBypass: first check → commit beb0a9a8 (2026-04-01)
-  ★ CHANGED: Skyvern-AI/skyvern: first check → commit 5ddd0ad3 (2026-04-20)
+  ★ CHANGED: Skyvern-AI/skyvern: first check → commit 73a98ec1 (2026-04-21)
   ★ CHANGED: Vinyzu/recognizer: first check → commit 8a002c45 (2026-03-29)
   ★ CHANGED: 2captcha/2captcha-cpp: first check → commit debc4cbd (2026-04-02)
   ★ CHANGED: 2captcha/2captcha-csharp: first check → commit fda7b820 (2026-04-06)
@@ -49,8 +49,8 @@ Daily reference check — 2026-04-20 09:04 UTC
   ★ CHANGED: greasyfork #431691 — Bypass All Shortlinks: first check → v96.7 (updated 2026-04-12)
   ★ CHANGED: greasyfork #442019 — UploadHEaven: first check → v1.4 (updated 2023-04-19)
   ★ CHANGED: greasyfork #522735 — Bypass FREEdlink countdown: first check → v1.4.3 (updated 2025-09-03)
-  ★ CHANGED: everywall/ladder: first check → commit b138d402 (2026-04-18)
-  ★ CHANGED: magnolia1234/bypass-paywalls-clean-filters: first check → v4.3.5.0 (sha c45d1f09)
+  ★ CHANGED: everywall/ladder: first check → commit 867f558c (2026-04-21)
+  ★ CHANGED: magnolia1234/bypass-paywalls-clean-filters: first check → v4.3.5.1 (sha 65306e45)
 
 ============================================================
 Total: 50 changed, 0 unchanged.
