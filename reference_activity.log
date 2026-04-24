@@ -1,4 +1,4 @@
-Daily reference check — 2026-04-23 08:49 UTC
+Daily reference check — 2026-04-24 08:56 UTC
 ============================================================
 
   ★ CHANGED: gorhill/uBlock: first check → release 1.70.0 (2026-03-11)
@@ -20,7 +20,7 @@ Daily reference check — 2026-04-23 08:49 UTC
   ★ CHANGED: NopeCHALLC/nopecha-extension: first check → release 0.5.6 (2026-04-20)
   ★ CHANGED: QIN2DIM/hcaptcha-challenger: first check → commit 6bfe7815 (2026-01-27)
   ★ CHANGED: sarperavci/GoogleRecaptchaBypass: first check → commit beb0a9a8 (2026-04-01)
-  ★ CHANGED: Skyvern-AI/skyvern: first check → commit 720c78a9 (2026-04-23)
+  ★ CHANGED: Skyvern-AI/skyvern: first check → commit a06d3bba (2026-04-24)
   ★ CHANGED: Vinyzu/recognizer: first check → commit 8a002c45 (2026-03-29)
   ★ CHANGED: 2captcha/2captcha-cpp: first check → commit 489ae5c2 (2026-04-23)
   ★ CHANGED: 2captcha/2captcha-csharp: first check → commit fda7b820 (2026-04-06)
