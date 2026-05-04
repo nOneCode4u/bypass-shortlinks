@@ -1,4 +1,4 @@
-Daily reference check — 2026-05-03 08:30 UTC
+Daily reference check — 2026-05-04 09:12 UTC
 ============================================================
 
   ★ CHANGED: gorhill/uBlock: first check → release 1.70.0 (2026-03-11)
@@ -6,7 +6,7 @@ Daily reference check — 2026-05-03 08:30 UTC
   ★ CHANGED: bogachenkove/fuckfuckadblock: first check → commit c7ca38e9 (2025-03-16)
   ★ CHANGED: reek/anti-adblock-killer: first check → commit a87431fb (2016-11-21)
   ★ CHANGED: SilverTke/go-away-fuckadblock: first check → commit 5e0a5351 (2026-03-11)
-  ★ CHANGED: altcha-org/altcha: first check → release v3.0.4 (2026-04-19)
+  ★ CHANGED: altcha-org/altcha: first check → release v3.0.6 (2026-05-04)
   ★ CHANGED: altcha-org/altcha-lib: first check → release v2.0.1 (2026-04-10)
   ★ CHANGED: altcha-org/altcha-lib-ex: first check → commit 7dcb35f1 (2026-04-07)
   ★ CHANGED: altcha-org/altcha-lib-go: first check → commit 23279567 (2026-04-16)
@@ -49,7 +49,7 @@ Daily reference check — 2026-05-03 08:30 UTC
   ★ CHANGED: greasyfork #431691 — Bypass All Shortlinks: first check → v96.7 (updated 2026-04-12)
   ★ CHANGED: greasyfork #442019 — UploadHEaven: first check → v1.4 (updated 2023-04-19)
   ★ CHANGED: greasyfork #522735 — Bypass FREEdlink countdown: first check → v1.4.3 (updated 2025-09-03)
-  ★ CHANGED: everywall/ladder: first check → commit e7ee669a (2026-05-01)
+  ★ CHANGED: everywall/ladder: first check → commit 24009497 (2026-05-04)
   ★ CHANGED: magnolia1234/bypass-paywalls-clean-filters: first check → v4.3.5.5 (sha d55b25b6)
 
 ============================================================
