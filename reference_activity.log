@@ -1,12 +1,12 @@
-Daily reference check — 2026-05-11 10:30 UTC
+Daily reference check — 2026-05-12 09:30 UTC
 ============================================================
 
-  ★ CHANGED: gorhill/uBlock: first check → release 1.70.0 (2026-03-11)
+  ★ CHANGED: gorhill/uBlock: first check → release 1.71.0 (2026-05-11)
   ★ CHANGED: Turtlecute33/toolz: first check → commit 1741d3ab (2026-05-05)
   ★ CHANGED: bogachenkove/fuckfuckadblock: first check → commit c7ca38e9 (2025-03-16)
   ★ CHANGED: reek/anti-adblock-killer: first check → commit a87431fb (2016-11-21)
   ★ CHANGED: SilverTke/go-away-fuckadblock: first check → commit 5e0a5351 (2026-03-11)
-  ★ CHANGED: altcha-org/altcha: first check → release v3.0.8 (2026-05-06)
+  ★ CHANGED: altcha-org/altcha: first check → release v3.0.9 (2026-05-12)
   ★ CHANGED: altcha-org/altcha-lib: first check → release v2.0.1 (2026-04-10)
   ★ CHANGED: altcha-org/altcha-lib-ex: first check → commit 7dcb35f1 (2026-04-07)
   ★ CHANGED: altcha-org/altcha-lib-go: first check → commit 23279567 (2026-04-16)
@@ -20,7 +20,7 @@ Daily reference check — 2026-05-11 10:30 UTC
   ★ CHANGED: NopeCHALLC/nopecha-extension: first check → release 0.5.6 (2026-04-20)
   ★ CHANGED: QIN2DIM/hcaptcha-challenger: first check → commit 6bfe7815 (2026-01-27)
   ★ CHANGED: sarperavci/GoogleRecaptchaBypass: first check → commit 4debb569 (2026-04-24)
-  ★ CHANGED: Skyvern-AI/skyvern: first check → commit 94458a9c (2026-05-11)
+  ★ CHANGED: Skyvern-AI/skyvern: first check → commit afd17cde (2026-05-11)
   ★ CHANGED: Vinyzu/recognizer: first check → commit 8a002c45 (2026-03-29)
   ★ CHANGED: 2captcha/2captcha-cpp: first check → commit 489ae5c2 (2026-04-23)
   ★ CHANGED: 2captcha/2captcha-csharp: first check → commit fda7b820 (2026-04-06)
