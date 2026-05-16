@@ -1,4 +1,4 @@
-Daily reference check — 2026-05-15 09:40 UTC
+Daily reference check — 2026-05-16 08:44 UTC
 ============================================================
 
   ★ CHANGED: gorhill/uBlock: first check → release 1.71.0 (2026-05-11)
@@ -20,7 +20,7 @@ Daily reference check — 2026-05-15 09:40 UTC
   ★ CHANGED: NopeCHALLC/nopecha-extension: first check → release 0.5.6 (2026-04-20)
   ★ CHANGED: QIN2DIM/hcaptcha-challenger: first check → commit 6bfe7815 (2026-01-27)
   ★ CHANGED: sarperavci/GoogleRecaptchaBypass: first check → commit 4debb569 (2026-04-24)
-  ★ CHANGED: Skyvern-AI/skyvern: first check → commit 516ec34d (2026-05-15)
+  ★ CHANGED: Skyvern-AI/skyvern: first check → commit 737e3c23 (2026-05-15)
   ★ CHANGED: Vinyzu/recognizer: first check → commit 8a002c45 (2026-03-29)
   ★ CHANGED: 2captcha/2captcha-cpp: first check → commit 489ae5c2 (2026-04-23)
   ★ CHANGED: 2captcha/2captcha-csharp: first check → commit fda7b820 (2026-04-06)
@@ -41,7 +41,7 @@ Daily reference check — 2026-05-15 09:40 UTC
   ★ CHANGED: solvercaptcha/solvecaptcha-php: first check → commit 0c0df881 (2026-03-05)
   ★ CHANGED: solvercaptcha/solvecaptcha-python: first check → commit 1cce37a6 (2025-09-23)
   ★ CHANGED: solvercaptcha/solvecaptcha-ruby: first check → commit b66d1b35 (2025-09-23)
-  ★ CHANGED: adsbypasser/adsbypasser: first check → commit fe8487a7 (2026-05-01)
+  ★ CHANGED: adsbypasser/adsbypasser: first check → commit 1214b1d6 (2026-05-15)
   ★ CHANGED: amitsingh-007/bypass-links: first check → commit 93062d48 (2026-05-02)
   ★ CHANGED: bypass-vip/userscript: first check → commit dfe45b49 (2026-05-08)
   ★ CHANGED: gongchandang49/bypass-all-shortlinks-debloated (PRIMARY): first check → commit d789d83c (2026-04-19)
