@@ -1,4 +1,4 @@
-Daily reference check — 2026-05-16 08:44 UTC
+Daily reference check — 2026-05-17 08:59 UTC
 ============================================================
 
   ★ CHANGED: gorhill/uBlock: first check → release 1.71.0 (2026-05-11)
@@ -50,7 +50,7 @@ Daily reference check — 2026-05-16 08:44 UTC
   ★ CHANGED: greasyfork #442019 — UploadHEaven: first check → v1.4 (updated 2023-04-19)
   ★ CHANGED: greasyfork #522735 — Bypass FREEdlink countdown: first check → v1.4.3 (updated 2025-09-03)
   ★ CHANGED: everywall/ladder: first check → commit 17db612f (2026-05-11)
-  ★ CHANGED: magnolia1234/bypass-paywalls-clean-filters: first check → v4.3.6.9 (sha c908f25f)
+  ★ CHANGED: magnolia1234/bypass-paywalls-clean-filters: first check → v4.3.7.0 (sha 4ff2aa6c)
 
 ============================================================
 Total: 50 changed, 0 unchanged.
