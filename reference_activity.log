@@ -1,4 +1,4 @@
-Daily reference check — 2026-05-24 09:15 UTC
+Daily reference check — 2026-05-25 11:05 UTC
 ============================================================
 
   ★ CHANGED: gorhill/uBlock: first check → release 1.71.0 (2026-05-11)
@@ -7,7 +7,7 @@ Daily reference check — 2026-05-24 09:15 UTC
   ★ CHANGED: reek/anti-adblock-killer: first check → commit a87431fb (2016-11-21)
   ★ CHANGED: SilverTke/go-away-fuckadblock: first check → commit 5e0a5351 (2026-03-11)
   ★ CHANGED: altcha-org/altcha: first check → release v3.0.10 (2026-05-23)
-  ★ CHANGED: altcha-org/altcha-lib: first check → release v2.1.0 (2026-05-20)
+  ★ CHANGED: altcha-org/altcha-lib: first check → release v2.2.0 (2026-05-24)
   ★ CHANGED: altcha-org/altcha-lib-ex: first check → commit 7dcb35f1 (2026-04-07)
   ★ CHANGED: altcha-org/altcha-lib-go: first check → commit f14102c7 (2026-05-12)
   ★ CHANGED: altcha-org/altcha-lib-java: first check → release v2.0.1 (2026-04-15)
@@ -20,7 +20,7 @@ Daily reference check — 2026-05-24 09:15 UTC
   ★ CHANGED: NopeCHALLC/nopecha-extension: first check → release 0.5.6 (2026-04-20)
   ★ CHANGED: QIN2DIM/hcaptcha-challenger: first check → commit 6bfe7815 (2026-01-27)
   ★ CHANGED: sarperavci/GoogleRecaptchaBypass: first check → commit 4debb569 (2026-04-24)
-  ★ CHANGED: Skyvern-AI/skyvern: first check → commit a9b646f0 (2026-05-24)
+  ★ CHANGED: Skyvern-AI/skyvern: first check → commit 631f0fbc (2026-05-25)
   ★ CHANGED: Vinyzu/recognizer: first check → commit 8a002c45 (2026-03-29)
   ★ CHANGED: 2captcha/2captcha-cpp: first check → commit 489ae5c2 (2026-04-23)
   ★ CHANGED: 2captcha/2captcha-csharp: first check → commit fda7b820 (2026-04-06)
@@ -50,7 +50,7 @@ Daily reference check — 2026-05-24 09:15 UTC
   ★ CHANGED: greasyfork #442019 — UploadHEaven: first check → v1.4 (updated 2023-04-19)
   ★ CHANGED: greasyfork #522735 — Bypass FREEdlink countdown: first check → v1.4.3 (updated 2025-09-03)
   ★ CHANGED: everywall/ladder: first check → commit 17db612f (2026-05-11)
-  ★ CHANGED: magnolia1234/bypass-paywalls-clean-filters: first check → v4.3.7.4 (sha 211d7b1d)
+  ★ CHANGED: magnolia1234/bypass-paywalls-clean-filters: first check → v4.3.7.5 (sha 99c8b7d2)
 
 ============================================================
 Total: 50 changed, 0 unchanged.
