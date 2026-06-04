@@ -1,4 +1,4 @@
-Daily reference check — 2026-06-03 11:50 UTC
+Daily reference check — 2026-06-04 10:34 UTC
 ============================================================
 
   ★ CHANGED: gorhill/uBlock: first check → release 1.71.0 (2026-05-11)
@@ -16,18 +16,18 @@ Daily reference check — 2026-06-03 11:50 UTC
   ★ CHANGED: altcha-org/altcha-lib-rb: first check → commit 06b7ea85 (2026-04-07)
   ★ CHANGED: aydinnyunus/ai-captcha-bypass: first check → commit 29228c0d (2026-05-23)
   ★ CHANGED: browser-use/browser-use: first check → commit 4931a7e0 (2026-06-01)
-  ★ CHANGED: dessant/buster: first check → release v3.1.3 (2026-04-27)
+  ★ CHANGED: dessant/buster: first check → release v3.1.4 (2026-06-03)
   ★ CHANGED: NopeCHALLC/nopecha-extension: first check → release 0.6.0 (2026-06-01)
   ★ CHANGED: QIN2DIM/hcaptcha-challenger: first check → commit 6bfe7815 (2026-01-27)
   ★ CHANGED: sarperavci/GoogleRecaptchaBypass: first check → commit d78586d5 (2026-05-27)
-  ★ CHANGED: Skyvern-AI/skyvern: first check → commit 1704b3fd (2026-06-03)
+  ★ CHANGED: Skyvern-AI/skyvern: first check → commit 3985d49e (2026-06-04)
   ★ CHANGED: Vinyzu/recognizer: first check → commit 8a002c45 (2026-03-29)
   ★ CHANGED: 2captcha/2captcha-cpp: first check → commit 44d30a76 (2026-05-27)
-  ★ CHANGED: 2captcha/2captcha-csharp: first check → commit 51338138 (2026-06-03)
+  ★ CHANGED: 2captcha/2captcha-csharp: first check → commit bd8d3ed7 (2026-06-04)
   ★ CHANGED: 2captcha/2captcha-go: first check → commit 35e3c00a (2026-05-26)
   ★ CHANGED: 2captcha/2captcha-java: first check → commit 736c4ba8 (2026-06-02)
   ★ CHANGED: 2captcha/2captcha-javascript: first check → commit 8cfdf9c1 (2026-06-01)
-  ★ CHANGED: 2captcha/2captcha-php: first check → commit cd4befbe (2026-05-28)
+  ★ CHANGED: 2captcha/2captcha-php: first check → commit ce46577a (2026-06-04)
   ★ CHANGED: 2captcha/2captcha-python: first check → commit 41e0aff3 (2026-05-29)
   ★ CHANGED: 2captcha/2captcha-ruby: first check → release v1.1.6 (2024-11-20)
   ★ CHANGED: 2captcha/captcha-solver-selenium-python-examples: first check → commit 35b59d7f (2026-04-01)
