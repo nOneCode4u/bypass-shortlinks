@@ -1,4 +1,4 @@
-Daily reference check — 2026-06-15 12:59 UTC
+Daily reference check — 2026-06-16 12:05 UTC
 ============================================================
 
   ★ CHANGED: gorhill/uBlock: first check → release 1.71.0 (2026-05-11)
@@ -10,19 +10,19 @@ Daily reference check — 2026-06-15 12:59 UTC
   ★ CHANGED: altcha-org/altcha-lib: first check → release v2.2.0 (2026-05-24)
   ★ CHANGED: altcha-org/altcha-lib-ex: first check → commit 7dcb35f1 (2026-04-07)
   ★ CHANGED: altcha-org/altcha-lib-go: first check → commit f14102c7 (2026-05-12)
-  ★ CHANGED: altcha-org/altcha-lib-java: first check → release v2.0.1 (2026-04-15)
+  ★ CHANGED: altcha-org/altcha-lib-java: first check → release v2.0.2 (2026-06-15)
   ★ CHANGED: altcha-org/altcha-lib-php: first check → release v2.0.0 (2026-04-07)
   ★ CHANGED: altcha-org/altcha-lib-py: first check → commit 773051d5 (2026-04-07)
   ★ CHANGED: altcha-org/altcha-lib-rb: first check → commit 06b7ea85 (2026-04-07)
   ★ CHANGED: aydinnyunus/ai-captcha-bypass: first check → commit 29228c0d (2026-05-23)
   ★ CHANGED: browser-use/browser-use: first check → commit da3d6a3e (2026-06-13)
-  ★ CHANGED: dessant/buster: first check → release v3.2.0 (2026-06-08)
+  ★ CHANGED: dessant/buster: first check → release v3.2.1 (2026-06-16)
   ★ CHANGED: NopeCHALLC/nopecha-extension: first check → release 0.6.1 (2026-06-11)
   ★ CHANGED: QIN2DIM/hcaptcha-challenger: first check → commit 6bfe7815 (2026-01-27)
   ★ CHANGED: sarperavci/GoogleRecaptchaBypass: first check → commit 075acb5b (2026-06-04)
-  ★ CHANGED: Skyvern-AI/skyvern: first check → commit 873312a2 (2026-06-15)
+  ★ CHANGED: Skyvern-AI/skyvern: first check → commit 3b57f267 (2026-06-16)
   ★ CHANGED: Vinyzu/recognizer: first check → commit 8a002c45 (2026-03-29)
-  ★ CHANGED: 2captcha/2captcha-cpp: first check → commit 44d30a76 (2026-05-27)
+  ★ CHANGED: 2captcha/2captcha-cpp: first check → commit 0ffbdc24 (2026-06-16)
   ★ CHANGED: 2captcha/2captcha-csharp: first check → commit bd8d3ed7 (2026-06-04)
   ★ CHANGED: 2captcha/2captcha-go: first check → commit 42ea24b6 (2026-06-11)
   ★ CHANGED: 2captcha/2captcha-java: first check → commit 736c4ba8 (2026-06-02)
