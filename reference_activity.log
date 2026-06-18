@@ -1,4 +1,4 @@
-Daily reference check — 2026-06-17 11:41 UTC
+Daily reference check — 2026-06-18 11:05 UTC
 ============================================================
 
   ★ CHANGED: gorhill/uBlock: first check → release 1.71.0 (2026-05-11)
@@ -16,16 +16,16 @@ Daily reference check — 2026-06-17 11:41 UTC
   ★ CHANGED: altcha-org/altcha-lib-rb: first check → commit 06b7ea85 (2026-04-07)
   ★ CHANGED: aydinnyunus/ai-captcha-bypass: first check → commit 29228c0d (2026-05-23)
   ★ CHANGED: browser-use/browser-use: first check → commit da3d6a3e (2026-06-13)
-  ★ CHANGED: dessant/buster: first check → release v3.2.1 (2026-06-16)
+  ★ CHANGED: dessant/buster: first check → release v3.3.0 (2026-06-17)
   ★ CHANGED: NopeCHALLC/nopecha-extension: first check → release 0.6.1 (2026-06-11)
   ★ CHANGED: QIN2DIM/hcaptcha-challenger: first check → commit 6bfe7815 (2026-01-27)
   ★ CHANGED: sarperavci/GoogleRecaptchaBypass: first check → commit 075acb5b (2026-06-04)
-  ✗ Skyvern-AI/skyvern: could not check
+  ★ CHANGED: Skyvern-AI/skyvern: first check → commit 4c29a9dd (2026-06-18)
   ★ CHANGED: Vinyzu/recognizer: first check → commit 8a002c45 (2026-03-29)
   ★ CHANGED: 2captcha/2captcha-cpp: first check → commit 0ffbdc24 (2026-06-16)
   ★ CHANGED: 2captcha/2captcha-csharp: first check → commit bd8d3ed7 (2026-06-04)
   ★ CHANGED: 2captcha/2captcha-go: first check → commit 42ea24b6 (2026-06-11)
-  ★ CHANGED: 2captcha/2captcha-java: first check → commit 736c4ba8 (2026-06-02)
+  ★ CHANGED: 2captcha/2captcha-java: first check → commit ca16e568 (2026-06-18)
   ★ CHANGED: 2captcha/2captcha-javascript: first check → commit 8cfdf9c1 (2026-06-01)
   ★ CHANGED: 2captcha/2captcha-php: first check → commit ce46577a (2026-06-04)
   ★ CHANGED: 2captcha/2captcha-python: first check → commit 41e0aff3 (2026-05-29)
@@ -35,13 +35,13 @@ Daily reference check — 2026-06-17 11:41 UTC
   ★ CHANGED: capsolver/n8n-nodes-capsolver: first check → commit 23a6db6a (2026-03-02)
   ★ CHANGED: solvercaptcha/solvecaptcha-cpp: first check → commit 55f0f643 (2025-09-23)
   ★ CHANGED: solvercaptcha/solvecaptcha-csharp: first check → commit d0fe3cc2 (2025-09-23)
-  ✗ solvercaptcha/solvecaptcha-go: could not check
+  ★ CHANGED: solvercaptcha/solvecaptcha-go: first check → commit 4d1e57ca (2025-09-23)
   ★ CHANGED: solvercaptcha/solvecaptcha-java: first check → commit b38ec5d5 (2025-09-23)
   ★ CHANGED: solvercaptcha/solvecaptcha-javascript: first check → commit c38b9540 (2025-09-23)
   ★ CHANGED: solvercaptcha/solvecaptcha-php: first check → commit 0c0df881 (2026-03-05)
   ★ CHANGED: solvercaptcha/solvecaptcha-python: first check → commit 1cce37a6 (2025-09-23)
   ★ CHANGED: solvercaptcha/solvecaptcha-ruby: first check → commit b66d1b35 (2025-09-23)
-  ★ CHANGED: adsbypasser/adsbypasser: first check → commit b5948616 (2026-06-08)
+  ★ CHANGED: adsbypasser/adsbypasser: first check → commit 864b462d (2026-06-17)
   ★ CHANGED: amitsingh-007/bypass-links: first check → commit 93062d48 (2026-05-02)
   ★ CHANGED: bypass-vip/userscript: first check → commit e8d72e06 (2026-06-13)
   ✗ gongchandang49/bypass-all-shortlinks-debloated (PRIMARY): could not check
@@ -53,4 +53,4 @@ Daily reference check — 2026-06-17 11:41 UTC
   ★ CHANGED: magnolia1234/bypass-paywalls-clean-filters: first check → v4.3.7.8 (sha 7ecff383)
 
 ============================================================
-Total: 46 changed, 4 unchanged.
+Total: 48 changed, 2 unchanged.
