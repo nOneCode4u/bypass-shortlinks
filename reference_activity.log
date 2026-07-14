@@ -1,4 +1,4 @@
-Daily reference check — 2026-07-13 10:16 UTC
+Daily reference check — 2026-07-14 08:59 UTC
 ============================================================
 
   ★ CHANGED: gorhill/uBlock: first check → release 1.72.2 (2026-07-08)
@@ -19,11 +19,11 @@ Daily reference check — 2026-07-13 10:16 UTC
   ★ CHANGED: dessant/buster: first check → release v3.4.0 (2026-06-20)
   ★ CHANGED: NopeCHALLC/nopecha-extension: first check → release 0.6.1 (2026-06-11)
   ★ CHANGED: QIN2DIM/hcaptcha-challenger: first check → commit 6bfe7815 (2026-01-27)
-  ★ CHANGED: sarperavci/GoogleRecaptchaBypass: first check → commit 618407d7 (2026-07-09)
-  ★ CHANGED: Skyvern-AI/skyvern: first check → commit 6ff4c6b0 (2026-07-13)
+  ★ CHANGED: sarperavci/GoogleRecaptchaBypass: first check → commit 40b2c68f (2026-07-13)
+  ★ CHANGED: Skyvern-AI/skyvern: first check → commit 1ea96ebc (2026-07-14)
   ★ CHANGED: Vinyzu/recognizer: first check → commit 8a002c45 (2026-03-29)
   ★ CHANGED: 2captcha/2captcha-cpp: first check → commit 67631785 (2026-07-10)
-  ★ CHANGED: 2captcha/2captcha-csharp: first check → commit 3186454c (2026-06-30)
+  ★ CHANGED: 2captcha/2captcha-csharp: first check → commit d4a7246f (2026-07-14)
   ★ CHANGED: 2captcha/2captcha-go: first check → commit b7f0aa30 (2026-07-09)
   ★ CHANGED: 2captcha/2captcha-java: first check → commit 39329611 (2026-06-24)
   ★ CHANGED: 2captcha/2captcha-javascript: first check → commit d2e44f99 (2026-06-25)
@@ -42,7 +42,7 @@ Daily reference check — 2026-07-13 10:16 UTC
   ★ CHANGED: solvercaptcha/solvecaptcha-python: first check → commit 1cce37a6 (2025-09-23)
   ★ CHANGED: solvercaptcha/solvecaptcha-ruby: first check → commit b66d1b35 (2025-09-23)
   ★ CHANGED: adsbypasser/adsbypasser: first check → commit dcf61227 (2026-07-13)
-  ★ CHANGED: amitsingh-007/bypass-links: first check → commit 5a6b5bb7 (2026-07-12)
+  ★ CHANGED: amitsingh-007/bypass-links: first check → commit 73de8f1f (2026-07-13)
   ★ CHANGED: bypass-vip/userscript: first check → commit e8d72e06 (2026-06-13)
   ✗ gongchandang49/bypass-all-shortlinks-debloated (PRIMARY): could not check
   ★ CHANGED: FastForwardTeam/FastForward: first check → commit a9b18943 (2024-11-21)
