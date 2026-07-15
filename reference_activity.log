@@ -1,4 +1,4 @@
-Daily reference check — 2026-07-14 08:59 UTC
+Daily reference check — 2026-07-15 09:05 UTC
 ============================================================
 
   ★ CHANGED: gorhill/uBlock: first check → release 1.72.2 (2026-07-08)
@@ -9,18 +9,18 @@ Daily reference check — 2026-07-14 08:59 UTC
   ★ CHANGED: altcha-org/altcha: first check → release v3.2.1 (2026-07-12)
   ★ CHANGED: altcha-org/altcha-lib: first check → release v2.2.0 (2026-05-24)
   ★ CHANGED: altcha-org/altcha-lib-ex: first check → commit 7dcb35f1 (2026-04-07)
-  ★ CHANGED: altcha-org/altcha-lib-go: first check → commit f14102c7 (2026-05-12)
+  ★ CHANGED: altcha-org/altcha-lib-go: first check → commit e164166b (2026-07-15)
   ★ CHANGED: altcha-org/altcha-lib-java: first check → release v2.0.2 (2026-06-15)
   ★ CHANGED: altcha-org/altcha-lib-php: first check → release v2.0.3 (2026-07-02)
   ★ CHANGED: altcha-org/altcha-lib-py: first check → commit 71550a7a (2026-06-20)
   ★ CHANGED: altcha-org/altcha-lib-rb: first check → commit 06b7ea85 (2026-04-07)
   ★ CHANGED: aydinnyunus/ai-captcha-bypass: first check → commit 29228c0d (2026-05-23)
-  ★ CHANGED: browser-use/browser-use: first check → commit c9206829 (2026-07-13)
+  ★ CHANGED: browser-use/browser-use: first check → commit dbc4d46e (2026-07-14)
   ★ CHANGED: dessant/buster: first check → release v3.4.0 (2026-06-20)
   ★ CHANGED: NopeCHALLC/nopecha-extension: first check → release 0.6.1 (2026-06-11)
   ★ CHANGED: QIN2DIM/hcaptcha-challenger: first check → commit 6bfe7815 (2026-01-27)
   ★ CHANGED: sarperavci/GoogleRecaptchaBypass: first check → commit 40b2c68f (2026-07-13)
-  ★ CHANGED: Skyvern-AI/skyvern: first check → commit 1ea96ebc (2026-07-14)
+  ★ CHANGED: Skyvern-AI/skyvern: first check → commit e9c9ceb4 (2026-07-15)
   ★ CHANGED: Vinyzu/recognizer: first check → commit 8a002c45 (2026-03-29)
   ★ CHANGED: 2captcha/2captcha-cpp: first check → commit 67631785 (2026-07-10)
   ★ CHANGED: 2captcha/2captcha-csharp: first check → commit d4a7246f (2026-07-14)
@@ -50,7 +50,7 @@ Daily reference check — 2026-07-14 08:59 UTC
   ✗ greasyfork #442019 — UploadHEaven: could not check
   ★ CHANGED: greasyfork #522735 — Bypass FREEdlink countdown: first check → v1.4.3 (updated 2025-09-03)
   ★ CHANGED: everywall/ladder: first check → commit 3723a95f (2026-07-02)
-  ★ CHANGED: magnolia1234/bypass-paywalls-clean-filters: first check → v4.3.9.3 (sha 21bb5789)
+  ★ CHANGED: magnolia1234/bypass-paywalls-clean-filters: first check → v4.3.9.5 (sha 23b92109)
 
 ============================================================
 Total: 48 changed, 2 unchanged.
