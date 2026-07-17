@@ -1,4 +1,4 @@
-Daily reference check — 2026-07-16 09:08 UTC
+Daily reference check — 2026-07-17 09:03 UTC
 ============================================================
 
   ★ CHANGED: gorhill/uBlock: first check → release 1.72.2 (2026-07-08)
@@ -15,15 +15,15 @@ Daily reference check — 2026-07-16 09:08 UTC
   ★ CHANGED: altcha-org/altcha-lib-py: first check → commit 71550a7a (2026-06-20)
   ★ CHANGED: altcha-org/altcha-lib-rb: first check → commit 06b7ea85 (2026-04-07)
   ★ CHANGED: aydinnyunus/ai-captcha-bypass: first check → commit 29228c0d (2026-05-23)
-  ★ CHANGED: browser-use/browser-use: first check → commit dbc4d46e (2026-07-14)
+  ★ CHANGED: browser-use/browser-use: first check → commit 950eb036 (2026-07-17)
   ★ CHANGED: dessant/buster: first check → release v3.4.0 (2026-06-20)
   ★ CHANGED: NopeCHALLC/nopecha-extension: first check → release 0.6.1 (2026-06-11)
   ★ CHANGED: QIN2DIM/hcaptcha-challenger: first check → commit 6bfe7815 (2026-01-27)
   ★ CHANGED: sarperavci/GoogleRecaptchaBypass: first check → commit 40b2c68f (2026-07-13)
-  ★ CHANGED: Skyvern-AI/skyvern: first check → commit 6b0b4fdc (2026-07-16)
+  ★ CHANGED: Skyvern-AI/skyvern: first check → commit 58b0397c (2026-07-17)
   ★ CHANGED: Vinyzu/recognizer: first check → commit 8a002c45 (2026-03-29)
   ★ CHANGED: 2captcha/2captcha-cpp: first check → commit 67631785 (2026-07-10)
-  ★ CHANGED: 2captcha/2captcha-csharp: first check → commit 65c37cd9 (2026-07-15)
+  ★ CHANGED: 2captcha/2captcha-csharp: first check → commit b7104ef9 (2026-07-17)
   ★ CHANGED: 2captcha/2captcha-go: first check → commit b7f0aa30 (2026-07-09)
   ★ CHANGED: 2captcha/2captcha-java: first check → commit 39329611 (2026-06-24)
   ★ CHANGED: 2captcha/2captcha-javascript: first check → commit d2e44f99 (2026-06-25)
@@ -41,7 +41,7 @@ Daily reference check — 2026-07-16 09:08 UTC
   ★ CHANGED: solvercaptcha/solvecaptcha-php: first check → commit 0c0df881 (2026-03-05)
   ★ CHANGED: solvercaptcha/solvecaptcha-python: first check → commit 1cce37a6 (2025-09-23)
   ★ CHANGED: solvercaptcha/solvecaptcha-ruby: first check → commit b66d1b35 (2025-09-23)
-  ★ CHANGED: adsbypasser/adsbypasser: first check → commit 6beb1c15 (2026-07-15)
+  ★ CHANGED: adsbypasser/adsbypasser: first check → commit 25a2bb67 (2026-07-16)
   ★ CHANGED: amitsingh-007/bypass-links: first check → commit 73de8f1f (2026-07-13)
   ★ CHANGED: bypass-vip/userscript: first check → commit e8d72e06 (2026-06-13)
   ✗ gongchandang49/bypass-all-shortlinks-debloated (PRIMARY): could not check
