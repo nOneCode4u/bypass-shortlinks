@@ -1,5 +1,3 @@
----
-
 # bypass-shortlinks — Project Summary
 
 **Repository:** `github.com/nOneCode4u/bypass-shortlinks`
