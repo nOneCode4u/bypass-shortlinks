@@ -1,0 +1,56 @@
+Daily reference check — 2026-07-28 05:40 UTC
+============================================================
+
+  ✓ gorhill/uBlock: release 1.72.2 (2026-07-08)
+  ✓ Turtlecute33/toolz: commit 6b2be4b4 (2026-07-25)
+  ✓ bogachenkove/fuckfuckadblock: commit c7ca38e9 (2025-03-16)
+  ✓ reek/anti-adblock-killer: commit a87431fb (2016-11-21)
+  ✓ SilverTke/go-away-fuckadblock: commit 5e0a5351 (2026-03-11)
+  ✓ altcha-org/altcha: release v3.2.1 (2026-07-12)
+  ✓ altcha-org/altcha-lib: release v2.3.2 (2026-07-27)
+  ✓ altcha-org/altcha-lib-ex: commit 7dcb35f1 (2026-04-07)
+  ✓ altcha-org/altcha-lib-go: commit 2c4fc27a (2026-07-25)
+  ✗ altcha-org/altcha-lib-java: could not check
+  ✗ altcha-org/altcha-lib-php: could not check
+  ✗ altcha-org/altcha-lib-py: could not check
+  ✗ altcha-org/altcha-lib-rb: could not check
+  ✗ aydinnyunus/ai-captcha-bypass: could not check
+  ✗ browser-use/browser-use: could not check
+  ✗ dessant/buster: could not check
+  ✗ NopeCHALLC/nopecha-extension: could not check
+  ✗ QIN2DIM/hcaptcha-challenger: could not check
+  ✗ sarperavci/GoogleRecaptchaBypass: could not check
+  ✗ Skyvern-AI/skyvern: could not check
+  ✗ Vinyzu/recognizer: could not check
+  ✗ 2captcha/2captcha-cpp: could not check
+  ✗ 2captcha/2captcha-csharp: could not check
+  ✗ 2captcha/2captcha-go: could not check
+  ✗ 2captcha/2captcha-java: could not check
+  ✗ 2captcha/2captcha-javascript: could not check
+  ✗ 2captcha/2captcha-php: could not check
+  ✗ 2captcha/2captcha-python: could not check
+  ✗ 2captcha/2captcha-ruby: could not check
+  ✗ 2captcha/captcha-solver-selenium-python-examples: could not check
+  ✗ capsolver/capsolver-skills: could not check
+  ✗ capsolver/n8n-nodes-capsolver: could not check
+  ✗ solvercaptcha/solvecaptcha-cpp: could not check
+  ✗ solvercaptcha/solvecaptcha-csharp: could not check
+  ✗ solvercaptcha/solvecaptcha-go: could not check
+  ✗ solvercaptcha/solvecaptcha-java: could not check
+  ✗ solvercaptcha/solvecaptcha-javascript: could not check
+  ✗ solvercaptcha/solvecaptcha-php: could not check
+  ✗ solvercaptcha/solvecaptcha-python: could not check
+  ✗ solvercaptcha/solvecaptcha-ruby: could not check
+  ✗ adsbypasser/adsbypasser: could not check
+  ✗ amitsingh-007/bypass-links: could not check
+  ✗ bypass-vip/userscript: could not check
+  ✗ gongchandang49/bypass-all-shortlinks-debloated (PRIMARY): could not check
+  ✗ FastForwardTeam/FastForward: could not check
+  ✓ greasyfork #431691 — Bypass All Shortlinks: v96.8 (updated 2026-07-07)
+  ✗ greasyfork #442019 — UploadHEaven: could not check
+  ✓ greasyfork #522735 — Bypass FREEdlink countdown: v1.4.3 (updated 2025-09-03)
+  ✗ everywall/ladder: could not check
+  ✓ magnolia1234/bypass-paywalls-clean-filters: v4.4.0.1 (sha 94b26657)
+
+============================================================
+Total: 0 changed, 50 unchanged.
