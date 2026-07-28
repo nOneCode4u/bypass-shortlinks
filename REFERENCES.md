@@ -206,7 +206,7 @@ shortlink-style intermediate redirect pages.
 
 | Repo | URL | Mirror |
 |---|---|---|
-| gongchandang49/bypass-all-shortlinks-debloated | https://github.com/gongchandang49/bypass-all-shortlinks-debloated | https://codeberg.org/gongchandang49/bypass-all-shortlinks-debloated |
+| gongchandang49/bypass-all-shortlinks-debloated | https://codeberg.org/gongchandang49/bypass-all-shortlinks-debloated | https://github.com/gongchandang49/bypass-all-shortlinks-debloated |
 
 Every day CI downloads `Bypass_All_Shortlinks.user.js` from this repo,
 applies our extras on top, and rebuilds.

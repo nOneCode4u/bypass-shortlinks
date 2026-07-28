@@ -85,7 +85,7 @@ Open your userscript manager menu (Violentmonkey/Tampermonkey extension popup) w
 This project is built upon the foundational work of open-source developers:
 
 * **Core Upstream Base**:
-  * [gongchandang49/bypass-all-shortlinks-debloated](https://github.com/gongchandang49/bypass-all-shortlinks-debloated) — Primary upstream base script (synced daily)
+  * [gongchandang49/bypass-all-shortlinks-debloated](https://codeberg.org/gongchandang49/bypass-all-shortlinks-debloated) — Primary upstream base script (synced daily)
   * [Amm0ni4](https://codeberg.org/Amm0ni4/bypass-all-shortlinks-debloated) — Original debloated fork
   * [BloggerPemula](https://greasyfork.org/scripts/431691) — Original base script
 * **APIs Used**:

@@ -13,14 +13,14 @@ if hasattr(sys.stdout, 'reconfigure'):
     sys.stdout.reconfigure(encoding='utf-8')
 
 UPSTREAM_URL = (
-    "https://github.com/gongchandang49/bypass-all-shortlinks-debloated"
-    "/raw/refs/heads/main/Bypass_All_Shortlinks.user.js"
-)
-
-# Fallback URL (Codeberg mirror of the same repo)
-UPSTREAM_URL_FALLBACK = (
     "https://codeberg.org/gongchandang49/bypass-all-shortlinks-debloated"
     "/raw/branch/main/Bypass_All_Shortlinks.user.js"
+)
+
+# Fallback URL (GitHub mirror of the same repo)
+UPSTREAM_URL_FALLBACK = (
+    "https://github.com/gongchandang49/bypass-all-shortlinks-debloated"
+    "/raw/refs/heads/main/Bypass_All_Shortlinks.user.js"
 )
 
 RAW_FILE = "upstream_gongchandang49.user.js"
@@ -39,11 +39,11 @@ def fetch(url, destination):
 
 
 def sync_upstream():
-    """Download the latest build from gongchandang49. Try GitHub first, fall back to Codeberg."""
+    """Download the latest build from gongchandang49. Try Codeberg first, fall back to GitHub."""
     try:
         fetch(UPSTREAM_URL, RAW_FILE)
     except Exception as e:
-        print(f"  GitHub failed ({e}), trying Codeberg...")
+        print(f"  Codeberg failed ({e}), trying GitHub...")
         fetch(UPSTREAM_URL_FALLBACK, RAW_FILE)
 
 

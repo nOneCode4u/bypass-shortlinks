@@ -178,10 +178,10 @@ REFS = [
      'label':'bypass-vip/userscript',
      'url':'https://api.github.com/repos/bypass-vip/userscript/commits/main',
      'raw':'https://raw.githubusercontent.com/bypass-vip/userscript/main/bypass.user.js'},
-    {'id':'gongchandang_bypass','type':'github_repo','group':'redirect',
+    {'id':'gongchandang_bypass','type':'codeberg_repo','group':'redirect',
      'label':'gongchandang49/bypass-all-shortlinks-debloated (PRIMARY)',
-     'url':'https://api.github.com/repos/gongchandang49/bypass-all-shortlinks-debloated/commits/main',
-     'raw':'https://raw.githubusercontent.com/gongchandang49/bypass-all-shortlinks-debloated/main/Bypass_All_Shortlinks.user.js'},
+     'url':'https://codeberg.org/api/v1/repos/gongchandang49/bypass-all-shortlinks-debloated/commits?limit=1',
+     'raw':'https://codeberg.org/gongchandang49/bypass-all-shortlinks-debloated/raw/branch/main/Bypass_All_Shortlinks.user.js'},
     {'id':'fastforward','type':'github_repo','group':'redirect',
      'label':'FastForwardTeam/FastForward',
      'url':'https://api.github.com/repos/FastForwardTeam/FastForward/commits/main','raw':None},
@@ -199,7 +199,8 @@ REFS = [
      'raw':'https://update.greasyfork.org/scripts/522735/Bypass%20FREEdlink%20countdown.user.js'},
     {'id':'apk_distributor','type':'github_repo','group':'redirect',
      'label':'nOneCode4u/apk-distributor',
-     'url':'https://api.github.com/repos/nOneCode4u/apk-distributor/commits/main','raw':None},
+     'url':'https://api.github.com/repos/nOneCode4u/apk-distributor/commits/main',
+     'raw':'https://raw.githubusercontent.com/nOneCode4u/apk-distributor/main/src/sources/filehosts/resolver.py'},
 
     # ── PAYWALL BYPASS ──
     {'id':'ladder','type':'github_repo','group':'paywall',
@@ -226,10 +227,9 @@ def _get_json(url):
             return json.loads(r.read().decode('utf-8', errors='replace'))
     except HTTPError as e:
         if e.code != 404:
-            print(f'    HTTP {e.code}: {url}')
+            pass
         return None
     except Exception as e:
-        print(f'    Error: {e}')
         return None
 
 def _get_text(url, max_bytes=400_000):
@@ -237,7 +237,6 @@ def _get_text(url, max_bytes=400_000):
         with urlopen(Request(url, headers={**_headers(), 'Accept':'text/plain,*/*'}), timeout=30) as r:
             return r.read(max_bytes).decode('utf-8', errors='replace')
     except Exception as e:
-        print(f'    Raw fetch error: {e}')
         return None
 
 # ─── Version detection per type ───────────────────────────────────────────────
@@ -246,6 +245,21 @@ def _check_ref(ref):
     """Returns (id_str, display_str) or (None, None) on failure."""
     t = ref['type']
 
+    if t == 'codeberg_repo':
+        d = _get_json(ref['url'])
+        if d and isinstance(d, list) and len(d) > 0:
+            sha = d[0].get('sha', '')[:12]
+            date = (d[0].get('commit', {}).get('committer', {}) or {}).get('date', '')[:10]
+            return sha, f'commit {sha[:8]} ({date})'
+        if ref.get('raw'):
+            text = _get_text(ref['raw'])
+            if text:
+                sha = hashlib.sha256(text.encode()).hexdigest()[:12]
+                ver_m = re.search(r'@version\s+(\S+)', text)
+                ver = ver_m.group(1) if ver_m else 'unknown'
+                return sha, f'sha {sha[:8]} (v{ver})'
+        return None, None
+
     if t == 'github_repo':
         d = _get_json(ref['url'])
         if d is None:
@@ -253,26 +267,69 @@ def _check_ref(ref):
             url2 = ref['url']
             if '/commits/main' in url2:   url2 = url2.replace('/commits/main',  '/commits/master')
             elif '/commits/master' in url2: url2 = url2.replace('/commits/master','/commits/main')
-            else: return None, None
-            d = _get_json(url2)
-            if d is None: return None, None
-        sha  = d.get('sha','')[:12]
-        date = (d.get('commit',{}).get('committer',{}) or {}).get('date','')[:10]
-        return sha, f'commit {sha[:8]} ({date})'
+            else: url2 = None
+            if url2:
+                d = _get_json(url2)
+
+        if d and isinstance(d, dict) and 'sha' in d:
+            sha  = d.get('sha','')[:12]
+            date = (d.get('commit',{}).get('committer',{}) or {}).get('date','')[:10]
+            return sha, f'commit {sha[:8]} ({date})'
+
+        # Fallback to raw content hash if GitHub API rate-limited
+        raw_url = ref.get('raw')
+        if not raw_url and ref.get('label'):
+            label_clean = ref['label'].split(' ')[0]
+            if '/' in label_clean:
+                raw_url = f"https://raw.githubusercontent.com/{label_clean}/main/README.md"
+
+        if raw_url:
+            text = _get_text(raw_url)
+            if not text and raw_url and 'main/README.md' in raw_url:
+                text = _get_text(raw_url.replace('/main/', '/master/'))
+            if text:
+                sha = hashlib.sha256(text.encode()).hexdigest()[:12]
+                ver_m = re.search(r'@version\s+(\S+)', text)
+                ver = ver_m.group(1) if ver_m else None
+                return sha, f'sha {sha[:8]} (v{ver})' if ver else f'sha {sha[:8]}'
+        return None, None
 
     if t == 'github_release':
         d = _get_json(ref['url'])
-        if not d: return None, None
-        tag  = d.get('tag_name','')
-        date = d.get('published_at','')[:10]
-        return tag, f'release {tag} ({date})'
+        if d and isinstance(d, dict) and 'tag_name' in d:
+            tag  = d.get('tag_name','')
+            date = d.get('published_at','')[:10]
+            return tag, f'release {tag} ({date})'
+
+        raw_url = ref.get('raw')
+        if not raw_url and ref.get('label'):
+            label_clean = ref['label'].split(' ')[0]
+            if '/' in label_clean:
+                raw_url = f"https://raw.githubusercontent.com/{label_clean}/main/README.md"
+
+        if raw_url:
+            text = _get_text(raw_url)
+            if not text and raw_url and 'main/README.md' in raw_url:
+                text = _get_text(raw_url.replace('/main/', '/master/'))
+            if text:
+                sha = hashlib.sha256(text.encode()).hexdigest()[:12]
+                return sha, f'sha {sha[:8]}'
+        return None, None
 
     if t == 'greasyfork':
         d = _get_json(ref['url'])
-        if not d: return None, None
-        ver     = str(d.get('version',''))
-        updated = d.get('code_updated_at','')[:10]
-        return ver, f'v{ver} (updated {updated})'
+        if d and isinstance(d, dict) and 'version' in d:
+            ver     = str(d.get('version',''))
+            updated = d.get('code_updated_at','')[:10]
+            return ver, f'v{ver} (updated {updated})'
+        if ref.get('raw'):
+            text = _get_text(ref['raw'])
+            if text:
+                sha = hashlib.sha256(text.encode()).hexdigest()[:12]
+                ver_m = re.search(r'@version\s+(\S+)', text)
+                ver = ver_m.group(1) if ver_m else 'unknown'
+                return sha, f'v{ver} (sha {sha[:8]})'
+        return None, None
 
     if t == 'gitflic':
         if not ref.get('raw'): return None, None
