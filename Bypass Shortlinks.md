@@ -254,18 +254,17 @@ mega4upload.net, uploady.io, upfilesgo.com/upfiles.app, modsfire.com, dailyuploa
 
 ## 6. Version Scheme
 
-**Format:** `{upstream_version}.b{our_build_counter}`
+**Format:** `{upstream_version}.{YYYYMMDD}.b{same_day_build_counter}`
 
-**Example:** `96.5-patch0.1.8.b3`
+**Example:** `96.5-patch0.2.3.20260728.b1`
 
 | Part | Source | Meaning |
 |---|---|---|
-| `96.5-patch0.1.8` | Read fresh from `upstream_patched.user.js` every build | Always mirrors gongchandang49 exactly |
-| `.b3` | Read from our output file, incremented each build | Our own build counter |
+| `96.5-patch0.2.3` | Read fresh from `upstream_patched.user.js` every build | Always mirrors gongchandang49 base release |
+| `20260728` | ISO date stamp (`YYYYMMDD`) | Guarantees automatic browser extension updates |
+| `.b1` | Same-day build counter | Increments on multiple builds on the same calendar day |
 
-When gongchandang49 bumps upstream to `0.1.9`, our next build automatically becomes `96.5-patch0.1.9.b1`. The upstream version is always visible and accurate.
-
-Previous broken scheme: read version from our own output file independently → diverged from upstream (we showed `0.1.3` while upstream was at `0.1.8`).
+When a new day occurs, the build counter resets to `.b1`. Upstream version changes follow automatically.
 
 ---
 

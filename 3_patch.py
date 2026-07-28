@@ -10,17 +10,20 @@ META_FILE = "Bypass_Shortlinks.meta.js"
 ICON_URL = "https://cdn-icons-png.flaticon.com/512/14025/14025295.png"
 
 
+import datetime
+
+
 def extract_version(our_output_file, upstream_file='upstream_patched.user.js'):
     """
-    Version scheme: {upstream_version}.b{our_build_counter}
-    Example:  96.5-patch0.1.8.b3
-              ^^^^^^^^^^^^^^^^^^  from gongchandang49 (always in sync)
-                                ^^ our own build counter (increments each build)
+    Version scheme: {upstream_version}.{YYYYMMDD}.b{same_day_build_counter}
+    Example:  96.5-patch0.2.3.20260728.b1
+              ^^^^^^^^^^^^^^^^^^           from gongchandang49 (always in sync)
+                                ^───────^  ISO date stamp (YYYYMMDD: 2026-07-28)
+                                          ^^ same-day build counter (.b1, .b2...)
 
-    - upstream_version is read fresh from upstream_patched.user.js every build.
-      If upstream bumps from 0.1.8 to 0.1.9, our version automatically follows.
-    - our build counter is read from our current output file and incremented.
-      Starts at b1 on first build.
+    - Always increases monotonically over time (YYYYMMDD sorting).
+    - Guarantees automatic updates in Violentmonkey & Tampermonkey.
+    - Resets build counter to b1 on a new date.
     """
     # Read upstream version
     upstream_ver = "96.5-patch0.0.1"  # fallback
@@ -33,21 +36,30 @@ def extract_version(our_output_file, upstream_file='upstream_patched.user.js'):
     except FileNotFoundError:
         pass
 
-    # Read our current build counter from output file
+    today_date = datetime.datetime.now(datetime.timezone.utc).strftime("%Y%m%d")
+
+    # Read current version from output file
     our_build = 0
+    existing_date = None
     try:
         with open(our_output_file, 'r', encoding='utf-8') as f:
             content = f.read()
-        # Match format like 96.5-patch0.1.8.b3
-        m = re.search(r'@version\s+[\d\.]+-patch[\d\.]+(\.[bB](\d+))?', content)
-        if m and m.group(2):
+        # Matches format: 96.5-patch0.2.3.20260728.b1 or 96.5-patch0.1.8.b3
+        m = re.search(r'@version\s+[\d\.]+-patch[\d\.]+\.(\d{8})\.b(\d+)', content)
+        if m:
+            existing_date = m.group(1)
             our_build = int(m.group(2))
     except FileNotFoundError:
         pass
 
-    our_build += 1
-    new_version = f"{upstream_ver}.b{our_build}"
-    print(f"Version: {upstream_ver} -> {new_version}")
+    # Reset to 1 on a new day; increment if same day
+    if existing_date == today_date:
+        our_build += 1
+    else:
+        our_build = 1
+
+    new_version = f"{upstream_ver}.{today_date}.b{our_build}"
+    print(f"Version: {new_version}")
     return new_version
 
 
