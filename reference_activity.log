@@ -1,4 +1,4 @@
-Daily reference check — 2026-07-31 09:37 UTC
+Daily reference check — 2026-08-01 09:00 UTC
 ============================================================
 
   ★ CHANGED: gorhill/uBlock: first check → release 1.72.2 (2026-07-08)
@@ -20,7 +20,7 @@ Daily reference check — 2026-07-31 09:37 UTC
   ★ CHANGED: NopeCHALLC/nopecha-extension: first check → release 0.6.1 (2026-06-11)
   ★ CHANGED: QIN2DIM/hcaptcha-challenger: first check → commit 6bfe7815 (2026-01-27)
   ★ CHANGED: sarperavci/GoogleRecaptchaBypass: first check → commit 549006c8 (2026-07-17)
-  ★ CHANGED: Skyvern-AI/skyvern: first check → commit fbbbca3e (2026-07-31)
+  ★ CHANGED: Skyvern-AI/skyvern: first check → commit ab7e2d9f (2026-08-01)
   ★ CHANGED: Vinyzu/recognizer: first check → commit 8a002c45 (2026-03-29)
   ★ CHANGED: 2captcha/2captcha-cpp: first check → commit 2ccd248a (2026-07-21)
   ★ CHANGED: 2captcha/2captcha-csharp: first check → commit b7104ef9 (2026-07-17)
@@ -41,7 +41,7 @@ Daily reference check — 2026-07-31 09:37 UTC
   ★ CHANGED: solvercaptcha/solvecaptcha-php: first check → commit 0c0df881 (2026-03-05)
   ★ CHANGED: solvercaptcha/solvecaptcha-python: first check → commit 1cce37a6 (2025-09-23)
   ★ CHANGED: solvercaptcha/solvecaptcha-ruby: first check → commit b66d1b35 (2025-09-23)
-  ★ CHANGED: adsbypasser/adsbypasser: first check → commit 83a6a36d (2026-07-30)
+  ★ CHANGED: adsbypasser/adsbypasser: first check → commit 0c4b37d2 (2026-08-01)
   ★ CHANGED: amitsingh-007/bypass-links: first check → commit 96698ccf (2026-07-19)
   ★ CHANGED: bypass-vip/userscript: first check → commit c7fca9ba (2026-07-22)
   ✗ gongchandang49/bypass-all-shortlinks-debloated (PRIMARY): could not check
@@ -49,7 +49,7 @@ Daily reference check — 2026-07-31 09:37 UTC
   ★ CHANGED: greasyfork #431691 — Bypass All Shortlinks: first check → v96.8 (updated 2026-07-07)
   ✗ greasyfork #442019 — UploadHEaven: could not check
   ★ CHANGED: greasyfork #522735 — Bypass FREEdlink countdown: first check → v1.4.3 (updated 2025-09-03)
-  ★ CHANGED: nOneCode4u/apk-distributor: first check → commit f26fcde7 (2026-07-31)
+  ★ CHANGED: nOneCode4u/apk-distributor: first check → commit af4ce535 (2026-08-01)
   ★ CHANGED: everywall/ladder: first check → commit 3723a95f (2026-07-02)
   ★ CHANGED: magnolia1234/bypass-paywalls-clean-filters: first check → v4.4.0.3 (sha 2842b121)
 
