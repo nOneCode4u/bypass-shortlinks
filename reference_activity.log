@@ -1,8 +1,8 @@
-Daily reference check — 2026-08-06 09:34 UTC
+Daily reference check — 2026-08-07 08:08 UTC
 ============================================================
 
   ★ CHANGED: gorhill/uBlock: first check → release 1.73.0 (2026-08-05)
-  ★ CHANGED: Turtlecute33/toolz: first check → commit 6b2be4b4 (2026-07-25)
+  ★ CHANGED: Turtlecute33/toolz: first check → commit befec39e (2026-08-06)
   ★ CHANGED: bogachenkove/fuckfuckadblock: first check → commit c7ca38e9 (2025-03-16)
   ★ CHANGED: reek/anti-adblock-killer: first check → commit a87431fb (2016-11-21)
   ★ CHANGED: SilverTke/go-away-fuckadblock: first check → commit 5e0a5351 (2026-03-11)
@@ -15,12 +15,12 @@ Daily reference check — 2026-08-06 09:34 UTC
   ★ CHANGED: altcha-org/altcha-lib-py: first check → commit 04b3b2bc (2026-07-27)
   ★ CHANGED: altcha-org/altcha-lib-rb: first check → commit 22b37d34 (2026-07-30)
   ★ CHANGED: aydinnyunus/ai-captcha-bypass: first check → commit 29228c0d (2026-05-23)
-  ★ CHANGED: browser-use/browser-use: first check → commit a3e3cc5d (2026-08-05)
+  ★ CHANGED: browser-use/browser-use: first check → commit 32601887 (2026-08-06)
   ★ CHANGED: dessant/buster: first check → release v3.4.0 (2026-06-20)
   ★ CHANGED: NopeCHALLC/nopecha-extension: first check → release 0.6.1 (2026-06-11)
   ★ CHANGED: QIN2DIM/hcaptcha-challenger: first check → commit 6bfe7815 (2026-01-27)
   ★ CHANGED: sarperavci/GoogleRecaptchaBypass: first check → commit 549006c8 (2026-07-17)
-  ★ CHANGED: Skyvern-AI/skyvern: first check → commit dfe02ce8 (2026-08-05)
+  ★ CHANGED: Skyvern-AI/skyvern: first check → commit 4888e45d (2026-08-07)
   ★ CHANGED: Vinyzu/recognizer: first check → commit 8a002c45 (2026-03-29)
   ★ CHANGED: 2captcha/2captcha-cpp: first check → commit 2ccd248a (2026-07-21)
   ★ CHANGED: 2captcha/2captcha-csharp: first check → commit b7104ef9 (2026-07-17)
@@ -42,16 +42,16 @@ Daily reference check — 2026-08-06 09:34 UTC
   ★ CHANGED: solvercaptcha/solvecaptcha-python: first check → commit 1cce37a6 (2025-09-23)
   ★ CHANGED: solvercaptcha/solvecaptcha-ruby: first check → commit b66d1b35 (2025-09-23)
   ★ CHANGED: adsbypasser/adsbypasser: first check → commit c3d6ec63 (2026-08-02)
-  ★ CHANGED: amitsingh-007/bypass-links: first check → commit 4bdba847 (2026-08-04)
+  ★ CHANGED: amitsingh-007/bypass-links: first check → commit 5b56f125 (2026-08-06)
   ★ CHANGED: bypass-vip/userscript: first check → commit c7fca9ba (2026-07-22)
   ✗ gongchandang49/bypass-all-shortlinks-debloated (PRIMARY): could not check
   ★ CHANGED: FastForwardTeam/FastForward: first check → commit a9b18943 (2024-11-21)
   ★ CHANGED: greasyfork #431691 — Bypass All Shortlinks: first check → v96.8 (sha 370da277)
   ✗ greasyfork #442019 — UploadHEaven: could not check
   ★ CHANGED: greasyfork #522735 — Bypass FREEdlink countdown: first check → v1.4.3 (sha 270be61c)
-  ★ CHANGED: nOneCode4u/apk-distributor: first check → commit 3c44e346 (2026-08-06)
-  ★ CHANGED: everywall/ladder: first check → commit 3723a95f (2026-07-02)
-  ★ CHANGED: magnolia1234/bypass-paywalls-clean-filters: first check → v4.4.1.0 (sha af1e849a)
+  ✗ nOneCode4u/apk-distributor: could not check
+  ★ CHANGED: everywall/ladder: first check → commit 76143f74 (2026-08-06)
+  ★ CHANGED: magnolia1234/bypass-paywalls-clean-filters: first check → v4.4.1.2 (sha 3414d7da)
 
 ============================================================
-Total: 49 changed, 2 unchanged.
+Total: 48 changed, 3 unchanged.
