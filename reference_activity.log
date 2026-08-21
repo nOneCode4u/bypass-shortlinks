@@ -1,4 +1,4 @@
-Daily reference check — 2026-08-20 07:34 UTC
+Daily reference check — 2026-08-21 07:35 UTC
 ============================================================
 
   ★ CHANGED: gorhill/uBlock: first check → release 1.73.0 (2026-08-05)
@@ -20,7 +20,7 @@ Daily reference check — 2026-08-20 07:34 UTC
   ★ CHANGED: NopeCHALLC/nopecha-extension: first check → release 0.6.1 (2026-06-11)
   ★ CHANGED: QIN2DIM/hcaptcha-challenger: first check → commit 28ee79b8 (2026-08-15)
   ★ CHANGED: sarperavci/GoogleRecaptchaBypass: first check → commit 73a60d3d (2026-08-13)
-  ★ CHANGED: Skyvern-AI/skyvern: first check → commit 98dbe907 (2026-08-20)
+  ★ CHANGED: Skyvern-AI/skyvern: first check → commit 486c8975 (2026-08-20)
   ★ CHANGED: Vinyzu/recognizer: first check → commit 8a002c45 (2026-03-29)
   ★ CHANGED: 2captcha/2captcha-cpp: first check → commit 2ccd248a (2026-07-21)
   ★ CHANGED: 2captcha/2captcha-csharp: first check → commit b7104ef9 (2026-07-17)
@@ -49,9 +49,9 @@ Daily reference check — 2026-08-20 07:34 UTC
   ★ CHANGED: greasyfork #431691 — Bypass All Shortlinks: first check → v96.8 (updated 2026-07-07)
   ✗ greasyfork #442019 — UploadHEaven: could not check
   ★ CHANGED: greasyfork #522735 — Bypass FREEdlink countdown: first check → v1.4.3 (updated 2025-09-03)
-  ★ CHANGED: nOneCode4u/apk-distributor: first check → commit e58ef76f (2026-08-20)
+  ✗ nOneCode4u/apk-distributor: could not check
   ★ CHANGED: everywall/ladder: first check → commit 76143f74 (2026-08-06)
   ★ CHANGED: magnolia1234/bypass-paywalls-clean-filters: first check → v4.4.2.7 (sha 88aa0d4e)
 
 ============================================================
-Total: 49 changed, 2 unchanged.
+Total: 48 changed, 3 unchanged.
