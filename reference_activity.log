@@ -1,4 +1,4 @@
-Daily reference check — 2026-08-26 07:38 UTC
+Daily reference check — 2026-08-27 18:00 UTC
 ============================================================
 
   ★ CHANGED: gorhill/uBlock: first check → release 1.74.0 (2026-08-25)
@@ -8,14 +8,14 @@ Daily reference check — 2026-08-26 07:38 UTC
   ★ CHANGED: SilverTke/go-away-fuckadblock: first check → commit 5e0a5351 (2026-03-11)
   ★ CHANGED: altcha-org/altcha: first check → release v3.2.2 (2026-08-19)
   ★ CHANGED: altcha-org/altcha-lib: first check → release v2.3.2 (2026-07-27)
-  ★ CHANGED: altcha-org/altcha-lib-ex: first check → commit aab040e5 (2026-07-30)
+  ★ CHANGED: altcha-org/altcha-lib-ex: first check → commit 6d35004e (2026-08-26)
   ★ CHANGED: altcha-org/altcha-lib-go: first check → commit 2c4fc27a (2026-07-25)
   ★ CHANGED: altcha-org/altcha-lib-java: first check → release v2.0.3 (2026-07-30)
   ★ CHANGED: altcha-org/altcha-lib-php: first check → release v2.1.0 (2026-07-20)
   ★ CHANGED: altcha-org/altcha-lib-py: first check → commit 04b3b2bc (2026-07-27)
   ★ CHANGED: altcha-org/altcha-lib-rb: first check → commit 22b37d34 (2026-07-30)
   ★ CHANGED: aydinnyunus/ai-captcha-bypass: first check → commit 29228c0d (2026-05-23)
-  ★ CHANGED: browser-use/browser-use: first check → commit fac707cc (2026-08-26)
+  ★ CHANGED: browser-use/browser-use: first check → commit e83e39d7 (2026-08-27)
   ★ CHANGED: dessant/buster: first check → release v3.4.0 (2026-06-20)
   ★ CHANGED: NopeCHALLC/nopecha-extension: first check → release 0.6.1 (2026-06-11)
   ★ CHANGED: QIN2DIM/hcaptcha-challenger: first check → commit 28ee79b8 (2026-08-15)
@@ -41,7 +41,7 @@ Daily reference check — 2026-08-26 07:38 UTC
   ★ CHANGED: solvercaptcha/solvecaptcha-php: first check → commit 0c0df881 (2026-03-05)
   ★ CHANGED: solvercaptcha/solvecaptcha-python: first check → commit 1cce37a6 (2025-09-23)
   ★ CHANGED: solvercaptcha/solvecaptcha-ruby: first check → commit b66d1b35 (2025-09-23)
-  ★ CHANGED: adsbypasser/adsbypasser: first check → commit b36d8de1 (2026-08-24)
+  ★ CHANGED: adsbypasser/adsbypasser: first check → commit a9d52c95 (2026-08-26)
   ★ CHANGED: amitsingh-007/bypass-links: first check → commit a7d004bc (2026-08-23)
   ★ CHANGED: bypass-vip/userscript: first check → commit c7fca9ba (2026-07-22)
   ✗ gongchandang49/bypass-all-shortlinks-debloated (PRIMARY): could not check
@@ -51,7 +51,7 @@ Daily reference check — 2026-08-26 07:38 UTC
   ★ CHANGED: greasyfork #522735 — Bypass FREEdlink countdown: first check → v1.4.3 (updated 2025-09-03)
   ★ CHANGED: nOneCode4u/apk-distributor: first check → commit f0680e0f (2026-08-25)
   ★ CHANGED: everywall/ladder: first check → commit 76143f74 (2026-08-06)
-  ★ CHANGED: magnolia1234/bypass-paywalls-clean-filters: first check → v4.4.3.3 (sha 00602707)
+  ★ CHANGED: magnolia1234/bypass-paywalls-clean-filters: first check → v4.4.3.5 (sha 0510d7ea)
 
 ============================================================
 Total: 49 changed, 2 unchanged.
