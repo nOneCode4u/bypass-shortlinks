@@ -1,8 +1,8 @@
-Daily reference check — 2026-08-27 18:00 UTC
+Daily reference check — 2026-08-28 19:10 UTC
 ============================================================
 
   ★ CHANGED: gorhill/uBlock: first check → release 1.74.0 (2026-08-25)
-  ★ CHANGED: Turtlecute33/toolz: first check → commit 9278bee6 (2026-08-25)
+  ★ CHANGED: Turtlecute33/toolz: first check → commit e41a79a2 (2026-08-28)
   ★ CHANGED: bogachenkove/fuckfuckadblock: first check → commit c7ca38e9 (2025-03-16)
   ★ CHANGED: reek/anti-adblock-killer: first check → commit a87431fb (2016-11-21)
   ★ CHANGED: SilverTke/go-away-fuckadblock: first check → commit 5e0a5351 (2026-03-11)
@@ -15,20 +15,20 @@ Daily reference check — 2026-08-27 18:00 UTC
   ★ CHANGED: altcha-org/altcha-lib-py: first check → commit 04b3b2bc (2026-07-27)
   ★ CHANGED: altcha-org/altcha-lib-rb: first check → commit 22b37d34 (2026-07-30)
   ★ CHANGED: aydinnyunus/ai-captcha-bypass: first check → commit 29228c0d (2026-05-23)
-  ★ CHANGED: browser-use/browser-use: first check → commit e83e39d7 (2026-08-27)
+  ★ CHANGED: browser-use/browser-use: first check → commit 67e7194c (2026-08-28)
   ★ CHANGED: dessant/buster: first check → release v3.4.0 (2026-06-20)
   ★ CHANGED: NopeCHALLC/nopecha-extension: first check → release 0.6.1 (2026-06-11)
   ★ CHANGED: QIN2DIM/hcaptcha-challenger: first check → commit 28ee79b8 (2026-08-15)
   ★ CHANGED: sarperavci/GoogleRecaptchaBypass: first check → commit 73a60d3d (2026-08-13)
-  ★ CHANGED: Skyvern-AI/skyvern: first check → commit d081a532 (2026-08-26)
+  ★ CHANGED: Skyvern-AI/skyvern: first check → commit 96618fc4 (2026-08-28)
   ★ CHANGED: Vinyzu/recognizer: first check → commit 8a002c45 (2026-03-29)
   ★ CHANGED: 2captcha/2captcha-cpp: first check → commit 2ccd248a (2026-07-21)
   ★ CHANGED: 2captcha/2captcha-csharp: first check → commit b7104ef9 (2026-07-17)
   ★ CHANGED: 2captcha/2captcha-go: first check → commit f44816c4 (2026-07-21)
   ★ CHANGED: 2captcha/2captcha-java: first check → commit e8eef30d (2026-07-20)
-  ★ CHANGED: 2captcha/2captcha-javascript: first check → commit d2e44f99 (2026-06-25)
+  ★ CHANGED: 2captcha/2captcha-javascript: first check → commit 5e9a08c9 (2026-08-28)
   ★ CHANGED: 2captcha/2captcha-php: first check → commit 107c1733 (2026-07-20)
-  ★ CHANGED: 2captcha/2captcha-python: first check → commit 259a0258 (2026-07-20)
+  ★ CHANGED: 2captcha/2captcha-python: first check → commit b49b9080 (2026-08-28)
   ★ CHANGED: 2captcha/2captcha-ruby: first check → release v1.1.6 (2024-11-20)
   ★ CHANGED: 2captcha/captcha-solver-selenium-python-examples: first check → commit 35b59d7f (2026-04-01)
   ★ CHANGED: capsolver/capsolver-skills: first check → commit d710daca (2026-03-19)
@@ -41,7 +41,7 @@ Daily reference check — 2026-08-27 18:00 UTC
   ★ CHANGED: solvercaptcha/solvecaptcha-php: first check → commit 0c0df881 (2026-03-05)
   ★ CHANGED: solvercaptcha/solvecaptcha-python: first check → commit 1cce37a6 (2025-09-23)
   ★ CHANGED: solvercaptcha/solvecaptcha-ruby: first check → commit b66d1b35 (2025-09-23)
-  ★ CHANGED: adsbypasser/adsbypasser: first check → commit a9d52c95 (2026-08-26)
+  ★ CHANGED: adsbypasser/adsbypasser: first check → commit 47024839 (2026-08-28)
   ★ CHANGED: amitsingh-007/bypass-links: first check → commit a7d004bc (2026-08-23)
   ★ CHANGED: bypass-vip/userscript: first check → commit c7fca9ba (2026-07-22)
   ✗ gongchandang49/bypass-all-shortlinks-debloated (PRIMARY): could not check
@@ -49,9 +49,9 @@ Daily reference check — 2026-08-27 18:00 UTC
   ★ CHANGED: greasyfork #431691 — Bypass All Shortlinks: first check → v96.8 (updated 2026-07-07)
   ✗ greasyfork #442019 — UploadHEaven: could not check
   ★ CHANGED: greasyfork #522735 — Bypass FREEdlink countdown: first check → v1.4.3 (updated 2025-09-03)
-  ★ CHANGED: nOneCode4u/apk-distributor: first check → commit f0680e0f (2026-08-25)
+  ✗ nOneCode4u/apk-distributor: could not check
   ★ CHANGED: everywall/ladder: first check → commit 76143f74 (2026-08-06)
-  ★ CHANGED: magnolia1234/bypass-paywalls-clean-filters: first check → v4.4.3.5 (sha 0510d7ea)
+  ★ CHANGED: magnolia1234/bypass-paywalls-clean-filters: first check → v4.4.3.6 (sha 18268374)
 
 ============================================================
-Total: 49 changed, 2 unchanged.
+Total: 48 changed, 3 unchanged.
