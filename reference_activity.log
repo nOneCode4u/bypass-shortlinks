@@ -1,4 +1,4 @@
-Daily reference check — 2026-08-28 19:10 UTC
+Daily reference check — 2026-08-29 12:54 UTC
 ============================================================
 
   ★ CHANGED: gorhill/uBlock: first check → release 1.74.0 (2026-08-25)
@@ -15,7 +15,7 @@ Daily reference check — 2026-08-28 19:10 UTC
   ★ CHANGED: altcha-org/altcha-lib-py: first check → commit 04b3b2bc (2026-07-27)
   ★ CHANGED: altcha-org/altcha-lib-rb: first check → commit 22b37d34 (2026-07-30)
   ★ CHANGED: aydinnyunus/ai-captcha-bypass: first check → commit 29228c0d (2026-05-23)
-  ★ CHANGED: browser-use/browser-use: first check → commit 67e7194c (2026-08-28)
+  ★ CHANGED: browser-use/browser-use: first check → commit 2e32d260 (2026-08-29)
   ★ CHANGED: dessant/buster: first check → release v3.4.0 (2026-06-20)
   ★ CHANGED: NopeCHALLC/nopecha-extension: first check → release 0.6.1 (2026-06-11)
   ★ CHANGED: QIN2DIM/hcaptcha-challenger: first check → commit 28ee79b8 (2026-08-15)
@@ -51,7 +51,7 @@ Daily reference check — 2026-08-28 19:10 UTC
   ★ CHANGED: greasyfork #522735 — Bypass FREEdlink countdown: first check → v1.4.3 (updated 2025-09-03)
   ✗ nOneCode4u/apk-distributor: could not check
   ★ CHANGED: everywall/ladder: first check → commit 76143f74 (2026-08-06)
-  ★ CHANGED: magnolia1234/bypass-paywalls-clean-filters: first check → v4.4.3.6 (sha 18268374)
+  ★ CHANGED: magnolia1234/bypass-paywalls-clean-filters: first check → v4.4.3.7 (sha 160510dc)
 
 ============================================================
 Total: 48 changed, 3 unchanged.
