@@ -1,4 +1,4 @@
-Daily reference check — 2026-08-29 12:54 UTC
+Daily reference check — 2026-08-30 12:28 UTC
 ============================================================
 
   ★ CHANGED: gorhill/uBlock: first check → release 1.74.0 (2026-08-25)
@@ -7,7 +7,7 @@ Daily reference check — 2026-08-29 12:54 UTC
   ★ CHANGED: reek/anti-adblock-killer: first check → commit a87431fb (2016-11-21)
   ★ CHANGED: SilverTke/go-away-fuckadblock: first check → commit 5e0a5351 (2026-03-11)
   ★ CHANGED: altcha-org/altcha: first check → release v3.2.2 (2026-08-19)
-  ★ CHANGED: altcha-org/altcha-lib: first check → release v2.3.2 (2026-07-27)
+  ★ CHANGED: altcha-org/altcha-lib: first check → release v2.4.0 (2026-08-30)
   ★ CHANGED: altcha-org/altcha-lib-ex: first check → commit 6d35004e (2026-08-26)
   ★ CHANGED: altcha-org/altcha-lib-go: first check → commit 2c4fc27a (2026-07-25)
   ★ CHANGED: altcha-org/altcha-lib-java: first check → release v2.0.3 (2026-07-30)
@@ -15,12 +15,12 @@ Daily reference check — 2026-08-29 12:54 UTC
   ★ CHANGED: altcha-org/altcha-lib-py: first check → commit 04b3b2bc (2026-07-27)
   ★ CHANGED: altcha-org/altcha-lib-rb: first check → commit 22b37d34 (2026-07-30)
   ★ CHANGED: aydinnyunus/ai-captcha-bypass: first check → commit 29228c0d (2026-05-23)
-  ★ CHANGED: browser-use/browser-use: first check → commit 2e32d260 (2026-08-29)
+  ★ CHANGED: browser-use/browser-use: first check → commit d2fcda58 (2026-08-30)
   ★ CHANGED: dessant/buster: first check → release v3.4.0 (2026-06-20)
   ★ CHANGED: NopeCHALLC/nopecha-extension: first check → release 0.6.1 (2026-06-11)
   ★ CHANGED: QIN2DIM/hcaptcha-challenger: first check → commit 28ee79b8 (2026-08-15)
   ★ CHANGED: sarperavci/GoogleRecaptchaBypass: first check → commit 73a60d3d (2026-08-13)
-  ★ CHANGED: Skyvern-AI/skyvern: first check → commit 96618fc4 (2026-08-28)
+  ★ CHANGED: Skyvern-AI/skyvern: first check → commit 8636f1a0 (2026-08-30)
   ★ CHANGED: Vinyzu/recognizer: first check → commit 8a002c45 (2026-03-29)
   ★ CHANGED: 2captcha/2captcha-cpp: first check → commit 2ccd248a (2026-07-21)
   ★ CHANGED: 2captcha/2captcha-csharp: first check → commit b7104ef9 (2026-07-17)
