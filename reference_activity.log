@@ -1,4 +1,4 @@
-Daily reference check — 2026-09-11 11:57 UTC
+Daily reference check — 2026-09-12 11:24 UTC
 ============================================================
 
   ★ CHANGED: gorhill/uBlock: first check → release 1.74.0 (2026-08-25)
@@ -42,7 +42,7 @@ Daily reference check — 2026-09-11 11:57 UTC
   ★ CHANGED: solvercaptcha/solvecaptcha-python: first check → commit 1cce37a6 (2025-09-23)
   ★ CHANGED: solvercaptcha/solvecaptcha-ruby: first check → commit b66d1b35 (2025-09-23)
   ★ CHANGED: adsbypasser/adsbypasser: first check → commit 0dc7617e (2026-09-10)
-  ★ CHANGED: amitsingh-007/bypass-links: first check → commit d581149c (2026-09-08)
+  ★ CHANGED: amitsingh-007/bypass-links: first check → commit e9c843b1 (2026-09-11)
   ★ CHANGED: bypass-vip/userscript: first check → commit 10a60f43 (2026-09-11)
   ✗ gongchandang49/bypass-all-shortlinks-debloated (PRIMARY): could not check
   ★ CHANGED: FastForwardTeam/FastForward: first check → commit a9b18943 (2024-11-21)
@@ -51,7 +51,7 @@ Daily reference check — 2026-09-11 11:57 UTC
   ★ CHANGED: greasyfork #522735 — Bypass FREEdlink countdown: first check → v1.4.3 (updated 2025-09-03)
   ✗ nOneCode4u/apk-distributor: could not check
   ★ CHANGED: everywall/ladder: first check → commit 76143f74 (2026-08-06)
-  ★ CHANGED: magnolia1234/bypass-paywalls-clean-filters: first check → v4.4.4.5 (sha 84b18487)
+  ★ CHANGED: magnolia1234/bypass-paywalls-clean-filters: first check → v4.4.4.6 (sha abac4dc9)
 
 ============================================================
 Total: 48 changed, 3 unchanged.
