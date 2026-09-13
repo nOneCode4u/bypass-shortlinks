@@ -1,4 +1,4 @@
-Daily reference check — 2026-09-12 11:24 UTC
+Daily reference check — 2026-09-13 12:27 UTC
 ============================================================
 
   ★ CHANGED: gorhill/uBlock: first check → release 1.74.0 (2026-08-25)
@@ -42,7 +42,7 @@ Daily reference check — 2026-09-12 11:24 UTC
   ★ CHANGED: solvercaptcha/solvecaptcha-python: first check → commit 1cce37a6 (2025-09-23)
   ★ CHANGED: solvercaptcha/solvecaptcha-ruby: first check → commit b66d1b35 (2025-09-23)
   ★ CHANGED: adsbypasser/adsbypasser: first check → commit 0dc7617e (2026-09-10)
-  ★ CHANGED: amitsingh-007/bypass-links: first check → commit e9c843b1 (2026-09-11)
+  ★ CHANGED: amitsingh-007/bypass-links: first check → commit becadcbf (2026-09-13)
   ★ CHANGED: bypass-vip/userscript: first check → commit 10a60f43 (2026-09-11)
   ✗ gongchandang49/bypass-all-shortlinks-debloated (PRIMARY): could not check
   ★ CHANGED: FastForwardTeam/FastForward: first check → commit a9b18943 (2024-11-21)
