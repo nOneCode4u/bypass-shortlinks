@@ -1,4 +1,4 @@
-Daily reference check — 2026-09-19 11:43 UTC
+Daily reference check — 2026-09-20 11:56 UTC
 ============================================================
 
   ★ CHANGED: gorhill/uBlock: first check → release 1.75.0 (2026-09-16)
@@ -6,7 +6,7 @@ Daily reference check — 2026-09-19 11:43 UTC
   ★ CHANGED: bogachenkove/fuckfuckadblock: first check → commit c7ca38e9 (2025-03-16)
   ★ CHANGED: reek/anti-adblock-killer: first check → commit a87431fb (2016-11-21)
   ★ CHANGED: SilverTke/go-away-fuckadblock: first check → commit 5e0a5351 (2026-03-11)
-  ★ CHANGED: altcha-org/altcha: first check → release v3.2.2 (2026-08-19)
+  ★ CHANGED: altcha-org/altcha: first check → release v3.2.3 (2026-09-20)
   ★ CHANGED: altcha-org/altcha-lib: first check → release v2.5.0 (2026-09-10)
   ★ CHANGED: altcha-org/altcha-lib-ex: first check → commit 82f85d65 (2026-09-01)
   ★ CHANGED: altcha-org/altcha-lib-go: first check → commit 2c4fc27a (2026-07-25)
@@ -41,17 +41,17 @@ Daily reference check — 2026-09-19 11:43 UTC
   ★ CHANGED: solvercaptcha/solvecaptcha-php: first check → commit 0c0df881 (2026-03-05)
   ★ CHANGED: solvercaptcha/solvecaptcha-python: first check → commit 1cce37a6 (2025-09-23)
   ★ CHANGED: solvercaptcha/solvecaptcha-ruby: first check → commit b66d1b35 (2025-09-23)
-  ★ CHANGED: adsbypasser/adsbypasser: first check → commit fb7ee05f (2026-09-16)
-  ★ CHANGED: amitsingh-007/bypass-links: first check → commit 4e67db76 (2026-09-18)
+  ★ CHANGED: adsbypasser/adsbypasser: first check → commit 7d4e0ac9 (2026-09-20)
+  ★ CHANGED: amitsingh-007/bypass-links: first check → commit 7362a6ba (2026-09-19)
   ★ CHANGED: bypass-vip/userscript: first check → commit 10a60f43 (2026-09-11)
   ✗ gongchandang49/bypass-all-shortlinks-debloated (PRIMARY): could not check
   ★ CHANGED: FastForwardTeam/FastForward: first check → commit a9b18943 (2024-11-21)
-  ✗ greasyfork #431691 — Bypass All Shortlinks: could not check
+  ★ CHANGED: greasyfork #431691 — Bypass All Shortlinks: first check → v96.8 (sha 370da277)
   ✗ greasyfork #442019 — UploadHEaven: could not check
-  ★ CHANGED: greasyfork #522735 — Bypass FREEdlink countdown: first check → v1.4.3 (updated 2025-09-03)
+  ★ CHANGED: greasyfork #522735 — Bypass FREEdlink countdown: first check → v1.4.3 (sha 270be61c)
   ✗ nOneCode4u/apk-distributor: could not check
   ★ CHANGED: everywall/ladder: first check → commit 76143f74 (2026-08-06)
   ★ CHANGED: magnolia1234/bypass-paywalls-clean-filters: first check → v4.4.4.9 (sha c6bbb8fc)
 
 ============================================================
-Total: 47 changed, 4 unchanged.
+Total: 48 changed, 3 unchanged.
