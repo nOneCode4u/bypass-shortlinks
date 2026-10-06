@@ -69,6 +69,7 @@ https://github.com/altcha-org/altcha-lib-py
 https://github.com/altcha-org/altcha-lib-rb
 https://github.com/aydinnyunus/ai-captcha-bypass
 https://github.com/browser-use/browser-use
+https://github.com/cloudflyer-project/cloudflyer-oss
 https://github.com/dessant/buster
 https://github.com/NopeCHALLC/nopecha-extension
 https://github.com/QIN2DIM/hcaptcha-challenger
@@ -80,6 +81,7 @@ https://github.com/Vinyzu/recognizer
 **What we use from these:**
 - `dessant/buster` — teaches us how reCAPTCHA audio mode is triggered; we use
   this to keep our `CaptchaDone()` listener reliable
+- `cloudflyer-project/cloudflyer-oss` — open-source Cloudflare Turnstile & captcha solving API patterns
 - `NopeCHALLC/nopecha-extension` — shows which CAPTCHA widget selectors
   (.cf-turnstile, .h-captcha, .g-recaptcha) are stable across site updates
 - `sarperavci/GoogleRecaptchaBypass` — documents which reCAPTCHA v2/v3 token
@@ -158,7 +160,10 @@ https://bypassunlock.com/
 https://github.com/adsbypasser/adsbypasser
 https://github.com/amitsingh-007/bypass-links
 https://github.com/bypass-vip/userscript
+https://github.com/DandelionSprout/adfilt
 https://github.com/gongchandang49/bypass-all-shortlinks-debloated
+https://github.com/rushiranpise/dl-site-scrubber
+https://github.com/rushiranpise/userscripts
 https://greasyfork.org/en/scripts/431691-bypass-all-shortlinks
 https://greasyfork.org/en/scripts/442019-uploadheaven
 https://greasyfork.org/en/scripts/522735-bypass-freedlink-countdown
@@ -166,6 +171,7 @@ https://izen.lol/
 https://rip.linkvertise.lol/
 https://skipped.lol/evade/evade.user.js
 https://trw.lat/install/userscript/u.user.js
+https://yuumari.com/m-links/#js-code
 ```
 
 **What we use from these:**
@@ -177,9 +183,13 @@ https://trw.lat/install/userscript/u.user.js
 | `adsbypasser/adsbypasser` | Rule-based redirect bypass database — large site list, different approach but good domain reference |
 | `amitsingh-007/bypass-links` | Indian/general shortlink bypass patterns and new domains |
 | `bypass.city` / `adbypass.org` | Live API endpoints — already used in script for linkvertise/admaven/loot-link |
-| `skipped.lol/evade` | Userscript with standalone bypasses for sites not in our list |
-| `trw.lat/u.user.js` | Another standalone bypass script, check for new site coverage |
-| `greasyfork/431691` | BloggerPemula original — tracked only as upstream source of gongchandang49 |
+| `DandelionSprout/adfilt` | Curated LegitimateURLShortener filter list for shortlink domain definitions and clear-url patterns |
+| `rushiranpise/dl-site-scrubber` | File-hoster clean form submission, prototype interception, countdown bypass, and anti-adblock neutralization |
+| `rushiranpise/userscripts` | Direct shortlink bypass scripts, offerwall helpers, and domain include catalogs |
+| `skipped.lol/evade` | Content-locker (work.ink, Linkvertise, LootLabs) WebSocket interception and token bypass logic |
+| `trw.lat/u.user.js` | Server-side bypass API relay and fetch-interception patterns |
+| `yuumari.com/m-links` | Hostname switch-case routing patterns and base64 parameter extraction techniques |
+| `greasyfork/431691` | BloggerPemula original — tracked as upstream source of gongchandang49 and base for Variant 2 |
 | `greasyfork/442019` | uploadheaven script — file host bypass patterns |
 | `greasyfork/522735` | bypass-freedlink-countdown — specific countdown bypass technique |
 | `FastForwardTeam/FastForward` | Extension rules database — good for finding domains not covered by userscripts |

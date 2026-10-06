@@ -302,6 +302,19 @@ def debloat_and_rebrand(file_path, new_version):
         content = content.replace("codeberg.org/Amm0ni4", HOMEPAGE)
         content = content.replace("https://codeberg.org/gongchandang49/bypass-all-shortlinks-debloated", HOMEPAGE)
 
+        # Set settings menu title to 'Additional AIO Bypass Settings' and enhance toggles
+        content = content.replace(
+            "title: 'Bypass All Shortlinks Version 96.5 Settings'",
+            "title: 'Additional AIO Bypass Settings'"
+        )
+        content = content.replace(
+            "AutoDL: {label: 'Auto Download For Supported Sites',type: 'checkbox',default: false,column: 'right'}}});",
+            "AutoDL: {label: 'Auto Download For Supported Sites',type: 'checkbox',default: false,column: 'right'},\n"
+            "    AutoTurnstile: {label: 'Auto Solve Turnstile / Cloudflare',type: 'checkbox',fontColor: \"#008080\",default: true,column: 'left&bottom'},\n"
+            "    SkipQueue: {label: 'Fast-Track Filehost Queues',type: 'checkbox',fontColor: \"#008080\",default: true,column: 'right&bottom'},\n"
+            "    SafeForm: {label: 'Anti-Clickjacking Form Protection',type: 'checkbox',fontColor: \"#008080\",default: true,column: 'left&bottom'}}});"
+        )
+
         # Clean up settings menu
         content = content.replace(
             "Recaptcha Audio Mode',type: 'checkbox',fontColor: \"#FF0000",

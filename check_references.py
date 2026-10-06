@@ -107,6 +107,9 @@ REFS = [
     {'id':'recognizer','type':'github_repo','group':'captcha',
      'label':'Vinyzu/recognizer',
      'url':'https://api.github.com/repos/Vinyzu/recognizer/commits/main','raw':None},
+    {'id':'cloudflyer_oss','type':'github_repo','group':'captcha',
+     'label':'cloudflyer-project/cloudflyer-oss',
+     'url':'https://api.github.com/repos/cloudflyer-project/cloudflyer-oss/commits/main','raw':None},
 
     # ── CAPTCHA: PAID (technique reference only — no API calls in script) ──
     {'id':'2captcha_cpp','type':'github_repo','group':'captcha_paid',
@@ -201,6 +204,15 @@ REFS = [
      'label':'nOneCode4u/apk-distributor',
      'url':'https://api.github.com/repos/nOneCode4u/apk-distributor/commits/main',
      'raw':'https://raw.githubusercontent.com/nOneCode4u/apk-distributor/main/src/sources/filehosts/resolver.py'},
+    {'id':'rushiranpise_userscripts','type':'github_repo','group':'redirect',
+     'label':'rushiranpise/userscripts',
+     'url':'https://api.github.com/repos/rushiranpise/userscripts/commits/main','raw':None},
+    {'id':'rushiranpise_scrubber','type':'github_repo','group':'redirect',
+     'label':'rushiranpise/dl-site-scrubber',
+     'url':'https://api.github.com/repos/rushiranpise/dl-site-scrubber/commits/master','raw':None},
+    {'id':'dandelion_adfilt','type':'github_repo','group':'redirect',
+     'label':'DandelionSprout/adfilt',
+     'url':'https://api.github.com/repos/DandelionSprout/adfilt/commits/master','raw':None},
 
     # ── PAYWALL BYPASS ──
     {'id':'ladder','type':'github_repo','group':'paywall',

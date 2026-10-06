@@ -89,6 +89,18 @@ def apply_our_fixes(src, dst):
         "(raftarsamachar|gadialert|jobinmeghalaya|raftarwords|sharclub|jankaritak).in"
     )
 
+    # tpi.li group - add srnky.com (new redirect domain for tpi.li)
+    content = content.replace(
+        "tii.la|oei.la|iir.la|tvi.la|oii.la|tpi.li|lnbz.la",
+        "tii.la|oei.la|iir.la|tvi.la|oii.la|tpi.li|lnbz.la|srnky.com"
+    )
+
+    # vplink group - add techmint.in landing blog network
+    content = content.replace(
+        "kaomojihub.com",
+        "kaomojihub.com|techmint.in"
+    )
+
     # work.ink still broken - keep disabled
     if "case 'work.ink'" in content and "//case 'work.ink'" not in content:
         content = content.replace("case 'work.ink'", "//case 'work.ink'")

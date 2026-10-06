@@ -2,6 +2,7 @@
 upstream_gongchandang49.user.js
 upstream_patched.user.js
 includes.txt
+upstream/*.user.js
 
 # Python
 __pycache__/

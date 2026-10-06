@@ -185,7 +185,7 @@ dogefury.com|thanks.tinygo.co
 michaelemad.com|7misr4day.com
 (dramaticqueen|emubliss).com
 (grtjobs|jksb).in
-tii.la|oei.la|iir.la|tvi.la|oii.la|tpi.li|lnbz.la
+tii.la|oei.la|iir.la|tvi.la|oii.la|tpi.li|lnbz.la|srnky.com
 (bnbfree|freeth|freebitco).in
 ouo.io|ouo.press
 askpaccosi.com|cryptomonitor.in
@@ -380,6 +380,9 @@ https://paster.so/*
 /(cloudfam\.io|get\.cloudfam\.io)/
 /(frdl\.io|freedl\.ink|fredl\.ru|frdl\.is)/
 /rapidgator\.net/
+/srnky\.com/
+/techmint\.in/
+/psa\.wf/
 /^(https?:\/\/)(.+)?((mega-enlace|acortados).com|tulink.org)/
 /^https:\/\/(.*\.|)(playonpc.online|(quins|megahosting).us|(tradeshowrating|historyofyesterday|retrotechreborn|insurelean|ecosolardigest|finance240|2wheelslife|ngebike).com|gally.shop|(qanin|ivnlnews|jobvox|gfcg).xyz|evegor.net|freeat30.org|droplink.co)\/.*/
 /quickeemail.com/

@@ -100,6 +100,9 @@
 // @include     /(cloudfam\.io|get\.cloudfam\.io)/
 // @include     /(frdl\.io|freedl\.ink|fredl\.ru|frdl\.is)/
 // @include     /rapidgator\.net/
+// @include     /srnky\.com/
+// @include     /techmint\.in/
+// @include     /psa\.wf/
 // @grant       GM_getValue
 // @grant       GM_setValue
 // @grant       GM_registerMenuCommand
@@ -1019,8 +1022,11 @@
         {
             id: 'cloudfam', hosts: ['cloudfam.io','get.cloudfam.io'],
             selectors: [
-                'a.get-link:not(.disabled)', 'a.get-link',
+                'a[href*="redirection0.php"]:not(.disabled)',
                 'a[href*="redirection"]:not(.disabled)',
+                'a.get-link:not(.disabled)', 'a.get-link',
+                'a:contains("Proceed to Download Now")',
+                'a:contains("Download")',
                 'a[href*="step="]:not(.disabled)',
                 'a[href*="download_handler.php"]:not(.disabled)',
                 'a[href*=".apk"]:not(.disabled)',
@@ -1125,19 +1131,35 @@
             return;
         }
 
-        // cloudfam.io: poll for wall dismissal then click get-link
+        // cloudfam.io: poll for wall dismissal, skip queue/cooldown, then click download link
         if (_HOST.indexOf('cloudfam.io') !== -1) {
             var _pollCF = setInterval(function() {
-                document.querySelectorAll('div,section,aside').forEach(function(el) {
+                // Dismiss adblock modals and queue overlays
+                document.querySelectorAll('div,section,aside,dialog').forEach(function(el) {
                     var st = window.getComputedStyle(el);
                     var text = (el.innerText || '').toLowerCase();
-                    if ((text.indexOf('ad blocker') !== -1 || text.indexOf('adblock') !== -1) &&
+                    if ((text.indexOf('ad blocker') !== -1 || text.indexOf('adblock') !== -1 || text.indexOf('verification queue') !== -1) &&
                         st.position === 'fixed' && parseInt(st.zIndex || 0) > 99) {
-                        el.style.display = 'none';
+                        el.style.setProperty('display', 'none', 'important');
                         if (document.body) document.body.style.removeProperty('overflow');
                     }
                 });
-                var link = document.querySelector('a.get-link:not(.disabled)') ||
+                // Click intermediate "Wait 60s for Free Download" or "I agree" options if present
+                var freeOpt = Array.from(document.querySelectorAll('button, a')).find(function(b) {
+                    var txt = (b.textContent || '').trim().toLowerCase();
+                    return txt.indexOf('free download') !== -1 || txt.indexOf('agree to download') !== -1;
+                });
+                if (freeOpt && freeOpt.offsetParent !== null) {
+                    try { freeOpt.click(); } catch(_e) {}
+                }
+                // Zero any countdown timer elements
+                document.querySelectorAll('#countdown, .seconds, [id*="timer"]').forEach(function(el) {
+                    if (/^\d+$/.test(el.textContent.trim())) el.textContent = '0';
+                });
+                // Find primary destination / download link
+                var link = document.querySelector('a[href*="redirection0.php"]') ||
+                           document.querySelector('a[href*="redirection"]') ||
+                           document.querySelector('a.get-link:not(.disabled)') ||
                            document.querySelector('a.get-link');
                 if (link && link.offsetParent !== null) {
                     clearInterval(_pollCF);
@@ -1145,8 +1167,94 @@
                         _proceed(link.href);
                     else link.click();
                 }
-            }, 500);
+            }, 400);
             setTimeout(function(){clearInterval(_pollCF);}, 30000);
+            return;
+        }
+
+        // vplink.in & intermediate landing networks (techmint.in, etc.)
+        if (_HOST.indexOf('vplink.in') !== -1 || _HOST.indexOf('techmint.in') !== -1) {
+            var _pollVP = setInterval(function() {
+                // If on techmint.in landing step, auto-advance
+                if (_HOST.indexOf('techmint.in') !== -1) {
+                    var btn = document.querySelector('#btn-main') ||
+                              document.querySelector('#gotolink') ||
+                              document.querySelector('a.get-link') ||
+                              document.querySelector('button.btn-primary');
+                    if (btn && btn.offsetParent !== null) {
+                        clearInterval(_pollVP);
+                        btn.click();
+                        return;
+                    }
+                    var landingLink = document.querySelector('a[href*="techmint.in/studyinsurances/"]');
+                    if (landingLink && landingLink.offsetParent !== null) {
+                        clearInterval(_pollVP);
+                        _proceed(landingLink.href);
+                        return;
+                    }
+                }
+                // On vplink.in itself
+                var vplink = document.querySelector('a.get-link:not(.disabled)') ||
+                             document.querySelector('a.get-link') ||
+                             document.querySelector('#btn-main');
+                if (vplink && vplink.offsetParent !== null) {
+                    clearInterval(_pollVP);
+                    if (vplink.href && vplink.href.indexOf('javascript') === -1) _proceed(vplink.href);
+                    else vplink.click();
+                }
+            }, 500);
+            setTimeout(function(){clearInterval(_pollVP);}, 30000);
+            return;
+        }
+
+        // tpi.li / srnky.com: handle Turnstile & continue
+        if (_HOST.indexOf('tpi.li') !== -1 || _HOST.indexOf('srnky.com') !== -1 || _HOST.indexOf('oii.la') !== -1) {
+            var _pollTpi = setInterval(function() {
+                // Look for base64 encoded destination in page
+                var m = document.documentElement.innerHTML.match(/aHR0c[a-zA-Z0-9+/=]+(?<!=)/);
+                if (m) {
+                    try {
+                        var d = atob(m[0]);
+                        if (d.indexOf('http') === 0 && d.indexOf(location.hostname) === -1) {
+                            clearInterval(_pollTpi);
+                            _proceed(d);
+                            return;
+                        }
+                    } catch(_e) {}
+                }
+                var c = document.querySelector('input[name="cf-turnstile-response"]');
+                var b = document.querySelector('#continue') || document.querySelector('button[type="submit"]') || document.querySelector('a.btn-primary');
+                if (c && c.value && b && b.offsetParent !== null) {
+                    clearInterval(_pollTpi);
+                    b.click();
+                }
+            }, 500);
+            setTimeout(function(){clearInterval(_pollTpi);}, 30000);
+            return;
+        }
+
+        // psa.wf: bypass adblock detection & auto-submit redirect form
+        if (_HOST.indexOf('psa.wf') !== -1) {
+            // Spoof adblock absence
+            try {
+                window.adblock = false;
+                window.isAdBlocked = false;
+                window.adBlockDetected = false;
+            } catch(_e) {}
+            var _jumpPsa = function() {
+                var form = document.forms && (document.forms.redirect || document.forms[0]);
+                if (form && (form.action || form.querySelector('input'))) {
+                    try { form.submit(); return true; } catch(_e) {}
+                }
+                return false;
+            };
+            if (!_jumpPsa()) {
+                if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', _jumpPsa, {once:true});
+                }
+                setTimeout(_jumpPsa, 500);
+                setTimeout(_jumpPsa, 1500);
+            }
             return;
         }
 

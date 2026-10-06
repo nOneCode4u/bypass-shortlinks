@@ -19,6 +19,7 @@ on:
       - '2_generate_includes.py'
       - '3_patch.py'
       - '4_add_extra_bypasses.py'
+      - 'build_variant2.py'
       - 'scripts/obfuscate.py'
       - 'extra_bypasses/**'
 
@@ -59,8 +60,11 @@ jobs:
       - name: Step 4 — Merge extra bypasses
         run: python 4_add_extra_bypasses.py
 
-      - name: Step 5 — Hardening pass
+      - name: Step 5 — Hardening pass (Variant 1)
         run: python scripts/obfuscate.py
+
+      - name: Step 6 — Build Variant 2 (Original AIO Base)
+        run: python build_variant2.py
 
       - name: Configure Git
         run: |
@@ -71,6 +75,8 @@ jobs:
         run: |
           git add Bypass_Shortlinks.user.js \
                   Bypass_Shortlinks.meta.js \
+                  Bypass_Shortlinks_Original.user.js \
+                  Bypass_Shortlinks_Original.meta.js \
                   supported_sites.txt \
                   match_rules.txt \
                   include_rules.txt

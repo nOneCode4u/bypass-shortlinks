@@ -14,7 +14,7 @@
 /^(https?:\/\/)(.+)?(michaelemad.com|7misr4day.com)(\/.*)/
 /^(https?:\/\/)(.+)?((dramaticqueen|emubliss).com)(\/.*)/
 /^(https?:\/\/)(.+)?((grtjobs|jksb).in)(\/.*)/
-/^(https?:\/\/)(.+)?(tii.la|oei.la|iir.la|tvi.la|oii.la|tpi.li|lnbz.la)(\/.*)/
+/^(https?:\/\/)(.+)?(tii.la|oei.la|iir.la|tvi.la|oii.la|tpi.li|lnbz.la|srnky.com)(\/.*)/
 /^(https?:\/\/)(.+)?((bnbfree|freeth|freebitco).in)(\/.*)/
 /^(https?:\/\/)(.+)?(ouo.io|ouo.press)(\/.*)/
 /^(https?:\/\/)(.+)?(askpaccosi.com|cryptomonitor.in)(\/.*)/
