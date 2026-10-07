@@ -21,10 +21,10 @@ This repository publishes **two independent userscripts**. Install either one, o
 | **Script Name** | `Bypass Shortlinks` | `Bypass Shortlinks (Original AIO)` |
 | **Namespace** | `Violentmonkey Scripts` | `https://github.com/nOneCode4u/bypass-shortlinks/variant2` |
 | **Upstream base** | [gongchandang49 debloated](https://codeberg.org/gongchandang49/bypass-all-shortlinks-debloated) | [BloggerPemula #431691](https://greasyfork.org/en/scripts/431691-bypass-all-shortlinks) |
-| **Page activation** | Granular `@match` / `@include` per domain | Global wildcard `*://*/*` |
+| **Page activation** | Global wildcard `*://*/*` | Global wildcard `*://*/*` |
 | **Anti-detection hardening** | ✅ 7-pass obfuscation | ✅ 7-pass obfuscation |
-| **Domain coverage** | 400+ explicitly listed | Every site (broadest) |
-| **Browser overhead** | Lower — runs only on known shorteners | Higher — evaluates every page |
+| **Domain coverage** | 400+ explicitly listed (via DomainMode filter) | Every site (broadest) |
+| **Browser overhead** | Higher — evaluates every page | Higher — evaluates every page |
 | **Settings menu** | ✅ Additional AIO Bypass Settings | ✅ Additional AIO Bypass Settings |
 | **Tracking removed** | ✅ | ✅ |
 | **Installs as separate script** | ✅ Yes | ✅ Yes (unique namespace + name) |

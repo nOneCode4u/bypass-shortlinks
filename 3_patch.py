@@ -77,35 +77,33 @@ def build_script(input_path, includes_path, output_path):
     with open(input_path, 'r', encoding='utf-8') as f:
         lines = f.readlines()
 
-    with open(includes_path, 'r', encoding='utf-8') as f:
-        includes_content = f.read()
-
     # Drop non-English name/description lines (encoding issues)
     lines = [l for l in lines if not (l.startswith("// @description:") or l.startswith("// @name:"))]
 
-    # Remove all existing @match and @include
+    # Remove all existing @match and @include — replace with universal wildcard
+    # Both variants evaluate every page; DomainMode runtime filter controls shortener-only mode
     lines = [l for l in lines if '@match' not in l and '@include' not in l]
 
-    # Find where to insert our generated includes (after last @description)
+    # Find where to insert our wildcard match (after last @description)
     last_desc_idx = None
     for i in range(len(lines) - 1, -1, -1):
         if lines[i].startswith('// @description'):
             last_desc_idx = i
             break
 
-    # Insert recaptcha includes first, then generated includes
-    recaptcha_includes = (
+    # Insert recaptcha includes + universal wildcard instead of granular per-domain rules
+    wildcard_includes = (
         "// @include /^(?:https?:\\/\\/)?(?:www\\.)?(?:google\\.com|recaptcha\\.net)\\/recaptcha\\/api2\\/.*$/\n"
         "// @match *://*/recaptcha/api2/*\n"
+        "// @match *://*/*\n"
         "\n"
     )
-    lines.insert(last_desc_idx + 1, includes_content)
-    lines.insert(last_desc_idx + 1, recaptcha_includes)
+    lines.insert(last_desc_idx + 1, wildcard_includes)
 
     with open(output_path, 'w', encoding='utf-8') as f:
         f.writelines(lines)
 
-    print(f"OK: Includes injected -> {output_path}")
+    print(f"OK: Wildcard match injected -> {output_path}")
 
 
 def debloat_and_rebrand(file_path, new_version):
@@ -301,6 +299,12 @@ def debloat_and_rebrand(file_path, new_version):
         # Replace upstream Codeberg references
         content = content.replace("codeberg.org/Amm0ni4", HOMEPAGE)
         content = content.replace("https://codeberg.org/gongchandang49/bypass-all-shortlinks-debloated", HOMEPAGE)
+
+        # Set a unique namespace so Variant 1 installs separately from gongchandang49 upstream
+        content = content.replace(
+            "// @namespace  Violentmonkey Scripts",
+            "// @namespace  https://github.com/nOneCode4u/bypass-shortlinks/variant1"
+        )
 
         # Set settings menu title to 'Additional AIO Bypass Settings' and enhance toggles
         content = content.replace(

@@ -112,9 +112,61 @@ def merge_extra_bypasses(folder, target_file):
     print(f"OK: Merged extra bypasses -> +{domains} domains, +{code_lines} code lines, +{grants} grants")
 
 
+def inject_domain_filter(target_file, sites_file="supported_sites.txt"):
+    """Inject the DomainMode runtime filter into a built userscript body.
+
+    When the 'DomainMode' setting is active the script aborts early on any page
+    whose hostname is not in the known-shorteners list read from supported_sites.txt.
+    This is injected AFTER all extra_bypasses/ domains have been appended to
+    supported_sites.txt so the list is complete.
+    """
+    try:
+        with open(sites_file, "r", encoding="utf-8") as sf:
+            sites = [s.strip() for s in sf.readlines() if s.strip()]
+    except FileNotFoundError:
+        print(f"Warning: {sites_file} not found, DomainMode filter skipped")
+        return
+
+    sites_list_js = str(sites)
+    domain_filter_js = f"""
+  // DomainMode Filter: Abort if strict mode is on and domain is not a known shortener
+  if (typeof cfg !== 'undefined' && cfg && cfg.get && cfg.get('DomainMode')) {{
+      var __knownDomains = {sites_list_js};
+      var __host = location.hostname.replace(/^www\\./, '');
+      var __isKnown = __knownDomains.some(function(p) {{
+          if (p.indexOf('|') !== -1 || p.indexOf('(') !== -1 || p.indexOf('[') !== -1) {{
+              try {{ return new RegExp(p).test(__host); }} catch(e) {{ return false; }}
+          }}
+          return __host === p || __host.slice(-(p.length + 1)) === '.' + p;
+      }});
+      if (!__isKnown) return;
+  }}
+
+"""
+    try:
+        with open(target_file, "r", encoding="utf-8") as f:
+            content = f.read()
+
+        # Inject right before "const bp = function" — reliable anchor after MonkeyConfig init
+        if "  const bp = function(" in content:
+            content = content.replace(
+                "  const bp = function(",
+                domain_filter_js + "  const bp = function("
+            )
+            with open(target_file, "w", encoding="utf-8") as f:
+                f.write(content)
+            print(f"OK: DomainMode filter injected -> {target_file}")
+        else:
+            print(f"Warning: injection anchor not found in {target_file}, skipped")
+    except FileNotFoundError:
+        print(f"Warning: {target_file} not found, skipped")
+
+
 def main():
     merge_extra_bypasses(EXTRA_BYPASSES_DIR, OUTPUT_FILE)
     extract_metadata(OUTPUT_FILE, META_FILE)
+    # Inject DomainMode filter AFTER supported_sites.txt is fully populated by merging extras
+    inject_domain_filter(OUTPUT_FILE)
     print("Build complete.")
 
 
