@@ -25,6 +25,7 @@ import shutil
 INPUT_FILE = "upstream/variant2_bloggerpemula.user.js"
 OUTPUT_FILE = "Bypass_Shortlinks_Original.user.js"
 META_FILE = "Bypass_Shortlinks_Original.meta.js"
+SCRIPT_NAME = "Bypass Shortlinks"
 REPO_RAW = "https://github.com/nOneCode4u/bypass-shortlinks/raw/main"
 HOMEPAGE = "https://github.com/nOneCode4u/bypass-shortlinks"
 SUPPORT_URL = "https://github.com/nOneCode4u/bypass-shortlinks/issues"
@@ -86,7 +87,9 @@ def build_variant_2():
     new_version = extract_version(OUTPUT_FILE)
     print(f"Variant 2 Version: {new_version}")
 
-    # Rebrand metadata
+    # Rebrand metadata & ensure unique namespace/name so Variant 2 installs separately
+    content = content.replace("// @namespace  Violentmonkey Scripts", "// @namespace  https://github.com/nOneCode4u/bypass-shortlinks/variant2")
+    content = content.replace("// @name       Bypass All Shortlinks", f"// @name       {SCRIPT_NAME} (Original AIO)")
     content = content.replace("@author     Bloggerpemula", f"@author     {AUTHOR}\n// @license    Unlicense")
     content = content.replace("https://i.ibb.co/qgr0H1n/BASS-Blogger-Pemula.png", ICON_URL)
     content = content.replace(
@@ -151,9 +154,38 @@ def build_variant_2():
         "YTDown: {label: 'Auto Download Youtube Video',type: 'checkbox',default: false,column: 'right'},\n"
         "    AutoTurnstile: {label: 'Auto Solve Turnstile / Cloudflare',type: 'checkbox',default: true,column: 'left'},\n"
         "    SkipQueue: {label: 'Fast-Track Filehost Queues',type: 'checkbox',default: true,column: 'right'},\n"
-        "    SafeForm: {label: 'Anti-Clickjacking Form Protection',type: 'checkbox',default: true,column: 'left'}}});"
+        "    SafeForm: {label: 'Anti-Clickjacking Form Protection',type: 'checkbox',default: true,column: 'left'},\n"
+        "    DomainMode: {label: 'Bypass Only Known Shorteners',type: 'checkbox',fontColor: \"#FF0000\",default: false,column: 'right'}}});"
     )
     content = content.replace(old_params_end, new_params_end)
+
+    # DomainMode Runtime Filter: Abort early if strict mode and domain not recognized
+    # Inject right before "const bp = function" — a reliable anchor after MonkeyConfig init
+    try:
+        with open("supported_sites.txt", "r", encoding="utf-8") as sf:
+            sites = [s.strip() for s in sf.readlines() if s.strip()]
+
+        sites_list_js = str(sites)
+        domain_filter_js = f"""
+  // DomainMode Filter: Abort if strict mode is on and domain is not a known shortener
+  if (cfg && cfg.get && cfg.get('DomainMode')) {{
+      const knownDomains = {sites_list_js};
+      const currentHost = location.hostname.replace(/^www\\./, '');
+      const isKnown = knownDomains.some(pattern => {{
+          if (pattern.includes('|') || pattern.includes('(') || pattern.includes('[')) {{
+              try {{ return new RegExp(pattern).test(currentHost); }} catch(e) {{ return false; }}
+          }}
+          return currentHost === pattern || currentHost.endsWith('.' + pattern);
+      }});
+      if (!isKnown) return; // Silently abort on unknown domains
+  }}
+"""
+        content = content.replace(
+            "  const bp = function(",
+            domain_filter_js + "  const bp = function("
+        )
+    except FileNotFoundError:
+        print("Warning: supported_sites.txt not found, DomainMode filter skipped")
 
     # Fix Issue #4: tpi.li & srnky.com
     content = content.replace(
@@ -254,6 +286,19 @@ def build_variant_2():
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         f.write(content)
     print(f"OK: Variant 2 built -> {OUTPUT_FILE} ({len(content):,} chars)")
+
+    # Apply 7-pass anti-detection obfuscation to Variant 2 as well
+    import sys as _sys
+    _obf_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "scripts")
+    if _obf_dir not in _sys.path:
+        _sys.path.insert(0, _obf_dir)
+    try:
+        import importlib, pathlib
+        _obf = importlib.import_module("obfuscate")
+        _obf.obfuscate_file(pathlib.Path(OUTPUT_FILE).resolve())
+        print(f"OK: Variant 2 hardened")
+    except Exception as e:
+        print(f"Warning: Variant 2 obfuscation failed: {e}")
 
     extract_metadata(OUTPUT_FILE, META_FILE)
 

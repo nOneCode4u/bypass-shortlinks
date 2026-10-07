@@ -28,7 +28,6 @@ if hasattr(sys.stdout, 'reconfigure'):
     sys.stdout.reconfigure(encoding='utf-8')
 
 ROOT   = Path(__file__).resolve().parent.parent
-TARGET = ROOT / 'Bypass_Shortlinks.user.js'
 
 
 def _seed(code):
@@ -211,18 +210,18 @@ def collapse_whitespace(body):
 
 
 # ── Main ──────────────────────────────────────────────────────────────────────
-def main():
-    if not TARGET.exists():
-        print(f'  Target not found: {TARGET}')
+def obfuscate_file(target_path):
+    if not target_path.exists():
+        print(f'  Target not found: {target_path}')
         return
 
-    code = TARGET.read_text(encoding='utf-8')
+    code = target_path.read_text(encoding='utf-8')
 
     # Split: header (untouched) | body (obfuscated)
     tag = '// ==/UserScript=='
     idx = code.find(tag)
     if idx == -1:
-        print('  UserScript header not found — aborting')
+        print(f'  UserScript header not found in {target_path.name} — aborting')
         return
     idx = code.index('\n', idx) + 1
     header = code[:idx]
@@ -240,9 +239,18 @@ def main():
     body = collapse_whitespace(body)
 
     result = header + '\n' + body + '\n'
-    TARGET.write_text(result, encoding='utf-8')
+    target_path.write_text(result, encoding='utf-8')
 
-    print(f'  Hardening done: {orig_len:,} → {len(result):,} chars ({TARGET.name})')
+    print(f'  Hardening done: {orig_len:,} → {len(result):,} chars ({target_path.name})')
+
+
+def main():
+    targets = [
+        ROOT / 'Bypass_Shortlinks.user.js',
+        ROOT / 'Bypass_Shortlinks_Original.user.js',
+    ]
+    for target in targets:
+        obfuscate_file(target)
 
 
 if __name__ == '__main__':

@@ -18,13 +18,16 @@ This repository publishes **two independent userscripts**. Install either one, o
 |---|---|---|
 | **Install** | [**⬇ Install Variant 1**](https://github.com/nOneCode4u/bypass-shortlinks/raw/main/Bypass_Shortlinks.user.js) | [**⬇ Install Variant 2**](https://github.com/nOneCode4u/bypass-shortlinks/raw/main/Bypass_Shortlinks_Original.user.js) |
 | **File** | `Bypass_Shortlinks.user.js` | `Bypass_Shortlinks_Original.user.js` |
+| **Script Name** | `Bypass Shortlinks` | `Bypass Shortlinks (Original AIO)` |
+| **Namespace** | `Violentmonkey Scripts` | `https://github.com/nOneCode4u/bypass-shortlinks/variant2` |
 | **Upstream base** | [gongchandang49 debloated](https://codeberg.org/gongchandang49/bypass-all-shortlinks-debloated) | [BloggerPemula #431691](https://greasyfork.org/en/scripts/431691-bypass-all-shortlinks) |
 | **Page activation** | Granular `@match` / `@include` per domain | Global wildcard `*://*/*` |
-| **Anti-detection hardening** | ✅ 7-pass obfuscation | ❌ Plain source |
+| **Anti-detection hardening** | ✅ 7-pass obfuscation | ✅ 7-pass obfuscation |
 | **Domain coverage** | 400+ explicitly listed | Every site (broadest) |
 | **Browser overhead** | Lower — runs only on known shorteners | Higher — evaluates every page |
 | **Settings menu** | ✅ Additional AIO Bypass Settings | ✅ Additional AIO Bypass Settings |
 | **Tracking removed** | ✅ | ✅ |
+| **Installs as separate script** | ✅ Yes | ✅ Yes (unique namespace + name) |
 | **Best for** | Everyday browsing, speed, privacy | Catching obscure or brand-new shorteners |
 
 ---

@@ -312,7 +312,8 @@ def debloat_and_rebrand(file_path, new_version):
             "AutoDL: {label: 'Auto Download For Supported Sites',type: 'checkbox',default: false,column: 'right'},\n"
             "    AutoTurnstile: {label: 'Auto Solve Turnstile / Cloudflare',type: 'checkbox',fontColor: \"#008080\",default: true,column: 'left&bottom'},\n"
             "    SkipQueue: {label: 'Fast-Track Filehost Queues',type: 'checkbox',fontColor: \"#008080\",default: true,column: 'right&bottom'},\n"
-            "    SafeForm: {label: 'Anti-Clickjacking Form Protection',type: 'checkbox',fontColor: \"#008080\",default: true,column: 'left&bottom'}}});"
+            "    SafeForm: {label: 'Anti-Clickjacking Form Protection',type: 'checkbox',fontColor: \"#008080\",default: true,column: 'left&bottom'},\n"
+            "    DomainMode: {label: 'Bypass Only Known Shorteners',type: 'checkbox',fontColor: \"#FF0000\",default: false,column: 'right&bottom'}}});"
         )
 
         # Clean up settings menu

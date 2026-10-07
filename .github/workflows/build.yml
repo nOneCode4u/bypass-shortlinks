@@ -60,11 +60,11 @@ jobs:
       - name: Step 4 — Merge extra bypasses
         run: python 4_add_extra_bypasses.py
 
-      - name: Step 5 — Hardening pass (Variant 1)
-        run: python scripts/obfuscate.py
-
-      - name: Step 6 — Build Variant 2 (Original AIO Base)
+      - name: Step 5 — Build Variant 2 (Original AIO Base)
         run: python build_variant2.py
+
+      - name: Step 6 — Hardening pass (both variants)
+        run: python scripts/obfuscate.py
 
       - name: Configure Git
         run: |
