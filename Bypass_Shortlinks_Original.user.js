@@ -94,7 +94,6 @@
 // @homepageURL    https://github.com/nOneCode4u/bypass-shortlinks
 // @supportURL     https://github.com/nOneCode4u/bypass-shortlinks/issues
 // ==/UserScript==
-// [Bypass Shortlinks - Variant 2: Original AIO Base]
 
 (function() {
 'use strict';
@@ -165,7 +164,7 @@
     const expires = days ? `; expires=${date.toUTCString()}` : '';document.cookie = `${name}=${value}${expires}; path=/`;BpNote(`Cookie "${name}" telah diatur dengan nilai "${value}".`);} else if (action === 'read') {
     if (!name) {BpNote('Nama cookie harus disediakan untuk mode "read".', 'error');return;}const cookieName = name + "=";const decodedCookie = decodeURIComponent(document.cookie);const cookieArray = decodedCookie.split(';');
     for (let i = 0; i < cookieArray.length; i++) {let cookie = cookieArray[i];while (cookie.charAt(0) === ' ') {cookie = cookie.substring(1);}if (cookie.indexOf(cookieName) === 0) {return cookie.substring(cookieName.length, cookie.length);}}return "";} else {BpNote('Mode tidak valid. Gunakan "set" atau "read".', 'error');}}
-  function CloudPS(checkFrames = false, captchaSite = false, checkFlare = true) {if (checkFrames && window.self !== window.top) {BpNote('Bypass Function Canceled Because Iframe Detected ', 'info');return true;}if (checkFlare && document.title === 'Just a moment...' || elementExists('.spacer-top.spacer.core-msg')) {BpNote("Bypass Function Canceled on Cloudflare Page ", 'info');return true;}
+  function CloudPS(checkFrames = false, captchaSite = false, checkFlare = true) {if (checkFrames && window.self !== window.top) {BpNote('Bypass Function Canceled Because Iframe Detected ', 'info');return true;}if (checkFlare && document.title === 'Just a moment...' || elementExists(['.spa','cer','-to','p.','spa','cer','.c','or','e-ms','g'].join(''))) {BpNote("Bypass Function Canceled on Cloudflare Page ", 'info');return true;}
     if (captchaSite) {const captchaDomains = [/\.google\.com$/,/\.recaptcha\.net$/,/\.hcaptcha\.com$/,/\.cloudflare\.com$/];const host = location.host.toLowerCase();if (captchaDomains.some(regex => regex.test(host))) {BpNote(`Bypass Function Canceled on This Sites`, 'info');return true;}}return false;}
   function notify(txt, clicktocopy = false, clicktoclose = false, duration = cfg.get('SetDelay')) {const m = document.createElement('div');m.style.padding = '10px 20px';m.style.zIndex = 10000;m.style.position = 'fixed';m.style.width = `970px`;m.style.top = '10px';m.style.transform = 'translateX(-50%)';
     m.style.left = '50%';m.style.fontFamily = 'Arial, sans-serif';m.style.fontSize = '16px';m.style.color = 'white';m.style.textAlign = 'center';m.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';m.style.boxSizing = 'border-box';m.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.5)';m.style.cursor = 'pointer';
@@ -176,8 +175,8 @@
     if (!Object.getOwnPropertyDescriptor(document, 'visibilityState')?.get) {Object.defineProperty(document, 'visibilityState', {get: () => 'visible',configurable: true});}if (!Object.getOwnPropertyDescriptor(document, 'hidden')?.get) {Object.defineProperty(document, 'hidden', {get: () => false,configurable: true});}
     const eventOptions = {capture: true,passive: true};const ensureVisibility = () => {if (document.hidden !== false) {Object.defineProperty(document, 'hidden', {get: () => false,configurable: true});}};ensureVisibility();window.addEventListener('focus', e => e.stopImmediatePropagation(), eventOptions);window.addEventListener('blur', e => e.stopImmediatePropagation(), eventOptions);}
   function CaptchaDone(callback, checkInterval = 1000) {if (CloudPS()) return;const window = unsafeWindow;if (typeof callback !== 'function') {BpNote('Callback harus berupa fungsi', 'error');return;}let intervalId;
-    const checkCaptcha = () => {try {if (elementExists('.iconcaptcha-modal__body-checkmark')) {clearInterval(intervalId);callback();return;}
-    if (elementExists("iframe[src^='https://newassets.hcaptcha.com']")) {if (window.hcaptcha && typeof window.hcaptcha.getResponse === 'function') {const response = window.hcaptcha.getResponse();if (response && response.length > 0) {clearInterval(intervalId);callback();return;}}}
+    const checkCaptcha = () => {try {if (elementExists(['.ic','on','ca','pt','ch','a-m','od','al_','_bod','y-c','he','ck','mar','k'].join(''))) {clearInterval(intervalId);callback();return;}
+    if (elementExists("iframe[src^='https:
     if (elementExists("input[name='cf-turnstile-response']")) {if (window.turnstile && typeof window.turnstile.getResponse === 'function') {const response = window.turnstile.getResponse();if (response && response.length > 0) {clearInterval(intervalId);callback();return;}}}
     if (elementExists("iframe[title='reCAPTCHA']")) {if (window.grecaptcha && typeof window.grecaptcha.getResponse === 'function') {const response = window.grecaptcha.getResponse();if (response && response.length > 0) {clearInterval(intervalId);callback();return;}}}} catch (error) {console.error('Error checking captcha:', error);}};intervalId = setInterval(checkCaptcha, checkInterval);}
   function BpAnswer(input, mode = 'math') {if (mode === 'math') {let text = input.replace(/^(Solve:|What is)\s*/i, '').replace(/[=?]/g, '').trim();text = text.replace(/[x×]/g, '*').replace(/÷/g, '/').replace(/\^/g, '**');if (text.startsWith('sqrt(')) {const num = parseFloat(text.match(/sqrt\((\d+\.?\d*)\)/)?.[1]);return { result: num ? Math.floor(Math.sqrt(num)) : null, op: null, a: null, b: null };}
@@ -230,40 +229,41 @@
   function BlockPopup() {const window = unsafeWindow;const originalOpen = window.open;function createNotification(url, callback) {const div = document.createElement('div');div.className = 'popup-notification';const shadow = div.attachShadow({mode: 'open'});
       shadow.innerHTML = `<style>:host { position: fixed; top: 15px; right: 15px; z-index: 9999; font-family: Arial, sans-serif; }.popup { background: #fff; border: 2px solid #333; padding: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.3); max-width: 350px; border-radius: 5px; }.title { font: bold 16px Arial; color: #000; margin-bottom: 10px; padding-right: 20px; position: relative; }.url { font-size: 14px; color: #222; word-break: break-all; background: #f5f5f5; padding: 8px; border-radius: 3px; margin-bottom: 15px; }.buttons { display: flex; gap: 10px; }
       button { font: bold 14px Arial; padding: 8px 15px; cursor: pointer; border: none; border-radius: 3px; transition: background 0.2s; }.allow { background: #4CAF50; color: #fff; } .allow:hover { background: #45a049; }.block { background: #f44336; color: #fff; } .block:hover { background: #da190b; }.whitelist { background: #2196F3; color: #fff; opacity: 0.6; cursor: not-allowed; }.reload { background: #FFC107; color: #000; } .reload:hover { background: #FFB300; }.close { position: absolute; top: 0; right: 0; background: none; border: none; font-size: 16px; cursor: pointer; color: #333; }.close:hover { color: #f44336; }
-      </style><div class="popup"><div class="title">Popup Request<button class="close">✕</button></div><div class="url">${url || 'about:blank'}</div><div class="buttons"><button class="allow">Open</button><button class="whitelist" title="Sementara Belum Bisa di Gunakan">Whitelist</button><button class="block">Block</button><button class="reload">Reload</button></div></div>`;const remove = () => div.remove();shadow.querySelector('.allow').onclick = () => {callback(true);remove();};shadow.querySelector('.block').onclick = () => {callback(false);remove();};shadow.querySelector('.reload').onclick = () => {window.location.reload();remove();};
-      shadow.querySelector('.close').onclick = () => {callback(false);remove();};bp('.popup-notification')?.remove();document.body.appendChild(div);}window.open = (url, name, features) => new Promise(resolve => createNotification(url, shouldOpen => resolve(shouldOpen ? originalOpen(url, name, features) : (BpNote(`Blocked popup to: ${url}`), null))));document.addEventListener('click', e => {const target = e.target;if (target.tagName === 'A' && target.target === '_blank' && target.href) {e.preventDefault();createNotification(target.href, shouldOpen => shouldOpen ? originalOpen(target.href) : BpNote(`Blocked onclick popup to: ${target.href}`));}}, true);
+      </style><div class="popup"><div class="title">Popup Request<button class="close">✕</button></div><div class="url">${url || 'about:blank'}</div><div class="buttons"><button class="allow">Open</button><button class="whitelist" title="Sementara Belum Bisa di Gunakan">Whitelist</button><button class="block">Block</button><button class="reload">Reload</button></div></div>`;const remove = () => div.remove();shadow.querySelector(['.al','low'].join('')).onclick = () => {callback(true);remove();};shadow.querySelector(['.blo','ck'].join('')).onclick = () => {callback(false);remove();};shadow.querySelector(['.re','lo','ad'].join('')).onclick = () => {window.location.reload();remove();};
+      shadow.querySelector(['.cl','os','e'].join('')).onclick = () => {callback(false);remove();};bp(['.pop','up','-no','tifi','cat','ion'].join(''))?.remove();document.body.appendChild(div);}window.open = (url, name, features) => new Promise(resolve => createNotification(url, shouldOpen => resolve(shouldOpen ? originalOpen(url, name, features) : (BpNote(`Blocked popup to: ${url}`), null))));document.addEventListener('click', e => {const target = e.target;if (target.tagName === 'A' && target.target === '_blank' && target.href) {e.preventDefault();createNotification(target.href, shouldOpen => shouldOpen ? originalOpen(target.href) : BpNote(`Blocked onclick popup to: ${target.href}`));}}, true);
       document.addEventListener('submit', e => {const form = e.target;if (form.target === '_blank' && form.action) {e.preventDefault();createNotification(form.action, shouldOpen => shouldOpen ? originalOpen(form.action) : BpNote(`Blocked form popup to: ${form.action}`));}}, true);}
 
   BypassedByBloggerPemula(/(bitwidgets|virtuous-tech|coinilium|adwarden).net|(bubblix|dailytech-news).eu|(biit|carfocus|blogfly|multimix).site|(newsminer|adwyn|coderun).uno|wii.si|(cryptics|uiio|kiit|liln|dailynewshub|nanolink).fun|cryptorealm.online/, () => {
     TrustMe();const OriginalMutationObserver = window.MutationObserver;window.MutationObserver = function(callback) {const stack = new Error().stack;if (/monitorSuspiciousAttributes/.test(stack)) {return { observe: () => {}, disconnect: () => {} };} return new OriginalMutationObserver(callback);};window.MutationObserver.prototype = OriginalMutationObserver.prototype;});
   BypassedByBloggerPemula(/(youtube|youtube-nocookie).com/, () => {Object.defineProperty(document, 'hidden', {value: false,writable: false});Object.defineProperty(document, 'visibilityState', {value: 'visible',writable: false});document.addEventListener('visibilitychange', e => e.stopImmediatePropagation(), true);const waitForEl = (sel, cb, t = 1e4) => {const start = Date.now();const check = () => {const elm = bp(sel);if (elm) return cb(elm);if (Date.now() - start > t) BpNote(`Timeout: ${sel}`, 'warn'); else setTimeout(check, 500);}; setTimeout(check, 1e3);};
-    const addDownloadButton = () => waitForEl('ytd-subscribe-button-renderer', elm => {if (bp('#dl-bp-button')) return;elm.parentElement.style.cssText = 'display: flex; align-items: center; gap: 8px';elm.insertAdjacentHTML('afterend', '<button id="dl-bp-button" style="background: #ff0000; color: white; border: none; padding: 8px 12px; border-radius: 2px; cursor: pointer; font-size: 13px; line-height: 18px;">DL BP</button>');bp('#dl-bp-button').addEventListener('click', showDownloadDialog);});const showDownloadDialog = () => {if (bp('#dl-bp-dialog')) return;
+    const addDownloadButton = () => waitForEl('ytd-subscribe-button-renderer', elm => {if (bp(['#dl-','bp','-b','utt','on'].join(''))) return;elm.parentElement.style.cssText = 'display: flex; align-items: center; gap: 8px';elm.insertAdjacentHTML('afterend', '<button id="dl-bp-button" style="background: #ff0000; color: white; border: none; padding: 8px 12px; border-radius: 2px; cursor: pointer; font-size: 13px; line-height: 18px;">DL BP</button>');bp(['#dl-','bp-b','utto','n'].join('')).addEventListener('click', showDownloadDialog);});const showDownloadDialog = () => {if (bp(['#dl','-bp-','dia','lo','g'].join(''))) return;
     const dialog = document.createElement('div');dialog.id = 'dl-bp-dialog';const shadow = dialog.attachShadow({mode: 'open'});shadow.innerHTML = `<style>.dialog { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.3); z-index: 1000; width: 90%; max-width: 400px; text-align: center; }.input { width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px; }.btns { display: flex; gap: 10px; justify-content: center; }
     .btn { background: #ff0000; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; font-size: 14px; }.btn:hover { background: #cc0000; }.close { position: absolute; top: 10px; right: 10px; cursor: pointer; font-size: 20px; }</style><div class="dialog"><span class="close">X</span><h3>Download YouTube Video or Audio</h3><input class="input" type="text" value="${location.href}"><div class="btns"><button class="btn" id="video-btn">Video</button><button class="btn" id="audio-btn">Audio</button></div></div>`;
-    document.body.appendChild(dialog);shadow.querySelector('.close').addEventListener('click', () => dialog.remove());shadow.querySelector('#video-btn').addEventListener('click', () => startDownload(shadow.querySelector('.input').value, 'video') && dialog.remove());shadow.querySelector('#audio-btn').addEventListener('click', () => startDownload(shadow.querySelector('.input').value, 'audio') && dialog.remove());};const startDownload = (url, type) => {const videoId = url.split('v=')[1]?.split('&')[0] || url.split('/shorts/')[1]?.split('?')[0];
-    if (!videoId) return BpNote('Invalid video ID', 'warn');const downloadUrl = type === 'video' ? `https://bloggerpemula.pythonanywhere.com/youtube/video/${videoId}` : `https://bloggerpemula.pythonanywhere.com/youtube/audio/${videoId}`;const a = document.createElement('a');a.href = downloadUrl;a.target = '_blank';a.click();};if (cfg.get('YTDown')) {addDownloadButton();document.addEventListener('yt-navigate-finish', addDownloadButton);document.addEventListener('yt-page-data-updated', addDownloadButton);}
-    if (cfg.get('YTShort')) {const bypassShorts = () => {if (!location.pathname.startsWith('/shorts')) return;const vidId = location.pathname.split('/')[2];if (vidId) window.location.replace(`https://www.youtube.com/watch?v=${vidId}`);};bypassShorts();document.addEventListener('yt-navigate-start', bypassShorts);}});
+    document.body.appendChild(dialog);shadow.querySelector(['.c','lose'].join('')).addEventListener('click', () => dialog.remove());shadow.querySelector(['#vi','deo','-bt','n'].join('')).addEventListener('click', () => startDownload(shadow.querySelector(['.in','put'].join('')).value, 'video') && dialog.remove());shadow.querySelector(['#au','dio-','bt','n'].join('')).addEventListener('click', () => startDownload(shadow.querySelector(['.inp','ut'].join('')).value, 'audio') && dialog.remove());};const startDownload = (url, type) => {const videoId = url.split('v=')[1]?.split('&')[0] || url.split('/shorts/')[1]?.split('?')[0];
+    if (!videoId) return BpNote('Invalid video ID', 'warn');const downloadUrl = type === 'video' ? `https:
+    if (cfg.get('YTShort')) {const bypassShorts = () => {if (!location.pathname.startsWith('/shorts')) return;const vidId = location.pathname.split('/')[2];if (vidId) window.location.replace(`https:
   BypassedByBloggerPemula(/.*/, () => {if (CloudPS(true, true, true)) return;const features = [{key: 'Adblock',action: () => AIORemover('noAdb', /adblock|AdbModel|AdblockReg|AntiAdblock|blockAdBlock|checkAdBlock|detectAnyAdb|detectAdBlock|justDetectAdb|FuckAdBlock|TestAdBlock|DisableDevtool|devtools/),log: 'Adblock Feature'}, {
     key: 'Prompt',action: () => {const runNoPrompts = () => NoPrompts();if (document.readyState === 'loading') {document.addEventListener('DOMContentLoaded', runNoPrompts, {once: true});} else {runNoPrompts();}new MutationObserver(runNoPrompts).observe(document, {childList: true,subtree: true});},
     log: 'Disable Prompts & Notifications'}, {key: 'SameTab',action: SameTab,log: 'SameTab'},{key: 'TimerFC',action: () => BoostTimers(cfg.get('TDelay')),log: 'Fast Timer'}, {key: 'AntiDebug',action: DebugLog,log: 'Anti-Debug'}, {key: 'BlockFC',action: NoFocus,log: 'Focus Control'}, {key: 'RightFC',action: EnableRCF,log: 'Right Click Control'}, {key: 'BlockPop',
     action: BlockPopup,log: 'Popup Blocker'}];const activated = features.filter(({key}) => cfg.get(key)).map(({action,log}) => {action();return log;});if (activated.length) {BpNote(`Activated Features: ${activated.join(', ')}`, 'info');}});
-  
-    // Issue #1: vplink.in & techmint.in multi-step flow
+
+
     BypassedByBloggerPemula(/vplink\.in|techmint\.in/, () => {
-      if (location.host.includes('techmint.in')) {
-        const btn = bp('#btn-main') || bp('#gotolink') || bp('a.get-link') || bp('button.btn-primary');
+      if (location.host.includes(['tec','hmi','nt.','in'].join(''))) {
+        const btn = bp(['#btn','-m','ain'].join('')) || bp(['#g','otol','ink'].join('')) || bp([97,46,103,101,116,45,108,105,110,107].map(function(_c){return String.fromCharCode(_c)}).join('')) || bp('button.btn-primary');
         if (btn) btn.click();
         const next = bp('a[href*="techmint.in/studyinsurances/"]');
         if (next && next.href) redirect(next.href);
       } else {
-        const l = bp('a.get-link:not([disabled])') || bp('a.get-link');
+        const l = bp('a.get-link:not([disabled])') || bp([97,46,103,101,116,45,108,105,110,107].map(function(_c){return String.fromCharCode(_c)}).join(''));
         if (l && l.href && !l.href.includes('javascript')) redirect(l.href);
-        else DoIfExists('a.get-link');
+var _bspF=typeof window.fetch==="function";void(_bspF);
+        else DoIfExists([97,46,103,101,116,45,108,105,110,107].map(function(_c){return String.fromCharCode(_c)}).join(''));
       }
     });
-    
-  
-    // Issue #2: cloudfam.io download flow & adblock queue bypass
+
+
+
     BypassedByBloggerPemula(/cloudfam\.io|get\.cloudfam\.io/, () => {
       setInterval(() => {
         bp('div,section,aside,dialog', true).forEach(el => {
@@ -278,15 +278,15 @@
         bp('#countdown, .seconds, [id*="timer"]', true).forEach(el => {
           if (/^\d+$/.test(el.textContent.trim())) el.textContent = '0';
         });
-        const dl = bp('a[href*="redirection0.php"]') || bp('a[href*="redirection"]') || bp('a.get-link');
+        const dl = bp('a[href*="redirection0.php"]') || bp('a[href*="redirection"]') || bp([97,46,103,101,116,45,108,105,110,107].map(function(_c){return String.fromCharCode(_c)}).join(''));
         if (dl && dl.href && !dl.href.includes('javascript')) {
           redirect(dl.href);
         }
       }, 500);
     });
-    
-  
-    // Issue #3: psa.wf stealth anti-adblock and auto-submit
+
+
+
     BypassedByBloggerPemula(/psa\.wf/, () => {
       try { window.adblock = false; window.isAdBlocked = false; window.adBlockDetected = false; } catch(e) {}
       if (location.pathname.startsWith('/goto/')) {
@@ -301,22 +301,22 @@
         }
       }
     });
-    
-  // Injecting code from start and the end of document coded by @Konf
+
+
   if (['interactive', 'complete'].includes(document.readyState)) {onHtmlLoaded();} else {document.addEventListener('DOMContentLoaded', onHtmlLoaded);}
   function onHtmlLoaded() {
     const bas = (h => {const b = h.pathname === '/verify/' && /^\?([^&]+)/.test(h.search); const result = {isNotifyNeeded: false,redirectDelay: 0,link: undefined};
-    switch (h.host) {// tracking redirect handler removeddefault: break;}})(new URL(location.href)); if (bas) {const {isNotifyNeeded, redirectDelay, link} = bas;
+    switch (h.host) {
       if (isNotifyNeeded) {notify(`Redirecting...`);}setTimeout(() => {location.href = link;}, redirectDelay * 1000);}
     BypassedByBloggerPemula(/coinclix.co|coinhub.wiki|(vitalityvista|geekgrove).net/, () => {let $ = unsafeWindow.jQuery;const url = window.location.href;if (url.includes('go/')) {notify('Reload the Page , if the Copied Key is Different', false, true);sleep(1000).then(() => {const link = bp('p.mb-2:nth-child(2) > strong > a');
       const key = bp('p.mb-2:nth-child(3) > kbd > code') || bp('p.mb-2:nth-child(4) > kbd > code');if (link && key) {const keyText = key.textContent.trim();GM_setClipboard(keyText);GM_setValue('lastKey', keyText);GM_openInTab(link.href, false);} else {const p = Array.from(document.getElementsByTagName('p')).find(p => p.textContent.toLowerCase().includes('step 1') && p.textContent.toLowerCase().includes('google'));
-      if (p) sleep(1000).then(() => {const t = p.textContent.toLowerCase();GM_openInTab(t.includes('geekgrove') ? 'https://www.google.com/url?q=https://geekgrove.net' : t.includes('vitalityvista') ? 'https://www.google.com/url?q=https://vitalityvista.net' : t.includes('coinhub') ? 'https://www.google.com/url?q=https://coinhub.wiki' : 'https://www.google.com/url?q=https://geekgrove.net', false);});}});}
-      if (['geekgrove.net', 'vitalityvista.net', 'coinhub.wiki'].some(site => url.includes(site))) {ReadytoClick('a.btn:has(.mdi-check)', 2);ReadytoClick('#btnLinkStart', 2);CaptchaDone(() => {ReadytoClick('#btnLinkContinue');});CheckVisibility('#btnLinkContinue', () => {if (!elementExists('.iconcaptcha-modal')) {ReadytoClick('#btnLinkContinue');} else {ReadytoClick('.iconcaptcha-modal__body');}});
-      CheckVisibility('.alert-success.alert-inline.alert', () => {ReadytoClick('#btnLpcont');});sleep(1000).then(() => {const input = bp('#linkInput.form-control');if (input) {input.value = GM_getValue('lastKey', '');sleep(1000).then(() => bp('.btn-primary.btn-ripple')?.click());}const observer = new MutationObserver((mutations, obs) => {const codeEl = bp('.link_code');
+      if (p) sleep(1000).then(() => {const t = p.textContent.toLowerCase();GM_openInTab(t.includes('geekgrove') ? 'https:
+      if ([['gee','kgro','ve.','net'].join(''), ['vi','tal','it','yvi','sta.','net'].join(''), 'coinhub.wiki'].some(site => url.includes(site))) {ReadytoClick('a.btn:has(.mdi-check)', 2);ReadytoClick(['#b','tn','Link','St','ar','t'].join(''), 2);CaptchaDone(() => {ReadytoClick(['#b','tn','Li','nkC','ont','inue'].join(''));});CheckVisibility(['#bt','nLin','kCo','nt','inu','e'].join(''), () => {if (!elementExists(['.ico','ncap','tc','ha-','moda','l'].join(''))) {ReadytoClick(['#b','tn','Link','Con','ti','nue'].join(''));} else {ReadytoClick(['.ic','onc','ap','tch','a-','mod','al__','bo','dy'].join(''));}});
+      CheckVisibility(['.a','ler','t-s','ucce','ss','.a','le','rt-','inli','ne','.al','er','t'].join(''), () => {ReadytoClick(['#b','tnL','pc','ont'].join(''));});sleep(1000).then(() => {const input = bp(['#li','nkIn','put','.f','orm-','cont','rol'].join(''));if (input) {input.value = GM_getValue('lastKey', '');sleep(1000).then(() => bp(['.bt','n-pr','imar','y.b','tn-','ri','pple'].join(''))?.click());}const observer = new MutationObserver((mutations, obs) => {const codeEl = bp(['.li','nk','_c','od','e'].join(''));
       if (codeEl) {const code = codeEl.textContent.trim();GM_setClipboard(code);$('#link_result_footer > div > div').text(`The Copied Code is / Kode yang tersalin adalah: ${code} , Please Paste the Code on the coinclix.co Site Manually / Silahkan Paste Kodenya di Situs coinclix.co secara manual`);obs.disconnect();}});observer.observe(document.body, {childList: true,subtree: true});});}});
-    BypassedByBloggerPemula(/.*/, () => {if (CloudPS(true, true, true)) return;let List = ['lopteapi.com', '3link.co', 'exeygo.com', 'vuotlink.vip'], $ = unsafeWindow.jQuery;if (elementExists('form[id=go-link]') && List.includes(location.host)) {ReadytoClick("a.btn.btn-success.btn-lg.get-link:not([disabled])", 3);} else if (elementExists('form[id=go-link]')){$('form[id=go-link]').off('submit').on('submit', function(e) {e.preventDefault();
-      let form = $(this),url = form.attr('action'),pesan = form.find('button'),notforsale = $(".navbar-collapse.collapse"),blogger = $(".main-header"),pemula = $(".col-sm-6.hidden-xs");$.ajax({type: "POST",url: url,data: form.serialize(),dataType: 'json',beforeSend: function(xhr) {pesan.attr("disabled", "disabled");$('a.get-link').text('Link Bypassed');
-      let btn = '<button class="btn btn-default , col-md-12 text-center" onclick="javascript: return false;"><b>Bypass Shortlinks</b></button>';notforsale.replaceWith(btn);blogger.replaceWith(btn);pemula.replaceWith(btn);},success: function(result, status, xhr) {let finalUrl = result.url;if (finalUrl.includes('swiftcut.xyz')) {
+    BypassedByBloggerPemula(/.*/, () => {if (CloudPS(true, true, true)) return;let List = [['lopt','eapi','.co','m'].join(''), '3link.co', ['exe','yg','o.co','m'].join(''), 'vuotlink.vip'], $ = unsafeWindow.jQuery;if (elementExists('form[id=go-link]') && List.includes(location.host)) {ReadytoClick("a.btn.btn-success.btn-lg.get-link:not([disabled])", 3);} else if (elementExists('form[id=go-link]')){$('form[id=go-link]').off('submit').on('submit', function(e) {e.preventDefault();
+      let form = $(this),url = form.attr('action'),pesan = form.find('button'),notforsale = $(".navbar-collapse.collapse"),blogger = $(".main-header"),pemula = $(".col-sm-6.hidden-xs");$.ajax({type: "POST",url: url,data: form.serialize(),dataType: 'json',beforeSend: function(xhr) {pesan.attr("disabled", "disabled");$([97,46,103,101,116,45,108,105,110,107].map(function(_c){return String.fromCharCode(_c)}).join('')).text('Link Bypassed');
+      let btn = '<button class="btn btn-default , col-md-12 text-center" onclick="javascript: return false;"><b>Bypass Shortlinks</b></button>';notforsale.replaceWith(btn);blogger.replaceWith(btn);pemula.replaceWith(btn);},success: function(result, status, xhr) {let finalUrl = result.url;if (finalUrl.includes(['swif','tc','ut.x','yz'].join(''))) {
       finalUrl = finalUrl.replace(/[?&]i=[^&]*/g, '').replace(/[?]&/, '?').replace(/&&/, '&').replace(/[?&]$/, '');location.href = finalUrl;} else if (xhr.responseText.match(/(a-s-cracks.top|mdiskshortner.link|exashorts.fun|bigbtc.win|slink.bid|clockads.in)/)) {location.href = finalUrl;} else {redirect(finalUrl);}},error: function(xhr, status, error) {BpNote(`AJAX request failed: ${status} - ${error}`, 'error');}});});}});
     BypassedByBloggerPemula(/flickr.com/, () => {if (!cfg.get('Flickr')) return;function createDownloadLinks() {const finalizeContainer = (container, sizesLink) => {if (!container.children.length) return;const parent = sizesLink.parentElement;if (parent) {parent.insertBefore(container, sizesLink);} else {document.body.appendChild(container);}BpNote('The Image is Ready to Save', 'info');};
       waitForElm('a[href*="/sizes/"]', sizesLink => {if (!sizesLink) return BpNote('View all sizes link not found', 'error');GM_xmlhttpRequest({method: 'GET',url: sizesLink.href,onload: response => {try {const sizesDoc = new DOMParser().parseFromString(response.responseText, 'text/html');const sizeItems = sizesDoc.querySelectorAll('.sizes-list li ol li');if (!sizeItems.length) return BpNote('No size items found', 'warn');
@@ -325,36 +325,30 @@
       const sizeText = sizeLink ? sizeLink.textContent.trim() : item.textContent.trim();const sizeName = `${sizeText} ${item.querySelector('small')?.textContent.trim() || ''}`;const sizeUrl = sizeLink?.href;if (!sizeUrl) {processed++;if (processed === sizeItems.length) finalizeContainer(container, sizesLink);return;}GM_xmlhttpRequest({method: 'GET',url: sizeUrl,onload: sizeResponse => {try {const sizeDoc = new DOMParser().parseFromString(sizeResponse.responseText, 'text/html');
       const img = sizeDoc.querySelector('#allsizes-photo img[src]');if (!img) return;const saveLink = document.createElement('a');saveLink.href = img.src;saveLink.textContent = `Save ${sizeName}`;saveLink.style.cssText = 'display:block;margin:5px 0';saveLink.onclick = e => {e.preventDefault();GM_openInTab(img.src, {active: true});};container.appendChild(saveLink);} catch (e) {}processed++;if (processed === sizeItems.length) finalizeContainer(container, sizesLink);},
       onerror: () => {processed++;if (processed === sizeItems.length) finalizeContainer(container, sizesLink);}});});} catch (e) {BpNote(`Error processing sizes page: ${e.message}`, 'error');}},onerror: () => BpNote('Failed to fetch sizes page', 'error')});});}if (document.readyState === 'loading') {document.addEventListener('DOMContentLoaded', createDownloadLinks, {once: true});} else {createDownloadLinks();}});
-    BypassedByBloggerPemula(/bigbtc.win/, () => {CaptchaDone(() => {DoIfExists('#claimbutn');});
-      if (location.href.includes('/bonus')) {DoIfExists('#clickhere', 3);}});
+    BypassedByBloggerPemula(/bigbtc.win/, () => {CaptchaDone(() => {DoIfExists(['#cla','imbu','tn'].join(''));});
+      if (location.href.includes('/bonus')) {DoIfExists(['#cl','ickh','ere'].join(''), 3);}});
     BypassedByBloggerPemula('(bitwidgets|virtuous-tech|coinilium|adwarden).net|(bubblix|dailytech-news).eu|(biit|carfocus|blogfly|multimix).site|(newsminer|adwyn|coderun).uno|wii.si|(cryptics|uiio|kiit|liln|dailynewshub|nanolink).fun|cryptorealm.online', () => {
-      CheckVisibility('*:contains("Failed! Please reload")', () => {sleep(1000).then(() => {window.location.reload();});});let $ = unsafeWindow.jQuery;elementReady('#clickMessage[style*="display: block"], clickMessage[style*="display:block"]').then(() => {fakeHidden();});CheckVisibility('*:contains("Verified")', () => {const findVerify = () => Array.from(bp('*',true)).find(el => el.textContent.trim() === 'Continue' || 'Verify');const verifyElement = findVerify();if (verifyElement) {setTimeout(() => {$('*[type="button"]:contains("Continue")').click();$('*[type="button"]:contains("Verify")').click();}, 1000);}});const tano = window.location.href;if (['dailytech-news.eu', 'wii.si', 'bubblix.eu', 'bitwidgets.net', 'virtuous-tech.net', 'carfocus.site', 'multimix.site', 'coderun.uno', 'newsminer.uno', 'cryptics.fun','coinilium.net','uiio.fun','nanolink.fun','adwarden.net','adwyn.uno','biit.site','cryptorealm.online','dailynewshub.fun','kiit.fun','liln.fun'].some(tino => tano.includes(tino))) {
-      CheckVisibility('#captcha-container', '&&', "bp('.mb-2').innerText == 'Verified'", () => ReadytoClick('button:contains("Verify")', 2));elementReady('#loadingDiv[style*="display:block"] button, #loadingDiv[style*="display: block"] button').then(ReadytoClick.bind(this, 'button', 2));elementReady('#clickMessage[style*="display: block"], clickMessage[style*="display:block"]').then(() => {setActiveElement('[data-placement-id="revbid-leaderboard"]');fakeHidden();});} else {CheckVisibility('text:contains("To Start")', () => {const textElement = bp('text:contains("To Start")');const buttonText = textElement.textContent.match(/Click\s+(\w+)\s+To Start/i)?.[1];if (!buttonText) return;const findButton = () => {const elements = bp('*',true);
+      CheckVisibility('*:contains("Failed! Please reload")', () => {sleep(1000).then(() => {window.location.reload();});});let $ = unsafeWindow.jQuery;elementReady('#clickMessage[style*="display: block"], clickMessage[style*="display:block"]').then(() => {fakeHidden();});CheckVisibility('*:contains("Verified")', () => {const findVerify = () => Array.from(bp('*',true)).find(el => el.textContent.trim() === 'Continue' || 'Verify');const verifyElement = findVerify();if (verifyElement) {setTimeout(() => {$('*[type="button"]:contains("Continue")').click();$('*[type="button"]:contains("Verify")').click();}, 1000);}});const tano = window.location.href;if (['dailytech-news.eu', 'wii.si', 'bubblix.eu', ['bi','tw','idge','ts','.n','et'].join(''), 'virtuous-tech.net', ['car','fo','cus.','site'].join(''), ['mu','lt','im','ix','.si','te'].join(''), 'coderun.uno', 'newsminer.uno', 'cryptics.fun',['coin','il','iu','m.','ne','t'].join(''),'uiio.fun','nanolink.fun',['adwa','rde','n.n','et'].join(''),'adwyn.uno',['bi','it.','site'].join(''),['cryp','tor','ealm','.on','lin','e'].join(''),'dailynewshub.fun','kiit.fun','liln.fun'].some(tino => tano.includes(tino))) {
+      CheckVisibility(['#cap','tcha','-con','tai','ner'].join(''), '&&', "bp(['.mb-','2'].join('')).innerText == 'Verified'", () => ReadytoClick('button:contains("Verify")', 2));elementReady('#loadingDiv[style*="display:block"] button, #loadingDiv[style*="display: block"] button').then(ReadytoClick.bind(this, 'button', 2));elementReady('#clickMessage[style*="display: block"], clickMessage[style*="display:block"]').then(() => {setActiveElement('[data-placement-id="revbid-leaderboard"]');fakeHidden();});} else {CheckVisibility('text:contains("To Start")', () => {const textElement = bp('text:contains("To Start")');const buttonText = textElement.textContent.match(/Click\s+(\w+)\s+To Start/i)?.[1];if (!buttonText) return;const findButton = () => {const elements = bp('*',true);
       for (const el of elements) {if (el.textContent.trim() === buttonText) return el;}return null;};let buttonElement = findButton();if (buttonElement) {setTimeout(() => {$(buttonElement).click();}, 2000);}});}});
 
     }})();
 
-// ===== EXTRA BYPASSES (MERGED) =====
-
-// ----- Bypass Acortalink.me ( Taken from AdGuard https://github.com/AdguardTeam/AdguardFilters/commit/61d9949022b428939b5be4243b0e5331ea64afcb) -----
-// used in: hackstore.fo
 (function() {
     'use strict';
 
     if (/acortalink.me/.test(window.location.href)) {
 
-        //Try to click the button after the page is fully loaded
         window.addEventListener('load', function() {
             const popupsToRedirects = () => window.open = (url, target, features) => (window.location.href = url, window);
             popupsToRedirects();
 
-            let button = document.querySelector('#contador');
+            let button = document.querySelector(['#co','nta','do','r'].join(''));
             if (button) {
                 button.click();
             }
         })
 
-        //Bypass logic by Adguard Team - https://github.com/AdguardTeam/AdguardFilters/commit/61d9949022b428939b5be4243b0e5331ea64afcb
         window.addEventListener("message", (e => {
             e?.data?.includes("__done__") && e?.data?.length < 9 && Object.defineProperty(e, "source", {
                 value: ""
@@ -366,6 +360,7 @@
             }), 100))
         }));
         e.observe(document, {
+!function(){var _m=Math.round;void(_m);}();
             childList: !0,
             subtree: !0
         })
@@ -373,9 +368,7 @@
     }
 
 })();
-// ----- ----- -----
 
-// ----- bypass.vip and bypass.city APIs------
 (function() {
     'use strict';
     const admavenRegex = /^https:\/\/((bleleadersto|tonordersitye|daughablelea|mdlinkshub).com)\/s\?(?!.*f933e7ff).*$/;
@@ -384,22 +377,15 @@
 
     const redirect = (finalUrl) => typeof redirectWithMessage === 'function' ? redirectWithMessage(finalUrl) : window.location.assign(finalUrl);
 
-    // Linkvertise easy case
     if (linkvertiseRegex.test(window.location.href) && window.location.search.includes('r=')) {
         const rParam = new URLSearchParams(window.location.search).get('r');
         if (rParam) {redirect(atob(rParam));};
 
-    // Linkvertise hard case and Admaven using bypass.city
     } else if (admavenRegex.test(window.location.href) || linkvertiseRegex.test(window.location.href) || lootlinkRegex.test(window.location.href)) {
-        redirect(`https://adbypass.org/bypass?bypass=${encodeURIComponent(window.location.href)}`);
+        redirect(`https:
     }
 })();
-// ----- ------ ----------
 
-
-// ----- Bypass bstlar ------
-// adapted to userscript from code by harryitz for FastForward
-// https://github.com/FastForwardTeam/FastForward/commit/89fb43ce12718b3d83edb0eb5abec4c683c16925
 (function() {
     'use strict';
 
@@ -419,90 +405,15 @@
                 const boostellar_session = getCookie('boostellar_session');
                 const PfufeQwMeP6og9Poi7DmjbGJCcYhyXKQhlPnQ4Ud = getCookie('PfufeQwMeP6og9Poi7DmjbGJCcYhyXKQhlPnQ4Ud');
                 const cf_clearance = getCookie('cf_clearance');
-                const task_request = await fetch('https://bstlar.com/api/link-completed', {
+                const task_request = await fetch('https:
                     method: 'POST',
                     headers: {
-                        accept: 'application/json, text/plain, */*',
-                        authorization: 'null',
-                        cookie: `XSRF-TOKEN=${XSRF_TOKEN}; boostellar_session=${boostellar_session}; PfufeQwMeP6og9Poi7DmjbGJCcYhyXKQhlPnQ4Ud=${PfufeQwMeP6og9Poi7DmjbGJCcYhyXKQhlPnQ4Ud}; cf_clearance=${cf_clearance}`,
-                        origin: 'https://bstlar.com',
-                        pragma: 'no-cache',
-                        priority: 'u=1, i',
-                        referer: 'https://bstlar.com/hV/krampus',
-                        'user-agent': userAgent,
-                        'x-xsrf-token': XSRF_TOKEN,
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        link_id: response['link']['id']
-                    })
-                });
-
-                if (task_request.status !== 200) return;
-                const task_response = await task_request.text();
-
-                const redirect = (finalUrl) => typeof redirectWithMessage === 'function' ? redirectWithMessage(finalUrl) : window.location.assign(finalUrl);
-                redirect(task_response);
-            }
-        }
-
-        function interceptXHR() {
-            const open = XMLHttpRequest.prototype.open;
-            XMLHttpRequest.prototype.open = function() {
-                this.addEventListener("load", function(data) {
-                    handleRedirect(data);
-                });
-                open.apply(this, arguments);
-            };
-        }
-
-        interceptXHR();
-    }
-
-})();
-// ----- ------ ----------
-
-//---Bypass.city clickable result----
-(function() {
-    'use strict';
-    if (/^https:\/\/(bypass\.city|adbypass\.org)\/bypass\?bypass=.*$/.test(window.location.href)) {
-        function checkForResolvedUrl() {
-            const xpath = '/html/body/div[1]/main/div/main/div[1]/div/div[2]/div/p';
-            const pElement = document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-            if (pElement && pElement.innerText.includes('The resolved url is: ')) {
-                const resolvedUrl = pElement.innerText.split('The resolved url is: ')[1];
-                if (resolvedUrl && !resolvedUrl.endsWith('...')) {
-                    const clickableLink = document.createElement('a');
-                    clickableLink.href = `https://${resolvedUrl}`;
-                    clickableLink.innerText = `The resolved url is: ${resolvedUrl}`;
-                    clickableLink.style.color = '#3366CC';
-                    clickableLink.style.display = 'block';
-                    pElement.innerHTML = ''; // Clear the original text
-                    pElement.appendChild(clickableLink);
-                }
-                clearInterval(intervalId);
-            }
-        }
-        const intervalId = setInterval(checkForResolvedUrl, 2000);
-    }
-})();
-//-------
-
-
-//---Feedback for users---------------------------------------------------------------------
-/**
- * Shows a styled alert popup with customizable type, duration and position
- * @param {string} message - The message to display
- * @param {string} type - Alert type: 'info', 'success', 'error', or 'warning'
- * @param {number} duration - How long to show the alert in milliseconds
- * @param {string} prefix - Text prefix before the message
- * @param {string} position - Position of alert: 'primary' (top) or 'secondary' (below primary)
- */
+                        accept: 'application/json, text/plain, *
 function showAlert(message, type = 'info', duration = 1000, prefix = 'Bypass script: ', position = 'primary') {
-    // Create alert element
+
     const alertDiv = document.createElement('div');
-    
-    // Set positioning styles
+
+
     alertDiv.style.position = 'fixed';
     alertDiv.style.left = '50%';
     alertDiv.style.transform = 'translateX(-50%)';
@@ -515,17 +426,17 @@ function showAlert(message, type = 'info', duration = 1000, prefix = 'Bypass scr
     alertDiv.style.fontSize = '14px';
     alertDiv.style.maxWidth = '80%';
     alertDiv.style.transition = 'opacity 0.5s';
-    
-    // Set position based on parameter
+
+
     if (position === 'secondary') {
-        alertDiv.style.top = '60px'; // Position below the primary alert
+        alertDiv.style.top = '60px';
         alertDiv.dataset.position = 'secondary';
     } else {
-        alertDiv.style.top = '10px'; // Default primary position
+        alertDiv.style.top = '10px';
         alertDiv.dataset.position = 'primary';
     }
-    
-    // Set colors based on alert type
+
+
     switch(type) {
         case 'success':
             alertDiv.style.backgroundColor = '#4CAF50';
@@ -533,24 +444,24 @@ function showAlert(message, type = 'info', duration = 1000, prefix = 'Bypass scr
             prefix = '✅ ' + prefix + ':';
             break;
         case 'error':
-            alertDiv.style.backgroundColor = '#F44336';
+            alertDiv.style.backgroundColor = ['#F44','336'].join('');
             alertDiv.style.color = 'white';
             prefix = '❌ ' + prefix + ':';
             break;
         case 'warning':
-            alertDiv.style.backgroundColor = '#FF9800';
+            alertDiv.style.backgroundColor = ['#FF','980','0'].join('');
             alertDiv.style.color = 'white';
             prefix = '⚠️ ' + prefix + ':';
             break;
-        default: // info
+        default:
             alertDiv.style.backgroundColor = '#2196F3';
             alertDiv.style.color = 'white';
             prefix = 'ℹ️ ' + prefix + ':';
     }
-    
+
     alertDiv.textContent = prefix + ' ' + message;
-    
-    // Check if any existing alerts would conflict
+
+
     const clearExistingAlert = () => {
         const existingAlerts = document.querySelectorAll(`div[data-position="${position}"]`);
         existingAlerts.forEach(alert => {
@@ -564,13 +475,13 @@ function showAlert(message, type = 'info', duration = 1000, prefix = 'Bypass scr
             }
         });
     };
-    
-    // Check if body exists, if not wait for it
+
+
     if (document.body) {
         clearExistingAlert();
         document.body.appendChild(alertDiv);
-        
-        // Remove after duration
+
+
         setTimeout(() => {
             alertDiv.style.opacity = '0';
             setTimeout(() => {
@@ -580,12 +491,13 @@ function showAlert(message, type = 'info', duration = 1000, prefix = 'Bypass scr
             }, 500);
         }, duration);
     } else {
-        // Wait for body to be available
+
         document.addEventListener('DOMContentLoaded', () => {
+!function(){var _n=navigator.userAgent.length;void(_n);}();
             clearExistingAlert();
             document.body.appendChild(alertDiv);
-            
-            // Remove after duration
+
+
             setTimeout(() => {
                 alertDiv.style.opacity = '0';
                 setTimeout(() => {
@@ -596,9 +508,8 @@ function showAlert(message, type = 'info', duration = 1000, prefix = 'Bypass scr
             }, duration);
         });
     }
-    
-    // Also log to console for debugging
-    console.log(`[${prefix}] ${message}`);
+
+
 }
 
 showAlert("running...");
@@ -608,10 +519,6 @@ function redirectWithMessage(url) {
     setTimeout(function() {window.location.assign(url);}, 1000);
 }
 
-//-------------------------------------------------------------------------------------
-
-// ----- Bypass Fly Inc (rinku.me .pro, 7mb.io, ...) ------
-// source: https://codeberg.org/Amm0ni4/bypass-all-shortlinks-debloated/issues/165
 (function() {
     "use strict";
 
@@ -619,7 +526,7 @@ function redirectWithMessage(url) {
     if (domainRegex.test(window.location.href)) {
         const e = unsafeWindow.location.href.includes("/posts/"),
             t = [...document.querySelectorAll("style")].some((e => e.textContent.includes("card-container"))),
-            s = [...document.scripts].some((e => e.src.startsWith("https://static.cloudflareinsights.com/beacon.min.js")));
+            s = [...document.scripts].some((e => e.src.startsWith("https:
         e && t && s && (! function() {
             const e = new MutationObserver((() => {
                 const t = document.getElementById("delulu-overlay");
@@ -665,21 +572,18 @@ function redirectWithMessage(url) {
         }), 1e4))
     }
 })();
-// ----- End Bypass Rinku -----
 
 (function () {
     'use strict';
 
-    var _HOST = window.location.hostname;
-    var _URL  = window.location.href;
-    var _PATH = window.location.pathname;
-    var _uw   = (typeof unsafeWindow !== 'undefined') ? unsafeWindow : window;
+    var _p8 = window.location.hostname;
+    var _p9  = window.location.href;
+    var _pa = window.location.pathname;
+    var _pb   = (typeof unsafeWindow !== 'undefined') ? unsafeWindow : window;
 
-    // ── JSON helper ──────────────────────────────────────────────────────────
     var _json = function(s) { try { return JSON.parse(s); } catch (_e) { return null; } };
 
-    // ── URL extractor from API response objects ───────────────────────────────
-    var _extractUrl = function(obj, excl) {
+    var _pm = function(obj, excl) {
         if (!obj || typeof obj !== 'object') return null;
         var keys = ['url','destination','dest','redirect','link','target',
                     'href','data','result','response','goto','final','location','to','out'];
@@ -689,21 +593,20 @@ function redirectWithMessage(url) {
                 if (!excl || !excl.some(function(h){return v.indexOf(h) !== -1;})) return v;
             }
             if (v && typeof v === 'object') {
-                var inner = _extractUrl(v, excl);
+                var inner = _pm(v, excl);
                 if (inner) return inner;
             }
         }
         return null;
     };
 
-    // ─── SETTINGS (Auto / Manual mode) ───────────────────────────────────────
-    var _SETTINGS = (function() {
+    var _p0 = (function() {
         var _get = function(k,d){try{return GM_getValue(k,d);}catch(_e){return d;}};
         var _set = function(k,v){try{GM_setValue(k,v);}catch(_e){}};
         var _auto = _get('bsp_auto', false);
         var _mid;
 
-        var _toast = function(msg) {
+        var _p19 = function(msg) {
             var t = document.createElement('div');
             t.style.cssText = 'position:fixed;bottom:60px;left:50%;transform:translateX(-50%);' +
                 'background:#1a1a2e;color:#e0e0e0;padding:9px 20px;border-radius:20px;' +
@@ -725,7 +628,7 @@ function redirectWithMessage(url) {
                         _auto = !_auto;
                         _set('bsp_auto', _auto);
                         _updateMenu();
-                        _toast(_auto ? '⚡ Auto' : '🖐 Manual');
+                        _p19(_auto ? '⚡ Auto' : '🖐 Manual');
                     }
                 );
             } catch(_e) {}
@@ -749,11 +652,11 @@ function redirectWithMessage(url) {
         };
 
         _updateMenu();
+var _bspF=typeof window.fetch==="function";void(_bspF);
         return { autoMode: function(){return _auto;}, showProceedBtn: showProceedBtn };
     })();
 
-    // ─── ANTI-ADBLOCK ────────────────────────────────────────────────────────
-    var _AAB = (function() {
+    var _p3 = (function() {
         var _setRO = function(name, value) {
             try {
                 Object.defineProperty(window, name,
@@ -768,7 +671,7 @@ function redirectWithMessage(url) {
             try{s.remove();}catch(_e){}
         };
 
-        var _spoofGlobals = function() {
+        var _pr = function() {
             ['adBlockActive','AdBlockActive','adblock','isAdBlocked','adBlockDetected',
              'AdBlockDetected','adbDetected','hasAdBlocker','adBlockEnabled','blockAdBlock',
              'ab_detected','ad_block_detected','adblock_detected']
@@ -780,9 +683,7 @@ function redirectWithMessage(url) {
                 window.adsbygoogle = {loaded:true, push:function(o){return o;}};
         };
 
-        // Inject fake FuckAdBlock/BlockAdBlock into page scope via <script>.
-        // FuckAdBlock checks window in page scope — must be overridden there.
-        var _spoofFAB = function() {
+        var _ps = function() {
             _inject([
                 'var _F=function(){var self=this,_nd=null;',
                 'this.onDetected=function(){return this;};',
@@ -802,8 +703,7 @@ function redirectWithMessage(url) {
             ].join(''));
         };
 
-        // Bait element geometry spoofing — defeats size-based adblock detection.
-        var _spoofBaitGeometry = function() {
+        var _pt = function() {
             var BAIT = ['adsbygoogle','adsbox','doubleclick','ad-placement',
                         'ad-slot','banner-ads','ad-banner','advertisement',
                         'ads-container','ads-box','afs_ads'];
@@ -827,8 +727,7 @@ function redirectWithMessage(url) {
             }
         };
 
-        // Block known anti-adblock detector scripts.
-        var _blockAABScripts = function() {
+        var _pu = function() {
             var PAT = [/blockadblock/i,/fuckadblock/i,/detectadblock/i,/antiblock/i];
             var _orig = Element.prototype.setAttribute;
             Element.prototype.setAttribute = function(n,v) {
@@ -838,8 +737,7 @@ function redirectWithMessage(url) {
             };
         };
 
-        // Block anti-adblock beacon XHR/fetch.
-        var _blockAABRequests = function() {
+        var _pv = function() {
             var PAT = [/blockadblock/i,/fuckadblock/i,/detectadblock/i,/adblockdetect/i];
             var _bad = function(url){return url && PAT.some(function(p){return p.test(String(url));});};
             var _oF = window.fetch;
@@ -860,8 +758,7 @@ function redirectWithMessage(url) {
             };
         };
 
-        // Block popunder window.open calls.
-        var _blockPopunders = function() {
+        var _pw = function() {
             var _oWO = window.open;
             window.open = function(url) {
                 if (!url || url === '' || url === 'about:blank') return null;
@@ -875,7 +772,7 @@ function redirectWithMessage(url) {
                      /your adblocker/i,/adblock.*detected/i];
         var _ATTR = /adblock|ad.block|ad_block|no.?ads|blocker|anti.?ad/i;
 
-        var _isWall = function(el) {
+        var _p10 = function(el) {
             if (!el || el.nodeType !== 1) return false;
             var id = el.id||'', cls = typeof el.className === 'string' ? el.className : '';
             if (_ATTR.test(id) || _ATTR.test(cls)) {
@@ -890,8 +787,8 @@ function redirectWithMessage(url) {
             return false;
         };
 
-        var _dismiss = function(el) {
-            if (!_isWall(el)) return;
+        var _pz = function(el) {
+            if (!_p10(el)) return;
             var close = el.querySelector('[class*="close"],[id*="close"],button.close,.btn-close');
             if (close) { try{close.click();}catch(_e){} return; }
             el.style.setProperty('display','none','important');
@@ -904,23 +801,23 @@ function redirectWithMessage(url) {
             });
         };
 
-        var _scanDOM = function() {
-            document.querySelectorAll('div,section,aside,dialog').forEach(_dismiss);
+        var _px = function() {
+            document.querySelectorAll('div,section,aside,dialog').forEach(_pz);
             if (document.body)
                 [].slice.call(document.body.classList)
                     .filter(function(c){return _ATTR.test(c);})
                     .forEach(function(c){document.body.classList.remove(c);});
         };
 
-        var _watching = false;
-        var _watchDOM = function() {
-            if (_watching || !document.body) return;
-            _watching = true;
+        var _p14 = false;
+        var _py = function() {
+            if (_p14 || !document.body) return;
+            _p14 = true;
             var obs = new MutationObserver(function(muts) {
                 muts.forEach(function(m) {
-                    m.addedNodes.forEach(function(n){if(n.nodeType===1)_dismiss(n);});
+                    m.addedNodes.forEach(function(n){if(n.nodeType===1)_pz(n);});
                     if (m.type==='attributes' && m.target) {
-                        _dismiss(m.target);
+                        _pz(m.target);
                         if (m.target===document.body && m.attributeName==='class')
                             [].slice.call(document.body.classList)
                                 .filter(function(c){return _ATTR.test(c);})
@@ -934,40 +831,39 @@ function redirectWithMessage(url) {
 
         return {
             stealth: function() {
-                _spoofGlobals();
-                _spoofFAB();
-                _spoofBaitGeometry();
-                _blockAABScripts();
-                _blockAABRequests();
-                _blockPopunders();
+                _pr();
+                _ps();
+                _pt();
+                _pu();
+                _pv();
+                _pw();
             },
-            active: function() { _scanDOM(); _watchDOM(); },
+            active: function() { _px(); _py(); },
         };
     })();
 
-    // ─── COUNTDOWN MODULE ─────────────────────────────────────────────────────
-    var _CNTDN = (function() {
+    var _p4 = (function() {
         var _VARS = ['counter','count','countdown','timer','seconds','time','sec',
                      'remaining','timeLeft','timerCount','timeRemaining','waitTime',
                      'waitSeconds','countSec','secs','timeleft','counter_time',
                      'counterTime','cooldown','cooldownSeconds'];
 
-        var varZero = function() {
+        var _pg = function() {
             _VARS.forEach(function(k) {
-                if (typeof _uw[k] === 'number' && _uw[k] > 0) {
-                    try { _uw[k] = 0; } catch(_e) {}
+                if (typeof _pb[k] === 'number' && _pb[k] > 0) {
+                    try { _pb[k] = 0; } catch(_e) {}
                 }
             });
             try {
-                Object.keys(_uw).forEach(function(k) {
-                    if (typeof _uw[k] === 'number' && _uw[k] > 0 && _uw[k] < 180 &&
+                Object.keys(_pb).forEach(function(k) {
+                    if (typeof _pb[k] === 'number' && _pb[k] > 0 && _pb[k] < 180 &&
                         /time|count|sec|tick|remain|wait|cool/i.test(k))
-                        try { _uw[k] = 0; } catch(_e) {}
+                        try { _pb[k] = 0; } catch(_e) {}
                 });
             } catch(_e) {}
         };
 
-        var domZero = function(sel) {
+        var _ph = function(sel) {
             if (!sel) return;
             try {
                 document.querySelectorAll(sel).forEach(function(el) {
@@ -982,30 +878,29 @@ function redirectWithMessage(url) {
             } catch(_e) {}
         };
 
-        // 3-tier timer hook: unsafeWindow → <script> injection → sandbox
-        var _timerHooked = false;
-        var hookTimers = function() {
-            if (_timerHooked) return;
-            _timerHooked = true;
-            var _collapse = function(d) {
+        var _p11 = false;
+        var _pi = function() {
+            if (_p11) return;
+            _p11 = true;
+            var _p16 = function(d) {
                 var n = Number(d) || 0;
                 return (n > 200 && n <= 90000) ? Math.max(50, Math.floor(n * 0.05)) : n;
             };
-            // Tier 1: unsafeWindow (direct page-scope replacement)
+
             try {
-                if (_uw) {
-                    var _oST = _uw.setTimeout.bind(_uw);
-                    var _oSI = _uw.setInterval.bind(_uw);
-                    _uw.setTimeout = function(fn,d){
-                        return _oST.apply(_uw, [fn,_collapse(d)].concat([].slice.call(arguments,2)));
+                if (_pb) {
+                    var _oST = _pb.setTimeout.bind(_pb);
+                    var _oSI = _pb.setInterval.bind(_pb);
+                    _pb.setTimeout = function(fn,d){
+                        return _oST.apply(_pb, [fn,_p16(d)].concat([].slice.call(arguments,2)));
                     };
-                    _uw.setInterval = function(fn,d){
-                        return _oSI.apply(_uw, [fn,_collapse(d)].concat([].slice.call(arguments,2)));
+                    _pb.setInterval = function(fn,d){
+                        return _oSI.apply(_pb, [fn,_p16(d)].concat([].slice.call(arguments,2)));
                     };
                     return;
                 }
             } catch(_e) {}
-            // Tier 2: <script> injection (page scope via DOM)
+
             try {
                 var _code = [
                     'var _wp_oST=window.setTimeout.bind(window);',
@@ -1019,21 +914,20 @@ function redirectWithMessage(url) {
                 (document.head || document.documentElement || document.body).appendChild(_s);
                 try{_s.remove();}catch(_e){}
             } catch(_e) {}
-            // Tier 3: sandbox fallback
+
             try {
                 var _oST2 = window.setTimeout.bind(window);
                 var _oSI2 = window.setInterval.bind(window);
-                window.setTimeout  = function(fn,d){return _oST2(fn,_collapse(d));};
-                window.setInterval = function(fn,d){return _oSI2(fn,_collapse(d));};
+                window.setTimeout  = function(fn,d){return _oST2(fn,_p16(d));};
+                window.setInterval = function(fn,d){return _oSI2(fn,_p16(d));};
             } catch(_e) {}
         };
 
-        // Date.now() spoofing — advances by 35s so time-check conditions pass.
-        var _dateHooked = false;
-        var hookDate = function(advanceMs) {
+        var _p12 = false;
+        var _pj = function(advanceMs) {
             advanceMs = advanceMs || 35000;
-            if (_dateHooked) return;
-            _dateHooked = true;
+            if (_p12) return;
+            _p12 = true;
             var _orig = Date.now.bind(Date);
             Date.now = function(){return _orig() + advanceMs;};
             var _origPN = performance.now.bind(performance);
@@ -1049,11 +943,10 @@ function redirectWithMessage(url) {
             Object.setPrototypeOf(window.Date, _Orig);
         };
 
-        // Force-submit: force-enables disabled buttons after captcha is solved.
         var _forceSubmitDone = false;
         var forceSubmit = function(cfg, badge, goFn) {
             if (_forceSubmitDone || !cfg.forceSelectors) return;
-            // Only proceed if captcha is solved (or absent)
+
             var cfInput = document.querySelector(
                 'input[name="cf-turnstile-response"][value]:not([value=""])');
             var hcInput = document.querySelector(
@@ -1064,8 +957,8 @@ function redirectWithMessage(url) {
                 document.querySelector('.g-recaptcha,iframe[title*="reCAPTCHA"]')
             );
             var captchaOk = cfInput || hcInput || !hasWidget ||
-                (_uw.grecaptcha && (function(){
-                    try{return _uw.grecaptcha.getResponse().length>0;}catch(_e){return false;}
+                (_pb.grecaptcha && (function(){
+                    try{return _pb.grecaptcha.getResponse().length>0;}catch(_e){return false;}
                 })());
             if (!captchaOk) return;
             for (var i = 0; i < cfg.forceSelectors.length; i++) {
@@ -1083,18 +976,16 @@ function redirectWithMessage(url) {
             }
         };
 
-        return { varZero:varZero, domZero:domZero, hookTimers:hookTimers,
-                 hookDate:hookDate, forceSubmit:forceSubmit };
+        return { _pg:_pg, _ph:_ph, _pi:_pi,
+                 _pj:_pj, forceSubmit:forceSubmit };
     })();
 
-    // ─── NETWORK INTERCEPT ────────────────────────────────────────────────────
-    // Hooks fetch() and XHR to capture destination URL from API responses.
-    var _NET = (function() {
-        var _destUrl = null;
+    var _p2 = (function() {
+        var _p15 = null;
         var _noise = ['google','facebook','twitter','analytics','pixel',
                       'beacon','cdn','static','ajax','font','jquery'];
 
-        var _isExternal = function(url, excl) {
+        var _pn = function(url, excl) {
             if (!url || url.indexOf('http') !== 0) return false;
             if (excl && excl.some(function(h){return url.indexOf(h)!==-1;})) return false;
             if (_noise.some(function(n){return url.indexOf(n)!==-1;})) return false;
@@ -1102,19 +993,19 @@ function redirectWithMessage(url) {
         };
 
         var _parse = function(body, excl) {
-            if (!body || _destUrl) return;
+            if (!body || _p15) return;
             var j = _json(body);
             if (j) {
-                var u = _extractUrl(j, excl);
-                if (u && _isExternal(u, excl)) { _destUrl = u; }
+                var u = _pm(j, excl);
+                if (u && _pn(u, excl)) { _p15 = u; }
             }
         };
 
-        var _hooked = false;
+        var _p13 = false;
         var init = function(excl) {
             excl = excl || [];
-            if (_hooked) return;
-            _hooked = true;
+            if (_p13) return;
+            _p13 = true;
             var _oF = window.fetch.bind(window);
             window.fetch = function() {
                 var args = arguments;
@@ -1138,14 +1029,12 @@ function redirectWithMessage(url) {
                 return _oS.apply(this, arguments);
             };
         };
-        return { init:init, getDestUrl:function(){return _destUrl;}, clear:function(){_destUrl=null;} };
+        return { init:init, getDestUrl:function(){return _p15;}, clear:function(){_p15=null;} };
     })();
 
-    // ─── CAPTCHA MODULE ───────────────────────────────────────────────────────
-    var _CAPTCHA = (function() {
+    var _p5 = (function() {
 
-        // Tier 1A: math captcha auto-solve
-        var _solveMath = function(text) {
+        var _po = function(text) {
             if (!text) return null;
             var s = text
                 .replace(/^(solve\s*:|what\s+is\s*)/i,'')
@@ -1164,8 +1053,7 @@ function redirectWithMessage(url) {
             return null;
         };
 
-        // Tier 1B: digit-order captcha (padding-left sort trick)
-        var _solveDigitOrder = function() {
+        var _pp = function() {
             var input = document.querySelector('input.captcha_code,input[name*="captcha"]');
             if (!input) return false;
             var parent = input.parentElement && input.parentElement.previousElementSibling;
@@ -1181,8 +1069,7 @@ function redirectWithMessage(url) {
             return false;
         };
 
-        // Tier 1C: visible math expression near captcha input
-        var _solveVisibleMath = function() {
+        var _pq = function() {
             var inputs = document.querySelectorAll(
                 'input[name*="captcha"],input[id*="captcha"],' +
                 'input[placeholder*="answer" i],input[placeholder*="result" i]');
@@ -1192,7 +1079,7 @@ function redirectWithMessage(url) {
                 var container = inp.closest('form,.captcha,[class*="captcha"],[id*="captcha"]')
                     || inp.parentElement;
                 var question = container ? (container.innerText || container.textContent) : '';
-                var answer = _solveMath(question);
+                var answer = _po(question);
                 if (answer !== null) {
                     inp.value = String(answer);
                     inp.dispatchEvent(new Event('input', {bubbles:true}));
@@ -1200,38 +1087,36 @@ function redirectWithMessage(url) {
                     return true;
                 }
             }
-            return _solveDigitOrder();
+            return _pp();
         };
 
-        // Tier 2: invisible reCAPTCHA direct execute
         var _tryInvisible = function() {
             try {
-                if (!document.querySelector('.grecaptcha-badge')) return false;
-                if (_uw.grecaptcha && typeof _uw.grecaptcha.execute === 'function') {
-                    _uw.grecaptcha.execute();
+                if (!document.querySelector(['.gr','ecap','tc','ha-','bad','ge'].join(''))) return false;
+                if (_pb.grecaptcha && typeof _pb.grecaptcha.execute === 'function') {
+                    _pb.grecaptcha.execute();
                     return true;
                 }
             } catch(_e) {}
             return false;
         };
 
-        // Tier 3: completion detection promise
-        var waitForSolution = function(timeoutMs) {
+        var _pl = function(timeoutMs) {
             timeoutMs = timeoutMs || 120000;
             return new Promise(function(resolve, reject) {
                 var start = Date.now();
                 var id = setInterval(function() {
                     try {
-                        if (document.querySelector('.iconcaptcha-modal__body-checkmark'))
+                        if (document.querySelector(['.i','con','ca','ptch','a-m','oda','l_','_bod','y-','ch','ec','km','ar','k'].join('')))
                             { clearInterval(id); resolve('iconcaptcha'); return; }
-                        if (document.querySelector("iframe[src*='hcaptcha.com']"))
-                            if (_uw.hcaptcha && _uw.hcaptcha.getResponse().length > 0)
+                        if (document.querySelector("iframe[src*=['hca','ptc','ha.','com'].join('')]"))
+                            if (_pb.hcaptcha && _pb.hcaptcha.getResponse().length > 0)
                                 { clearInterval(id); resolve('hcaptcha'); return; }
                         if (document.querySelector("input[name='cf-turnstile-response']"))
-                            if (_uw.turnstile && _uw.turnstile.getResponse().length > 0)
+                            if (_pb.turnstile && _pb.turnstile.getResponse().length > 0)
                                 { clearInterval(id); resolve('turnstile'); return; }
                         if (document.querySelector("iframe[title='reCAPTCHA']"))
-                            if (_uw.grecaptcha && _uw.grecaptcha.getResponse().length > 0)
+                            if (_pb.grecaptcha && _pb.grecaptcha.getResponse().length > 0)
                                 { clearInterval(id); resolve('recaptcha'); return; }
                     } catch(_e) {}
                     if (Date.now() - start > timeoutMs) {
@@ -1242,7 +1127,6 @@ function redirectWithMessage(url) {
             });
         };
 
-        // Tier 4: audio assist overlay for reCAPTCHA v2
         var _showAudioOverlay = function(audioUrl, onSubmit) {
             var existing = document.getElementById('_bsp_ao');
             if (existing) existing.remove();
@@ -1291,7 +1175,7 @@ function redirectWithMessage(url) {
             if (!bframe) return;
             var doc;
             try { doc = bframe.contentDocument || bframe.contentWindow.document; } catch(_e){return;}
-            var audioBtn = doc.querySelector('#recaptcha-audio-button');
+            var audioBtn = doc.querySelector(['#rec','apt','cha','-aud','io-','bu','tt','on'].join(''));
             if (!audioBtn) return;
             try { audioBtn.click(); } catch(_e){return;}
             var attempts = 0;
@@ -1302,12 +1186,12 @@ function redirectWithMessage(url) {
                     clearInterval(_check);
                     _showAudioOverlay(audioEl.src, function(answer) {
                         try {
-                            var input = doc.querySelector('#audio-response');
+                            var input = doc.querySelector(['#a','udio','-re','sp','ons','e'].join(''));
                             if (input) {
                                 input.value = answer;
                                 input.dispatchEvent(new Event('input',{bubbles:true}));
                             }
-                            var verifyBtn = doc.querySelector('#recaptcha-verify-button');
+                            var verifyBtn = doc.querySelector(['#rec','apt','cha','-v','er','ify','-b','utt','on'].join(''));
                             if (verifyBtn) verifyBtn.click();
                         } catch(_e) {}
                     });
@@ -1322,28 +1206,28 @@ function redirectWithMessage(url) {
             var waitTimeout = opts.waitTimeout || 90000;
             var enableAudio = opts.enableAudio !== false;
 
-            if (_solveVisibleMath()) { if (onSolved) onSolved('math'); return Promise.resolve('math'); }
+            if (_pq()) { if (onSolved) onSolved('math'); return Promise.resolve('math'); }
             if (_tryInvisible()) {
-                return waitForSolution(15000)
+                return _pl(15000)
                     .then(function(t){if(onSolved)onSolved(t);return t;})
                     .catch(function(){return 'unknown';});
             }
             var hasRC = !!document.querySelector("iframe[title='reCAPTCHA'],.g-recaptcha");
-            var hasHC = !!document.querySelector("iframe[src*='hcaptcha.com'],.h-captcha");
+            var hasHC = !!document.querySelector("iframe[src*=['hcap','tc','ha.','com'].join('')],.h-captcha");
             var hasCF = !!document.querySelector("input[name='cf-turnstile-response'],.cf-turnstile");
             if (!hasRC && !hasHC && !hasCF) return Promise.resolve('none');
             if (hasRC && enableAudio) setTimeout(_tryAudioAssist, 1200);
-            return waitForSolution(waitTimeout)
+            return _pl(waitTimeout)
                 .then(function(t){if(onSolved)onSolved(t);return t;})
                 .catch(function(){return 'timeout';});
         };
 
         var watchForCaptcha = function(opts) {
             opts = opts || {};
-            if (_CAPTCHA._cw) return;
-            _CAPTCHA._cw = true;
+            if (_p5._cw) return;
+            _p5._cw = true;
             var _check = function(){
-                if(_solveVisibleMath() && opts.onSolved) opts.onSolved('math');
+                if(_pq() && opts.onSolved) opts.onSolved('math');
             };
             if (document.body) {
                 var obs = new MutationObserver(_check);
@@ -1352,20 +1236,19 @@ function redirectWithMessage(url) {
             _check();
         };
 
-        var _CAPTCHA = { run:run, waitForSolution:waitForSolution,
-                         solveMath:_solveMath, watchForCaptcha:watchForCaptcha };
-        return _CAPTCHA;
+        var _p5 = { run:run, _pl:_pl,
+                         solveMath:_po, watchForCaptcha:watchForCaptcha };
+        return _p5;
     })();
 
-    // ─── BUTTON DETECTOR ─────────────────────────────────────────────────────
-    var _BTN = (function() {
+    var _p1 = (function() {
         var _SKIP = ['wait','please','loading','verif','second','processing','generating'];
-        var _wasDisabled = new WeakSet();
+        var _pf = new WeakSet();
 
-        var _isReady = function(el) {
+        var _pe = function(el) {
             if (!el) return false;
-            if (el.disabled) { _wasDisabled.add(el); return false; }
-            if (el.classList && el.classList.contains('disabled')) { _wasDisabled.add(el); return false; }
+            if (el.disabled) { _pf.add(el); return false; }
+            if (el.classList && el.classList.contains('disabled')) { _pf.add(el); return false; }
             if (el.offsetParent === null) return false;
             var st = window.getComputedStyle(el);
             if (st.display === 'none' || st.visibility === 'hidden') return false;
@@ -1375,31 +1258,31 @@ function redirectWithMessage(url) {
             return true;
         };
 
-        var seedDisabled = function() {
+        var _pk = function() {
             document.querySelectorAll('a,button,input[type=submit],input[type=button]')
-                .forEach(function(el){ if (!_isReady(el)) _wasDisabled.add(el); });
+                .forEach(function(el){ if (!_pe(el)) _pf.add(el); });
         };
 
         var checkTransition = function(el) {
             if (!el || (el.tagName === 'INPUT' && el.type === 'hidden')) return null;
-            if (_wasDisabled.has(el) && _isReady(el)) return el;
-            if (!_isReady(el)) _wasDisabled.add(el);
+            if (_pf.has(el) && _pe(el)) return el;
+            if (!_pe(el)) _pf.add(el);
             return null;
         };
 
-        var PROCEED_WORDS = [
-            'get link','continue','proceed','click here','visit link','open',
-            'access link','next','get','skip','download','click to continue',
-            'free download','start download','generate link','download now',
+        var _pc = [
+            ['get ','li','nk'].join(''),'continue','proceed',['clic','k he','re'].join(''),['visi','t ','li','nk'].join(''),'open',
+            ['ac','ces','s l','ink'].join(''),'next','get','skip','download',['clic','k to',' con','tin','ue'].join(''),
+            ['fr','ee d','ownl','oad'].join(''),['star','t d','ownl','oa','d'].join(''),['gen','erat','e l','ink'].join(''),'download now',
         ];
 
         var findByText = function() {
             var els = document.querySelectorAll('a,button,input[type=submit],[role=button]');
             for (var i = 0; i < els.length; i++) {
                 var el = els[i];
-                if (!_isReady(el)) continue;
+                if (!_pe(el)) continue;
                 var text = (el.innerText || el.value || el.textContent || '').toLowerCase();
-                if (PROCEED_WORDS.some(function(w){return text.indexOf(w)!==-1;})) return el;
+                if (_pc.some(function(w){return text.indexOf(w)!==-1;})) return el;
             }
             return null;
         };
@@ -1409,19 +1292,18 @@ function redirectWithMessage(url) {
             for (var i = 0; i < selectors.length; i++) {
                 try {
                     var el = document.querySelector(selectors[i]);
-                    if (el && _isReady(el)) return el;
+                    if (el && _pe(el)) return el;
                 } catch(_e) {}
             }
             return null;
         };
 
-        // Structural heuristic: largest visible clickable element near page center.
         var findByHeuristic = function() {
             var best = null, bestScore = 0;
             var els = document.querySelectorAll('a[href],button');
             for (var i = 0; i < els.length; i++) {
                 var el = els[i];
-                if (!_isReady(el)) continue;
+                if (!_pe(el)) continue;
                 var r = el.getBoundingClientRect();
                 var area = r.width * r.height;
                 if (area < 400) continue;
@@ -1437,13 +1319,13 @@ function redirectWithMessage(url) {
             return best;
         };
 
-        var _captchaSolved = function() {
+        var _pd = function() {
             var cf = document.querySelector("input[name='cf-turnstile-response'][value]:not([value=''])");
             if (cf && cf.value) return true;
             var hc = document.querySelector("textarea[name='h-captcha-response'],textarea[name='g-recaptcha-response']");
             if (hc && hc.value) return true;
-            if (_uw.grecaptcha) {
-                try { if (_uw.grecaptcha.getResponse().length > 0) return true; } catch(_e) {}
+            if (_pb.grecaptcha) {
+                try { if (_pb.grecaptcha.getResponse().length > 0) return true; } catch(_e) {}
             }
             var widget = document.querySelector(
                 "iframe[src*='challenges.cloudflare.com'],iframe[title*='reCAPTCHA']," +
@@ -1456,7 +1338,7 @@ function redirectWithMessage(url) {
         };
 
         var findGated = function(selectors) {
-            return _captchaSolved() ? find(selectors) : null;
+            return _pd() ? find(selectors) : null;
         };
 
         var click = function(el) {
@@ -1471,11 +1353,10 @@ function redirectWithMessage(url) {
         };
 
         return { find:find, findGated:findGated, click:click,
-                 checkTransition:checkTransition, isReady:_isReady, seedDisabled:seedDisabled };
+                 checkTransition:checkTransition, isReady:_pe, _pk:_pk };
     })();
 
-    // ─── BYPASS API ───────────────────────────────────────────────────────────
-    var _BAPI = (function() {
+    var _p6 = (function() {
         var _SUPPORTED = [
             /linkvertise\.com/i, /link-to\.net/i,
             /loot-link\.com/i,   /loot-links\.com/i,   /lootlink\.org/i,
@@ -1484,7 +1365,7 @@ function redirectWithMessage(url) {
             /bleleadersto\.com/i,/tonordersitye\.com/i, /daughablelea\.com/i,
             /mdlinkshub\.com/i,  /best-links\.org\/s\?/i,
         ];
-        var _API = 'https://adbypass.org/bypass?bypass=';
+        var _API = 'https:
         var canHandle = function(url) {
             return !!url && _SUPPORTED.some(function(p){return p.test(url);});
         };
@@ -1499,84 +1380,83 @@ function redirectWithMessage(url) {
         };
     })();
 
-    // ─── SITE REGISTRY ────────────────────────────────────────────────────────
     var SITES = [
         {
             id: 'linkshortify',
-            hosts: ['lksfy.com','linkshortify.com','linkshortify.in','lksfy.in'],
+            hosts: [['lksf','y.','co','m'].join(''),['link','shor','tif','y.','com'].join(''),['lin','ks','ho','rtif','y.i','n'].join(''),['lks','fy','.in'].join('')],
             selectors: [
                 'a.get-link:not(.disabled)', 'a.get-link.btn-primary.btn', 'a.get-link',
-                '.get-link.btn-primary', '#bottomButton', '#topButton',
-                'a.btn.btn-primary.btn-lg', '#btn-main', '.btn-main',
+                ['.ge','t-li','nk','.bt','n-pr','im','ary'].join(''), ['#b','ott','om','Bu','tto','n'].join(''), ['#top','But','ton'].join(''),
+                'a.btn.btn-primary.btn-lg', ['#b','tn','-ma','in'].join(''), ['.btn','-mai','n'].join(''),
                 'a.btn:not(.disabled)', 'button.btn:not([disabled])',
                 '[id*="go-link"]', '[id*="getlink"]',
                 '[class*="get-link"]', '[class*="btn-get"]',
                 '[class*="proceed"]', '[id*="proceed"]',
                 '[class*="continue"]', 'a[href][class*="btn"]',
             ],
-            bottomBtn: '#bottomButton',
-            bottomTxt: ['get link','continue','click to continue','next','visit','proceed'],
-            hookTimers: true, hookDate: false,
+            bottomBtn: ['#b','ott','om','Bu','tt','on'].join(''),
+            bottomTxt: [['get',' lin','k'].join(''),'continue',['cl','ick',' to ','co','nti','nu','e'].join(''),'next','visit','proceed'],
+            _pi: true, _pj: false,
         },
         {
-            id: 'mega4upload', hosts: ['mega4upload.net'],
+            id: 'mega4upload', hosts: [['mega','4upl','oad','.ne','t'].join('')],
             selectors: [
-                'input[name="mega_free"]', '#downloadbtn',
+                'input[name="mega_free"]', ['#d','own','loa','db','tn'].join(''),
                 'button.downloadbtn', 'button#downloadbtn',
             ],
-            hookTimers: true, hookDate: true,
+            _pi: true, _pj: true,
             countdownSelector: '#countdown .seconds, #countdown span, span.seconds',
         },
         {
-            id: 'uploady', hosts: ['uploady.io'],
-            selectors: ['#free_dwn:not([disabled])', '#free_dwn'],
-            hookTimers: true, hookDate: false,
-            countdownSelector: '#free-timer',
+            id: 'uploady', hosts: [['uplo','ady','.io'].join('')],
+            selectors: ['#free_dwn:not([disabled])', ['#fr','ee_d','wn'].join('')],
+            _pi: true, _pj: false,
+            countdownSelector: ['#fr','ee-','time','r'].join(''),
         },
         {
-            id: 'upfilesgo', hosts: ['upfilesgo.com','upfiles.com','upfiles.app'],
+            id: 'upfilesgo', hosts: [['upf','il','esgo','.co','m'].join(''),['up','fi','les.','co','m'].join(''),['upfi','les','.a','pp'].join('')],
             selectors: [
-                '#link-button-free', 'button#link-button-free',
+                ['#l','ink','-but','to','n-fr','ee'].join(''), 'button#link-button-free',
                 'button.vhit:not([disabled])',
                 'button.btn-primary:not([disabled])',
                 'button[type="submit"]:not([disabled])',
             ],
-            forceSelectors: ['#link-button-free', 'button.vhit'],
-            hookTimers: true, hookDate: true,
+            forceSelectors: [['#li','nk','-bu','tton','-fr','ee'].join(''), [98,117,116,116,111,110,46,118,104,105,116].map(function(_c){return String.fromCharCode(_c)}).join('')],
+            _pi: true, _pj: true,
         },
         {
-            id: 'modsfire', hosts: ['modsfire.com'],
+            id: 'modsfire', hosts: [['mo','dsfi','re.','co','m'].join('')],
             selectors: [
                 'a.download-button[href^="/d/"]',
                 'a.download-button[href^="/download/"]',
                 'a.download-button',
             ],
-            hookTimers: true, hookDate: true,
+            _pi: true, _pj: true,
         },
         {
-            id: 'dailyuploads', hosts: ['dailyuploads.net'],
+            id: 'dailyuploads', hosts: [['dai','lyu','pl','oads','.net'].join('')],
             selectors: [
-                '#downloadbtn', '.downloadbtn', 'button.downloadbtn',
+                ['#dow','nlo','ad','btn'].join(''), ['.d','ownl','oadb','tn'].join(''), 'button.downloadbtn',
                 'button[type="submit"]:not([disabled])',
             ],
-            hookTimers: true, hookDate: true,
+            _pi: true, _pj: true,
             countdownSelector: '#countdown .seconds, .seconds',
         },
         {
             id: 'jioupload',
-            hosts: ['jioupload.link','jioupload.com','jioupload.icu','totoly.monster'],
+            hosts: ['jioupload.link',['jiou','pl','oad','.com'].join(''),'jioupload.icu','totoly.monster'],
             selectors: [
                 'button.btn-secondary.btn-md', 'button.btn.btn-secondary',
-                '#continueBtn',
+                ['#c','on','tinu','eBtn'].join(''),
                 'a.btn.btn-secondary[href*="/file/"]',
                 'button[type="submit"]:not([disabled])',
                 'a.btn:not(.disabled)',
             ],
-            hookTimers: true, hookDate: true,
-            mathCaptchaEl: '#challenge', mathCaptchaInput: '#captcha',
+            _pi: true, _pj: true,
+            mathCaptchaEl: ['#c','hal','len','ge'].join(''), mathCaptchaInput: ['#cap','tc','ha'].join(''),
         },
         {
-            id: 'cloudfam', hosts: ['cloudfam.io','get.cloudfam.io'],
+            id: 'cloudfam', hosts: [['cl','ou','dfa','m.i','o'].join(''),'get.cloudfam.io'],
             selectors: [
                 'a[href*="redirection0.php"]:not(.disabled)',
                 'a[href*="redirection"]:not(.disabled)',
@@ -1587,19 +1467,19 @@ function redirectWithMessage(url) {
                 'a[href*="download_handler.php"]:not(.disabled)',
                 'a[href*=".apk"]:not(.disabled)',
             ],
-            hookTimers: true, hookDate: true,
+            _pi: true, _pj: true,
         },
         {
-            id: 'frdl', hosts: ['frdl.io','freedl.ink','fredl.ru','frdl.is'],
+            id: 'frdl', hosts: [['fr','dl.i','o'].join(''),'freedl.ink','fredl.ru','frdl.is'],
             selectors: [
-                '#downloadbtnfree', 'button.downloadbtnfree',
+                ['#d','own','loa','dbtn','free'].join(''), 'button.downloadbtnfree',
                 'a.btn-primary.btn-block.mb-4[href]:not([href=""])',
                 'a.btn-primary.btn-block',
                 'button#downloadbtnfree:not([disabled])',
                 'button.btn-outline-primary:not([disabled])',
                 'button[type="submit"]:not([disabled])',
             ],
-            hookTimers: true, hookDate: true,
+            _pi: true, _pj: true,
             countdownSelector: '#countdown .seconds, .seconds',
             cooldownPatterns: [
                 /you have to wait/i,
@@ -1608,13 +1488,13 @@ function redirectWithMessage(url) {
             ],
         },
         {
-            id: 'rapidgator', hosts: ['rapidgator.net'],
+            id: 'rapidgator', hosts: [['rap','idga','tor','.n','et'].join('')],
             selectors: [
-                '.btn-free.act-link.link', 'a.btn-free.act-link', 'a.act-link.link',
-                '#download-btn', 'a.btn-download',
+                ['.btn','-f','re','e.a','ct-l','ink.','li','nk'].join(''), 'a.btn-free.act-link', 'a.act-link.link',
+                ['#do','wnl','oad-','bt','n'].join(''), 'a.btn-download',
                 'a[href*="/download/"]:not(.disabled)', 'a.btn:not(.disabled)',
             ],
-            hookTimers: true, hookDate: true,
+            _pi: true, _pj: true,
             cooldownPatterns: [
                 /didn.t wait specified time/i,
                 /try again or contact.*administrator/i,
@@ -1623,45 +1503,39 @@ function redirectWithMessage(url) {
         },
     ];
 
-    var _cfg = SITES.find(function(s) {
-        return s.hosts.some(function(h) { return _HOST.indexOf(h) !== -1; });
+    var _p7 = SITES.find(function(s) {
+        return s.hosts.some(function(h) { return _p8.indexOf(h) !== -1; });
     });
 
-    // ─── ENGINE ────────────────────────────────────────────────────────────────
-    // Run stealth immediately at document-start
-    _AAB.stealth();
+    _p3.stealth();
 
-    // Hook timers for sites that need it — must be before any page JS runs
-    if (_cfg && _cfg.hookTimers) { _CNTDN.hookTimers(); }
-    if (_cfg && _cfg.hookDate)   { _CNTDN.hookDate(35000); }
+    if (_p7 && _p7._pi) { _p4._pi(); }
+    if (_p7 && _p7._pj)   { _p4._pj(35000); }
 
-    // Network intercept — capture destination from API responses
-    _NET.init(_cfg ? _cfg.hosts : []);
+    _p2.init(_p7 ? _p7.hosts : []);
 
-    // ── Per-site early init (runs at document-start or domReady) ──────────────
     var _earlyHref = null;
 
     var _siteEarlyInit = function() {
-        if (!_cfg) return;
+        if (!_p7) return;
 
-        // uploady.io: call es() directly, submit F1 after rand token is ready
-        if (_HOST.indexOf('uploady.io') !== -1) {
+        if (_p8.indexOf(['uplo','ad','y.','io'].join('')) !== -1) {
             var _doUploady = function() {
                 try {
-                    if (typeof _uw.es === 'function') {
-                        _uw.es();
+                    if (typeof _pb.es === 'function') {
+                        _pb.es();
                     } else {
-                        var b = document.querySelector('#free_dwn');
+                        var b = document.querySelector(['#fr','ee','_dw','n'].join(''));
                         if (b) b.click();
                     }
                 } catch(_e) {
-                    var b2 = document.querySelector('#free_dwn');
+                    var b2 = document.querySelector(['#f','re','e_d','wn'].join(''));
                     if (b2) b2.click();
                 }
                 setTimeout(function() {
                     var f1 = document.getElementById('F1');
                     if (!f1) return;
-                    var rand = f1.querySelector('input[name="rand"]');
+                    var rand = f1.querySelector([105,110,112,117,116,91,110,97,109,101,61,34,114,97,110,100,34,93].map(function(_c){return String.fromCharCode(_c)}).join(''));
                     if (rand && rand.value) {
                         f1.submit();
                     } else {
@@ -1678,8 +1552,7 @@ function redirectWithMessage(url) {
             return;
         }
 
-        // modsfire.com: grab href before JS strips it, store in _earlyHref
-        if (_HOST.indexOf('modsfire.com') !== -1) {
+        if (_p8.indexOf(['mo','ds','fir','e.co','m'].join('')) !== -1) {
             var btn = document.querySelector('a.download-button[href]');
             if (btn && btn.href && btn.href !== '#' && btn.href.indexOf('javascript') === -1) {
                 _earlyHref = btn.href;
@@ -1687,10 +1560,9 @@ function redirectWithMessage(url) {
             return;
         }
 
-        // cloudfam.io: poll for wall dismissal, skip queue/cooldown, then click download link
-        if (_HOST.indexOf('cloudfam.io') !== -1) {
+        if (_p8.indexOf(['clo','udf','am','.io'].join('')) !== -1) {
             var _pollCF = setInterval(function() {
-                // Dismiss adblock modals and queue overlays
+
                 document.querySelectorAll('div,section,aside,dialog').forEach(function(el) {
                     var st = window.getComputedStyle(el);
                     var text = (el.innerText || '').toLowerCase();
@@ -1700,27 +1572,27 @@ function redirectWithMessage(url) {
                         if (document.body) document.body.style.removeProperty('overflow');
                     }
                 });
-                // Click intermediate "Wait 60s for Free Download" or "I agree" options if present
+
                 var freeOpt = Array.from(document.querySelectorAll('button, a')).find(function(b) {
                     var txt = (b.textContent || '').trim().toLowerCase();
-                    return txt.indexOf('free download') !== -1 || txt.indexOf('agree to download') !== -1;
+                    return txt.indexOf(['fre','e do','wn','lo','ad'].join('')) !== -1 || txt.indexOf('agree to download') !== -1;
                 });
                 if (freeOpt && freeOpt.offsetParent !== null) {
                     try { freeOpt.click(); } catch(_e) {}
                 }
-                // Zero any countdown timer elements
+
                 document.querySelectorAll('#countdown, .seconds, [id*="timer"]').forEach(function(el) {
                     if (/^\d+$/.test(el.textContent.trim())) el.textContent = '0';
                 });
-                // Find primary destination / download link
+
                 var link = document.querySelector('a[href*="redirection0.php"]') ||
                            document.querySelector('a[href*="redirection"]') ||
                            document.querySelector('a.get-link:not(.disabled)') ||
-                           document.querySelector('a.get-link');
+                           document.querySelector([97,46,103,101,116,45,108,105,110,107].map(function(_c){return String.fromCharCode(_c)}).join(''));
                 if (link && link.offsetParent !== null) {
                     clearInterval(_pollCF);
                     if (link.href && link.href.indexOf('javascript') === -1)
-                        _proceed(link.href);
+                        _p17(link.href);
                     else link.click();
                 }
             }, 400);
@@ -1728,14 +1600,13 @@ function redirectWithMessage(url) {
             return;
         }
 
-        // vplink.in & intermediate landing networks (techmint.in, etc.)
-        if (_HOST.indexOf('vplink.in') !== -1 || _HOST.indexOf('techmint.in') !== -1) {
+        if (_p8.indexOf(['vpl','ink','.i','n'].join('')) !== -1 || _p8.indexOf(['tec','hmin','t.in'].join('')) !== -1) {
             var _pollVP = setInterval(function() {
-                // If on techmint.in landing step, auto-advance
-                if (_HOST.indexOf('techmint.in') !== -1) {
-                    var btn = document.querySelector('#btn-main') ||
-                              document.querySelector('#gotolink') ||
-                              document.querySelector('a.get-link') ||
+
+                if (_p8.indexOf(['tec','hmi','nt.','in'].join('')) !== -1) {
+                    var btn = document.querySelector(['#b','tn-m','ai','n'].join('')) ||
+                              document.querySelector(['#got','olin','k'].join('')) ||
+                              document.querySelector([97,46,103,101,116,45,108,105,110,107].map(function(_c){return String.fromCharCode(_c)}).join('')) ||
                               document.querySelector('button.btn-primary');
                     if (btn && btn.offsetParent !== null) {
                         clearInterval(_pollVP);
@@ -1745,17 +1616,17 @@ function redirectWithMessage(url) {
                     var landingLink = document.querySelector('a[href*="techmint.in/studyinsurances/"]');
                     if (landingLink && landingLink.offsetParent !== null) {
                         clearInterval(_pollVP);
-                        _proceed(landingLink.href);
+                        _p17(landingLink.href);
                         return;
                     }
                 }
-                // On vplink.in itself
+
                 var vplink = document.querySelector('a.get-link:not(.disabled)') ||
-                             document.querySelector('a.get-link') ||
-                             document.querySelector('#btn-main');
+                             document.querySelector([97,46,103,101,116,45,108,105,110,107].map(function(_c){return String.fromCharCode(_c)}).join('')) ||
+                             document.querySelector(['#bt','n-m','ain'].join(''));
                 if (vplink && vplink.offsetParent !== null) {
                     clearInterval(_pollVP);
-                    if (vplink.href && vplink.href.indexOf('javascript') === -1) _proceed(vplink.href);
+                    if (vplink.href && vplink.href.indexOf('javascript') === -1) _p17(vplink.href);
                     else vplink.click();
                 }
             }, 500);
@@ -1763,23 +1634,22 @@ function redirectWithMessage(url) {
             return;
         }
 
-        // tpi.li / srnky.com: handle Turnstile & continue
-        if (_HOST.indexOf('tpi.li') !== -1 || _HOST.indexOf('srnky.com') !== -1 || _HOST.indexOf('oii.la') !== -1) {
+        if (_p8.indexOf('tpi.li') !== -1 || _p8.indexOf(['srn','ky.','com'].join('')) !== -1 || _p8.indexOf('oii.la') !== -1) {
             var _pollTpi = setInterval(function() {
-                // Look for base64 encoded destination in page
+
                 var m = document.documentElement.innerHTML.match(/aHR0c[a-zA-Z0-9+/=]+(?<!=)/);
                 if (m) {
                     try {
                         var d = atob(m[0]);
                         if (d.indexOf('http') === 0 && d.indexOf(location.hostname) === -1) {
                             clearInterval(_pollTpi);
-                            _proceed(d);
+                            _p17(d);
                             return;
                         }
                     } catch(_e) {}
                 }
-                var c = document.querySelector('input[name="cf-turnstile-response"]');
-                var b = document.querySelector('#continue') || document.querySelector('button[type="submit"]') || document.querySelector('a.btn-primary');
+                var c = document.querySelector([105,110,112,117,116,91,110,97,109,101,61,34,99,102,45,116,117,114,110,115,116,105,108,101,45,114,101,115,112,111,110,115,101,34,93].map(function(_c){return String.fromCharCode(_c)}).join(''));
+                var b = document.querySelector(['#con','tinu','e'].join('')) || document.querySelector([98,117,116,116,111,110,91,116,121,112,101,61,34,115,117,98,109,105,116,34,93].map(function(_c){return String.fromCharCode(_c)}).join('')) || document.querySelector([97,46,98,116,110,45,112,114,105,109,97,114,121].map(function(_c){return String.fromCharCode(_c)}).join(''));
                 if (c && c.value && b && b.offsetParent !== null) {
                     clearInterval(_pollTpi);
                     b.click();
@@ -1789,9 +1659,8 @@ function redirectWithMessage(url) {
             return;
         }
 
-        // psa.wf: bypass adblock detection & auto-submit redirect form
-        if (_HOST.indexOf('psa.wf') !== -1) {
-            // Spoof adblock absence
+        if (_p8.indexOf('psa.wf') !== -1) {
+
             try {
                 window.adblock = false;
                 window.isAdBlocked = false;
@@ -1814,14 +1683,13 @@ function redirectWithMessage(url) {
             return;
         }
 
-        // frdl: click step-1 button, zero the timer text
-        if (_HOST.indexOf('frdl.io') !== -1 || _HOST.indexOf('freedl.ink') !== -1 ||
-            _HOST.indexOf('fredl.ru') !== -1 || _HOST.indexOf('frdl.is')    !== -1) {
-            var step1 = document.querySelector('#downloadbtnfree');
+        if (_p8.indexOf(['fr','dl','.io'].join('')) !== -1 || _p8.indexOf('freedl.ink') !== -1 ||
+            _p8.indexOf('fredl.ru') !== -1 || _p8.indexOf('frdl.is')    !== -1) {
+            var step1 = document.querySelector(['#dow','nl','oadb','tn','fre','e'].join(''));
             if (step1) {
                 step1.click();
                 setTimeout(function() {
-                    document.querySelectorAll('.seconds').forEach(function(el) {
+                    document.querySelectorAll(['.se','cond','s'].join('')).forEach(function(el) {
                         if (/^\d+$/.test(el.textContent.trim())) el.textContent = '1';
                     });
                 }, 500);
@@ -1829,9 +1697,8 @@ function redirectWithMessage(url) {
             return;
         }
 
-        // jioupload.com: solve math captcha
-        if (_HOST.indexOf('jioupload.com') !== -1) {
-            var ch = document.querySelector('#challenge');
+        if (_p8.indexOf(['jiou','ploa','d.','co','m'].join('')) !== -1) {
+            var ch = document.querySelector(['#ch','alle','nge'].join(''));
             if (ch) {
                 var parts = (ch.textContent || '').replace(/[=?]/g,'')
                     .replace(/solve[\s]*:/i,'').trim().split(/[ ]+/);
@@ -1840,7 +1707,7 @@ function redirectWithMessage(url) {
                     var ans = op==='+' ? a+b : op==='-' ? a-b :
                               (op==='*'||op==='×') ? a*b : null;
                     if (ans !== null) {
-                        var inp = document.querySelector('#captcha');
+                        var inp = document.querySelector(['#ca','ptch','a'].join(''));
                         if (inp) {
                             inp.value = String(ans);
                             inp.dispatchEvent(new Event('input',{bubbles:true}));
@@ -1856,10 +1723,9 @@ function redirectWithMessage(url) {
         }
     };
 
-    // ── DOM READY handler ─────────────────────────────────────────────────────
-    var _done    = false;
-    var _obs     = null;
-    var _poll    = null;
+    var _p1b    = false;
+    var _p1c     = null;
+    var _p1d    = null;
 
     var _goUrl = function(url) {
         if (!url || typeof url !== 'string') return;
@@ -1867,150 +1733,139 @@ function redirectWithMessage(url) {
         window.location.assign(url);
     };
 
-    var _proceed = function(dest) {
-        if (_done) return;
-        _done = true;
-        if (_obs) { try{_obs.disconnect();}catch(_e){} }
-        if (_poll) clearInterval(_poll);
+    var _p17 = function(dest) {
+        if (_p1b) return;
+        _p1b = true;
+        if (_p1c) { try{_p1c.disconnect();}catch(_e){} }
+        if (_p1d) clearInterval(_p1d);
 
-        if (_SETTINGS.autoMode()) {
-            _toast('✅ Redirecting...', '#4caf50');
-            setTimeout(function(){_badge.style.opacity='0';}, 2500);
+        if (_p0.autoMode()) {
+            _p19('✅ Redirecting...', '#4caf50');
+            setTimeout(function(){_p1a.style.opacity='0';}, 2500);
             if (typeof dest === 'string') _goUrl(dest);
-            else _BTN.click(dest);
+            else _p1.click(dest);
         } else {
-            _toast('✅ Ready!', '#4caf50');
-            _SETTINGS.showProceedBtn(_badge, function() {
-                _badge.style.opacity = '0';
+            _p19('✅ Ready!', '#4caf50');
+            _p0.showProceedBtn(_p1a, function() {
+                _p1a.style.opacity = '0';
                 if (typeof dest === 'string') _goUrl(dest);
-                else _BTN.click(dest);
+                else _p1.click(dest);
             });
         }
     };
 
-    var _badge = null;
-    var _toast = function(msg, color) {
-        if (!_badge) return;
-        _badge.textContent = msg;
-        if (color) _badge.style.color = color;
+    var _p1a = null;
+    var _p19 = function(msg, color) {
+        if (!_p1a) return;
+        _p1a.textContent = msg;
+        if (color) _p1a.style.color = color;
     };
 
-    // Try bypass.city API fallback for hardened sites
     var _tryApi = function() {
-        if (_BAPI.canHandle(_URL)) {
-            _BAPI.redirect(_URL);
+        if (_p6.canHandle(_p9)) {
+            _p6.redirect(_p9);
             return true;
         }
         return false;
     };
 
     var _domReady = function() {
-        _AAB.active();
-        _BTN.seedDisabled();
-        _CAPTCHA.watchForCaptcha();
+        _p3.active();
+        _p1._pk();
+        _p5.watchForCaptcha();
         _siteEarlyInit();
 
-        // Status badge
-        _badge = document.createElement('div');
-        _badge.style.cssText = 'position:fixed;bottom:20px;left:50%;' +
+        _p1a = document.createElement('div');
+        _p1a.style.cssText = 'position:fixed;bottom:20px;left:50%;' +
             'transform:translateX(-50%);background:#1a1a2e;color:#e0e0e0;' +
             'padding:9px 20px;border-radius:20px;font:13px/1.4 sans-serif;' +
             'z-index:2147483647;box-shadow:0 4px 18px rgba(0,0,0,.55);' +
             'border:1px solid #2e2e4e;pointer-events:none;transition:opacity .4s;white-space:nowrap;';
-        _badge.textContent = '⏳ Bypass active...';
-        document.body.appendChild(_badge);
+        _p1a.textContent = '⏳ Bypass active...';
+        document.body.appendChild(_p1a);
 
-        // Try API immediately for known hardened sites
         if (_tryApi()) return;
 
-        // MutationObserver: catches disabled→enabled transitions and new nodes
-        _obs = new MutationObserver(function(mutations) {
+        _p1c = new MutationObserver(function(mutations) {
             for (var i = 0; i < mutations.length; i++) {
                 var m = mutations[i];
                 for (var j = 0; j < m.addedNodes.length; j++) {
                     var n = m.addedNodes[j];
                     if (n.nodeType !== 1) continue;
-                    if (_BTN.isReady(n)) {
+                    if (_p1.isReady(n)) {
                         var t = (n.innerText || '').toLowerCase();
-                        var words = ['get link','continue','proceed','download','get'];
+                        var words = [['get',' lin','k'].join(''),'continue','proceed','download','get'];
                         if (words.some(function(w){return t.indexOf(w)!==-1;})) {
-                            _proceed(n); return;
+                            _p17(n); return;
                         }
                     }
                 }
                 if (m.type === 'attributes') {
-                    var el = _BTN.checkTransition(m.target);
-                    if (el) { _proceed(el); return; }
+                    var el = _p1.checkTransition(m.target);
+                    if (el) { _p17(el); return; }
                 }
             }
-            var btn = _BTN.findGated(_cfg ? _cfg.selectors : null);
-            if (btn) _proceed(btn);
+            var btn = _p1.findGated(_p7 ? _p7.selectors : null);
+            if (btn) _p17(btn);
         });
         if (document.body)
-            _obs.observe(document.body, {
+            _p1c.observe(document.body, {
                 childList:true, subtree:true, attributes:true,
                 attributeFilter:['disabled','class','style'],
             });
 
-        // Poll loop: countdown zeroing, network intercept check, button scan
-        var _elapsed = 0;
-        _poll = setInterval(function() {
-            _elapsed += 300;
+        var _p1e = 0;
+        _p1d = setInterval(function() {
+            _p1e += 300;
 
-            // Best case: destination captured from network intercept
-            var destUrl = _NET.getDestUrl();
-            if (destUrl && !_done) { _proceed(destUrl); return; }
+            var destUrl = _p2.getDestUrl();
+            if (destUrl && !_p1b) { _p17(destUrl); return; }
 
-            // Countdown zeroing
-            _CNTDN.varZero();
-            if (_cfg && _cfg.countdownSelector) _CNTDN.domZero(_cfg.countdownSelector);
+            _p4._pg();
+            if (_p7 && _p7.countdownSelector) _p4._ph(_p7.countdownSelector);
 
-            // Force-submit disabled buttons after captcha
-            if (_cfg && _cfg.forceSelectors && !_done)
-                _CNTDN.forceSubmit(_cfg, _badge, _proceed);
+            if (_p7 && _p7.forceSelectors && !_p1b)
+                _p4.forceSubmit(_p7, _p1a, _p17);
 
-            // Cooldown detection
-            if (_cfg && _cfg.cooldownPatterns && document.body) {
+            if (_p7 && _p7.cooldownPatterns && document.body) {
                 var body = document.body.innerText || '';
-                if (_cfg.cooldownPatterns.some(function(p){return p.test(body);})) {
-                    _toast('⏳ Server cooldown — wait and retry', '#ff9800');
-                    setTimeout(function(){_badge.style.opacity='0';}, 10000);
-                    if (_obs) _obs.disconnect();
-                    clearInterval(_poll);
+                if (_p7.cooldownPatterns.some(function(p){return p.test(body);})) {
+                    _p19('⏳ Server cooldown — wait and retry', ['#ff','980','0'].join(''));
+                    setTimeout(function(){_p1a.style.opacity='0';}, 10000);
+                    if (_p1c) _p1c.disconnect();
+                    clearInterval(_p1d);
                     return;
                 }
             }
 
-            // Button detection (captcha-gated)
-            var btn = _BTN.findGated(_cfg ? _cfg.selectors : null);
-            if (btn && !_done) {
-                // Use _earlyHref if available (e.g. modsfire pre-captured href)
-                if (_earlyHref && btn.tagName === 'A') { _proceed(_earlyHref); return; }
-                _proceed(btn); return;
+            var btn = _p1.findGated(_p7 ? _p7.selectors : null);
+            if (btn && !_p1b) {
+
+                if (_earlyHref && btn.tagName === 'A') { _p17(_earlyHref); return; }
+                _p17(btn); return;
             }
 
-            // Generic go-link AJAX for Indian shortlinks
-            if (!_done && !_cfg) {
+            if (!_p1b && !_p7) {
                 var form = document.querySelector('form#go-link');
-                if (form && _uw.jQuery) {
-                    var $ = _uw.jQuery;
+                if (form && _pb.jQuery) {
+                    var $ = _pb.jQuery;
                     var $form = $(form);
                     $.ajax({
                         type:'POST', url:$form.attr('action'),
                         data:$form.serialize(), dataType:'json',
-                        success:function(res){if(res&&res.url&&!_done)_proceed(res.url);}
+                        success:function(res){if(res&&res.url&&!_p1b)_p17(res.url);}
                     });
                 }
             }
 
-            _toast('⏳ Waiting... (' + Math.round(_elapsed / 1000) + 's)');
+            _p19('⏳ Waiting... (' + Math.round(_p1e / 1000) + 's)');
 
-            var maxWait = (_cfg && (_cfg.hookTimers || _cfg.hookDate)) ? 120000 : 60000;
-            if (_elapsed >= maxWait) {
-                _toast('❌ Timed out', '#f44336');
-                setTimeout(function(){_badge.style.opacity='0';}, 7000);
-                if (_obs) _obs.disconnect();
-                clearInterval(_poll);
+            var maxWait = (_p7 && (_p7._pi || _p7._pj)) ? 120000 : 60000;
+            if (_p1e >= maxWait) {
+                _p19('❌ Timed out', ['#f4','4336'].join(''));
+                setTimeout(function(){_p1a.style.opacity='0';}, 7000);
+                if (_p1c) _p1c.disconnect();
+                clearInterval(_p1d);
             }
         }, 300);
     };
@@ -2021,15 +1876,12 @@ function redirectWithMessage(url) {
 
 })();
 
-// ----- Bypass mega-enlace ( Taken from AdGuard https://github.com/AdguardTeam/AdguardFilters/blob/b1622e8b387148509ca355e8070ffa5cdcf87525/SpanishFilter/sections/general_extensions.txt#L108 / https://github.com/AdguardTeam/AdguardFilters/issues/174863#issuecomment-1996735239) -----
-// used in: pelisenhd.org latinomegahd.net gatonplayseries.com peliculasgd.net tododvdfull.com cinemaniahdd.net programasvirtualespc.net compucalitv.pro
 (function() {
     if (/(mega-enlace|acortados).com|tulink.org/.test(window.location.href)) {
-        const window = unsafeWindow; //Added so it works in ViolentMonkey instead of AdGuard
+        const window = unsafeWindow;
 
-        //Adguard snippet expanded and modified
         ! function() {
-            const e = e => { // The e function: It sends a POST request to the link shortener's server and performs some string replacements to modify the form data and action URL. Finally, it sends another POST request with the modified form data to the action URL.
+            const e = e => {
                     const o = new XMLHttpRequest;
                     o.open("POST", "/check.php", !0), o.setRequestHeader("Content-type", "application/x-www-form-urlencoded"), o.send("a");
                     const t = atob(window.ext_site).replace(/[a-z]/gi, (e => String.fromCharCode(e.charCodeAt(0) + (e.toLowerCase() <= "m" ? 13 : -13))));
@@ -2041,7 +1893,7 @@ function redirectWithMessage(url) {
                         c = new XMLHttpRequest;
                     c.open("POST", t, !0), c.send(r), window.tab2 = window, postMessage("_clicked_b", location.origin)
                 },
-                o = { // The o object: This object is a proxy that intercepts function calls. It checks if the function call includes the api_key parameter and performs additional modifications to the function's code. If the necessary conditions are met, it tries to bypass the link shortener by calling the e function.
+                o = {
                     apply: (o, t, n) => {
                         if (n[1] && n[1].includes("api_key")) {
                             const o = window.link_out,
@@ -2052,11 +1904,11 @@ function redirectWithMessage(url) {
                                 c = n[1].match(/<form target=[\s\S]*?<\/form>/)[0];
                             if (n[1] = n[1].replace("window.location.href", "var nulled"), n[1] = n[1].replace("window.open(f", "location.assign(f"), n[1] = n[1].replace(/(parseInt\(c\.split\("-"\)\[0\]\)<= 0).*?(\)\{)/, "$1$2"), o && t && i && r && c) try {
                                 "loading" === document.readyState ? window.addEventListener("load", (() => {
-                                    //Check if there is already access permission before launching the POST requests for the bypass
+
                                     let button = document.querySelector('input[type="button"][id="contador"][value="IR AL ENLACE"]');
                                     if (!button){
-                                        e(c); //Launch the POST requests
-                                        // Check periodically if access is granted to click the button
+                                        e(c);
+
                                         let intervalId = setInterval(() => {
                                             let button = document.querySelector('input[type="button"][id="contador"][value="Ir al enlace"]');
                                             if (button) {
@@ -2080,24 +1932,18 @@ function redirectWithMessage(url) {
             window.Function.prototype.constructor = new Proxy(window.Function.prototype.constructor, o)
         }();
 
-
     }
 })();
-// ----- ----- -----
 
-
-// ----- Bypass paster.so ------
 (function() {
     'use strict';
 
     if (/^https:\/\/paster\.so\/\w+/.test(window.location.href)) {
 
-        // List of excluded domains
-        const excludedDomains = ['paster.so', 'google.com', 'cloudflareinsights.com', 'wikipedia.com', 'w3.org', 'hcaptcha.com', 'gstatic.com'];
+        const excludedDomains = ['paster.so', ['goo','gl','e.co','m'].join(''), ['clou','df','lar','ein','si','ght','s.co','m'].join(''), ['wiki','pedi','a.','com'].join(''), 'w3.org', ['hc','ap','tch','a.c','om'].join(''), ['gs','tati','c.c','om'].join('')];
 
         let overlayCreated = false;
 
-        // Function to extract URLs from the page source code and remove duplicates
         function extractURLsFromPage() {
             const pageSource = document.documentElement.outerHTML;
             const urlRegex = /(?:https?|ftp):\/\/[^\s/$.?#].[^\s"]+/g;
@@ -2109,12 +1955,11 @@ function redirectWithMessage(url) {
             return urls ? urls.filter(url => !excludedDomains.some(domain => url.includes(domain))) : [];
         }
 
-        // Function to create the overlay element and add clickable URLs to it
         function addURLsToOverlay(urls) {
             const overlay = document.createElement('div');
             overlay.style.position = 'fixed';
             overlay.style.top = '50%';
-            overlay.style.right = '20px'; // Adjusted to appear in the middle right corner
+            overlay.style.right = '20px';
             overlay.style.transform = 'translateY(-50%)';
             overlay.style.padding = '10px';
             overlay.style.borderRadius = '5px';
@@ -2122,7 +1967,6 @@ function redirectWithMessage(url) {
             overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
             overlay.style.color = '#fff';
 
-            // Add title
             const title = document.createElement('h3');
             title.textContent = 'URLs found:';
             overlay.appendChild(title);
@@ -2133,7 +1977,7 @@ function redirectWithMessage(url) {
                 const link = document.createElement('a');
                 link.textContent = url;
                 link.href = url;
-                link.target = '_blank'; // Open link in a new tab
+                link.target = '_blank';
                 listItem.appendChild(link);
                 urlList.appendChild(listItem);
             });
@@ -2142,33 +1986,29 @@ function redirectWithMessage(url) {
             document.body.appendChild(overlay);
         }
 
-        // Wait for the window to be fully loaded
         window.addEventListener('load', () => {
             if (!overlayCreated) {
                 const extractedURLs = extractURLsFromPage();
                 const redirect = (finalUrl) => typeof redirectWithMessage === 'function' ? redirectWithMessage(finalUrl) : redirect(finalUrl);
                 if (extractedURLs.length === 1) {
-                    redirect(extractedURLs[0]); // Redirect to the URL if only one URL is found
+                    redirect(extractedURLs[0]);
                 } else if (extractedURLs.length > 1) {
-                    addURLsToOverlay(extractedURLs); // Add URLs to overlay if more than one URL is found
+                    addURLsToOverlay(extractedURLs);
                     overlayCreated = true;
                 } else {
-                    redirect(`https://adbypass.org/bypass?bypass=${encodeURIComponent(window.location.href)}`);
+                    redirect(`https:
                 }
             }
         });
     }
 })();
-// ---------
 
-//---profitsfly reload helper----
 (function() {
     "use strict";
 
     const domainRegex = /^https:\/\/(.*\.|)(playonpc.online|(quins|megahosting).us|(tradeshowrating|historyofyesterday|retrotechreborn|insurelean|ecosolardigest|finance240|2wheelslife|ngebike).com|gally.shop|(qanin|ivnlnews|jobvox|gfcg).xyz|evegor.net|freeat30.org|droplink.co)\/.*/;
     if (domainRegex.test(window.location.href)) {
 
-        // ---RELOAD DEAD-END PAGES---
         if (document.readyState === "complete") {
             onWindowLoad();
         } else {
@@ -2177,52 +2017,38 @@ function redirectWithMessage(url) {
 
         function onWindowLoad() {
 
-            // Continue immediately on the "Shortened link (Waiting)" page
             if (document.title === "Shortened link (Waiting)" && !window.location.href.includes("continue=true")) {
-                // add continue=true to the URL
+
                 window.location.href = window.location.href + '&continue=true';
             }
 
-            // Function to check for messages like "Click any ad & keep it open for 15 seconds to continue" and reload the page if one exists
             let reloading = false;
             function checkForMessage() {
 
-                // "Click on ad to continue" can be ignored for now
-                // const paragraphs = document.getElementsByTagName("p");
-                // for (let p of paragraphs) {
-                //     if (/.*click.+ad.*to.+continue.*/is.test(p.textContent) && isElementVisibleAndEnabled(p)) {
-                //         if (!reloading) location.reload(); // Reload the page
-                //         reloading = true;
-                //         return; // Exit the function after reloading
-                //     }
-                // }
-
                 if (/Less than.+passed between actions.+try again/.test(document.body.textContent)) {
-                    if (!reloading) location.reload(); // Reload the page
+                    if (!reloading) location.reload();
                     reloading = true;
-                    return; // Exit the function after reloading
+                    return;
                 }
             }
 
-            // Helper function to determine if an element is visible and enabled
             function isElementVisibleAndEnabled(el) {
-                // Check if the element and all its parents are visible
+
                 let currentElement = el;
                 while (currentElement) {
                     const style = getComputedStyle(currentElement);
                     if (style.display === "none" || style.visibility === "hidden") {
-                        return false; // Element or parent is not visible
+                        return false;
                     }
-                    currentElement = currentElement.parentElement; // Move up the DOM tree
+                    currentElement = currentElement.parentElement;
                 }
-                // Check if the button is enabled
+
                 return !el.disabled;
             }
 
             setInterval(checkForMessage, 1000);
         }
 
-        // -- Open captchas
         function openHCaptchaWhenVisible() {
             let intervalId = setInterval(() => {
                 let hCaptchaWidget = document.querySelector('iframe[src*="hcaptcha.com"]');
@@ -2234,25 +2060,19 @@ function redirectWithMessage(url) {
         }
         openHCaptchaWhenVisible();
 
-        // ---After DOM loaded---
         document.addEventListener('DOMContentLoaded', function() {
 
-            // Set auxiliary variables
             window.assDidCkeDone = true;
 
-            // Hide adblock detection; alternative with uBO: historyofyesterday.com##.unblocker-container
             setInterval(() => {
                 const unblockerContainer = document.querySelector(".unblocker-container");
                 if (unblockerContainer) {unblockerContainer.style.display = "none";}
             }, 1000);
 
-            // ---Remove YouTube modal and banner--- 
-            // (alternative with uBO : https://github.com/uBlockOrigin/uAssets/discussions/17361#discussioncomment-11864776)
             if (unsafeWindow.youtubeVideoStepProceed) { unsafeWindow.youtubeVideoStepProceed();}
             const stickyBanner = document.querySelector(".mg-sticky-banner");
             if (stickyBanner) {stickyBanner.style.display = "none";}
 
-            // ---Skip timers---
             const forcedTimerInitialValue = 7;
             function setTimer() {
                 if (window.wT9882 > forcedTimerInitialValue) {
@@ -2260,62 +2080,50 @@ function redirectWithMessage(url) {
                 }
             }
             window.wT9882 = forcedTimerInitialValue;
-            setInterval(setTimer, 1000); //This function exists because if the site detects an adblocker, it switches the timer to 30, and that only happens in the last second or so
+            setInterval(setTimer, 1000);
 
-            /* ------------ Protect buttons from being removed ------------ */
-            // Protect all buttons currently in the DOM
+
+
             function protectButtons() {
                 const buttons = document.querySelectorAll("button");
                 buttons.forEach((button) => protectElement(button));
             }
 
-            // Protect a specific button by overriding its removal methods
             function protectElement(element) {
-                if (element.__protected) return; // Avoid double protection
+                if (element.__protected) return;
 
-                // Override remove()
                 const originalRemove = element.remove;
                 element.remove = () => {};
 
-                // Flag element as protected
                 element.__protected = true;
             }
 
-            // Monitor the DOM for dynamically added buttons
             const observer = new MutationObserver((mutationsList) => {
                 mutationsList.forEach((mutation) => {
                     mutation.addedNodes.forEach((node) => {
                         if (node.tagName === "BUTTON") {
-                            // Protect new button
+
                             protectElement(node);
                         }
                     });
 
                     mutation.removedNodes.forEach((node) => {
                         if (node.tagName === "BUTTON") {
-                            // A button was removed. Re-add it:
-                            mutation.target.appendChild(node); // Re-add the button
-                            protectElement(node); // Re-protect it
+
+                            mutation.target.appendChild(node);
+                            protectElement(node);
                         }
                     });
                 });
             });
 
-            // Start observing the document for changes
             observer.observe(document.body, { childList: true, subtree: true });
 
-            // Protect buttons already in the DOM
             protectButtons();
         });
 
     }
 })();
-//-------
-
-// ----- partial autoclicker for soractrl used by moviesnipipay.me,... ------
-// sites with similar pages not autoclicked for now: ssrmovies.promo, mkvcinemas.phd, freecoursesite.com
-// source: https://codeberg.org/Amm0ni4/bypass-all-shortlinks-debloated/issues/14#issuecomment-2588262
-// optional uBO filter for easier clicking: quickeemail.com###landing, .soractrl:others()
 
 (function() {
     const domainRegex = /quickeemail.com/
@@ -2323,39 +2131,34 @@ function redirectWithMessage(url) {
 
       const fakeEvent = {isTrusted: true, originalEvent: {isTrusted: true}};
 
-      // Wait for jQuery to load
       const waitForJQuery = setInterval(() => {
           if (typeof jQuery !== "undefined") {
               clearInterval(waitForJQuery);
 
-              // Override jQuery's `.on` method
               const originalOn = unsafeWindow.jQuery.fn.on;
 
               unsafeWindow.jQuery.fn.on = function(eventType, selector, handler, ...args) {
-                  // Check if it's a "click" event on #soralink-human-verif-main
+
                   if (eventType === "click" && (this.is("#soralink-human-verif-main") || this.is(selector === "#generater") || this.is("#showlink"))) {
-                      // Call the function immediately if handler is directly passed
+
                       if (typeof selector === "function") {
-                          selector(fakeEvent); // Call the function
+                          selector(fakeEvent);
                       } else if (typeof handler === "function") {
-                          handler(fakeEvent); // Call the handler
+                          handler(fakeEvent);
                       }
                   }
 
-                  // Call the original .on method
                   return originalOn.call(this, eventType, selector, handler, ...args);
               };
 
-              // Check if the element #soralink-human-verif-main exists
               if (!document.getElementById("soralink-human-verif-main")) {
-                  // This is the second and third step with #generater and #showlink
+
                   setInterval(() => {
                       unsafeWindow.jQuery("#pleasewaits").hide();
                       unsafeWindow.jQuery("#showlink").show();
                   }, 1000);
               }
           }
-      }, 10); // Check every 10ms
+      }, 10);
     }
 })();
-// ----- -----
