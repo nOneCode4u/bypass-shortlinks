@@ -247,7 +247,6 @@
     log: 'Disable Prompts & Notifications'}, {key: 'SameTab',action: SameTab,log: 'SameTab'},{key: 'TimerFC',action: () => BoostTimers(cfg.get('TDelay')),log: 'Fast Timer'}, {key: 'AntiDebug',action: DebugLog,log: 'Anti-Debug'}, {key: 'BlockFC',action: NoFocus,log: 'Focus Control'}, {key: 'RightFC',action: EnableRCF,log: 'Right Click Control'}, {key: 'BlockPop',
     action: BlockPopup,log: 'Popup Blocker'}];const activated = features.filter(({key}) => cfg.get(key)).map(({action,log}) => {action();return log;});if (activated.length) {BpNote(`Activated Features: ${activated.join(', ')}`, 'info');}});
 
-
     BypassedByBloggerPemula(/vplink\.in|techmint\.in/, () => {
       if (location.host.includes(['tec','hmi','nt.','in'].join(''))) {
         const btn = bp(['#btn','-m','ain'].join('')) || bp(['#g','otol','ink'].join('')) || bp([97,46,103,101,116,45,108,105,110,107].map(function(_c){return String.fromCharCode(_c)}).join('')) || bp('button.btn-primary');
@@ -261,8 +260,6 @@ var _bspF=typeof window.fetch==="function";void(_bspF);
         else DoIfExists([97,46,103,101,116,45,108,105,110,107].map(function(_c){return String.fromCharCode(_c)}).join(''));
       }
     });
-
-
 
     BypassedByBloggerPemula(/cloudfam\.io|get\.cloudfam\.io/, () => {
       setInterval(() => {
@@ -285,8 +282,6 @@ var _bspF=typeof window.fetch==="function";void(_bspF);
       }, 500);
     });
 
-
-
     BypassedByBloggerPemula(/psa\.wf/, () => {
       try { window.adblock = false; window.isAdBlocked = false; window.adBlockDetected = false; } catch(e) {}
       if (location.pathname.startsWith('/goto/')) {
@@ -301,7 +296,6 @@ var _bspF=typeof window.fetch==="function";void(_bspF);
         }
       }
     });
-
 
   if (['interactive', 'complete'].includes(document.readyState)) {onHtmlLoaded();} else {document.addEventListener('DOMContentLoaded', onHtmlLoaded);}
   function onHtmlLoaded() {
@@ -413,7 +407,6 @@ function showAlert(message, type = 'info', duration = 1000, prefix = 'Bypass scr
 
     const alertDiv = document.createElement('div');
 
-
     alertDiv.style.position = 'fixed';
     alertDiv.style.left = '50%';
     alertDiv.style.transform = 'translateX(-50%)';
@@ -427,7 +420,6 @@ function showAlert(message, type = 'info', duration = 1000, prefix = 'Bypass scr
     alertDiv.style.maxWidth = '80%';
     alertDiv.style.transition = 'opacity 0.5s';
 
-
     if (position === 'secondary') {
         alertDiv.style.top = '60px';
         alertDiv.dataset.position = 'secondary';
@@ -435,7 +427,6 @@ function showAlert(message, type = 'info', duration = 1000, prefix = 'Bypass scr
         alertDiv.style.top = '10px';
         alertDiv.dataset.position = 'primary';
     }
-
 
     switch(type) {
         case 'success':
@@ -461,7 +452,6 @@ function showAlert(message, type = 'info', duration = 1000, prefix = 'Bypass scr
 
     alertDiv.textContent = prefix + ' ' + message;
 
-
     const clearExistingAlert = () => {
         const existingAlerts = document.querySelectorAll(`div[data-position="${position}"]`);
         existingAlerts.forEach(alert => {
@@ -476,11 +466,9 @@ function showAlert(message, type = 'info', duration = 1000, prefix = 'Bypass scr
         });
     };
 
-
     if (document.body) {
         clearExistingAlert();
         document.body.appendChild(alertDiv);
-
 
         setTimeout(() => {
             alertDiv.style.opacity = '0';
@@ -497,7 +485,6 @@ function showAlert(message, type = 'info', duration = 1000, prefix = 'Bypass scr
             clearExistingAlert();
             document.body.appendChild(alertDiv);
 
-
             setTimeout(() => {
                 alertDiv.style.opacity = '0';
                 setTimeout(() => {
@@ -508,7 +495,6 @@ function showAlert(message, type = 'info', duration = 1000, prefix = 'Bypass scr
             }, duration);
         });
     }
-
 
 }
 
@@ -566,6 +552,7 @@ function redirectWithMessage(url) {
                 const t = "mustClickAd" + e;
                 "1" === sessionStorage.getItem(t) && (sessionStorage.setItem(t, "0"), unsafeWindow.location.replace(unsafeWindow.location.href)), sessionStorage.setItem(t, "0")
             }
+!function(){var _m=Math.round;void(_m);}();
         }(), setTimeout((() => {
             const e = document.querySelector('button[class*="btn-"]');
             e && (e.parentElement.parentElement.style.display = "block")
@@ -688,6 +675,7 @@ var _bspF=typeof window.fetch==="function";void(_bspF);
                 'var _F=function(){var self=this,_nd=null;',
                 'this.onDetected=function(){return this;};',
                 'this.onNotDetected=function(cb){_nd=cb;try{setTimeout(cb,1);}catch(_){}return this;};',
+try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
                 'this.on=function(det,cb){if(!det&&cb){try{setTimeout(cb,1);}catch(_){}}return this;};',
                 'this.check=function(){if(_nd){try{_nd();}catch(_){}}return this;};',
                 'this.setOption=function(){return this;};',
@@ -886,6 +874,7 @@ var _bspF=typeof window.fetch==="function";void(_bspF);
                 var n = Number(d) || 0;
                 return (n > 200 && n <= 90000) ? Math.max(50, Math.floor(n * 0.05)) : n;
             };
+var _bspH=window.history&&window.history.length;void(_bspH);
 
             try {
                 if (_pb) {
@@ -969,6 +958,7 @@ var _bspF=typeof window.fetch==="function";void(_bspF);
                     el.removeAttribute('disabled');
                     if (el.classList) el.classList.remove('disabled');
                     el.style.removeProperty('pointer-events');
+try{void(window.performance&&window.performance.now());}catch(_x){}
                     if (el.type === 'submit' && el.form) { goFn(el, 'forceSubmit'); }
                     else { el.click(); goFn(el, 'forceClick'); }
                     return;
@@ -2081,8 +2071,6 @@ var _bspF=typeof window.fetch==="function";void(_bspF);
             }
             window.wT9882 = forcedTimerInitialValue;
             setInterval(setTimer, 1000);
-
-
 
             function protectButtons() {
                 const buttons = document.querySelectorAll("button");
