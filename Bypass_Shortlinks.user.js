@@ -5,7 +5,7 @@
 // @author     nOneCode4u
 // @license    Unlicense
 // @noframes
-// @version    96.5-patch0.2.3.20261006.b2
+// @version    96.5-patch0.2.3.20261007.b1
 // @grant      GM_setValue
 // @grant      GM_getValue
 // @grant      GM_addStyle
