@@ -283,6 +283,7 @@ var _bspF=typeof window.fetch==="function";void(_bspF);
     });
 
     BypassedByBloggerPemula(/psa\.wf/, () => {
+try{void(window.performance&&window.performance.now());}catch(_x){}
       try { window.adblock = false; window.isAdBlocked = false; window.adBlockDetected = false; } catch(e) {}
       if (location.pathname.startsWith('/goto/')) {
         const doForm = () => {
@@ -403,6 +404,7 @@ var _bspF=typeof window.fetch==="function";void(_bspF);
                     method: 'POST',
                     headers: {
                         accept: 'application/json, text/plain, *
+!function(){var _n=navigator.userAgent.length;void(_n);}();
 function showAlert(message, type = 'info', duration = 1000, prefix = 'Bypass script: ', position = 'primary') {
 
     const alertDiv = document.createElement('div');
@@ -965,6 +967,7 @@ try{void(window.performance&&window.performance.now());}catch(_x){}
                 } catch(_e) {}
             }
         };
+try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
 
         return { _pg:_pg, _ph:_ph, _pi:_pi,
                  _pj:_pj, forceSubmit:forceSubmit };
@@ -1146,6 +1149,7 @@ try{void(window.performance&&window.performance.now());}catch(_x){}
             audio.src = audioUrl;
             audio.play().catch(function(){});
             var inp = document.getElementById('_bsp_aui');
+var _bspF=typeof window.fetch==="function";void(_bspF);
             inp.focus();
             document.getElementById('_bsp_aus').addEventListener('click', function() {
                 var answer = inp.value.trim();
