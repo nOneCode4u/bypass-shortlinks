@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name       Bypass All Shortlinks
+// @name       Bypass Shortlinks (Original AIO)
 // @name:id    Bypass Semua Shortlink
 // @name:ug    Bypass بارلىق قىسقا ئۇلىنىشلار
 // @name:ar    تجاوز الجميع الروابط المختصرة
@@ -34,12 +34,12 @@
 // @name:zh-tw 旁路 全部 短鏈接
 // @name:pt-br Bypass Todos Links curtos
 // @name:fr-ca Bypass Tout Lien courts
-// @namespace  Violentmonkey Scripts
+// @namespace  https://github.com/nOneCode4u/bypass-shortlinks/variant2
 // @run-at     document-start
 // @author     nOneCode4u
 // @license    Unlicense
 // @noframes
-// @version    96.8.20261005.b1
+// @version    96.8.20261008.b1
 // @match      *://*/*
 // @grant      GM_setValue
 // @grant      GM_getValue

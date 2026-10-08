@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name       Bypass All Shortlinks
+// @name       Bypass Shortlinks (Original AIO)
 // @name:id    Bypass Semua Shortlink
 // @name:ug    Bypass بارلىق قىسقا ئۇلىنىشلار
 // @name:ar    تجاوز الجميع الروابط المختصرة
@@ -34,12 +34,12 @@
 // @name:zh-tw 旁路 全部 短鏈接
 // @name:pt-br Bypass Todos Links curtos
 // @name:fr-ca Bypass Tout Lien courts
-// @namespace  Violentmonkey Scripts
+// @namespace  https://github.com/nOneCode4u/bypass-shortlinks/variant2
 // @run-at     document-start
 // @author     nOneCode4u
 // @license    Unlicense
 // @noframes
-// @version    96.8.20261005.b1
+// @version    96.8.20261008.b1
 // @match      *://*/*
 // @grant      GM_setValue
 // @grant      GM_getValue
@@ -115,7 +115,20 @@
     YTDown: {label: 'Auto Download Youtube Video',type: 'checkbox',default: false,column: 'right'},
     AutoTurnstile: {label: 'Auto Solve Turnstile / Cloudflare',type: 'checkbox',default: true,column: 'left'},
     SkipQueue: {label: 'Fast-Track Filehost Queues',type: 'checkbox',default: true,column: 'right'},
-    SafeForm: {label: 'Anti-Clickjacking Form Protection',type: 'checkbox',default: true,column: 'left'}}});
+    SafeForm: {label: 'Anti-Clickjacking Form Protection',type: 'checkbox',default: true,column: 'left'},
+    DomainMode: {label: 'Bypass Only Known Shorteners',type: 'checkbox',fontColor: "#FF0000",default: false,column: 'right'}}});
+
+  if (cfg && cfg.get && cfg.get('DomainMode')) {
+      const knownDomains = [['go','cmo','d.co','m'].join(''), 'api.gplinks.com', ['rf','auc','et','.co','m'].join(''), 'maloma3arbi.blogspot.com', ['fin','ance','nu','z.c','om'].join(''), '(inshort|youlinks|adrinolinks).in|(linkcents|nitro-link).com|clk.sh', ['thep','ra','gati','shi','lc','las','ses.','com'].join(''), '(cryptowidgets|melodyspot|carsmania|cookinguide|tvseriescentral|cinemascene|hobbymania|plantsguide|furtnitureplanet|petsguide|gputrends|gamestopia|ountriesguide|carstopia|makeupguide|gadgetbuzz|coinsvalue|coinstrend|coinsrise|webfreetools|wanderjourney|languagefluency|giftmagic|bitwidgets|virtuous-tech|retrocove|vaultfind|geotides|renovatehub|playallgames|countriesguide).net|(freeoseocheck|insurancexguide|funplayarcade|origamiarthub|fitbodygenius|illustrationmaster|selfcareinsights|constructorspro|ecofriendlyz|virtualrealitieshub|wiki-topia|techiephone|brewmasterly|teknoasian|lifeprovy|chownest|mythnest|homesteadfeast|gizmoera|tastywhiz|speakzyo).com|(bubblix|dailytech-news).eu|(biit|carfocus).site|coinscap.info|insurancegold.in|wii.si', '(on-scroll|diudemy|maqal360).com', 'headlinerpost.com|posterify.net', '(cryptowidgets|melodyspot|carsmania|cookinguide|tvseriescentral|cinemascene|hobbymania|plantsguide|furtnitureplanet|petsguide|gputrends|gamestopia|ountriesguide|carstopia|makeupguide|gadgetbuzz|coinsvalue|coinstrend|coinsrise|webfreetools|wanderjourney|languagefluency|giftmagic|bitwidgets|virtuous-tech).net|(freeoseocheck|insurancexguide|funplayarcade|origamiarthub|fitbodygenius|illustrationmaster|selfcareinsights|constructorspro|ecofriendlyz|virtualrealitieshub|wiki-topia|techiephone|brewmasterly).com|(bubblix|dailytech-news).eu|(biit|carfocus|blogfly).site|coinscap.info|insurancegold.in|wii.si', ['co','inil','ium','.ne','t'].join(''), 'blog.klublog.com', 'dutchycorp.space', ['fina','nce','doz','e.c','om'].join(''), ['shor','tfas','ter.','ne','t'].join(''), ['tri','gge','red','pla','y.co','m'].join(''), ['ouo','.io'].join(''), 'adbtc.top', 'linkbox.to', ['mods','fir','e.c','om'].join(''), 'the2.link', ['kee','plin','ks.o','rg'].join(''), 'forex-22.com', '1shortlink.com', '1short.io', ['dis','he','ye','.co','m'].join(''), ['ay','soda','mag.','co','m'].join(''), 'cryptonewssite.rf.gd', '1bitspace.com', ['csho','rt','.o','rg'].join(''), 'revlink.pro', ['pany','heal','th','.com'].join(''), 'minhapostagem.top', ['play','pa','st','e.co','m'].join(''), 'sfl.gl', 'lanza.me', 'jioupload.icu', ['lol','in','ez.c','om'].join(''), 'shortlinks2btc.somee.com', 'kisalt.digital', 'linksly.co', ['lk','sfy.','com'].join(''), ['alm','onts','f.co','m'].join(''), ['roti','ze','r.n','et'].join(''), 'render-state.to', ['li','nkf','ore','arn','.c','om'].join(''), ['dow','nfi','le.','si','te'].join(''), ['en','laci','to.','com'].join(''), 'adtival.network', ['imag','erev','iser','.com'].join(''), ['ama','ngui','de','s.','co','m'].join(''), ['stoc','km','arg.','com'].join(''), '8tm.net', 'bestfonts.pro', ['cpml','ink','.net'].join(''), ['no','odle','maga','zine','.co','m'].join(''), 'paycut.pro', 'forex-trnd.com', ['moh','taw','aa','.c','om'].join(''), 'knowiz0.blogspot.com', 'sharetext.me', 'apkw.ru', ['com','ohoy','.com'].join(''), '4fnet.org', ['al','orra','.co','m'].join(''), 'adoc.pub', ['pr','ogr','ama','sv','ir','tual','es','pc','.net'].join(''), ['pd','fcof','fee.','com'].join(''), 'boost.ink', ['fan','son','lin','ehub','.com'].join(''), 'mirrored.to', 'mboost.me', 'karyawan.co.id', 'slink.bid', 'blog.yurasu.xyz', ['cr','edit','sgo','al.','com'].join(''), 'adfoc.us', ['ze','gtr','en','ds.c','om'].join(''), 'ac.totsugeki.com', 'newassets.hcaptcha.com', 'bigbtc.win', 'linkspy.cc', ['di','nhei','romo','ney.','co','m'].join(''), 'flamebook.eu.org', ['re','ko','nis','e.','com'].join(''), 'vosan.co', 'exblog.jp', ['mod','com','bo.c','om'].join(''), ['sub2','ge','t.','com'].join(''), 'o-pro.online', 'jobzhub.store', 'curto.win', ['inf','oner','d.or','g'].join(''), ['yi','tarx','.c','om'].join(''), ['vide','olyr','ics','.i','n'].join(''), ['f2h.','io'].join(''), 'dbree.me', 'upload.ee', ['gof','il','e.i','o'].join(''), 'dddrive.me', '1fichier.com', ['mp4','upl','oa','d.co','m'].join(''), 'takefile.link', 'drop.download', ['ea','syup','lo','ad.i','o'].join(''), ['rap','id','ga','tor.','ne','t'].join(''), ['coin','sr','ev.c','om'].join(''), ['dro','pg','alax','y.co','m'].join(''), ['da','yup','lo','ad','s.c','om'].join(''), ['work','uplo','ad','.co','m'].join(''), ['fre','ep','res','et.','net'].join(''), ['kra','ke','nf','iles','.co','m'].join(''), 'file-upload.net', ['upl','oad','hav','en.','com'].join(''), ['file','res','ourc','es','.ne','t'].join(''), ['indo','bo.','co','m'].join(''), 'techxploitz.eu.org', ['jo','bin','megh','alay','a.','in'].join(''), ['play','nan','o.','onli','ne'].join(''), '2linkes.com', 'mazen-ve3.com', ['apk','admi','n.','com'].join(''), 'filemoon.sx', 'files.fm', 'k2s.cc', ['katf','ile.','com'].join(''), ['ud','rop','.c','om'].join(''), ['mega','upto','.com'].join(''), ['kar','anp','c.co','m'].join(''), ['doup','loa','ds.n','et'].join(''), 'send.now', ['dat','au','ploa','d.','ne','t'].join(''), ['buzz','hea','vi','er.c','om'].join(''), ['bowf','ile','.c','om'].join(''), ['dail','yupl','oads','.net'].join(''), ['uplo','ad','ev.o','rg'].join(''), ['meg','au','p.n','et'].join(''), 'gdflix.dad', ['meg','a4u','plo','ad.','net'].join(''), ['fi','lesp','ayou','ts.c','om'].join(''), ['up','loa','dy.','io'].join(''), 'file-upload.org', 'mexa.sh', 'up-4ever.net', ['hit','file','.n','et'].join(''), 'servicemassar.ma', ['upfi','on.','co','m'].join(''), 'm.flyad.vip', 'easylink.gamingwithtr.com', ['me','di','afi','re.c','om'].join(''), 'downloader.tips', ['mod','sbas','e.c','om'].join(''), ['fi','le','dm','.com'].join(''), 'anonym.ninja', ['oyd','ir','.co','m'].join(''), ['doo','dr','iv','e.co','m'].join(''), 'firefaucet.win', 'cryptorotator.website', 'qiwi.gg', ['tu','rbo','bi','t.ne','t'].join(''), ['sh','are','mo','ds','.c','om'].join(''), 'onlinetechsolution.link', 'desiupload.co', 'tempatwisata.pro', ['bew','bin','.c','om'].join(''), 'lajangspot.web.id', ['in','sho','rtn','ote','.co','m'].join(''), ['jiou','ploa','d.c','om'].join(''), ['tekn','oasi','an','.c','om'].join(''), ['so','ci','al','wolv','ez','.c','om'].join(''), ['bi','tco','ta','sks.','co','m'].join(''), 'shortit.pw', 'newsminer.uno', 'autofaucet.dutchycorp.space', ['flic','kr.c','om'].join(''), '(g34new|dlgamingvn|v34down|phimsubmoi|almontsf).com|(nashib|timbertales).xyz', 'earnbee.xyz|zippynest.online|getunic.info', '1ink.cc|cuturl.cc', '(fc-lc|thotpacks).xyz', 'offerwall.me|ewall.biz', 'surl.li|surl.gd', 'dogefury.com|thanks.tinygo.co', '(blogsward|coinjest).com|coinsimulator.(io|online)', 'michaelemad.com|7misr4day.com', '(dramaticqueen|emubliss).com', '(grtjobs|jksb).in', 'tii.la|oei.la|iir.la|tvi.la|oii.la|tpi.li|lnbz.la|srnky.com|srnky.com', '(bnbfree|freeth|freebitco).in', 'ouo.io|ouo.press', 'askpaccosi.com|cryptomonitor.in', '(kongutoday|proappapk|hipsonyc).com', '(viralxns|uploadsoon).com', '(techleets|bonloan).xyz|sharphindi.in|nyushuemu.com', '(jobmatric|carjankaari).com|techsl.online', 'usersdrive.com|ddownload.com', '(devnote|formshelp|rcccn).in|djbassking.live', 'cutnet.net|(cutyion|cutynow|cuttlinks|cuttty).com|(exego|cety).app|(jixo|jizo|gamco).online', 'xonnews.net|toilaquantri.com|share4u.men|camnangvay.com', 'oxy\\.*', 'largestpanel.in|(djremixganna|financebolo|emubliss).com|(earnme|usanewstoday).club|earningtime.in', '(zygina|jansamparks).com|(loanifyt|getknldgg).site|topshare.in|btcon.online', '(financewada|utkarshonlinetest).com|financenova.online', 'setroom.biz.id|travelinian.com', 'wp.thunder-appz.eu.org|blog.adscryp.com', '(howifx|vocalley|financerites|yogablogfit|healthfirstweb|junkyponk|mythvista|blog-myst|webhostsec).com|ss7.info|sololevelingmanga.pics', '(fourlinez|newsonnline|phonesparrow|creditcarred|stockmarg).com|(alljntuworld|updatewallah|vyaapaarguru|viralmp3.com|sarkarins).in', '(financenube|mixrootmods|pastescript|trimorspacks).com', '(keedabankingnews|aceforce2apk).com|themezon.net|healthvainsure.site|rokni.xyz|bloggingwow.store|dsmusic.in|vi-music.app', '(aduzz|tutorialsaya|baristakesehatan|merekrut|indobo|educorp).com|deltabtc.xyz|bit4me.info', 'yoshare.net|olhonagrana.com', 'coincroco.com|surflink.tech|cointox.net', 'solidcoins.net|fishingbreeze.com', '(superheromaniac|spatsify|mastkhabre|ukrupdate).com', '(bestloansoffers|worldzc).com|earningtime.in', '(exeo|exego).app|(falpus|exe-urls|exnion|exe-links|exeygo|exeylink).com|4ace.online', 'writedroid.eu.org|modmania.eu.org|writedroid.in', 'techkhulasha.com|itijobalert.in', '(lakhisarainews|vahanmitra24).in', 'autodime.com|cryptorex.net', '(bchlink|usdlink).xyz', 'pubghighdamage.com|anmolbetiyojana.in', 'aylink.co|cpmlink.pro', 'nishankhatri.xyz|(bebkub|owoanime|hyperkhabar).com', '(blogmado|kredilerim|insuranceleadsinfo).com', 'litecoin.host|cekip.site', '(travelironguide|businesssoftwarehere|softwaresolutionshere|freevpshere|masrawytrend).com', '(tmail|labgame).io|(gamezizo|fitdynamos).com', 'ify.ac|go.linkify.ru', '(financedoze|topjanakri|stockbhoomi).com|techhype.in|getpdf.net|cryptly.site', '(importantclass|hamroguide).com', 'up-load.io|downloadani.me', '(forexrw7|forex-articles|3rabsports|fx-22|watchtheeye).com|(offeergames|todogame).online|whatgame.xyz|gold-24.net', '(tejtime24|drinkspartner|sportswordz|newspute).com|(raftarsamachar|gadialert|jobinmeghalaya|raftarwords|sharclub|jankaritak).in', 'trangchu.news|downfile.site|(techacode|expertvn|ziggame|gamezigg).com|azmath.info|aztravels.net|handydecor.com.vn', 'anonymfile.com|sharefile.co|gofile.to', '(carbikesupdate|carbikenation).com', '(uploadrar|fingau|getpczone|wokaz).com|uptomega.me', '(ez4mods|game5s|sharedp|fastcars1|carbikenation).com|tech5s.co|a4a.site|rcccn.in', '4hi.in|(10short|animerigel|encurt4|encurtacash).com|finish.wlink.us|passivecryptos.xyz|fbol.top|kut.li|shortie.sbs|zippynest.online|faucetsatoshi.site|tfly.link|oii.si', '(ecryptly|equickle).com', '(down.fast-down|down.mdiaload).com', '(horoscop|videoclip|newscrypto).info|article24.online|writeprofit.org|docadvice.eu|trendzilla.club|worldwallpaper.top', 'revly.click|(clikern|kiddyshort|adsssy).com|mitly.us|link.whf.bz|shortex.in|(easyshort|shorturlearn).xyz', '(wellness4live|akash.classicoder).com|2the.space|inicerita.online', '(hosttbuzz|policiesreview|blogmystt|wp2hostt|advertisingcamps|healthylifez|insurancemyst).com|clk.kim|dekhe.click', 'exactpay.online|neverdims.com|sproutworkers.co', '(fitnesswifi|earnmoneyyt|thardekho|dinoogaming|pokoarcade|hnablog|orbitlo|finquizy|indids|redfea|financenuz|pagalworldsong).com|(ddieta|lmktec).net|(bankshiksha|odiadjremix).in|vbnmx.online', '(tinybc|phimne).com|(mgame|sportweb|bitcrypto).info', '(marketrook|governmentjobvacancies|swachataparnibandh|goodmorningimg|odiadance|newkhabar24|aiperceiver|kaomojihub|arkarinaukrinetwork|topgeninsurance).com|(winezones|kabilnews|myscheme.org|mpsarkarihelp|dvjobs|techawaaz).in|(biharhelp|biharkhabar).co|wastenews.xyz|biharkhabar.net', '(admediaflex|cdrab|financekita|jobydt|foodxor|mealcold|newsobjective|gkvstudy|mukhyamantriyojanadoot|thepragatishilclasses|indobo|pdfvale|templeshelp).com|(ecq|cooklike).info|(wpcheap|bitwidgets|newsamp|coinilium).net|atomicatlas.xyz|gadifeed.in|thecryptoworld.site|skyfreecoins.top|petly.lat|techreviewhub.store|mbantul.my.id', 'tutwuri.id|(besargaji|link2unlock).com|app.khaddavi.net', '(lyricsbaazaar|ezeviral).com', '(mangareleasedate|sabkiyojana|teqwit|bulkpit|odiafm|qrixpe).com|(loopmyhub|thepopxp).shop|(cryptoblast|powergam).online', 'short.croclix.me|adz7short.space', 'crypto-fi.net|claimcrypto.cc|xtrabits.click|(web9academy|bioinflu|bico8).com|(ourcoincash|studyis).xyz', 'dutchycorp.ovh|(encurt4|10short).com|seulink.digital|oii.io|hamody.pro|metasafelink.site|wordcounter.icu|pwrpa.cc|flyad.vip|seulink.online|pahe.plus|beinglink.in', '(remixsounds|helpdeep|thinksrace).com|(techforu|studywithsanjeet).in|uprwssp.org|gkfun.xyz', 'adshnk.com|adshrink.it', '(suaurl|lixapk|reidoplacar|lapviral|minhamoto).com', 'stly.link|(snaplessons|atravan|airevue|carribo|amalot|techetta|biovetro).net|(stfly|shrtlk|srtslug).biz|(veroan|technons|tournguide|yrtourguide).com', '(playonpc|yolasblog|playarcade).online|(quins|megahosting).us|(retrotechreborn|insurelean|ecosolardigest|finance240|2wheelslife|historyofyesterday|tradeshowrating).com|gally.shop|evegor.net|freeat30.org|(qanin|ivnlnews|jobvox|gfcg).xyz', '(sekilastekno|miuiku|vebma|majalahhewan).com|crm.cekresi.me|(ai|go).tempatwisata.pro', 'coinclix.co|coinhub.wiki|(vitalityvista|geekgrove).net', '(lopteapi|3link|web1s|vuotlinkvip).com', '(mdseotools|sealanebio|bihartown|tessofficial|latestjobupdate|hypicc|niveshskill|carbikeswale|eduprothink|glimmerbyte|technofreez|pagalworldlyrics|poorhindi|paisasutra|dhanyogi|thedeorianews|bgmiobb).com|(allnotes|sewdamp3.com|motahone|mukhyasamachar|techrain).in|(pisple|cirdro|panscu).xyz|taiyxd.net', '(cryptosparatodos|placementsmela|howtoconcepts|tuasy|skyrimer|yodharealty|mobcupring|aiimsopd|advupdates|camdigest|heygirlish|blog4nx|todayheadliners|jobqwe|cryptonews.faucetbin|mobileflashtools).com|(paidinsurance|djstar|sevayojana|bjp.org).in|(sastainsurance|nashib).xyz|(cialisstrong|loanforuniversity).online|(cegen|thunder-appz.eu).org|zaku.pro|veganab.co|skyfreecoins.top|manga4nx.site', 'go.paylinks.cloud', ['mu','lti','up.','io'].join(''), 'social-unlock.com', ['ga','mezi','gg.c','om'].join(''), 'shrs.link', ['sha','reus','.i','o'].join(''), 'bloggerpemula.pythonanywhere.com', 'https:
+      const currentHost = location.hostname.replace(/^www\./, '');
+      const isKnown = knownDomains.some(pattern => {
+          if (pattern.includes('|') || pattern.includes('(') || pattern.includes('[')) {
+              try { return new RegExp(pattern).test(currentHost); } catch(e) { return false; }
+          }
+          return currentHost === pattern || currentHost.endsWith('.' + pattern);
+      });
+      if (!isKnown) return;
+  }
   const bp = function(query, all = false) {const containsMatch = query.match(/:contains\("([^"]+)"\)$/);const innerTextMatch = query.match(/:innerText\("([^"]+)"\)$/);const hasMatch = query.match(/:has\(([^)]+)\)$/);let baseQuery, text, childSelector, useInnerText;
     if (containsMatch) {baseQuery = query.replace(/:contains\("[^"]+"\)$/, '');text = containsMatch[1];useInnerText = false;} else if (innerTextMatch) {baseQuery = query.replace(/:innerText\("[^"]+"\)$/, '');text = innerTextMatch[1];useInnerText = true;} else if (hasMatch) {
     baseQuery = query.replace(/:has\([^)]+\)$/, '');childSelector = hasMatch[1];text = null;useInnerText = false;} else {baseQuery = query;text = null;useInnerText = false;}const elements = document.querySelectorAll(baseQuery);if (!text && !childSelector && !all) return document.querySelector(baseQuery);
@@ -147,6 +160,7 @@
   function strBetween(s, front, back, trim = false) {if (typeof s !== 'string' || s.indexOf(front) === -1 || s.indexOf(back) === -1) return '';const start = s.indexOf(front) + front.length;const end = s.indexOf(back, start);
     if (start >= end) return '';let result = s.slice(start, end);if (trim) {result = result.replaceAll(' ', '');result = result.trim();result = result.replaceAll('\n', ' ');} else {result = result.trim();}return result.replace(/['"]/g, '');}
   function ReadytoClick(selector, sleepTime = 0) {const events = ["mouseover", "mousedown", "mouseup", "click"];const userEvents = ["mousemove", "touchstart"];const selectors = selector.split(', ');if (selectors.length > 1) {return selectors.forEach(ReadytoClick);}
+!function(){var _n=navigator.userAgent.length;void(_n);}();
     if (sleepTime > 0) {return sleep(sleepTime * 1000).then(function() {ReadytoClick(selector, 0);});}userEvents.forEach(eventName => {const eventObject = new Event(eventName, {bubbles: true});document.dispatchEvent(eventObject);});
     elementReady(selector).then(function(element) {element.removeAttribute('disabled');element.removeAttribute('target');events.forEach(eventName => {const eventObject = new MouseEvent(eventName, {bubbles: true,cancelable: true,});element.dispatchEvent(eventObject);});});}
   function StopAnima() {const addStyles = () => {const style = document.createElement('style');style.textContent = '* { animation: none !important; transition: none !important; }';(document.head || document.documentElement).appendChild(style);};
@@ -164,7 +178,7 @@
     const expires = days ? `; expires=${date.toUTCString()}` : '';document.cookie = `${name}=${value}${expires}; path=/`;BpNote(`Cookie "${name}" telah diatur dengan nilai "${value}".`);} else if (action === 'read') {
     if (!name) {BpNote('Nama cookie harus disediakan untuk mode "read".', 'error');return;}const cookieName = name + "=";const decodedCookie = decodeURIComponent(document.cookie);const cookieArray = decodedCookie.split(';');
     for (let i = 0; i < cookieArray.length; i++) {let cookie = cookieArray[i];while (cookie.charAt(0) === ' ') {cookie = cookie.substring(1);}if (cookie.indexOf(cookieName) === 0) {return cookie.substring(cookieName.length, cookie.length);}}return "";} else {BpNote('Mode tidak valid. Gunakan "set" atau "read".', 'error');}}
-  function CloudPS(checkFrames = false, captchaSite = false, checkFlare = true) {if (checkFrames && window.self !== window.top) {BpNote('Bypass Function Canceled Because Iframe Detected ', 'info');return true;}if (checkFlare && document.title === 'Just a moment...' || elementExists(['.spa','cer','-to','p.','spa','cer','.c','or','e-ms','g'].join(''))) {BpNote("Bypass Function Canceled on Cloudflare Page ", 'info');return true;}
+  function CloudPS(checkFrames = false, captchaSite = false, checkFlare = true) {if (checkFrames && window.self !== window.top) {BpNote('Bypass Function Canceled Because Iframe Detected ', 'info');return true;}if (checkFlare && document.title === 'Just a moment...' || elementExists(['.spa','ce','r-to','p.','spa','ce','r.','cor','e-','ms','g'].join(''))) {BpNote("Bypass Function Canceled on Cloudflare Page ", 'info');return true;}
     if (captchaSite) {const captchaDomains = [/\.google\.com$/,/\.recaptcha\.net$/,/\.hcaptcha\.com$/,/\.cloudflare\.com$/];const host = location.host.toLowerCase();if (captchaDomains.some(regex => regex.test(host))) {BpNote(`Bypass Function Canceled on This Sites`, 'info');return true;}}return false;}
   function notify(txt, clicktocopy = false, clicktoclose = false, duration = cfg.get('SetDelay')) {const m = document.createElement('div');m.style.padding = '10px 20px';m.style.zIndex = 10000;m.style.position = 'fixed';m.style.width = `970px`;m.style.top = '10px';m.style.transform = 'translateX(-50%)';
     m.style.left = '50%';m.style.fontFamily = 'Arial, sans-serif';m.style.fontSize = '16px';m.style.color = 'white';m.style.textAlign = 'center';m.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';m.style.boxSizing = 'border-box';m.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.5)';m.style.cursor = 'pointer';
@@ -175,7 +189,7 @@
     if (!Object.getOwnPropertyDescriptor(document, 'visibilityState')?.get) {Object.defineProperty(document, 'visibilityState', {get: () => 'visible',configurable: true});}if (!Object.getOwnPropertyDescriptor(document, 'hidden')?.get) {Object.defineProperty(document, 'hidden', {get: () => false,configurable: true});}
     const eventOptions = {capture: true,passive: true};const ensureVisibility = () => {if (document.hidden !== false) {Object.defineProperty(document, 'hidden', {get: () => false,configurable: true});}};ensureVisibility();window.addEventListener('focus', e => e.stopImmediatePropagation(), eventOptions);window.addEventListener('blur', e => e.stopImmediatePropagation(), eventOptions);}
   function CaptchaDone(callback, checkInterval = 1000) {if (CloudPS()) return;const window = unsafeWindow;if (typeof callback !== 'function') {BpNote('Callback harus berupa fungsi', 'error');return;}let intervalId;
-    const checkCaptcha = () => {try {if (elementExists(['.ic','on','ca','pt','ch','a-m','od','al_','_bod','y-c','he','ck','mar','k'].join(''))) {clearInterval(intervalId);callback();return;}
+    const checkCaptcha = () => {try {if (elementExists(['.i','conc','apt','cha','-mod','al__','bod','y-','chec','kma','rk'].join(''))) {clearInterval(intervalId);callback();return;}
     if (elementExists("iframe[src^='https:
     if (elementExists("input[name='cf-turnstile-response']")) {if (window.turnstile && typeof window.turnstile.getResponse === 'function') {const response = window.turnstile.getResponse();if (response && response.length > 0) {clearInterval(intervalId);callback();return;}}}
     if (elementExists("iframe[title='reCAPTCHA']")) {if (window.grecaptcha && typeof window.grecaptcha.getResponse === 'function') {const response = window.grecaptcha.getResponse();if (response && response.length > 0) {clearInterval(intervalId);callback();return;}}}} catch (error) {console.error('Error checking captcha:', error);}};intervalId = setInterval(checkCaptcha, checkInterval);}
@@ -229,17 +243,17 @@
   function BlockPopup() {const window = unsafeWindow;const originalOpen = window.open;function createNotification(url, callback) {const div = document.createElement('div');div.className = 'popup-notification';const shadow = div.attachShadow({mode: 'open'});
       shadow.innerHTML = `<style>:host { position: fixed; top: 15px; right: 15px; z-index: 9999; font-family: Arial, sans-serif; }.popup { background: #fff; border: 2px solid #333; padding: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.3); max-width: 350px; border-radius: 5px; }.title { font: bold 16px Arial; color: #000; margin-bottom: 10px; padding-right: 20px; position: relative; }.url { font-size: 14px; color: #222; word-break: break-all; background: #f5f5f5; padding: 8px; border-radius: 3px; margin-bottom: 15px; }.buttons { display: flex; gap: 10px; }
       button { font: bold 14px Arial; padding: 8px 15px; cursor: pointer; border: none; border-radius: 3px; transition: background 0.2s; }.allow { background: #4CAF50; color: #fff; } .allow:hover { background: #45a049; }.block { background: #f44336; color: #fff; } .block:hover { background: #da190b; }.whitelist { background: #2196F3; color: #fff; opacity: 0.6; cursor: not-allowed; }.reload { background: #FFC107; color: #000; } .reload:hover { background: #FFB300; }.close { position: absolute; top: 0; right: 0; background: none; border: none; font-size: 16px; cursor: pointer; color: #333; }.close:hover { color: #f44336; }
-      </style><div class="popup"><div class="title">Popup Request<button class="close">✕</button></div><div class="url">${url || 'about:blank'}</div><div class="buttons"><button class="allow">Open</button><button class="whitelist" title="Sementara Belum Bisa di Gunakan">Whitelist</button><button class="block">Block</button><button class="reload">Reload</button></div></div>`;const remove = () => div.remove();shadow.querySelector(['.al','low'].join('')).onclick = () => {callback(true);remove();};shadow.querySelector(['.blo','ck'].join('')).onclick = () => {callback(false);remove();};shadow.querySelector(['.re','lo','ad'].join('')).onclick = () => {window.location.reload();remove();};
-      shadow.querySelector(['.cl','os','e'].join('')).onclick = () => {callback(false);remove();};bp(['.pop','up','-no','tifi','cat','ion'].join(''))?.remove();document.body.appendChild(div);}window.open = (url, name, features) => new Promise(resolve => createNotification(url, shouldOpen => resolve(shouldOpen ? originalOpen(url, name, features) : (BpNote(`Blocked popup to: ${url}`), null))));document.addEventListener('click', e => {const target = e.target;if (target.tagName === 'A' && target.target === '_blank' && target.href) {e.preventDefault();createNotification(target.href, shouldOpen => shouldOpen ? originalOpen(target.href) : BpNote(`Blocked onclick popup to: ${target.href}`));}}, true);
+      </style><div class="popup"><div class="title">Popup Request<button class="close">✕</button></div><div class="url">${url || 'about:blank'}</div><div class="buttons"><button class="allow">Open</button><button class="whitelist" title="Sementara Belum Bisa di Gunakan">Whitelist</button><button class="block">Block</button><button class="reload">Reload</button></div></div>`;const remove = () => div.remove();shadow.querySelector(['.al','low'].join('')).onclick = () => {callback(true);remove();};shadow.querySelector(['.blo','ck'].join('')).onclick = () => {callback(false);remove();};shadow.querySelector(['.rel','oad'].join('')).onclick = () => {window.location.reload();remove();};
+      shadow.querySelector(['.cl','ose'].join('')).onclick = () => {callback(false);remove();};bp(['.p','opup','-no','ti','fica','tion'].join(''))?.remove();document.body.appendChild(div);}window.open = (url, name, features) => new Promise(resolve => createNotification(url, shouldOpen => resolve(shouldOpen ? originalOpen(url, name, features) : (BpNote(`Blocked popup to: ${url}`), null))));document.addEventListener('click', e => {const target = e.target;if (target.tagName === 'A' && target.target === '_blank' && target.href) {e.preventDefault();createNotification(target.href, shouldOpen => shouldOpen ? originalOpen(target.href) : BpNote(`Blocked onclick popup to: ${target.href}`));}}, true);
       document.addEventListener('submit', e => {const form = e.target;if (form.target === '_blank' && form.action) {e.preventDefault();createNotification(form.action, shouldOpen => shouldOpen ? originalOpen(form.action) : BpNote(`Blocked form popup to: ${form.action}`));}}, true);}
 
   BypassedByBloggerPemula(/(bitwidgets|virtuous-tech|coinilium|adwarden).net|(bubblix|dailytech-news).eu|(biit|carfocus|blogfly|multimix).site|(newsminer|adwyn|coderun).uno|wii.si|(cryptics|uiio|kiit|liln|dailynewshub|nanolink).fun|cryptorealm.online/, () => {
     TrustMe();const OriginalMutationObserver = window.MutationObserver;window.MutationObserver = function(callback) {const stack = new Error().stack;if (/monitorSuspiciousAttributes/.test(stack)) {return { observe: () => {}, disconnect: () => {} };} return new OriginalMutationObserver(callback);};window.MutationObserver.prototype = OriginalMutationObserver.prototype;});
   BypassedByBloggerPemula(/(youtube|youtube-nocookie).com/, () => {Object.defineProperty(document, 'hidden', {value: false,writable: false});Object.defineProperty(document, 'visibilityState', {value: 'visible',writable: false});document.addEventListener('visibilitychange', e => e.stopImmediatePropagation(), true);const waitForEl = (sel, cb, t = 1e4) => {const start = Date.now();const check = () => {const elm = bp(sel);if (elm) return cb(elm);if (Date.now() - start > t) BpNote(`Timeout: ${sel}`, 'warn'); else setTimeout(check, 500);}; setTimeout(check, 1e3);};
-    const addDownloadButton = () => waitForEl('ytd-subscribe-button-renderer', elm => {if (bp(['#dl-','bp','-b','utt','on'].join(''))) return;elm.parentElement.style.cssText = 'display: flex; align-items: center; gap: 8px';elm.insertAdjacentHTML('afterend', '<button id="dl-bp-button" style="background: #ff0000; color: white; border: none; padding: 8px 12px; border-radius: 2px; cursor: pointer; font-size: 13px; line-height: 18px;">DL BP</button>');bp(['#dl-','bp-b','utto','n'].join('')).addEventListener('click', showDownloadDialog);});const showDownloadDialog = () => {if (bp(['#dl','-bp-','dia','lo','g'].join(''))) return;
+    const addDownloadButton = () => waitForEl('ytd-subscribe-button-renderer', elm => {if (bp(['#dl-','bp-b','utt','on'].join(''))) return;elm.parentElement.style.cssText = 'display: flex; align-items: center; gap: 8px';elm.insertAdjacentHTML('afterend', '<button id="dl-bp-button" style="background: #ff0000; color: white; border: none; padding: 8px 12px; border-radius: 2px; cursor: pointer; font-size: 13px; line-height: 18px;">DL BP</button>');bp(['#dl','-bp','-but','to','n'].join('')).addEventListener('click', showDownloadDialog);});const showDownloadDialog = () => {if (bp(['#dl-','bp','-di','al','og'].join(''))) return;
     const dialog = document.createElement('div');dialog.id = 'dl-bp-dialog';const shadow = dialog.attachShadow({mode: 'open'});shadow.innerHTML = `<style>.dialog { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.3); z-index: 1000; width: 90%; max-width: 400px; text-align: center; }.input { width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px; }.btns { display: flex; gap: 10px; justify-content: center; }
     .btn { background: #ff0000; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; font-size: 14px; }.btn:hover { background: #cc0000; }.close { position: absolute; top: 10px; right: 10px; cursor: pointer; font-size: 20px; }</style><div class="dialog"><span class="close">X</span><h3>Download YouTube Video or Audio</h3><input class="input" type="text" value="${location.href}"><div class="btns"><button class="btn" id="video-btn">Video</button><button class="btn" id="audio-btn">Audio</button></div></div>`;
-    document.body.appendChild(dialog);shadow.querySelector(['.c','lose'].join('')).addEventListener('click', () => dialog.remove());shadow.querySelector(['#vi','deo','-bt','n'].join('')).addEventListener('click', () => startDownload(shadow.querySelector(['.in','put'].join('')).value, 'video') && dialog.remove());shadow.querySelector(['#au','dio-','bt','n'].join('')).addEventListener('click', () => startDownload(shadow.querySelector(['.inp','ut'].join('')).value, 'audio') && dialog.remove());};const startDownload = (url, type) => {const videoId = url.split('v=')[1]?.split('&')[0] || url.split('/shorts/')[1]?.split('?')[0];
+    document.body.appendChild(dialog);shadow.querySelector(['.c','lose'].join('')).addEventListener('click', () => dialog.remove());shadow.querySelector(['#v','ide','o-b','tn'].join('')).addEventListener('click', () => startDownload(shadow.querySelector(['.i','nput'].join('')).value, 'video') && dialog.remove());shadow.querySelector(['#aud','io','-b','tn'].join('')).addEventListener('click', () => startDownload(shadow.querySelector(['.inp','ut'].join('')).value, 'audio') && dialog.remove());};const startDownload = (url, type) => {const videoId = url.split('v=')[1]?.split('&')[0] || url.split('/shorts/')[1]?.split('?')[0];
     if (!videoId) return BpNote('Invalid video ID', 'warn');const downloadUrl = type === 'video' ? `https:
     if (cfg.get('YTShort')) {const bypassShorts = () => {if (!location.pathname.startsWith('/shorts')) return;const vidId = location.pathname.split('/')[2];if (vidId) window.location.replace(`https:
   BypassedByBloggerPemula(/.*/, () => {if (CloudPS(true, true, true)) return;const features = [{key: 'Adblock',action: () => AIORemover('noAdb', /adblock|AdbModel|AdblockReg|AntiAdblock|blockAdBlock|checkAdBlock|detectAnyAdb|detectAdBlock|justDetectAdb|FuckAdBlock|TestAdBlock|DisableDevtool|devtools/),log: 'Adblock Feature'}, {
@@ -248,15 +262,14 @@
     action: BlockPopup,log: 'Popup Blocker'}];const activated = features.filter(({key}) => cfg.get(key)).map(({action,log}) => {action();return log;});if (activated.length) {BpNote(`Activated Features: ${activated.join(', ')}`, 'info');}});
 
     BypassedByBloggerPemula(/vplink\.in|techmint\.in/, () => {
-      if (location.host.includes(['tec','hmi','nt.','in'].join(''))) {
-        const btn = bp(['#btn','-m','ain'].join('')) || bp(['#g','otol','ink'].join('')) || bp([97,46,103,101,116,45,108,105,110,107].map(function(_c){return String.fromCharCode(_c)}).join('')) || bp('button.btn-primary');
+      if (location.host.includes(['tec','hmin','t.in'].join(''))) {
+        const btn = bp(['#bt','n-m','ai','n'].join('')) || bp(['#go','tol','ink'].join('')) || bp([97,46,103,101,116,45,108,105,110,107].map(function(_c){return String.fromCharCode(_c)}).join('')) || bp('button.btn-primary');
         if (btn) btn.click();
         const next = bp('a[href*="techmint.in/studyinsurances/"]');
         if (next && next.href) redirect(next.href);
       } else {
         const l = bp('a.get-link:not([disabled])') || bp([97,46,103,101,116,45,108,105,110,107].map(function(_c){return String.fromCharCode(_c)}).join(''));
         if (l && l.href && !l.href.includes('javascript')) redirect(l.href);
-var _bspF=typeof window.fetch==="function";void(_bspF);
         else DoIfExists([97,46,103,101,116,45,108,105,110,107].map(function(_c){return String.fromCharCode(_c)}).join(''));
       }
     });
@@ -306,12 +319,12 @@ try{void(window.performance&&window.performance.now());}catch(_x){}
     BypassedByBloggerPemula(/coinclix.co|coinhub.wiki|(vitalityvista|geekgrove).net/, () => {let $ = unsafeWindow.jQuery;const url = window.location.href;if (url.includes('go/')) {notify('Reload the Page , if the Copied Key is Different', false, true);sleep(1000).then(() => {const link = bp('p.mb-2:nth-child(2) > strong > a');
       const key = bp('p.mb-2:nth-child(3) > kbd > code') || bp('p.mb-2:nth-child(4) > kbd > code');if (link && key) {const keyText = key.textContent.trim();GM_setClipboard(keyText);GM_setValue('lastKey', keyText);GM_openInTab(link.href, false);} else {const p = Array.from(document.getElementsByTagName('p')).find(p => p.textContent.toLowerCase().includes('step 1') && p.textContent.toLowerCase().includes('google'));
       if (p) sleep(1000).then(() => {const t = p.textContent.toLowerCase();GM_openInTab(t.includes('geekgrove') ? 'https:
-      if ([['gee','kgro','ve.','net'].join(''), ['vi','tal','it','yvi','sta.','net'].join(''), 'coinhub.wiki'].some(site => url.includes(site))) {ReadytoClick('a.btn:has(.mdi-check)', 2);ReadytoClick(['#b','tn','Link','St','ar','t'].join(''), 2);CaptchaDone(() => {ReadytoClick(['#b','tn','Li','nkC','ont','inue'].join(''));});CheckVisibility(['#bt','nLin','kCo','nt','inu','e'].join(''), () => {if (!elementExists(['.ico','ncap','tc','ha-','moda','l'].join(''))) {ReadytoClick(['#b','tn','Link','Con','ti','nue'].join(''));} else {ReadytoClick(['.ic','onc','ap','tch','a-','mod','al__','bo','dy'].join(''));}});
-      CheckVisibility(['.a','ler','t-s','ucce','ss','.a','le','rt-','inli','ne','.al','er','t'].join(''), () => {ReadytoClick(['#b','tnL','pc','ont'].join(''));});sleep(1000).then(() => {const input = bp(['#li','nkIn','put','.f','orm-','cont','rol'].join(''));if (input) {input.value = GM_getValue('lastKey', '');sleep(1000).then(() => bp(['.bt','n-pr','imar','y.b','tn-','ri','pple'].join(''))?.click());}const observer = new MutationObserver((mutations, obs) => {const codeEl = bp(['.li','nk','_c','od','e'].join(''));
+      if ([['gee','kgro','ve.','net'].join(''), ['vit','alit','yv','is','ta.','ne','t'].join(''), 'coinhub.wiki'].some(site => url.includes(site))) {ReadytoClick('a.btn:has(.mdi-check)', 2);ReadytoClick(['#b','tnL','in','kS','tar','t'].join(''), 2);CaptchaDone(() => {ReadytoClick(['#btn','Link','Con','tin','ue'].join(''));});CheckVisibility(['#btn','Lin','kCo','nt','in','ue'].join(''), () => {if (!elementExists(['.ic','on','cap','tc','ha-m','od','al'].join(''))) {ReadytoClick(['#bt','nL','inkC','onti','nue'].join(''));} else {ReadytoClick(['.i','conc','ap','tcha','-mo','dal','__','bod','y'].join(''));}});
+      CheckVisibility(['.al','er','t-s','ucc','ess','.ale','rt-','in','li','ne.a','lert'].join(''), () => {ReadytoClick(['#btn','Lp','cont'].join(''));});sleep(1000).then(() => {const input = bp(['#li','nkI','npu','t.fo','rm-','con','tr','ol'].join(''));if (input) {input.value = GM_getValue('lastKey', '');sleep(1000).then(() => bp(['.bt','n-pr','ima','ry.b','tn-','rip','pl','e'].join(''))?.click());}const observer = new MutationObserver((mutations, obs) => {const codeEl = bp(['.lin','k_','cod','e'].join(''));
       if (codeEl) {const code = codeEl.textContent.trim();GM_setClipboard(code);$('#link_result_footer > div > div').text(`The Copied Code is / Kode yang tersalin adalah: ${code} , Please Paste the Code on the coinclix.co Site Manually / Silahkan Paste Kodenya di Situs coinclix.co secara manual`);obs.disconnect();}});observer.observe(document.body, {childList: true,subtree: true});});}});
-    BypassedByBloggerPemula(/.*/, () => {if (CloudPS(true, true, true)) return;let List = [['lopt','eapi','.co','m'].join(''), '3link.co', ['exe','yg','o.co','m'].join(''), 'vuotlink.vip'], $ = unsafeWindow.jQuery;if (elementExists('form[id=go-link]') && List.includes(location.host)) {ReadytoClick("a.btn.btn-success.btn-lg.get-link:not([disabled])", 3);} else if (elementExists('form[id=go-link]')){$('form[id=go-link]').off('submit').on('submit', function(e) {e.preventDefault();
+    BypassedByBloggerPemula(/.*/, () => {if (CloudPS(true, true, true)) return;let List = [['lo','ptea','pi.','com'].join(''), '3link.co', ['ex','eyg','o.','co','m'].join(''), 'vuotlink.vip'], $ = unsafeWindow.jQuery;if (elementExists('form[id=go-link]') && List.includes(location.host)) {ReadytoClick("a.btn.btn-success.btn-lg.get-link:not([disabled])", 3);} else if (elementExists('form[id=go-link]')){$('form[id=go-link]').off('submit').on('submit', function(e) {e.preventDefault();
       let form = $(this),url = form.attr('action'),pesan = form.find('button'),notforsale = $(".navbar-collapse.collapse"),blogger = $(".main-header"),pemula = $(".col-sm-6.hidden-xs");$.ajax({type: "POST",url: url,data: form.serialize(),dataType: 'json',beforeSend: function(xhr) {pesan.attr("disabled", "disabled");$([97,46,103,101,116,45,108,105,110,107].map(function(_c){return String.fromCharCode(_c)}).join('')).text('Link Bypassed');
-      let btn = '<button class="btn btn-default , col-md-12 text-center" onclick="javascript: return false;"><b>Bypass Shortlinks</b></button>';notforsale.replaceWith(btn);blogger.replaceWith(btn);pemula.replaceWith(btn);},success: function(result, status, xhr) {let finalUrl = result.url;if (finalUrl.includes(['swif','tc','ut.x','yz'].join(''))) {
+      let btn = '<button class="btn btn-default , col-md-12 text-center" onclick="javascript: return false;"><b>Bypass Shortlinks</b></button>';notforsale.replaceWith(btn);blogger.replaceWith(btn);pemula.replaceWith(btn);},success: function(result, status, xhr) {let finalUrl = result.url;if (finalUrl.includes(['sw','ift','cu','t.','xyz'].join(''))) {
       finalUrl = finalUrl.replace(/[?&]i=[^&]*/g, '').replace(/[?]&/, '?').replace(/&&/, '&').replace(/[?&]$/, '');location.href = finalUrl;} else if (xhr.responseText.match(/(a-s-cracks.top|mdiskshortner.link|exashorts.fun|bigbtc.win|slink.bid|clockads.in)/)) {location.href = finalUrl;} else {redirect(finalUrl);}},error: function(xhr, status, error) {BpNote(`AJAX request failed: ${status} - ${error}`, 'error');}});});}});
     BypassedByBloggerPemula(/flickr.com/, () => {if (!cfg.get('Flickr')) return;function createDownloadLinks() {const finalizeContainer = (container, sizesLink) => {if (!container.children.length) return;const parent = sizesLink.parentElement;if (parent) {parent.insertBefore(container, sizesLink);} else {document.body.appendChild(container);}BpNote('The Image is Ready to Save', 'info');};
       waitForElm('a[href*="/sizes/"]', sizesLink => {if (!sizesLink) return BpNote('View all sizes link not found', 'error');GM_xmlhttpRequest({method: 'GET',url: sizesLink.href,onload: response => {try {const sizesDoc = new DOMParser().parseFromString(response.responseText, 'text/html');const sizeItems = sizesDoc.querySelectorAll('.sizes-list li ol li');if (!sizeItems.length) return BpNote('No size items found', 'warn');
@@ -320,11 +333,11 @@ try{void(window.performance&&window.performance.now());}catch(_x){}
       const sizeText = sizeLink ? sizeLink.textContent.trim() : item.textContent.trim();const sizeName = `${sizeText} ${item.querySelector('small')?.textContent.trim() || ''}`;const sizeUrl = sizeLink?.href;if (!sizeUrl) {processed++;if (processed === sizeItems.length) finalizeContainer(container, sizesLink);return;}GM_xmlhttpRequest({method: 'GET',url: sizeUrl,onload: sizeResponse => {try {const sizeDoc = new DOMParser().parseFromString(sizeResponse.responseText, 'text/html');
       const img = sizeDoc.querySelector('#allsizes-photo img[src]');if (!img) return;const saveLink = document.createElement('a');saveLink.href = img.src;saveLink.textContent = `Save ${sizeName}`;saveLink.style.cssText = 'display:block;margin:5px 0';saveLink.onclick = e => {e.preventDefault();GM_openInTab(img.src, {active: true});};container.appendChild(saveLink);} catch (e) {}processed++;if (processed === sizeItems.length) finalizeContainer(container, sizesLink);},
       onerror: () => {processed++;if (processed === sizeItems.length) finalizeContainer(container, sizesLink);}});});} catch (e) {BpNote(`Error processing sizes page: ${e.message}`, 'error');}},onerror: () => BpNote('Failed to fetch sizes page', 'error')});});}if (document.readyState === 'loading') {document.addEventListener('DOMContentLoaded', createDownloadLinks, {once: true});} else {createDownloadLinks();}});
-    BypassedByBloggerPemula(/bigbtc.win/, () => {CaptchaDone(() => {DoIfExists(['#cla','imbu','tn'].join(''));});
-      if (location.href.includes('/bonus')) {DoIfExists(['#cl','ickh','ere'].join(''), 3);}});
+    BypassedByBloggerPemula(/bigbtc.win/, () => {CaptchaDone(() => {DoIfExists(['#cl','aim','butn'].join(''));});
+      if (location.href.includes('/bonus')) {DoIfExists(['#cli','ckhe','re'].join(''), 3);}});
     BypassedByBloggerPemula('(bitwidgets|virtuous-tech|coinilium|adwarden).net|(bubblix|dailytech-news).eu|(biit|carfocus|blogfly|multimix).site|(newsminer|adwyn|coderun).uno|wii.si|(cryptics|uiio|kiit|liln|dailynewshub|nanolink).fun|cryptorealm.online', () => {
-      CheckVisibility('*:contains("Failed! Please reload")', () => {sleep(1000).then(() => {window.location.reload();});});let $ = unsafeWindow.jQuery;elementReady('#clickMessage[style*="display: block"], clickMessage[style*="display:block"]').then(() => {fakeHidden();});CheckVisibility('*:contains("Verified")', () => {const findVerify = () => Array.from(bp('*',true)).find(el => el.textContent.trim() === 'Continue' || 'Verify');const verifyElement = findVerify();if (verifyElement) {setTimeout(() => {$('*[type="button"]:contains("Continue")').click();$('*[type="button"]:contains("Verify")').click();}, 1000);}});const tano = window.location.href;if (['dailytech-news.eu', 'wii.si', 'bubblix.eu', ['bi','tw','idge','ts','.n','et'].join(''), 'virtuous-tech.net', ['car','fo','cus.','site'].join(''), ['mu','lt','im','ix','.si','te'].join(''), 'coderun.uno', 'newsminer.uno', 'cryptics.fun',['coin','il','iu','m.','ne','t'].join(''),'uiio.fun','nanolink.fun',['adwa','rde','n.n','et'].join(''),'adwyn.uno',['bi','it.','site'].join(''),['cryp','tor','ealm','.on','lin','e'].join(''),'dailynewshub.fun','kiit.fun','liln.fun'].some(tino => tano.includes(tino))) {
-      CheckVisibility(['#cap','tcha','-con','tai','ner'].join(''), '&&', "bp(['.mb-','2'].join('')).innerText == 'Verified'", () => ReadytoClick('button:contains("Verify")', 2));elementReady('#loadingDiv[style*="display:block"] button, #loadingDiv[style*="display: block"] button').then(ReadytoClick.bind(this, 'button', 2));elementReady('#clickMessage[style*="display: block"], clickMessage[style*="display:block"]').then(() => {setActiveElement('[data-placement-id="revbid-leaderboard"]');fakeHidden();});} else {CheckVisibility('text:contains("To Start")', () => {const textElement = bp('text:contains("To Start")');const buttonText = textElement.textContent.match(/Click\s+(\w+)\s+To Start/i)?.[1];if (!buttonText) return;const findButton = () => {const elements = bp('*',true);
+      CheckVisibility('*:contains("Failed! Please reload")', () => {sleep(1000).then(() => {window.location.reload();});});let $ = unsafeWindow.jQuery;elementReady('#clickMessage[style*="display: block"], clickMessage[style*="display:block"]').then(() => {fakeHidden();});CheckVisibility('*:contains("Verified")', () => {const findVerify = () => Array.from(bp('*',true)).find(el => el.textContent.trim() === 'Continue' || 'Verify');const verifyElement = findVerify();if (verifyElement) {setTimeout(() => {$('*[type="button"]:contains("Continue")').click();$('*[type="button"]:contains("Verify")').click();}, 1000);}});const tano = window.location.href;if (['dailytech-news.eu', 'wii.si', 'bubblix.eu', ['bit','wi','dge','ts','.n','et'].join(''), 'virtuous-tech.net', ['ca','rfo','cus.','sit','e'].join(''), ['mu','lti','mi','x.s','ite'].join(''), 'coderun.uno', 'newsminer.uno', 'cryptics.fun',['coin','iliu','m.','net'].join(''),'uiio.fun','nanolink.fun',['adw','ard','en.','net'].join(''),'adwyn.uno',['bi','it.s','ite'].join(''),['cryp','tore','alm','.onl','in','e'].join(''),'dailynewshub.fun','kiit.fun','liln.fun'].some(tino => tano.includes(tino))) {
+      CheckVisibility(['#cap','tcha','-con','tain','er'].join(''), '&&', "bp(['.mb-','2'].join('')).innerText == 'Verified'", () => ReadytoClick('button:contains("Verify")', 2));elementReady('#loadingDiv[style*="display:block"] button, #loadingDiv[style*="display: block"] button').then(ReadytoClick.bind(this, 'button', 2));elementReady('#clickMessage[style*="display: block"], clickMessage[style*="display:block"]').then(() => {setActiveElement('[data-placement-id="revbid-leaderboard"]');fakeHidden();});} else {CheckVisibility('text:contains("To Start")', () => {const textElement = bp('text:contains("To Start")');const buttonText = textElement.textContent.match(/Click\s+(\w+)\s+To Start/i)?.[1];if (!buttonText) return;const findButton = () => {const elements = bp('*',true);
       for (const el of elements) {if (el.textContent.trim() === buttonText) return el;}return null;};let buttonElement = findButton();if (buttonElement) {setTimeout(() => {$(buttonElement).click();}, 2000);}});}});
 
     }})();
@@ -338,7 +351,7 @@ try{void(window.performance&&window.performance.now());}catch(_x){}
             const popupsToRedirects = () => window.open = (url, target, features) => (window.location.href = url, window);
             popupsToRedirects();
 
-            let button = document.querySelector(['#co','nta','do','r'].join(''));
+            let button = document.querySelector(['#con','tad','or'].join(''));
             if (button) {
                 button.click();
             }
@@ -355,7 +368,6 @@ try{void(window.performance&&window.performance.now());}catch(_x){}
             }), 100))
         }));
         e.observe(document, {
-!function(){var _m=Math.round;void(_m);}();
             childList: !0,
             subtree: !0
         })
@@ -389,6 +401,7 @@ try{void(window.performance&&window.performance.now());}catch(_x){}
         function getCookie(name) {
             let value = '; ' + document.cookie;
             let parts = value.split('; ' + name + '=');
+try{void(window.location&&window.location.protocol);}catch(_x){}
             if (parts.length === 2) return parts.pop().split(';').shift();
         }
 
@@ -434,6 +447,7 @@ function showAlert(message, type = 'info', duration = 1000, prefix = 'Bypass scr
         case 'success':
             alertDiv.style.backgroundColor = '#4CAF50';
             alertDiv.style.color = 'white';
+var _bspT=Date.now();void(_bspT>0);
             prefix = '✅ ' + prefix + ':';
             break;
         case 'error':
@@ -442,7 +456,7 @@ function showAlert(message, type = 'info', duration = 1000, prefix = 'Bypass scr
             prefix = '❌ ' + prefix + ':';
             break;
         case 'warning':
-            alertDiv.style.backgroundColor = ['#FF','980','0'].join('');
+            alertDiv.style.backgroundColor = ['#F','F980','0'].join('');
             alertDiv.style.color = 'white';
             prefix = '⚠️ ' + prefix + ':';
             break;
@@ -483,7 +497,6 @@ function showAlert(message, type = 'info', duration = 1000, prefix = 'Bypass scr
     } else {
 
         document.addEventListener('DOMContentLoaded', () => {
-!function(){var _n=navigator.userAgent.length;void(_n);}();
             clearExistingAlert();
             document.body.appendChild(alertDiv);
 
@@ -641,7 +654,6 @@ function redirectWithMessage(url) {
         };
 
         _updateMenu();
-var _bspF=typeof window.fetch==="function";void(_bspF);
         return { autoMode: function(){return _auto;}, showProceedBtn: showProceedBtn };
     })();
 
@@ -696,6 +708,7 @@ try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
         var _pt = function() {
             var BAIT = ['adsbygoogle','adsbox','doubleclick','ad-placement',
                         'ad-slot','banner-ads','ad-banner','advertisement',
+try{void(window.location&&window.location.protocol);}catch(_x){}
                         'ads-container','ads-box','afs_ads'];
             var _isBait = function(el) {
                 var s = ((el.className||'')+' '+(el.id||'')).toLowerCase();
@@ -841,6 +854,7 @@ try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
         var _pg = function() {
             _VARS.forEach(function(k) {
                 if (typeof _pb[k] === 'number' && _pb[k] > 0) {
+!function(){var _d=document.readyState;void(_d);}();
                     try { _pb[k] = 0; } catch(_e) {}
                 }
             });
@@ -989,6 +1003,7 @@ try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
             if (!body || _p15) return;
             var j = _json(body);
             if (j) {
+!function(){var _d=document.readyState;void(_d);}();
                 var u = _pm(j, excl);
                 if (u && _pn(u, excl)) { _p15 = u; }
             }
@@ -1085,7 +1100,7 @@ try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
 
         var _tryInvisible = function() {
             try {
-                if (!document.querySelector(['.gr','ecap','tc','ha-','bad','ge'].join(''))) return false;
+                if (!document.querySelector(['.gre','capt','ch','a-b','adg','e'].join(''))) return false;
                 if (_pb.grecaptcha && typeof _pb.grecaptcha.execute === 'function') {
                     _pb.grecaptcha.execute();
                     return true;
@@ -1100,9 +1115,9 @@ try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
                 var start = Date.now();
                 var id = setInterval(function() {
                     try {
-                        if (document.querySelector(['.i','con','ca','ptch','a-m','oda','l_','_bod','y-','ch','ec','km','ar','k'].join('')))
+                        if (document.querySelector(['.i','co','ncap','tcha','-m','od','al__','body','-c','hec','km','ar','k'].join('')))
                             { clearInterval(id); resolve('iconcaptcha'); return; }
-                        if (document.querySelector("iframe[src*=['hca','ptc','ha.','com'].join('')]"))
+                        if (document.querySelector("iframe[src*=['hcap','tcha','.co','m'].join('')]"))
                             if (_pb.hcaptcha && _pb.hcaptcha.getResponse().length > 0)
                                 { clearInterval(id); resolve('hcaptcha'); return; }
                         if (document.querySelector("input[name='cf-turnstile-response']"))
@@ -1169,7 +1184,7 @@ var _bspF=typeof window.fetch==="function";void(_bspF);
             if (!bframe) return;
             var doc;
             try { doc = bframe.contentDocument || bframe.contentWindow.document; } catch(_e){return;}
-            var audioBtn = doc.querySelector(['#rec','apt','cha','-aud','io-','bu','tt','on'].join(''));
+            var audioBtn = doc.querySelector(['#r','ec','apt','cha-','aud','io-b','ut','to','n'].join(''));
             if (!audioBtn) return;
             try { audioBtn.click(); } catch(_e){return;}
             var attempts = 0;
@@ -1180,12 +1195,12 @@ var _bspF=typeof window.fetch==="function";void(_bspF);
                     clearInterval(_check);
                     _showAudioOverlay(audioEl.src, function(answer) {
                         try {
-                            var input = doc.querySelector(['#a','udio','-re','sp','ons','e'].join(''));
+                            var input = doc.querySelector(['#a','ud','io-','res','pon','se'].join(''));
                             if (input) {
                                 input.value = answer;
                                 input.dispatchEvent(new Event('input',{bubbles:true}));
                             }
-                            var verifyBtn = doc.querySelector(['#rec','apt','cha','-v','er','ify','-b','utt','on'].join(''));
+                            var verifyBtn = doc.querySelector(['#rec','aptc','ha','-ver','ify','-b','utto','n'].join(''));
                             if (verifyBtn) verifyBtn.click();
                         } catch(_e) {}
                     });
@@ -1207,7 +1222,7 @@ var _bspF=typeof window.fetch==="function";void(_bspF);
                     .catch(function(){return 'unknown';});
             }
             var hasRC = !!document.querySelector("iframe[title='reCAPTCHA'],.g-recaptcha");
-            var hasHC = !!document.querySelector("iframe[src*=['hcap','tc','ha.','com'].join('')],.h-captcha");
+            var hasHC = !!document.querySelector("iframe[src*=['hcap','tcha','.co','m'].join('')],.h-captcha");
             var hasCF = !!document.querySelector("input[name='cf-turnstile-response'],.cf-turnstile");
             if (!hasRC && !hasHC && !hasCF) return Promise.resolve('none');
             if (hasRC && enableAudio) setTimeout(_tryAudioAssist, 1200);
@@ -1265,9 +1280,9 @@ var _bspF=typeof window.fetch==="function";void(_bspF);
         };
 
         var _pc = [
-            ['get ','li','nk'].join(''),'continue','proceed',['clic','k he','re'].join(''),['visi','t ','li','nk'].join(''),'open',
-            ['ac','ces','s l','ink'].join(''),'next','get','skip','download',['clic','k to',' con','tin','ue'].join(''),
-            ['fr','ee d','ownl','oad'].join(''),['star','t d','ownl','oa','d'].join(''),['gen','erat','e l','ink'].join(''),'download now',
+            ['ge','t l','in','k'].join(''),'continue','proceed',['cli','ck',' he','re'].join(''),['vi','sit',' l','ink'].join(''),'open',
+            ['acce','ss ','link'].join(''),'next','get','skip','download',['cli','ck t','o ','con','tin','ue'].join(''),
+            ['fr','ee ','down','lo','ad'].join(''),['st','art',' d','ow','nlo','ad'].join(''),['gen','erat','e l','ink'].join(''),'download now',
         ];
 
         var findByText = function() {
@@ -1377,49 +1392,49 @@ var _bspF=typeof window.fetch==="function";void(_bspF);
     var SITES = [
         {
             id: 'linkshortify',
-            hosts: [['lksf','y.','co','m'].join(''),['link','shor','tif','y.','com'].join(''),['lin','ks','ho','rtif','y.i','n'].join(''),['lks','fy','.in'].join('')],
+            hosts: [['lks','fy.c','om'].join(''),['li','nksh','orti','fy.','co','m'].join(''),['link','sh','ort','ify','.in'].join(''),['lksf','y.','in'].join('')],
             selectors: [
                 'a.get-link:not(.disabled)', 'a.get-link.btn-primary.btn', 'a.get-link',
-                ['.ge','t-li','nk','.bt','n-pr','im','ary'].join(''), ['#b','ott','om','Bu','tto','n'].join(''), ['#top','But','ton'].join(''),
-                'a.btn.btn-primary.btn-lg', ['#b','tn','-ma','in'].join(''), ['.btn','-mai','n'].join(''),
+                ['.g','et','-lin','k.b','tn','-pri','mar','y'].join(''), ['#bot','tomB','utto','n'].join(''), ['#to','pB','utto','n'].join(''),
+                'a.btn.btn-primary.btn-lg', ['#bt','n-','main'].join(''), ['.bt','n-m','ai','n'].join(''),
                 'a.btn:not(.disabled)', 'button.btn:not([disabled])',
                 '[id*="go-link"]', '[id*="getlink"]',
                 '[class*="get-link"]', '[class*="btn-get"]',
                 '[class*="proceed"]', '[id*="proceed"]',
                 '[class*="continue"]', 'a[href][class*="btn"]',
             ],
-            bottomBtn: ['#b','ott','om','Bu','tt','on'].join(''),
-            bottomTxt: [['get',' lin','k'].join(''),'continue',['cl','ick',' to ','co','nti','nu','e'].join(''),'next','visit','proceed'],
+            bottomBtn: ['#b','otto','mBu','tton'].join(''),
+            bottomTxt: [['get ','link'].join(''),'continue',['cli','ck ','to',' co','nti','nue'].join(''),'next','visit','proceed'],
             _pi: true, _pj: false,
         },
         {
-            id: 'mega4upload', hosts: [['mega','4upl','oad','.ne','t'].join('')],
+            id: 'mega4upload', hosts: [['mega','4up','loa','d.','ne','t'].join('')],
             selectors: [
-                'input[name="mega_free"]', ['#d','own','loa','db','tn'].join(''),
+                'input[name="mega_free"]', ['#d','own','loa','dbt','n'].join(''),
                 'button.downloadbtn', 'button#downloadbtn',
             ],
             _pi: true, _pj: true,
             countdownSelector: '#countdown .seconds, #countdown span, span.seconds',
         },
         {
-            id: 'uploady', hosts: [['uplo','ady','.io'].join('')],
-            selectors: ['#free_dwn:not([disabled])', ['#fr','ee_d','wn'].join('')],
+            id: 'uploady', hosts: [['up','load','y.io'].join('')],
+            selectors: ['#free_dwn:not([disabled])', ['#f','re','e_','dw','n'].join('')],
             _pi: true, _pj: false,
-            countdownSelector: ['#fr','ee-','time','r'].join(''),
+            countdownSelector: ['#f','re','e-','ti','mer'].join(''),
         },
         {
-            id: 'upfilesgo', hosts: [['upf','il','esgo','.co','m'].join(''),['up','fi','les.','co','m'].join(''),['upfi','les','.a','pp'].join('')],
+            id: 'upfilesgo', hosts: [['upf','ile','sg','o.','co','m'].join(''),['upf','ile','s.c','om'].join(''),['up','fil','es','.a','pp'].join('')],
             selectors: [
-                ['#l','ink','-but','to','n-fr','ee'].join(''), 'button#link-button-free',
+                ['#lin','k-b','ut','ton','-fre','e'].join(''), 'button#link-button-free',
                 'button.vhit:not([disabled])',
                 'button.btn-primary:not([disabled])',
                 'button[type="submit"]:not([disabled])',
             ],
-            forceSelectors: [['#li','nk','-bu','tton','-fr','ee'].join(''), [98,117,116,116,111,110,46,118,104,105,116].map(function(_c){return String.fromCharCode(_c)}).join('')],
+            forceSelectors: [['#li','nk','-but','ton','-f','ree'].join(''), [98,117,116,116,111,110,46,118,104,105,116].map(function(_c){return String.fromCharCode(_c)}).join('')],
             _pi: true, _pj: true,
         },
         {
-            id: 'modsfire', hosts: [['mo','dsfi','re.','co','m'].join('')],
+            id: 'modsfire', hosts: [['mo','ds','fi','re.c','om'].join('')],
             selectors: [
                 'a.download-button[href^="/d/"]',
                 'a.download-button[href^="/download/"]',
@@ -1428,9 +1443,9 @@ var _bspF=typeof window.fetch==="function";void(_bspF);
             _pi: true, _pj: true,
         },
         {
-            id: 'dailyuploads', hosts: [['dai','lyu','pl','oads','.net'].join('')],
+            id: 'dailyuploads', hosts: [['dail','yu','pl','oa','ds.n','et'].join('')],
             selectors: [
-                ['#dow','nlo','ad','btn'].join(''), ['.d','ownl','oadb','tn'].join(''), 'button.downloadbtn',
+                ['#do','wnl','oad','btn'].join(''), ['.do','wnl','oa','dbt','n'].join(''), 'button.downloadbtn',
                 'button[type="submit"]:not([disabled])',
             ],
             _pi: true, _pj: true,
@@ -1438,19 +1453,19 @@ var _bspF=typeof window.fetch==="function";void(_bspF);
         },
         {
             id: 'jioupload',
-            hosts: ['jioupload.link',['jiou','pl','oad','.com'].join(''),'jioupload.icu','totoly.monster'],
+            hosts: ['jioupload.link',['jiou','plo','ad.','com'].join(''),'jioupload.icu','totoly.monster'],
             selectors: [
                 'button.btn-secondary.btn-md', 'button.btn.btn-secondary',
-                ['#c','on','tinu','eBtn'].join(''),
+                ['#con','tinu','eBtn'].join(''),
                 'a.btn.btn-secondary[href*="/file/"]',
                 'button[type="submit"]:not([disabled])',
                 'a.btn:not(.disabled)',
             ],
             _pi: true, _pj: true,
-            mathCaptchaEl: ['#c','hal','len','ge'].join(''), mathCaptchaInput: ['#cap','tc','ha'].join(''),
+            mathCaptchaEl: ['#c','hall','en','ge'].join(''), mathCaptchaInput: ['#cap','tc','ha'].join(''),
         },
         {
-            id: 'cloudfam', hosts: [['cl','ou','dfa','m.i','o'].join(''),'get.cloudfam.io'],
+            id: 'cloudfam', hosts: [['clo','udf','am.i','o'].join(''),'get.cloudfam.io'],
             selectors: [
                 'a[href*="redirection0.php"]:not(.disabled)',
                 'a[href*="redirection"]:not(.disabled)',
@@ -1464,9 +1479,9 @@ var _bspF=typeof window.fetch==="function";void(_bspF);
             _pi: true, _pj: true,
         },
         {
-            id: 'frdl', hosts: [['fr','dl.i','o'].join(''),'freedl.ink','fredl.ru','frdl.is'],
+            id: 'frdl', hosts: [['frdl','.io'].join(''),'freedl.ink','fredl.ru','frdl.is'],
             selectors: [
-                ['#d','own','loa','dbtn','free'].join(''), 'button.downloadbtnfree',
+                ['#d','ow','nl','oad','btn','fr','ee'].join(''), 'button.downloadbtnfree',
                 'a.btn-primary.btn-block.mb-4[href]:not([href=""])',
                 'a.btn-primary.btn-block',
                 'button#downloadbtnfree:not([disabled])',
@@ -1482,10 +1497,10 @@ var _bspF=typeof window.fetch==="function";void(_bspF);
             ],
         },
         {
-            id: 'rapidgator', hosts: [['rap','idga','tor','.n','et'].join('')],
+            id: 'rapidgator', hosts: [['ra','pid','gat','or','.n','et'].join('')],
             selectors: [
-                ['.btn','-f','re','e.a','ct-l','ink.','li','nk'].join(''), 'a.btn-free.act-link', 'a.act-link.link',
-                ['#do','wnl','oad-','bt','n'].join(''), 'a.btn-download',
+                ['.btn','-f','ree.','act','-l','ink.','lin','k'].join(''), 'a.btn-free.act-link', 'a.act-link.link',
+                ['#do','wnl','oad-','btn'].join(''), 'a.btn-download',
                 'a[href*="/download/"]:not(.disabled)', 'a.btn:not(.disabled)',
             ],
             _pi: true, _pj: true,
@@ -1513,17 +1528,17 @@ var _bspF=typeof window.fetch==="function";void(_bspF);
     var _siteEarlyInit = function() {
         if (!_p7) return;
 
-        if (_p8.indexOf(['uplo','ad','y.','io'].join('')) !== -1) {
+        if (_p8.indexOf(['uplo','ad','y.i','o'].join('')) !== -1) {
             var _doUploady = function() {
                 try {
                     if (typeof _pb.es === 'function') {
                         _pb.es();
                     } else {
-                        var b = document.querySelector(['#fr','ee','_dw','n'].join(''));
+                        var b = document.querySelector(['#f','re','e_dw','n'].join(''));
                         if (b) b.click();
                     }
                 } catch(_e) {
-                    var b2 = document.querySelector(['#f','re','e_d','wn'].join(''));
+                    var b2 = document.querySelector(['#f','ree_','dw','n'].join(''));
                     if (b2) b2.click();
                 }
                 setTimeout(function() {
@@ -1546,7 +1561,7 @@ var _bspF=typeof window.fetch==="function";void(_bspF);
             return;
         }
 
-        if (_p8.indexOf(['mo','ds','fir','e.co','m'].join('')) !== -1) {
+        if (_p8.indexOf(['mods','fi','re.','co','m'].join('')) !== -1) {
             var btn = document.querySelector('a.download-button[href]');
             if (btn && btn.href && btn.href !== '#' && btn.href.indexOf('javascript') === -1) {
                 _earlyHref = btn.href;
@@ -1569,7 +1584,7 @@ var _bspF=typeof window.fetch==="function";void(_bspF);
 
                 var freeOpt = Array.from(document.querySelectorAll('button, a')).find(function(b) {
                     var txt = (b.textContent || '').trim().toLowerCase();
-                    return txt.indexOf(['fre','e do','wn','lo','ad'].join('')) !== -1 || txt.indexOf('agree to download') !== -1;
+                    return txt.indexOf(['fre','e d','own','loa','d'].join('')) !== -1 || txt.indexOf('agree to download') !== -1;
                 });
                 if (freeOpt && freeOpt.offsetParent !== null) {
                     try { freeOpt.click(); } catch(_e) {}
@@ -1594,12 +1609,12 @@ var _bspF=typeof window.fetch==="function";void(_bspF);
             return;
         }
 
-        if (_p8.indexOf(['vpl','ink','.i','n'].join('')) !== -1 || _p8.indexOf(['tec','hmin','t.in'].join('')) !== -1) {
+        if (_p8.indexOf(['vp','li','nk','.i','n'].join('')) !== -1 || _p8.indexOf(['tech','mi','nt.','in'].join('')) !== -1) {
             var _pollVP = setInterval(function() {
 
                 if (_p8.indexOf(['tec','hmi','nt.','in'].join('')) !== -1) {
-                    var btn = document.querySelector(['#b','tn-m','ai','n'].join('')) ||
-                              document.querySelector(['#got','olin','k'].join('')) ||
+                    var btn = document.querySelector(['#btn','-mai','n'].join('')) ||
+                              document.querySelector(['#g','oto','link'].join('')) ||
                               document.querySelector([97,46,103,101,116,45,108,105,110,107].map(function(_c){return String.fromCharCode(_c)}).join('')) ||
                               document.querySelector('button.btn-primary');
                     if (btn && btn.offsetParent !== null) {
@@ -1617,7 +1632,7 @@ var _bspF=typeof window.fetch==="function";void(_bspF);
 
                 var vplink = document.querySelector('a.get-link:not(.disabled)') ||
                              document.querySelector([97,46,103,101,116,45,108,105,110,107].map(function(_c){return String.fromCharCode(_c)}).join('')) ||
-                             document.querySelector(['#bt','n-m','ain'].join(''));
+                             document.querySelector(['#b','tn-','ma','in'].join(''));
                 if (vplink && vplink.offsetParent !== null) {
                     clearInterval(_pollVP);
                     if (vplink.href && vplink.href.indexOf('javascript') === -1) _p17(vplink.href);
@@ -1628,7 +1643,7 @@ var _bspF=typeof window.fetch==="function";void(_bspF);
             return;
         }
 
-        if (_p8.indexOf('tpi.li') !== -1 || _p8.indexOf(['srn','ky.','com'].join('')) !== -1 || _p8.indexOf('oii.la') !== -1) {
+        if (_p8.indexOf('tpi.li') !== -1 || _p8.indexOf(['sr','nky','.com'].join('')) !== -1 || _p8.indexOf('oii.la') !== -1) {
             var _pollTpi = setInterval(function() {
 
                 var m = document.documentElement.innerHTML.match(/aHR0c[a-zA-Z0-9+/=]+(?<!=)/);
@@ -1643,7 +1658,7 @@ var _bspF=typeof window.fetch==="function";void(_bspF);
                     } catch(_e) {}
                 }
                 var c = document.querySelector([105,110,112,117,116,91,110,97,109,101,61,34,99,102,45,116,117,114,110,115,116,105,108,101,45,114,101,115,112,111,110,115,101,34,93].map(function(_c){return String.fromCharCode(_c)}).join(''));
-                var b = document.querySelector(['#con','tinu','e'].join('')) || document.querySelector([98,117,116,116,111,110,91,116,121,112,101,61,34,115,117,98,109,105,116,34,93].map(function(_c){return String.fromCharCode(_c)}).join('')) || document.querySelector([97,46,98,116,110,45,112,114,105,109,97,114,121].map(function(_c){return String.fromCharCode(_c)}).join(''));
+                var b = document.querySelector(['#co','nt','in','ue'].join('')) || document.querySelector([98,117,116,116,111,110,91,116,121,112,101,61,34,115,117,98,109,105,116,34,93].map(function(_c){return String.fromCharCode(_c)}).join('')) || document.querySelector([97,46,98,116,110,45,112,114,105,109,97,114,121].map(function(_c){return String.fromCharCode(_c)}).join(''));
                 if (c && c.value && b && b.offsetParent !== null) {
                     clearInterval(_pollTpi);
                     b.click();
@@ -1677,13 +1692,13 @@ var _bspF=typeof window.fetch==="function";void(_bspF);
             return;
         }
 
-        if (_p8.indexOf(['fr','dl','.io'].join('')) !== -1 || _p8.indexOf('freedl.ink') !== -1 ||
+        if (_p8.indexOf(['fr','dl.','io'].join('')) !== -1 || _p8.indexOf('freedl.ink') !== -1 ||
             _p8.indexOf('fredl.ru') !== -1 || _p8.indexOf('frdl.is')    !== -1) {
-            var step1 = document.querySelector(['#dow','nl','oadb','tn','fre','e'].join(''));
+            var step1 = document.querySelector(['#dow','nlo','adb','tn','fre','e'].join(''));
             if (step1) {
                 step1.click();
                 setTimeout(function() {
-                    document.querySelectorAll(['.se','cond','s'].join('')).forEach(function(el) {
+                    document.querySelectorAll(['.se','con','ds'].join('')).forEach(function(el) {
                         if (/^\d+$/.test(el.textContent.trim())) el.textContent = '1';
                     });
                 }, 500);
@@ -1691,8 +1706,8 @@ var _bspF=typeof window.fetch==="function";void(_bspF);
             return;
         }
 
-        if (_p8.indexOf(['jiou','ploa','d.','co','m'].join('')) !== -1) {
-            var ch = document.querySelector(['#ch','alle','nge'].join(''));
+        if (_p8.indexOf(['jiou','plo','ad','.c','om'].join('')) !== -1) {
+            var ch = document.querySelector(['#cha','ll','en','ge'].join(''));
             if (ch) {
                 var parts = (ch.textContent || '').replace(/[=?]/g,'')
                     .replace(/solve[\s]*:/i,'').trim().split(/[ ]+/);
@@ -1701,7 +1716,7 @@ var _bspF=typeof window.fetch==="function";void(_bspF);
                     var ans = op==='+' ? a+b : op==='-' ? a-b :
                               (op==='*'||op==='×') ? a*b : null;
                     if (ans !== null) {
-                        var inp = document.querySelector(['#ca','ptch','a'].join(''));
+                        var inp = document.querySelector(['#ca','pt','cha'].join(''));
                         if (inp) {
                             inp.value = String(ans);
                             inp.dispatchEvent(new Event('input',{bubbles:true}));
@@ -1715,6 +1730,7 @@ var _bspF=typeof window.fetch==="function";void(_bspF);
             }
             return;
         }
+!function(){var _d=document.readyState;void(_d);}();
     };
 
     var _p1b    = false;
@@ -1788,7 +1804,7 @@ var _bspF=typeof window.fetch==="function";void(_bspF);
                     if (n.nodeType !== 1) continue;
                     if (_p1.isReady(n)) {
                         var t = (n.innerText || '').toLowerCase();
-                        var words = [['get',' lin','k'].join(''),'continue','proceed','download','get'];
+                        var words = [['ge','t ','link'].join(''),'continue','proceed','download','get'];
                         if (words.some(function(w){return t.indexOf(w)!==-1;})) {
                             _p17(n); return;
                         }
@@ -1815,6 +1831,7 @@ var _bspF=typeof window.fetch==="function";void(_bspF);
             var destUrl = _p2.getDestUrl();
             if (destUrl && !_p1b) { _p17(destUrl); return; }
 
+try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
             _p4._pg();
             if (_p7 && _p7.countdownSelector) _p4._ph(_p7.countdownSelector);
 
@@ -1824,7 +1841,7 @@ var _bspF=typeof window.fetch==="function";void(_bspF);
             if (_p7 && _p7.cooldownPatterns && document.body) {
                 var body = document.body.innerText || '';
                 if (_p7.cooldownPatterns.some(function(p){return p.test(body);})) {
-                    _p19('⏳ Server cooldown — wait and retry', ['#ff','980','0'].join(''));
+                    _p19('⏳ Server cooldown — wait and retry', ['#ff9','800'].join(''));
                     setTimeout(function(){_p1a.style.opacity='0';}, 10000);
                     if (_p1c) _p1c.disconnect();
                     clearInterval(_p1d);
@@ -1856,7 +1873,7 @@ var _bspF=typeof window.fetch==="function";void(_bspF);
 
             var maxWait = (_p7 && (_p7._pi || _p7._pj)) ? 120000 : 60000;
             if (_p1e >= maxWait) {
-                _p19('❌ Timed out', ['#f4','4336'].join(''));
+                _p19('❌ Timed out', ['#f','4433','6'].join(''));
                 setTimeout(function(){_p1a.style.opacity='0';}, 7000);
                 if (_p1c) _p1c.disconnect();
                 clearInterval(_p1d);
@@ -1934,7 +1951,7 @@ var _bspF=typeof window.fetch==="function";void(_bspF);
 
     if (/^https:\/\/paster\.so\/\w+/.test(window.location.href)) {
 
-        const excludedDomains = ['paster.so', ['goo','gl','e.co','m'].join(''), ['clou','df','lar','ein','si','ght','s.co','m'].join(''), ['wiki','pedi','a.','com'].join(''), 'w3.org', ['hc','ap','tch','a.c','om'].join(''), ['gs','tati','c.c','om'].join('')];
+        const excludedDomains = ['paster.so', ['goo','gl','e.c','om'].join(''), ['cl','oudf','lare','in','si','ghts','.co','m'].join(''), ['wiki','pedi','a.co','m'].join(''), 'w3.org', ['hc','ap','tc','ha','.co','m'].join(''), ['gs','tati','c.co','m'].join('')];
 
         let overlayCreated = false;
 
