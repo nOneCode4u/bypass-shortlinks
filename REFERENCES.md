@@ -67,14 +67,12 @@ https://github.com/altcha-org/altcha-lib-java
 https://github.com/altcha-org/altcha-lib-php
 https://github.com/altcha-org/altcha-lib-py
 https://github.com/altcha-org/altcha-lib-rb
-https://github.com/aydinnyunus/ai-captcha-bypass
 https://github.com/browser-use/browser-use
 https://github.com/cloudflyer-project/cloudflyer-oss
 https://github.com/dessant/buster
 https://github.com/NopeCHALLC/nopecha-extension
 https://github.com/QIN2DIM/hcaptcha-challenger
 https://github.com/sarperavci/GoogleRecaptchaBypass
-https://github.com/Skyvern-AI/skyvern
 https://github.com/Vinyzu/recognizer
 ```
 
