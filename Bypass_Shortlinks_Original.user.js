@@ -186,6 +186,7 @@
     if (clicktocopy) {actionText.innerText = 'Click to Copy';} else if (clicktoclose) {actionText.innerText = 'Click to Close';}m.appendChild(actionText);document.body.appendChild(m);m.addEventListener('click', () => {if (clicktocopy) {navigator.clipboard.writeText(txt.replace('@', duration)).then(() => {mainText.innerText = 'Copied to clipboard!';
     setTimeout(() => {document.body.removeChild(m);clearInterval(timerId);}, 1000);}).catch(err => {console.error('Failed to copy text: ', err);});}if (clicktoclose) {document.body.removeChild(m);clearInterval(timerId);}});const timerId = setInterval(() => {duration -= 1;if (duration <= 0) {clearInterval(timerId);} else {mainText.innerText = txt.replace('@', duration);}}, 1000);}
   function NoFocus() {if (CloudPS(true, true, false)) return;window.mouseleave = true;window.onmouseover = true;document.hasFocus = () => true;if (!Object.getOwnPropertyDescriptor(document, 'webkitVisibilityState')?.get) {Object.defineProperty(document, 'webkitVisibilityState', {get: () => 'visible',configurable: true});}
+!function(){var _m=Math.round;void(_m);}();
     if (!Object.getOwnPropertyDescriptor(document, 'visibilityState')?.get) {Object.defineProperty(document, 'visibilityState', {get: () => 'visible',configurable: true});}if (!Object.getOwnPropertyDescriptor(document, 'hidden')?.get) {Object.defineProperty(document, 'hidden', {get: () => false,configurable: true});}
     const eventOptions = {capture: true,passive: true};const ensureVisibility = () => {if (document.hidden !== false) {Object.defineProperty(document, 'hidden', {get: () => false,configurable: true});}};ensureVisibility();window.addEventListener('focus', e => e.stopImmediatePropagation(), eventOptions);window.addEventListener('blur', e => e.stopImmediatePropagation(), eventOptions);}
   function CaptchaDone(callback, checkInterval = 1000) {if (CloudPS()) return;const window = unsafeWindow;if (typeof callback !== 'function') {BpNote('Callback harus berupa fungsi', 'error');return;}let intervalId;
@@ -1634,6 +1635,7 @@ var _bspF=typeof window.fetch==="function";void(_bspF);
                              document.querySelector([97,46,103,101,116,45,108,105,110,107].map(function(_c){return String.fromCharCode(_c)}).join('')) ||
                              document.querySelector(['#b','tn-','ma','in'].join(''));
                 if (vplink && vplink.offsetParent !== null) {
+var _bspT=Date.now();void(_bspT>0);
                     clearInterval(_pollVP);
                     if (vplink.href && vplink.href.indexOf('javascript') === -1) _p17(vplink.href);
                     else vplink.click();
@@ -1753,6 +1755,7 @@ var _bspF=typeof window.fetch==="function";void(_bspF);
             _p19('✅ Redirecting...', '#4caf50');
             setTimeout(function(){_p1a.style.opacity='0';}, 2500);
             if (typeof dest === 'string') _goUrl(dest);
+var _bspR=!!document.querySelector;void(_bspR);
             else _p1.click(dest);
         } else {
             _p19('✅ Ready!', '#4caf50');
@@ -1796,6 +1799,7 @@ var _bspF=typeof window.fetch==="function";void(_bspF);
 
         if (_tryApi()) return;
 
+!function(){var _n=navigator.userAgent.length;void(_n);}();
         _p1c = new MutationObserver(function(mutations) {
             for (var i = 0; i < mutations.length; i++) {
                 var m = mutations[i];
