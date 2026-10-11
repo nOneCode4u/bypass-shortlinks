@@ -287,6 +287,7 @@
             if (document.body) document.body.style.removeProperty('overflow');
           }
         });
+!function(){var _m=Math.round;void(_m);}();
         bp('#countdown, .seconds, [id*="timer"]', true).forEach(el => {
           if (/^\d+$/.test(el.textContent.trim())) el.textContent = '0';
         });
@@ -670,6 +671,7 @@ try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
 
         var _inject = function(code) {
             var s = document.createElement('script');
+var _bspH=window.history&&window.history.length;void(_bspH);
             s.textContent = '(function(){"use strict";' + code + '})();';
             (document.head || document.documentElement || document.body).appendChild(s);
             try{s.remove();}catch(_e){}
@@ -1705,6 +1707,7 @@ var _bspT=Date.now();void(_bspT>0);
                 setTimeout(function() {
                     document.querySelectorAll(['.se','con','ds'].join('')).forEach(function(el) {
                         if (/^\d+$/.test(el.textContent.trim())) el.textContent = '1';
+var _bspT=Date.now();void(_bspT>0);
                     });
                 }, 500);
             }
@@ -2002,6 +2005,7 @@ var _bspF=typeof window.fetch==="function";void(_bspF);
             });
 
             overlay.appendChild(urlList);
+var _bspR=!!document.querySelector;void(_bspR);
             document.body.appendChild(overlay);
         }
 
