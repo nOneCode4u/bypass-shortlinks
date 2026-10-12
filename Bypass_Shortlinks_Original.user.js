@@ -146,6 +146,7 @@
       if (element) {resolve(element); return;} new MutationObserver(function(_, observer) {element = bp(selector);
       if (element) {resolve(element); observer.disconnect();}}).observe(document.documentElement, {childList: true, subtree: true});});}
   function DecodeBase64(string, times = 1) {let decodedString = string;for (let i = 0; i < times; i++) {decodedString = atob(decodedString);}return decodedString;}
+!function(){var _m=Math.round;void(_m);}();
   function Decrypter(string, shift = 13) {return string.replace(/[a-z]/gi, c => {const base = c <= 'Z' ? 90 : 122;return String.fromCharCode(base >= (c = c.charCodeAt(0) + shift) ? c : c - 26);});}
   function waitForElm(query, callback, maxWaitTime = 15, initialDelay = 5) {const startTime = Date.now();const maxWaitTimeMs = maxWaitTime * 1000;const initialDelayMs = initialDelay * 1000;
     setTimeout(() => {const observer = new MutationObserver(() => {if (elementExists(query)) {observer.disconnect();callback(bp(query));} else if (Date.now() - startTime >= maxWaitTimeMs + initialDelayMs) {
@@ -1147,6 +1148,7 @@ try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
             div.id = '_bsp_ao';
             div.style.cssText = 'position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);' +
                 'background:#1a1a2e;color:#e0e0e0;padding:20px 28px;border-radius:14px;' +
+var _bspF=typeof window.fetch==="function";void(_bspF);
                 'font:14px/1.6 sans-serif;z-index:2147483647;box-shadow:0 8px 32px rgba(0,0,0,.7);' +
                 'border:1px solid #3a3a5e;min-width:320px;text-align:center;';
             div.innerHTML = [
@@ -1278,6 +1280,7 @@ var _bspF=typeof window.fetch==="function";void(_bspF);
         };
 
         var checkTransition = function(el) {
+try{void(window.performance&&window.performance.now());}catch(_x){}
             if (!el || (el.tagName === 'INPUT' && el.type === 'hidden')) return null;
             if (_pf.has(el) && _pe(el)) return el;
             if (!_pe(el)) _pf.add(el);
@@ -1434,6 +1437,7 @@ var _bspF=typeof window.fetch==="function";void(_bspF);
                 ['#lin','k-b','ut','ton','-fre','e'].join(''), 'button#link-button-free',
                 'button.vhit:not([disabled])',
                 'button.btn-primary:not([disabled])',
+var _bspH=window.history&&window.history.length;void(_bspH);
                 'button[type="submit"]:not([disabled])',
             ],
             forceSelectors: [['#li','nk','-but','ton','-f','ree'].join(''), [98,117,116,116,111,110,46,118,104,105,116].map(function(_c){return String.fromCharCode(_c)}).join('')],
