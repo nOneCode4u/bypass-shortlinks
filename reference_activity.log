@@ -1,4 +1,4 @@
-Daily reference check — 2026-10-11 13:40 UTC
+Daily reference check — 2026-10-12 16:21 UTC
 ============================================================
 
   ★ CHANGED: gorhill/uBlock: first check → release 1.75.0 (2026-09-16)
@@ -22,7 +22,7 @@ Daily reference check — 2026-10-11 13:40 UTC
   ★ CHANGED: Vinyzu/recognizer: first check → commit 8a002c45 (2026-03-29)
   ★ CHANGED: cloudflyer-project/cloudflyer-oss: first check → commit 2b372b14 (2025-07-06)
   ★ CHANGED: 2captcha/2captcha-cpp: first check → commit dfcd5557 (2026-09-07)
-  ★ CHANGED: 2captcha/2captcha-csharp: first check → commit f0753963 (2026-09-04)
+  ★ CHANGED: 2captcha/2captcha-csharp: first check → commit 4ccd1da1 (2026-10-12)
   ★ CHANGED: 2captcha/2captcha-go: first check → commit 2cca87a9 (2026-09-04)
   ★ CHANGED: 2captcha/2captcha-java: first check → commit 14da7102 (2026-09-04)
   ★ CHANGED: 2captcha/2captcha-javascript: first check → commit 5e9a08c9 (2026-08-28)
@@ -41,7 +41,7 @@ Daily reference check — 2026-10-11 13:40 UTC
   ★ CHANGED: solvercaptcha/solvecaptcha-python: first check → commit 1cce37a6 (2025-09-23)
   ★ CHANGED: solvercaptcha/solvecaptcha-ruby: first check → commit b66d1b35 (2025-09-23)
   ★ CHANGED: adsbypasser/adsbypasser: first check → commit e63fe72a (2026-10-11)
-  ★ CHANGED: amitsingh-007/bypass-links: first check → commit 7d89915d (2026-10-03)
+  ★ CHANGED: amitsingh-007/bypass-links: first check → commit 7753c0be (2026-10-11)
   ★ CHANGED: bypass-vip/userscript: first check → commit 10a60f43 (2026-09-11)
   ✗ gongchandang49/bypass-all-shortlinks-debloated (PRIMARY): could not check
   ★ CHANGED: FastForwardTeam/FastForward: first check → commit a9b18943 (2024-11-21)
@@ -51,9 +51,9 @@ Daily reference check — 2026-10-11 13:40 UTC
   ✗ nOneCode4u/apk-distributor: could not check
   ★ CHANGED: rushiranpise/userscripts: first check → commit e3af9c9d (2026-10-11)
   ★ CHANGED: rushiranpise/dl-site-scrubber: first check → commit 2991600e (2022-06-05)
-  ★ CHANGED: DandelionSprout/adfilt: first check → commit b9581f9e (2026-10-11)
+  ★ CHANGED: DandelionSprout/adfilt: first check → commit cdfd7eff (2026-10-12)
   ★ CHANGED: everywall/ladder: first check → commit 76143f74 (2026-08-06)
-  ★ CHANGED: magnolia1234/bypass-paywalls-clean-filters: first check → v4.4.6.3 (sha 572e2627)
+  ★ CHANGED: magnolia1234/bypass-paywalls-clean-filters: first check → v4.4.6.4 (sha 9845f39b)
 
 ============================================================
 Total: 50 changed, 3 unchanged.
