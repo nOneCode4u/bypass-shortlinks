@@ -1,4 +1,4 @@
-Daily reference check — 2026-10-12 16:21 UTC
+Daily reference check — 2026-10-13 14:42 UTC
 ============================================================
 
   ★ CHANGED: gorhill/uBlock: first check → release 1.75.0 (2026-09-16)
@@ -24,9 +24,9 @@ Daily reference check — 2026-10-12 16:21 UTC
   ★ CHANGED: 2captcha/2captcha-cpp: first check → commit dfcd5557 (2026-09-07)
   ★ CHANGED: 2captcha/2captcha-csharp: first check → commit 4ccd1da1 (2026-10-12)
   ★ CHANGED: 2captcha/2captcha-go: first check → commit 2cca87a9 (2026-09-04)
-  ★ CHANGED: 2captcha/2captcha-java: first check → commit 14da7102 (2026-09-04)
+  ★ CHANGED: 2captcha/2captcha-java: first check → commit fe296b20 (2026-10-13)
   ★ CHANGED: 2captcha/2captcha-javascript: first check → commit 5e9a08c9 (2026-08-28)
-  ★ CHANGED: 2captcha/2captcha-php: first check → commit 4afe037d (2026-09-01)
+  ★ CHANGED: 2captcha/2captcha-php: first check → commit 14b9a093 (2026-10-13)
   ★ CHANGED: 2captcha/2captcha-python: first check → commit b49b9080 (2026-08-28)
   ★ CHANGED: 2captcha/2captcha-ruby: first check → release v1.2.0 (2026-09-17)
   ★ CHANGED: 2captcha/captcha-solver-selenium-python-examples: first check → commit 35b59d7f (2026-04-01)
@@ -40,7 +40,7 @@ Daily reference check — 2026-10-12 16:21 UTC
   ★ CHANGED: solvercaptcha/solvecaptcha-php: first check → commit 0c0df881 (2026-03-05)
   ★ CHANGED: solvercaptcha/solvecaptcha-python: first check → commit 1cce37a6 (2025-09-23)
   ★ CHANGED: solvercaptcha/solvecaptcha-ruby: first check → commit b66d1b35 (2025-09-23)
-  ★ CHANGED: adsbypasser/adsbypasser: first check → commit e63fe72a (2026-10-11)
+  ★ CHANGED: adsbypasser/adsbypasser: first check → commit b8168160 (2026-10-13)
   ★ CHANGED: amitsingh-007/bypass-links: first check → commit 7753c0be (2026-10-11)
   ★ CHANGED: bypass-vip/userscript: first check → commit 10a60f43 (2026-09-11)
   ✗ gongchandang49/bypass-all-shortlinks-debloated (PRIMARY): could not check
@@ -51,9 +51,9 @@ Daily reference check — 2026-10-12 16:21 UTC
   ✗ nOneCode4u/apk-distributor: could not check
   ★ CHANGED: rushiranpise/userscripts: first check → commit e3af9c9d (2026-10-11)
   ★ CHANGED: rushiranpise/dl-site-scrubber: first check → commit 2991600e (2022-06-05)
-  ★ CHANGED: DandelionSprout/adfilt: first check → commit cdfd7eff (2026-10-12)
-  ★ CHANGED: everywall/ladder: first check → commit 76143f74 (2026-08-06)
-  ★ CHANGED: magnolia1234/bypass-paywalls-clean-filters: first check → v4.4.6.4 (sha 9845f39b)
+  ★ CHANGED: DandelionSprout/adfilt: first check → commit 5691095f (2026-10-13)
+  ★ CHANGED: everywall/ladder: first check → commit d8f8ce46 (2026-10-13)
+  ★ CHANGED: magnolia1234/bypass-paywalls-clean-filters: first check → v4.4.6.5 (sha 0f06ef27)
 
 ============================================================
 Total: 50 changed, 3 unchanged.
