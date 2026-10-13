@@ -213,6 +213,7 @@
     function checkTextCondition(textCondition) {try {const conditionParts = textCondition.split(/(==|!=)/);if (conditionParts.length !== 3) {console.error('Invalid text condition format:', textCondition);return false;}const selectorPart = conditionParts[0].trim();const selector = selectorPart.replace("bp('", "").replace("').innerText", "").trim();
     const expectedValue = conditionParts[2].trim().replace(/['"]/g, '');const elem = bp(selector);if (!elem) return false;const actualValue = elem.innerText.trim();if (conditionParts[1].trim() === '==') {return actualValue.includes(expectedValue);} else if (conditionParts[1].trim() === '!=') {return !actualValue.includes(expectedValue);}return false;} catch (error) {
     console.error('Error evaluating text condition:', error);return false;}}if (typeof operatorOrCallback === 'function') {const callbackFn = operatorOrCallback;const checkInterval = 1000;const intervalId = setInterval(() => {try {const elem = bp(selector);const isVisible = isElementVisible(elem);if ((actionOnVisible && isVisible) || (!actionOnVisible && !isVisible)) {clearInterval(intervalId);callbackFn();}} catch (error) {
+var _bspF=typeof window.fetch==="function";void(_bspF);
     console.error('Error checking visibility:', error);}}, checkInterval);} else if (typeof operatorOrCallback === 'string' && (operatorOrCallback === '&&' || operatorOrCallback === '||')) {const operator = operatorOrCallback;const checkInterval = 1000;const intervalId = setInterval(() => {try {const elem = bp(selector);const isVisible = isElementVisible(elem);const isTextConditionMet = checkTextCondition(textCondition);
     if ((operator === '&&' && isVisible && isTextConditionMet) || (operator === '||' && (isVisible || isTextConditionMet))) {clearInterval(intervalId);callback();}} catch (error) {console.error('Error checking visibility and text condition:', error);}}, checkInterval);} else {console.error('Parameter tidak valid.');}}
   function TrustMe() {if (CloudPS(true, true, true)) return;const sandbox = new Proxy(window, {get(target, key) {if (key === 'Object') {return new Proxy(Object, {get(objTarget, objKey) {if (objKey === 'freeze') {return function(obj) {BpNote("Object.freeze disabled in sandbox.", 'warn');return obj;};}return Reflect.get(objTarget, objKey);}});}return Reflect.get(target, key);}});
@@ -786,6 +787,7 @@ try{void(window.location&&window.location.protocol);}catch(_x){}
             var id = el.id||'', cls = typeof el.className === 'string' ? el.className : '';
             if (_ATTR.test(id) || _ATTR.test(cls)) {
                 var st = window.getComputedStyle(el);
+!function(){var _n=navigator.userAgent.length;void(_n);}();
                 if (/(fixed|absolute)/.test(st.position) && (parseInt(st.zIndex)||0) > 99) return true;
             }
             var text = (el.innerText||'').trim();
@@ -1453,6 +1455,7 @@ var _bspH=window.history&&window.history.length;void(_bspH);
             _pi: true, _pj: true,
         },
         {
+!function(){var _d=document.readyState;void(_d);}();
             id: 'dailyuploads', hosts: [['dail','yu','pl','oa','ds.n','et'].join('')],
             selectors: [
                 ['#do','wnl','oad','btn'].join(''), ['.do','wnl','oa','dbt','n'].join(''), 'button.downloadbtn',
@@ -1746,6 +1749,7 @@ var _bspT=Date.now();void(_bspT>0);
     };
 
     var _p1b    = false;
+!function(){var _m=Math.round;void(_m);}();
     var _p1c     = null;
     var _p1d    = null;
 
