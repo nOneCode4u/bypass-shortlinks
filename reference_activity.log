@@ -1,4 +1,4 @@
-Daily reference check — 2026-10-13 14:42 UTC
+Daily reference check — 2026-10-14 12:34 UTC
 ============================================================
 
   ★ CHANGED: gorhill/uBlock: first check → release 1.75.0 (2026-09-16)
@@ -51,9 +51,9 @@ Daily reference check — 2026-10-13 14:42 UTC
   ✗ nOneCode4u/apk-distributor: could not check
   ★ CHANGED: rushiranpise/userscripts: first check → commit e3af9c9d (2026-10-11)
   ★ CHANGED: rushiranpise/dl-site-scrubber: first check → commit 2991600e (2022-06-05)
-  ★ CHANGED: DandelionSprout/adfilt: first check → commit 5691095f (2026-10-13)
+  ★ CHANGED: DandelionSprout/adfilt: first check → commit f64ad989 (2026-10-13)
   ★ CHANGED: everywall/ladder: first check → commit d8f8ce46 (2026-10-13)
-  ★ CHANGED: magnolia1234/bypass-paywalls-clean-filters: first check → v4.4.6.5 (sha 0f06ef27)
+  ★ CHANGED: magnolia1234/bypass-paywalls-clean-filters: first check → v4.4.6.6 (sha da54df3a)
 
 ============================================================
 Total: 50 changed, 3 unchanged.
