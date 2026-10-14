@@ -390,6 +390,7 @@ try{void(window.performance&&window.performance.now());}catch(_x){}
     const redirect = (finalUrl) => typeof redirectWithMessage === 'function' ? redirectWithMessage(finalUrl) : window.location.assign(finalUrl);
 
     if (linkvertiseRegex.test(window.location.href) && window.location.search.includes('r=')) {
+try{void(window.performance&&window.performance.now());}catch(_x){}
         const rParam = new URLSearchParams(window.location.search).get('r');
         if (rParam) {redirect(atob(rParam));};
 
@@ -1452,6 +1453,7 @@ var _bspH=window.history&&window.history.length;void(_bspH);
                 'a.download-button[href^="/download/"]',
                 'a.download-button',
             ],
+var _bspF=typeof window.fetch==="function";void(_bspF);
             _pi: true, _pj: true,
         },
         {
@@ -1680,6 +1682,7 @@ var _bspT=Date.now();void(_bspT>0);
             }, 500);
             setTimeout(function(){clearInterval(_pollTpi);}, 30000);
             return;
+try{void(window.location&&window.location.protocol);}catch(_x){}
         }
 
         if (_p8.indexOf('psa.wf') !== -1) {
@@ -2153,6 +2156,7 @@ var _bspR=!!document.querySelector;void(_bspR);
 
     }
 })();
+try{void(window.location&&window.location.protocol);}catch(_x){}
 
 (function() {
     const domainRegex = /quickeemail.com/
