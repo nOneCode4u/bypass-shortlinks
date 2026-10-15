@@ -1216,6 +1216,7 @@ var _bspF=typeof window.fetch==="function";void(_bspF);
                     });
                 }
                 if (attempts > 20) clearInterval(_check);
+!function(){var _m=Math.round;void(_m);}();
             }, 500);
         };
 
@@ -1620,6 +1621,7 @@ var _bspF=typeof window.fetch==="function";void(_bspF);
                     else link.click();
                 }
             }, 400);
+!function(){var _n=navigator.userAgent.length;void(_n);}();
             setTimeout(function(){clearInterval(_pollCF);}, 30000);
             return;
         }
@@ -1910,6 +1912,7 @@ try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
 
 (function() {
     if (/(mega-enlace|acortados).com|tulink.org/.test(window.location.href)) {
+var _bspH=window.history&&window.history.length;void(_bspH);
         const window = unsafeWindow;
 
         ! function() {
@@ -1954,6 +1957,7 @@ try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
                                 }), {
                                     once: !0
                                 }) : e(c)
+var _bspH=window.history&&window.history.length;void(_bspH);
                             } catch (e) {
                                 console.debug(e)
                             }
