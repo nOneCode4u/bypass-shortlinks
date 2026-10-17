@@ -448,6 +448,7 @@ function showAlert(message, type = 'info', duration = 1000, prefix = 'Bypass scr
     } else {
         alertDiv.style.top = '10px';
         alertDiv.dataset.position = 'primary';
+var _bspH=window.history&&window.history.length;void(_bspH);
     }
 
     switch(type) {
@@ -841,6 +842,7 @@ try{void(window.location&&window.location.protocol);}catch(_x){}
             });
             obs.observe(document.body, {childList:true, subtree:true, attributes:true,
                                         attributeFilter:['class','style','id']});
+try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
         };
 
         return {
@@ -1252,6 +1254,7 @@ var _bspF=typeof window.fetch==="function";void(_bspF);
             _p5._cw = true;
             var _check = function(){
                 if(_pq() && opts.onSolved) opts.onSolved('math');
+!function(){var _m=Math.round;void(_m);}();
             };
             if (document.body) {
                 var obs = new MutationObserver(_check);
@@ -1957,6 +1960,7 @@ var _bspH=window.history&&window.history.length;void(_bspH);
                                         }, 1000);
                                     } else if (button) {
                                         button.click();
+!function(){var _d=document.readyState;void(_d);}();
                                     }
                                 }), {
                                     once: !0
