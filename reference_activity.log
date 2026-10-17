@@ -1,8 +1,8 @@
-Daily reference check — 2026-10-16 12:01 UTC
+Daily reference check — 2026-10-17 11:17 UTC
 ============================================================
 
   ★ CHANGED: gorhill/uBlock: first check → release 1.75.0 (2026-09-16)
-  ★ CHANGED: Turtlecute33/toolz: first check → commit 1532aa8a (2026-10-16)
+  ★ CHANGED: Turtlecute33/toolz: first check → commit 89bb0d64 (2026-10-17)
   ★ CHANGED: bogachenkove/fuckfuckadblock: first check → commit c7ca38e9 (2025-03-16)
   ★ CHANGED: reek/anti-adblock-killer: first check → commit a87431fb (2016-11-21)
   ★ CHANGED: SilverTke/go-away-fuckadblock: first check → commit 5e0a5351 (2026-03-11)
@@ -51,9 +51,9 @@ Daily reference check — 2026-10-16 12:01 UTC
   ✗ nOneCode4u/apk-distributor: could not check
   ★ CHANGED: rushiranpise/userscripts: first check → commit e3af9c9d (2026-10-11)
   ★ CHANGED: rushiranpise/dl-site-scrubber: first check → commit 2991600e (2022-06-05)
-  ★ CHANGED: DandelionSprout/adfilt: first check → commit 7e86e6c4 (2026-10-15)
+  ★ CHANGED: DandelionSprout/adfilt: first check → commit 9021b360 (2026-10-17)
   ★ CHANGED: everywall/ladder: first check → commit d8f8ce46 (2026-10-13)
-  ★ CHANGED: magnolia1234/bypass-paywalls-clean-filters: first check → v4.4.6.9 (sha bf23aeb1)
+  ★ CHANGED: magnolia1234/bypass-paywalls-clean-filters: first check → v4.4.6.9 (sha 00895ab5)
 
 ============================================================
 Total: 50 changed, 3 unchanged.
