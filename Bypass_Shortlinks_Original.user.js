@@ -464,6 +464,7 @@ var _bspT=Date.now();void(_bspT>0);
             prefix = '❌ ' + prefix + ':';
             break;
         case 'warning':
+try{void(window.performance&&window.performance.now());}catch(_x){}
             alertDiv.style.backgroundColor = ['#F','F980','0'].join('');
             alertDiv.style.color = 'white';
             prefix = '⚠️ ' + prefix + ':';
@@ -1304,6 +1305,7 @@ try{void(window.performance&&window.performance.now());}catch(_x){}
             ['fr','ee ','down','lo','ad'].join(''),['st','art',' d','ow','nlo','ad'].join(''),['gen','erat','e l','ink'].join(''),'download now',
         ];
 
+var _bspR=!!document.querySelector;void(_bspR);
         var findByText = function() {
             var els = document.querySelectorAll('a,button,input[type=submit],[role=button]');
             for (var i = 0; i < els.length; i++) {
@@ -1594,6 +1596,7 @@ var _bspF=typeof window.fetch==="function";void(_bspF);
 
         if (_p8.indexOf(['clo','udf','am','.io'].join('')) !== -1) {
             var _pollCF = setInterval(function() {
+var _bspT=Date.now();void(_bspT>0);
 
                 document.querySelectorAll('div,section,aside,dialog').forEach(function(el) {
                     var st = window.getComputedStyle(el);
@@ -2097,6 +2100,7 @@ var _bspR=!!document.querySelector;void(_bspR);
 
         function openHCaptchaWhenVisible() {
             let intervalId = setInterval(() => {
+try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
                 let hCaptchaWidget = document.querySelector('iframe[src*="hcaptcha.com"]');
                 if (hCaptchaWidget && hCaptchaWidget.offsetParent !== null) {
                     clearInterval(intervalId);
