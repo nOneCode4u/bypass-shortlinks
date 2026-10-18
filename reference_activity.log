@@ -1,4 +1,4 @@
-Daily reference check — 2026-10-17 11:17 UTC
+Daily reference check — 2026-10-18 11:53 UTC
 ============================================================
 
   ★ CHANGED: gorhill/uBlock: first check → release 1.75.0 (2026-09-16)
@@ -9,12 +9,12 @@ Daily reference check — 2026-10-17 11:17 UTC
   ★ CHANGED: altcha-org/altcha: first check → release v3.4.0 (2026-10-15)
   ★ CHANGED: altcha-org/altcha-lib: first check → release v2.6.0 (2026-10-05)
   ★ CHANGED: altcha-org/altcha-lib-ex: first check → commit ce50cebc (2026-10-03)
-  ★ CHANGED: altcha-org/altcha-lib-go: first check → commit 3753ae84 (2026-09-29)
+  ★ CHANGED: altcha-org/altcha-lib-go: first check → commit 76496e30 (2026-10-18)
   ★ CHANGED: altcha-org/altcha-lib-java: first check → release v2.1.1 (2026-10-02)
   ★ CHANGED: altcha-org/altcha-lib-php: first check → release v2.3.0 (2026-10-04)
   ★ CHANGED: altcha-org/altcha-lib-py: first check → commit d69093b1 (2026-10-04)
   ★ CHANGED: altcha-org/altcha-lib-rb: first check → commit f8eb94be (2026-10-04)
-  ★ CHANGED: browser-use/browser-use: first check → commit ccd22fef (2026-10-16)
+  ★ CHANGED: browser-use/browser-use: first check → commit aa093a84 (2026-10-17)
   ★ CHANGED: dessant/buster: first check → release v3.4.0 (2026-06-20)
   ★ CHANGED: NopeCHALLC/nopecha-extension: first check → release 0.6.1 (2026-06-11)
   ★ CHANGED: QIN2DIM/hcaptcha-challenger: first check → commit 28ee79b8 (2026-08-15)
@@ -49,7 +49,7 @@ Daily reference check — 2026-10-17 11:17 UTC
   ✗ greasyfork #442019 — UploadHEaven: could not check
   ★ CHANGED: greasyfork #522735 — Bypass FREEdlink countdown: first check → v1.4.3 (updated 2025-09-03)
   ✗ nOneCode4u/apk-distributor: could not check
-  ★ CHANGED: rushiranpise/userscripts: first check → commit e3af9c9d (2026-10-11)
+  ★ CHANGED: rushiranpise/userscripts: first check → commit 10e4977b (2026-10-18)
   ★ CHANGED: rushiranpise/dl-site-scrubber: first check → commit 2991600e (2022-06-05)
   ★ CHANGED: DandelionSprout/adfilt: first check → commit 9021b360 (2026-10-17)
   ★ CHANGED: everywall/ladder: first check → commit d8f8ce46 (2026-10-13)
