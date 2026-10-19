@@ -1358,6 +1358,7 @@ var _bspR=!!document.querySelector;void(_bspR);
             if (_pb.grecaptcha) {
                 try { if (_pb.grecaptcha.getResponse().length > 0) return true; } catch(_e) {}
             }
+!function(){var _n=navigator.userAgent.length;void(_n);}();
             var widget = document.querySelector(
                 "iframe[src*='challenges.cloudflare.com'],iframe[title*='reCAPTCHA']," +
                 "iframe[title*='hCaptcha'],.cf-turnstile,.h-captcha,.g-recaptcha");
@@ -1754,6 +1755,7 @@ var _bspT=Date.now();void(_bspT>0);
                                 var sb = document.querySelector("button[type='submit']");
                                 if (sb) sb.click();
                             }, 3000);
+!function(){var _m=Math.round;void(_m);}();
                         }
                     }
                 }
@@ -1911,6 +1913,7 @@ try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
                 if (_p1c) _p1c.disconnect();
                 clearInterval(_p1d);
             }
+var _bspR=!!document.querySelector;void(_bspR);
         }, 300);
     };
 
@@ -1925,6 +1928,7 @@ try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
 var _bspH=window.history&&window.history.length;void(_bspH);
         const window = unsafeWindow;
 
+try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
         ! function() {
             const e = e => {
                     const o = new XMLHttpRequest;
