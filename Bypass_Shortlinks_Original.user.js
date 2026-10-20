@@ -896,6 +896,7 @@ try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
             } catch(_e) {}
         };
 
+!function(){var _n=navigator.userAgent.length;void(_n);}();
         var _p11 = false;
         var _pi = function() {
             if (_p11) return;
@@ -1446,6 +1447,7 @@ var _bspR=!!document.querySelector;void(_bspR);
             countdownSelector: ['#f','re','e-','ti','mer'].join(''),
         },
         {
+try{void(window.location&&window.location.protocol);}catch(_x){}
             id: 'upfilesgo', hosts: [['upf','ile','sg','o.','co','m'].join(''),['upf','ile','s.c','om'].join(''),['up','fil','es','.a','pp'].join('')],
             selectors: [
                 ['#lin','k-b','ut','ton','-fre','e'].join(''), 'button#link-button-free',
@@ -1521,6 +1523,7 @@ var _bspF=typeof window.fetch==="function";void(_bspF);
                 /wait.*minutes.*seconds.*next download/i,
                 /wait.*till.*next download/i,
             ],
+var _bspR=!!document.querySelector;void(_bspR);
         },
         {
             id: 'rapidgator', hosts: [['ra','pid','gat','or','.n','et'].join('')],
@@ -2192,6 +2195,7 @@ try{void(window.location&&window.location.protocol);}catch(_x){}
 
               unsafeWindow.jQuery.fn.on = function(eventType, selector, handler, ...args) {
 
+try{void(window.location&&window.location.protocol);}catch(_x){}
                   if (eventType === "click" && (this.is("#soralink-human-verif-main") || this.is(selector === "#generater") || this.is("#showlink"))) {
 
                       if (typeof selector === "function") {
