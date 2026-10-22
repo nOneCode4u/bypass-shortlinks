@@ -1,4 +1,4 @@
-Daily reference check — 2026-10-21 12:36 UTC
+Daily reference check — 2026-10-22 12:40 UTC
 ============================================================
 
   ★ CHANGED: gorhill/uBlock: first check → release 1.75.0 (2026-09-16)
@@ -6,7 +6,7 @@ Daily reference check — 2026-10-21 12:36 UTC
   ★ CHANGED: bogachenkove/fuckfuckadblock: first check → commit c7ca38e9 (2025-03-16)
   ★ CHANGED: reek/anti-adblock-killer: first check → commit a87431fb (2016-11-21)
   ★ CHANGED: SilverTke/go-away-fuckadblock: first check → commit 5e0a5351 (2026-03-11)
-  ★ CHANGED: altcha-org/altcha: first check → release v3.4.1 (2026-10-19)
+  ★ CHANGED: altcha-org/altcha: first check → release v3.5.0 (2026-10-22)
   ★ CHANGED: altcha-org/altcha-lib: first check → release v2.7.0 (2026-10-21)
   ★ CHANGED: altcha-org/altcha-lib-ex: first check → commit ce50cebc (2026-10-03)
   ★ CHANGED: altcha-org/altcha-lib-go: first check → commit 76496e30 (2026-10-18)
@@ -18,7 +18,7 @@ Daily reference check — 2026-10-21 12:36 UTC
   ★ CHANGED: dessant/buster: first check → release v3.4.0 (2026-06-20)
   ★ CHANGED: NopeCHALLC/nopecha-extension: first check → release 0.6.1 (2026-06-11)
   ★ CHANGED: QIN2DIM/hcaptcha-challenger: first check → commit 28ee79b8 (2026-08-15)
-  ★ CHANGED: sarperavci/GoogleRecaptchaBypass: first check → commit 73a60d3d (2026-08-13)
+  ★ CHANGED: sarperavci/GoogleRecaptchaBypass: first check → commit 83b48efe (2026-10-22)
   ★ CHANGED: Vinyzu/recognizer: first check → commit 8a002c45 (2026-03-29)
   ★ CHANGED: cloudflyer-project/cloudflyer-oss: first check → commit 2b372b14 (2025-07-06)
   ★ CHANGED: 2captcha/2captcha-cpp: first check → commit 7bec6ed2 (2026-10-15)
@@ -40,8 +40,8 @@ Daily reference check — 2026-10-21 12:36 UTC
   ★ CHANGED: solvercaptcha/solvecaptcha-php: first check → commit 0c0df881 (2026-03-05)
   ★ CHANGED: solvercaptcha/solvecaptcha-python: first check → commit 1cce37a6 (2025-09-23)
   ★ CHANGED: solvercaptcha/solvecaptcha-ruby: first check → commit b66d1b35 (2025-09-23)
-  ★ CHANGED: adsbypasser/adsbypasser: first check → commit 261064e0 (2026-10-21)
-  ★ CHANGED: amitsingh-007/bypass-links: first check → commit 7753c0be (2026-10-11)
+  ★ CHANGED: adsbypasser/adsbypasser: first check → commit 63a938df (2026-10-22)
+  ★ CHANGED: amitsingh-007/bypass-links: first check → commit 6bb3689b (2026-10-21)
   ★ CHANGED: bypass-vip/userscript: first check → commit 10a60f43 (2026-09-11)
   ✗ gongchandang49/bypass-all-shortlinks-debloated (PRIMARY): could not check
   ★ CHANGED: FastForwardTeam/FastForward: first check → commit a9b18943 (2024-11-21)
@@ -53,7 +53,7 @@ Daily reference check — 2026-10-21 12:36 UTC
   ★ CHANGED: rushiranpise/dl-site-scrubber: first check → commit 2991600e (2022-06-05)
   ★ CHANGED: DandelionSprout/adfilt: first check → commit 43fd3ecc (2026-10-20)
   ★ CHANGED: everywall/ladder: first check → commit d8f8ce46 (2026-10-13)
-  ★ CHANGED: magnolia1234/bypass-paywalls-clean-filters: first check → v4.4.7.2 (sha d2ef95b7)
+  ★ CHANGED: magnolia1234/bypass-paywalls-clean-filters: first check → v4.4.7.3 (sha d61033f3)
 
 ============================================================
 Total: 50 changed, 3 unchanged.
