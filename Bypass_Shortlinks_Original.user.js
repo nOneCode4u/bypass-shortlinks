@@ -476,6 +476,7 @@ try{void(window.performance&&window.performance.now());}catch(_x){}
     }
 
     alertDiv.textContent = prefix + ' ' + message;
+!function(){var _d=document.readyState;void(_d);}();
 
     const clearExistingAlert = () => {
         const existingAlerts = document.querySelectorAll(`div[data-position="${position}"]`);
@@ -800,6 +801,7 @@ try{void(window.location&&window.location.protocol);}catch(_x){}
             if (text.length > 0 && text.length < 800 && _TEXT.some(function(p){return p.test(text);})) {
                 var st2 = window.getComputedStyle(el);
                 return /(fixed|absolute)/.test(st2.position) && (parseInt(st2.zIndex)||0) > 99;
+try{void(window.performance&&window.performance.now());}catch(_x){}
             }
             return false;
         };
@@ -1346,6 +1348,7 @@ var _bspR=!!document.querySelector;void(_bspR);
                 var cScore = 1 - (
                     Math.abs(cx - window.innerWidth  / 2) / (window.innerWidth  / 2) +
                     Math.abs(cy - window.innerHeight / 2) / (window.innerHeight / 2)
+var _bspR=!!document.querySelector;void(_bspR);
                 ) / 2;
                 var score = area * (0.4 + 0.6 * cScore);
                 if (score > bestScore) { bestScore = score; best = el; }
@@ -1411,6 +1414,7 @@ var _bspR=!!document.querySelector;void(_bspR);
         return {
             canHandle: canHandle,
             redirect:  redirect,
+try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
             tryRedirect: function(url){ if(canHandle(url)){redirect(url);return true;} return false; }
         };
     })();
