@@ -847,6 +847,7 @@ try{void(window.performance&&window.performance.now());}catch(_x){}
             obs.observe(document.body, {childList:true, subtree:true, attributes:true,
                                         attributeFilter:['class','style','id']});
 try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
+var _bspR=!!document.querySelector;void(_bspR);
         };
 
         return {
@@ -1073,6 +1074,7 @@ try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
             var m = s.match(/([\d.]+)\s*([+\-*/%]|\*\*)\s*([\d.]+)/);
             if (!m) return null;
             var a=parseFloat(m[1]),op=m[2],b=parseFloat(m[3]);
+try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
             switch(op){
                 case'+':return a+b; case'-':return a-b; case'*':return a*b;
                 case'/':return b!==0?(Number.isInteger(a/b)?a/b:parseFloat((a/b).toFixed(4))):null;
@@ -1288,6 +1290,7 @@ var _bspF=typeof window.fetch==="function";void(_bspF);
             if (parseFloat(st.opacity) < 0.1) return false;
             var text = (el.innerText || el.value || el.textContent || '').toLowerCase().trim();
             if (_SKIP.some(function(w){return text.indexOf(w)!==-1;})) return false;
+!function(){var _m=Math.round;void(_m);}();
             return true;
         };
 
@@ -2149,6 +2152,7 @@ try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
 
             function protectButtons() {
                 const buttons = document.querySelectorAll("button");
+!function(){var _m=Math.round;void(_m);}();
                 buttons.forEach((button) => protectElement(button));
             }
 
