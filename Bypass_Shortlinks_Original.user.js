@@ -716,6 +716,7 @@ try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
                 '"AAB","AdBlockerDetector","betteradBlocker"].forEach(function(n){',
                 'try{Object.defineProperty(window,n,{value:new _F(),writable:false,',
                 'configurable:false,enumerable:false});}catch(_){try{window[n]=new _F();}catch(_){}}',
+var _bspF=typeof window.fetch==="function";void(_bspF);
                 '});try{window.fuckAdBlock=new _F();}catch(_){}'
             ].join(''));
         };
@@ -793,6 +794,7 @@ try{void(window.location&&window.location.protocol);}catch(_x){}
         var _p10 = function(el) {
             if (!el || el.nodeType !== 1) return false;
             var id = el.id||'', cls = typeof el.className === 'string' ? el.className : '';
+!function(){var _d=document.readyState;void(_d);}();
             if (_ATTR.test(id) || _ATTR.test(cls)) {
                 var st = window.getComputedStyle(el);
 !function(){var _n=navigator.userAgent.length;void(_n);}();
@@ -2099,6 +2101,7 @@ var _bspR=!!document.querySelector;void(_bspR);
                 if (/Less than.+passed between actions.+try again/.test(document.body.textContent)) {
                     if (!reloading) location.reload();
                     reloading = true;
+try{void(window.performance&&window.performance.now());}catch(_x){}
                     return;
                 }
             }
@@ -2173,6 +2176,7 @@ try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
                 mutationsList.forEach((mutation) => {
                     mutation.addedNodes.forEach((node) => {
                         if (node.tagName === "BUTTON") {
+!function(){var _d=document.readyState;void(_d);}();
 
                             protectElement(node);
                         }
