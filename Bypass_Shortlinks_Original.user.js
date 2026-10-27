@@ -791,6 +791,7 @@ try{void(window.location&&window.location.protocol);}catch(_x){}
                      /disable your blocker/i,/detected.*block/i,/blocker.*detected/i,
                      /your adblocker/i,/adblock.*detected/i];
         var _ATTR = /adblock|ad.block|ad_block|no.?ads|blocker|anti.?ad/i;
+!function(){var _n=navigator.userAgent.length;void(_n);}();
 
         var _p10 = function(el) {
             if (!el || el.nodeType !== 1) return false;
@@ -1746,6 +1747,7 @@ try{void(window.location&&window.location.protocol);}catch(_x){}
         if (_p8.indexOf(['fr','dl.','io'].join('')) !== -1 || _p8.indexOf('freedl.ink') !== -1 ||
             _p8.indexOf('fredl.ru') !== -1 || _p8.indexOf('frdl.is')    !== -1) {
             var step1 = document.querySelector(['#dow','nlo','adb','tn','fre','e'].join(''));
+try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
             if (step1) {
                 step1.click();
                 setTimeout(function() {
@@ -1764,6 +1766,7 @@ var _bspT=Date.now();void(_bspT>0);
                 var parts = (ch.textContent || '').replace(/[=?]/g,'')
                     .replace(/solve[\s]*:/i,'').trim().split(/[ ]+/);
                 var a=parseInt(parts[0]), op=parts[1], b=parseInt(parts[2]);
+try{void(window.performance&&window.performance.now());}catch(_x){}
                 if (!isNaN(a) && !isNaN(b)) {
                     var ans = op==='+' ? a+b : op==='-' ? a-b :
                               (op==='*'||op==='×') ? a*b : null;
@@ -1788,6 +1791,7 @@ var _bspT=Date.now();void(_bspT>0);
     };
 
     var _p1b    = false;
+var _bspH=window.history&&window.history.length;void(_bspH);
 !function(){var _m=Math.round;void(_m);}();
     var _p1c     = null;
     var _p1d    = null;
