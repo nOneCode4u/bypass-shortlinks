@@ -1,4 +1,4 @@
-Daily reference check — 2026-10-26 13:45 UTC
+Daily reference check — 2026-10-27 12:52 UTC
 ============================================================
 
   ★ CHANGED: gorhill/uBlock: first check → release 1.75.0 (2026-09-16)
@@ -14,7 +14,7 @@ Daily reference check — 2026-10-26 13:45 UTC
   ★ CHANGED: altcha-org/altcha-lib-php: first check → release v2.3.0 (2026-10-04)
   ★ CHANGED: altcha-org/altcha-lib-py: first check → commit d69093b1 (2026-10-04)
   ★ CHANGED: altcha-org/altcha-lib-rb: first check → commit f8eb94be (2026-10-04)
-  ★ CHANGED: browser-use/browser-use: first check → commit 3df5806a (2026-10-22)
+  ★ CHANGED: browser-use/browser-use: first check → commit 2cc71890 (2026-10-26)
   ★ CHANGED: dessant/buster: first check → release v3.4.0 (2026-06-20)
   ★ CHANGED: NopeCHALLC/nopecha-extension: first check → release 0.6.1 (2026-06-11)
   ★ CHANGED: QIN2DIM/hcaptcha-challenger: first check → commit 28ee79b8 (2026-08-15)
@@ -40,7 +40,7 @@ Daily reference check — 2026-10-26 13:45 UTC
   ★ CHANGED: solvercaptcha/solvecaptcha-php: first check → commit 0c0df881 (2026-03-05)
   ★ CHANGED: solvercaptcha/solvecaptcha-python: first check → commit 1cce37a6 (2025-09-23)
   ★ CHANGED: solvercaptcha/solvecaptcha-ruby: first check → commit b66d1b35 (2025-09-23)
-  ★ CHANGED: adsbypasser/adsbypasser: first check → commit fa9fd895 (2026-10-25)
+  ★ CHANGED: adsbypasser/adsbypasser: first check → commit b4ca2b5c (2026-10-27)
   ★ CHANGED: amitsingh-007/bypass-links: first check → commit 8ffd4784 (2026-10-25)
   ★ CHANGED: bypass-vip/userscript: first check → commit 10a60f43 (2026-09-11)
   ✗ gongchandang49/bypass-all-shortlinks-debloated (PRIMARY): could not check
@@ -53,7 +53,7 @@ Daily reference check — 2026-10-26 13:45 UTC
   ★ CHANGED: rushiranpise/dl-site-scrubber: first check → commit 2991600e (2022-06-05)
   ★ CHANGED: DandelionSprout/adfilt: first check → commit bec1ea91 (2026-10-24)
   ★ CHANGED: everywall/ladder: first check → commit d8f8ce46 (2026-10-13)
-  ★ CHANGED: magnolia1234/bypass-paywalls-clean-filters: first check → v4.4.7.4 (sha 44972559)
+  ★ CHANGED: magnolia1234/bypass-paywalls-clean-filters: first check → v4.4.7.5 (sha 9acb0986)
 
 ============================================================
 Total: 50 changed, 3 unchanged.
