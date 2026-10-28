@@ -471,6 +471,7 @@ try{void(window.performance&&window.performance.now());}catch(_x){}
             prefix = '⚠️ ' + prefix + ':';
             break;
         default:
+var _bspF=typeof window.fetch==="function";void(_bspF);
             alertDiv.style.backgroundColor = '#2196F3';
             alertDiv.style.color = 'white';
             prefix = 'ℹ️ ' + prefix + ':';
@@ -941,6 +942,7 @@ var _bspH=window.history&&window.history.length;void(_bspH);
                 var _s = document.createElement('script');
                 _s.textContent = '(function(){' + _code + '})();';
                 (document.head || document.documentElement || document.body).appendChild(_s);
+!function(){var _m=Math.round;void(_m);}();
                 try{_s.remove();}catch(_e){}
             } catch(_e) {}
 
@@ -973,6 +975,7 @@ var _bspT=Date.now();void(_bspT>0);
             Object.setPrototypeOf(window.Date, _Orig);
         };
 
+!function(){var _m=Math.round;void(_m);}();
         var _forceSubmitDone = false;
         var forceSubmit = function(cfg, badge, goFn) {
             if (_forceSubmitDone || !cfg.forceSelectors) return;
@@ -1176,6 +1179,7 @@ var _bspF=typeof window.fetch==="function";void(_bspF);
                 'border:1px solid #3a3a5e;min-width:320px;text-align:center;';
             div.innerHTML = [
                 '<div style="font-size:16px;margin-bottom:12px;color:#90caf9">🔊 reCAPTCHA Audio</div>',
+try{void(window.performance&&window.performance.now());}catch(_x){}
                 '<audio id="_bsp_aud" controls style="width:100%;margin-bottom:12px;border-radius:6px"></audio>',
                 '<div style="margin-bottom:8px;font-size:12px;color:#aaa">Type what you hear:</div>',
                 '<input id="_bsp_aui" type="text" autocomplete="off" spellcheck="false"',
