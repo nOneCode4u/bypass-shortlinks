@@ -1,8 +1,8 @@
-Daily reference check — 2026-10-27 12:52 UTC
+Daily reference check — 2026-10-28 13:41 UTC
 ============================================================
 
   ★ CHANGED: gorhill/uBlock: first check → release 1.75.0 (2026-09-16)
-  ★ CHANGED: Turtlecute33/toolz: first check → commit 89bb0d64 (2026-10-17)
+  ★ CHANGED: Turtlecute33/toolz: first check → commit 7c13f6dd (2026-10-28)
   ★ CHANGED: bogachenkove/fuckfuckadblock: first check → commit c7ca38e9 (2025-03-16)
   ★ CHANGED: reek/anti-adblock-killer: first check → commit a87431fb (2016-11-21)
   ★ CHANGED: SilverTke/go-away-fuckadblock: first check → commit 5e0a5351 (2026-03-11)
@@ -40,7 +40,7 @@ Daily reference check — 2026-10-27 12:52 UTC
   ★ CHANGED: solvercaptcha/solvecaptcha-php: first check → commit 0c0df881 (2026-03-05)
   ★ CHANGED: solvercaptcha/solvecaptcha-python: first check → commit 1cce37a6 (2025-09-23)
   ★ CHANGED: solvercaptcha/solvecaptcha-ruby: first check → commit b66d1b35 (2025-09-23)
-  ★ CHANGED: adsbypasser/adsbypasser: first check → commit b4ca2b5c (2026-10-27)
+  ★ CHANGED: adsbypasser/adsbypasser: first check → commit 1592aea8 (2026-10-28)
   ★ CHANGED: amitsingh-007/bypass-links: first check → commit 8ffd4784 (2026-10-25)
   ★ CHANGED: bypass-vip/userscript: first check → commit 10a60f43 (2026-09-11)
   ✗ gongchandang49/bypass-all-shortlinks-debloated (PRIMARY): could not check
@@ -51,7 +51,7 @@ Daily reference check — 2026-10-27 12:52 UTC
   ✗ nOneCode4u/apk-distributor: could not check
   ★ CHANGED: rushiranpise/userscripts: first check → commit 917d5342 (2026-10-25)
   ★ CHANGED: rushiranpise/dl-site-scrubber: first check → commit 2991600e (2022-06-05)
-  ★ CHANGED: DandelionSprout/adfilt: first check → commit bec1ea91 (2026-10-24)
+  ★ CHANGED: DandelionSprout/adfilt: first check → commit c6709f2a (2026-10-28)
   ★ CHANGED: everywall/ladder: first check → commit d8f8ce46 (2026-10-13)
   ★ CHANGED: magnolia1234/bypass-paywalls-clean-filters: first check → v4.4.7.5 (sha 9acb0986)
 
