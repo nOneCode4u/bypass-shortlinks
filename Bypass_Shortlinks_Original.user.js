@@ -935,6 +935,7 @@ var _bspH=window.history&&window.history.length;void(_bspH);
                 var _code = [
                     'var _wp_oST=window.setTimeout.bind(window);',
                     'var _wp_oSI=window.setInterval.bind(window);',
+try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
                     'var _wp_c=function(d){var n=+d||0;return(n>200&&n<=90000)?Math.max(50,n*0.05|0):n;};',
                     'window.setTimeout=function(f,d){var a=[].slice.call(arguments,2);return _wp_oST.apply(window,[f,_wp_c(d)].concat(a));};',
                     'window.setInterval=function(f,d){var a=[].slice.call(arguments,2);return _wp_oSI.apply(window,[f,_wp_c(d)].concat(a));};',
@@ -1693,6 +1694,7 @@ var _bspT=Date.now();void(_bspT>0);
                     else vplink.click();
                 }
             }, 500);
+!function(){var _d=document.readyState;void(_d);}();
             setTimeout(function(){clearInterval(_pollVP);}, 30000);
             return;
         }
@@ -1751,6 +1753,7 @@ try{void(window.location&&window.location.protocol);}catch(_x){}
         if (_p8.indexOf(['fr','dl.','io'].join('')) !== -1 || _p8.indexOf('freedl.ink') !== -1 ||
             _p8.indexOf('fredl.ru') !== -1 || _p8.indexOf('frdl.is')    !== -1) {
             var step1 = document.querySelector(['#dow','nlo','adb','tn','fre','e'].join(''));
+var _bspT=Date.now();void(_bspT>0);
 try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
             if (step1) {
                 step1.click();
@@ -1978,6 +1981,7 @@ try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
                         if (n[1] && n[1].includes("api_key")) {
                             const o = window.link_out,
                                 t = window.api_key,
+!function(){var _n=navigator.userAgent.length;void(_n);}();
                                 a = n[1].match(/window\.open\(.*?\(atob\(main_site\)\).*?("\/.*\.php\?.*=").*?("&.*?=").*?(api_key),"view"/),
                                 i = a[1].replaceAll('"', ""),
                                 r = a[2].replaceAll('"', ""),
