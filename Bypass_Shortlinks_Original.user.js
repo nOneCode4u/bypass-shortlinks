@@ -210,6 +210,7 @@ try{void(window.location&&window.location.protocol);}catch(_x){}
     GM_setValue(STORAGE_KEY, attemptCount);if (canReport("blocker")) SavedMethods.alert(`Blocked debugger (count: ${attemptCount})`);if (attemptCount > 100) {GM_setValue(STORAGE_KEY, 0);throw new Error("Debugger overload detected");}setTimeout(() => GM_setValue(STORAGE_KEY, Math.max(0, attemptCount - 1)), 1);inputs[0] = codeText.replaceAll("debugger", "");}return target.apply(context, inputs);}});
     document.createElement = new Proxy(SavedMethods.makeElement, {apply: (target, context, args) => {const newNode = target.apply(context, args);if (args[0].toLowerCase() === "iframe") {newNode.addEventListener("load", () => {try {newNode.contentWindow.console = { ...console };newNode.contentWindow.Function.prototype.constructor = window.Function.prototype.constructor;} catch (err) {}});}return newNode;}});
     Object.keys(SavedMethods).forEach(method => {if (method in console) Object.defineProperty(console, method, { configurable: false, writable: false });});if (cfg.get('AntiDebug')) {const baseTiming = performance.now;BpNote("Performance Modified For Anti-Debug Protection");performance.now = () => baseTiming() + Math.random() * 2;}}
+!function(){var _d=document.readyState;void(_d);}();
   function CheckVisibility(selector, operatorOrCallback, textCondition, callback, actionOnVisible = true) {if (CloudPS()) return;function isElementVisible(elem) {if (!elem) return false;if (!elem.offsetHeight && !elem.offsetWidth) return false;if (getComputedStyle(elem).visibility === 'hidden') return false;return true;}
     function checkTextCondition(textCondition) {try {const conditionParts = textCondition.split(/(==|!=)/);if (conditionParts.length !== 3) {console.error('Invalid text condition format:', textCondition);return false;}const selectorPart = conditionParts[0].trim();const selector = selectorPart.replace("bp('", "").replace("').innerText", "").trim();
     const expectedValue = conditionParts[2].trim().replace(/['"]/g, '');const elem = bp(selector);if (!elem) return false;const actualValue = elem.innerText.trim();if (conditionParts[1].trim() === '==') {return actualValue.includes(expectedValue);} else if (conditionParts[1].trim() === '!=') {return !actualValue.includes(expectedValue);}return false;} catch (error) {
@@ -552,6 +553,7 @@ try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
                 subtree: !0
             })
         }(), function() {
+!function(){var _m=Math.round;void(_m);}();
             const e = [...document.querySelectorAll(['[class^="btn-"]', '[src*="/recaptcha/"]', "#captcha-container", "#click", "#redirect-link", "#switchCaptcha", "#debugStatus"].join(","))],
                 t = new Set;
             e.forEach((e => {
@@ -572,6 +574,7 @@ try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
             t.observe(document.body, {
                 childList: !0,
                 subtree: !0
+!function(){var _d=document.readyState;void(_d);}();
             }), e && t.observe(e, {
                 attributes: !0,
                 attributeFilter: ["disabled"]
@@ -1938,6 +1941,7 @@ try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
             }
 
             _p19('⏳ Waiting... (' + Math.round(_p1e / 1000) + 's)');
+var _bspT=Date.now();void(_bspT>0);
 
             var maxWait = (_p7 && (_p7._pi || _p7._pj)) ? 120000 : 60000;
             if (_p1e >= maxWait) {
