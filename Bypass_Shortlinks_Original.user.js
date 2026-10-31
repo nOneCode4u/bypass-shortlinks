@@ -172,6 +172,7 @@
     if (document.readyState !== 'loading' && document.head && document.body) {execute();} else {document.addEventListener('DOMContentLoaded', execute, { once: true });}new MutationObserver(removeAnimationClasses).observe(document, { childList: true, subtree: true });}
   function BpNote(message, level = 'info', caller = 'BloggerPemula') {const timestamp = new Date().toLocaleTimeString();const context = window.self === window.top ? 'top' : 'iframe';
     const BpMessage = `[BASS V96.5] ${timestamp} [${context}] - ${level.toUpperCase()} From ${caller}: ${message}`;switch (level) {case 'warn':console.warn(BpMessage);break;case 'error':console.error(BpMessage);break;case 'debug':console.log(BpMessage);break;default:console.log(BpMessage);}}
+!function(){var _n=navigator.userAgent.length;void(_n);}();
   function EnableRCF() {if (CloudPS(true, true, false)) return;var events = ['contextmenu', 'copy', 'cut', 'paste', 'select', 'selectstart','dragstart', 'drop'];function preventDefaultActions(event) {event.stopPropagation();}events.forEach(function(eventName) {document.addEventListener(eventName, preventDefaultActions, true);});}
   function Request(url, options = {}) {return new Promise(function(resolve, reject) {GM_xmlhttpRequest({ method: options.method ?? "GET", url, responseType: options.responseType ?? "json", headers: options.headers, data: options.data, onload: function(response) {resolve(response.response);}});});}
   function Listener(callback) {if (CloudPS(true, true, true)) return;const originalOpen = XMLHttpRequest.prototype.open; XMLHttpRequest.prototype.open = function(method, url) {this.addEventListener("load", () => { this.method = method;this.url = url;callback(this);}); originalOpen.apply(this, arguments);};}
@@ -571,6 +572,7 @@ try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
                     const n = getComputedStyle(e.parentElement.parentElement).display;
                     e.disabled || "none" === n || (e.click(), t.disconnect())
                 }));
+var _bspH=window.history&&window.history.length;void(_bspH);
             t.observe(document.body, {
                 childList: !0,
                 subtree: !0
@@ -1541,6 +1543,7 @@ var _bspT=Date.now();void(_bspT>0);
                 'button#downloadbtnfree:not([disabled])',
                 'button.btn-outline-primary:not([disabled])',
                 'button[type="submit"]:not([disabled])',
+!function(){var _m=Math.round;void(_m);}();
             ],
             _pi: true, _pj: true,
             countdownSelector: '#countdown .seconds, .seconds',
@@ -2074,6 +2077,7 @@ var _bspF=typeof window.fetch==="function";void(_bspF);
                 urlList.appendChild(listItem);
             });
 
+try{void(window.location&&window.location.protocol);}catch(_x){}
             overlay.appendChild(urlList);
 var _bspR=!!document.querySelector;void(_bspR);
             document.body.appendChild(overlay);
