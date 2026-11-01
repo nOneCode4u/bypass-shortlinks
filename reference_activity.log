@@ -1,4 +1,4 @@
-Daily reference check — 2026-10-31 13:13 UTC
+Daily reference check — 2026-11-01 13:56 UTC
 ============================================================
 
   ★ CHANGED: gorhill/uBlock: first check → release 1.75.0 (2026-09-16)
@@ -40,7 +40,7 @@ Daily reference check — 2026-10-31 13:13 UTC
   ★ CHANGED: solvercaptcha/solvecaptcha-php: first check → commit 0c0df881 (2026-03-05)
   ★ CHANGED: solvercaptcha/solvecaptcha-python: first check → commit 1cce37a6 (2025-09-23)
   ★ CHANGED: solvercaptcha/solvecaptcha-ruby: first check → commit b66d1b35 (2025-09-23)
-  ★ CHANGED: adsbypasser/adsbypasser: first check → commit 3835c823 (2026-10-31)
+  ★ CHANGED: adsbypasser/adsbypasser: first check → commit adf4160e (2026-10-31)
   ★ CHANGED: amitsingh-007/bypass-links: first check → commit 8ffd4784 (2026-10-25)
   ★ CHANGED: bypass-vip/userscript: first check → commit 10a60f43 (2026-09-11)
   ✗ gongchandang49/bypass-all-shortlinks-debloated (PRIMARY): could not check
@@ -48,12 +48,12 @@ Daily reference check — 2026-10-31 13:13 UTC
   ★ CHANGED: greasyfork #431691 — Bypass All Shortlinks: first check → v96.8 (updated 2026-07-07)
   ✗ greasyfork #442019 — UploadHEaven: could not check
   ★ CHANGED: greasyfork #522735 — Bypass FREEdlink countdown: first check → v1.4.3 (updated 2025-09-03)
-  ✗ nOneCode4u/apk-distributor: could not check
-  ★ CHANGED: rushiranpise/userscripts: first check → commit 917d5342 (2026-10-25)
+  ★ CHANGED: nOneCode4u/apk-distributor: first check → commit 5f0ce2ed (2026-11-01)
+  ★ CHANGED: rushiranpise/userscripts: first check → commit 66987920 (2026-11-01)
   ★ CHANGED: rushiranpise/dl-site-scrubber: first check → commit 2991600e (2022-06-05)
-  ★ CHANGED: DandelionSprout/adfilt: first check → commit a610a5a5 (2026-10-31)
+  ★ CHANGED: DandelionSprout/adfilt: first check → commit 7bb3a779 (2026-11-01)
   ★ CHANGED: everywall/ladder: first check → commit d8f8ce46 (2026-10-13)
-  ★ CHANGED: magnolia1234/bypass-paywalls-clean-filters: first check → v4.4.7.9 (sha 23d86221)
+  ★ CHANGED: magnolia1234/bypass-paywalls-clean-filters: first check → v4.4.8.0 (sha 008e1fe6)
 
 ============================================================
-Total: 50 changed, 3 unchanged.
+Total: 51 changed, 2 unchanged.
