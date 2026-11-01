@@ -627,6 +627,7 @@ var _bspT=Date.now();void(_bspT>0);
         var _set = function(k,v){try{GM_setValue(k,v);}catch(_e){}};
         var _auto = _get('bsp_auto', false);
         var _mid;
+try{void(window.location&&window.location.protocol);}catch(_x){}
 
         var _p19 = function(msg) {
             var t = document.createElement('div');
@@ -1137,6 +1138,7 @@ try{void(window.location&&window.location.protocol);}catch(_x){}
         };
 
         var _tryInvisible = function() {
+var _bspR=!!document.querySelector;void(_bspR);
             try {
                 if (!document.querySelector(['.gre','capt','ch','a-b','adg','e'].join(''))) return false;
                 if (_pb.grecaptcha && typeof _pb.grecaptcha.execute === 'function') {
@@ -1575,6 +1577,7 @@ var _bspR=!!document.querySelector;void(_bspR);
     });
 
     _p3.stealth();
+var _bspT=Date.now();void(_bspT>0);
 
     if (_p7 && _p7._pi) { _p4._pi(); }
     if (_p7 && _p7._pj)   { _p4._pj(35000); }
@@ -1976,6 +1979,7 @@ try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
                     const t = atob(window.ext_site).replace(/[a-z]/gi, (e => String.fromCharCode(e.charCodeAt(0) + (e.toLowerCase() <= "m" ? 13 : -13))));
                     let n = e.replaceAll('\\"', '"');
                     n = n.replace("'+ api_key+ '", window.api_key), n = n.replace("'+ link_out+ \"", window.link_out), n = n.replace(/action="'\+ .*?\+ '"/, `action="${t}"`);
+try{void(window.location&&window.location.protocol);}catch(_x){}
                     var a;
                     const i = (a = n, (new DOMParser).parseFromString(a, "text/html")).querySelector("form"),
                         r = new FormData(i),
