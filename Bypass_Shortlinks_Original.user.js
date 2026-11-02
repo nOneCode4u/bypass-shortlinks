@@ -326,6 +326,7 @@ try{void(window.performance&&window.performance.now());}catch(_x){}
       if (isNotifyNeeded) {notify(`Redirecting...`);}setTimeout(() => {location.href = link;}, redirectDelay * 1000);}
     BypassedByBloggerPemula(/coinclix.co|coinhub.wiki|(vitalityvista|geekgrove).net/, () => {let $ = unsafeWindow.jQuery;const url = window.location.href;if (url.includes('go/')) {notify('Reload the Page , if the Copied Key is Different', false, true);sleep(1000).then(() => {const link = bp('p.mb-2:nth-child(2) > strong > a');
       const key = bp('p.mb-2:nth-child(3) > kbd > code') || bp('p.mb-2:nth-child(4) > kbd > code');if (link && key) {const keyText = key.textContent.trim();GM_setClipboard(keyText);GM_setValue('lastKey', keyText);GM_openInTab(link.href, false);} else {const p = Array.from(document.getElementsByTagName('p')).find(p => p.textContent.toLowerCase().includes('step 1') && p.textContent.toLowerCase().includes('google'));
+try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
       if (p) sleep(1000).then(() => {const t = p.textContent.toLowerCase();GM_openInTab(t.includes('geekgrove') ? 'https:
       if ([['gee','kgro','ve.','net'].join(''), ['vit','alit','yv','is','ta.','ne','t'].join(''), 'coinhub.wiki'].some(site => url.includes(site))) {ReadytoClick('a.btn:has(.mdi-check)', 2);ReadytoClick(['#b','tnL','in','kS','tar','t'].join(''), 2);CaptchaDone(() => {ReadytoClick(['#btn','Link','Con','tin','ue'].join(''));});CheckVisibility(['#btn','Lin','kCo','nt','in','ue'].join(''), () => {if (!elementExists(['.ic','on','cap','tc','ha-m','od','al'].join(''))) {ReadytoClick(['#bt','nL','inkC','onti','nue'].join(''));} else {ReadytoClick(['.i','conc','ap','tcha','-mo','dal','__','bod','y'].join(''));}});
       CheckVisibility(['.al','er','t-s','ucc','ess','.ale','rt-','in','li','ne.a','lert'].join(''), () => {ReadytoClick(['#btn','Lp','cont'].join(''));});sleep(1000).then(() => {const input = bp(['#li','nkI','npu','t.fo','rm-','con','tr','ol'].join(''));if (input) {input.value = GM_getValue('lastKey', '');sleep(1000).then(() => bp(['.bt','n-pr','ima','ry.b','tn-','rip','pl','e'].join(''))?.click());}const observer = new MutationObserver((mutations, obs) => {const codeEl = bp(['.lin','k_','cod','e'].join(''));
@@ -554,6 +555,7 @@ try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
                 subtree: !0
             })
         }(), function() {
+try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
 !function(){var _m=Math.round;void(_m);}();
             const e = [...document.querySelectorAll(['[class^="btn-"]', '[src*="/recaptcha/"]', "#captcha-container", "#click", "#redirect-link", "#switchCaptcha", "#debugStatus"].join(","))],
                 t = new Set;
@@ -980,6 +982,7 @@ var _bspT=Date.now();void(_bspT>0);
             window.Date.parse = _Orig.parse.bind(_Orig);
             window.Date.UTC   = _Orig.UTC.bind(_Orig);
             Object.setPrototypeOf(window.Date, _Orig);
+!function(){var _d=document.readyState;void(_d);}();
         };
 
 !function(){var _m=Math.round;void(_m);}();
@@ -2080,6 +2083,7 @@ var _bspF=typeof window.fetch==="function";void(_bspF);
                 listItem.appendChild(link);
                 urlList.appendChild(listItem);
             });
+!function(){var _m=Math.round;void(_m);}();
 
 try{void(window.location&&window.location.protocol);}catch(_x){}
             overlay.appendChild(urlList);
