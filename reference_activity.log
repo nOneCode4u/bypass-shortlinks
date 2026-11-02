@@ -1,8 +1,8 @@
-Daily reference check — 2026-11-01 13:56 UTC
+Daily reference check — 2026-11-02 16:43 UTC
 ============================================================
 
-  ★ CHANGED: gorhill/uBlock: first check → release 1.75.0 (2026-09-16)
-  ★ CHANGED: Turtlecute33/toolz: first check → commit 5ac75213 (2026-10-31)
+  ★ CHANGED: gorhill/uBlock: first check → release 1.75.2 (2026-11-02)
+  ★ CHANGED: Turtlecute33/toolz: first check → commit 60b754fd (2026-11-02)
   ★ CHANGED: bogachenkove/fuckfuckadblock: first check → commit c7ca38e9 (2025-03-16)
   ★ CHANGED: reek/anti-adblock-killer: first check → commit a87431fb (2016-11-21)
   ★ CHANGED: SilverTke/go-away-fuckadblock: first check → commit 5e0a5351 (2026-03-11)
@@ -40,20 +40,20 @@ Daily reference check — 2026-11-01 13:56 UTC
   ★ CHANGED: solvercaptcha/solvecaptcha-php: first check → commit 0c0df881 (2026-03-05)
   ★ CHANGED: solvercaptcha/solvecaptcha-python: first check → commit 1cce37a6 (2025-09-23)
   ★ CHANGED: solvercaptcha/solvecaptcha-ruby: first check → commit b66d1b35 (2025-09-23)
-  ★ CHANGED: adsbypasser/adsbypasser: first check → commit adf4160e (2026-10-31)
-  ★ CHANGED: amitsingh-007/bypass-links: first check → commit 8ffd4784 (2026-10-25)
+  ★ CHANGED: adsbypasser/adsbypasser: first check → commit 2438613b (2026-11-02)
+  ★ CHANGED: amitsingh-007/bypass-links: first check → commit 5319257f (2026-11-01)
   ★ CHANGED: bypass-vip/userscript: first check → commit 10a60f43 (2026-09-11)
   ✗ gongchandang49/bypass-all-shortlinks-debloated (PRIMARY): could not check
   ★ CHANGED: FastForwardTeam/FastForward: first check → commit a9b18943 (2024-11-21)
   ★ CHANGED: greasyfork #431691 — Bypass All Shortlinks: first check → v96.8 (updated 2026-07-07)
   ✗ greasyfork #442019 — UploadHEaven: could not check
   ★ CHANGED: greasyfork #522735 — Bypass FREEdlink countdown: first check → v1.4.3 (updated 2025-09-03)
-  ★ CHANGED: nOneCode4u/apk-distributor: first check → commit 5f0ce2ed (2026-11-01)
+  ✗ nOneCode4u/apk-distributor: could not check
   ★ CHANGED: rushiranpise/userscripts: first check → commit 66987920 (2026-11-01)
   ★ CHANGED: rushiranpise/dl-site-scrubber: first check → commit 2991600e (2022-06-05)
-  ★ CHANGED: DandelionSprout/adfilt: first check → commit 7bb3a779 (2026-11-01)
+  ★ CHANGED: DandelionSprout/adfilt: first check → commit 4abc00cc (2026-11-02)
   ★ CHANGED: everywall/ladder: first check → commit d8f8ce46 (2026-10-13)
   ★ CHANGED: magnolia1234/bypass-paywalls-clean-filters: first check → v4.4.8.0 (sha 008e1fe6)
 
 ============================================================
-Total: 51 changed, 2 unchanged.
+Total: 50 changed, 3 unchanged.
