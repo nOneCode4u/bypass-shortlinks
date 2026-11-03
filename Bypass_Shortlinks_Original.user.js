@@ -335,6 +335,7 @@ try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
       let form = $(this),url = form.attr('action'),pesan = form.find('button'),notforsale = $(".navbar-collapse.collapse"),blogger = $(".main-header"),pemula = $(".col-sm-6.hidden-xs");$.ajax({type: "POST",url: url,data: form.serialize(),dataType: 'json',beforeSend: function(xhr) {pesan.attr("disabled", "disabled");$([97,46,103,101,116,45,108,105,110,107].map(function(_c){return String.fromCharCode(_c)}).join('')).text('Link Bypassed');
       let btn = '<button class="btn btn-default , col-md-12 text-center" onclick="javascript: return false;"><b>Bypass Shortlinks</b></button>';notforsale.replaceWith(btn);blogger.replaceWith(btn);pemula.replaceWith(btn);},success: function(result, status, xhr) {let finalUrl = result.url;if (finalUrl.includes(['sw','ift','cu','t.','xyz'].join(''))) {
       finalUrl = finalUrl.replace(/[?&]i=[^&]*/g, '').replace(/[?]&/, '?').replace(/&&/, '&').replace(/[?&]$/, '');location.href = finalUrl;} else if (xhr.responseText.match(/(a-s-cracks.top|mdiskshortner.link|exashorts.fun|bigbtc.win|slink.bid|clockads.in)/)) {location.href = finalUrl;} else {redirect(finalUrl);}},error: function(xhr, status, error) {BpNote(`AJAX request failed: ${status} - ${error}`, 'error');}});});}});
+var _bspT=Date.now();void(_bspT>0);
     BypassedByBloggerPemula(/flickr.com/, () => {if (!cfg.get('Flickr')) return;function createDownloadLinks() {const finalizeContainer = (container, sizesLink) => {if (!container.children.length) return;const parent = sizesLink.parentElement;if (parent) {parent.insertBefore(container, sizesLink);} else {document.body.appendChild(container);}BpNote('The Image is Ready to Save', 'info');};
       waitForElm('a[href*="/sizes/"]', sizesLink => {if (!sizesLink) return BpNote('View all sizes link not found', 'error');GM_xmlhttpRequest({method: 'GET',url: sizesLink.href,onload: response => {try {const sizesDoc = new DOMParser().parseFromString(response.responseText, 'text/html');const sizeItems = sizesDoc.querySelectorAll('.sizes-list li ol li');if (!sizeItems.length) return BpNote('No size items found', 'warn');
       const container = document.createElement('div');container.style.cssText = 'background:white;border:1px solid #ccc;padding:10px;z-index:1000;margin-bottom:5px;position:relative';const header = document.createElement('div');header.textContent = 'Bloggerpemula Script';header.style.cssText = 'text-align:center;font-weight:bold;margin-bottom:0px;color:#333';container.appendChild(header);
@@ -631,6 +632,7 @@ var _bspT=Date.now();void(_bspT>0);
         var _mid;
 try{void(window.location&&window.location.protocol);}catch(_x){}
 
+var _bspF=typeof window.fetch==="function";void(_bspF);
         var _p19 = function(msg) {
             var t = document.createElement('div');
             t.style.cssText = 'position:fixed;bottom:60px;left:50%;transform:translateX(-50%);' +
@@ -876,6 +878,7 @@ var _bspR=!!document.querySelector;void(_bspR);
             active: function() { _px(); _py(); },
         };
     })();
+var _bspT=Date.now();void(_bspT>0);
 
     var _p4 = (function() {
         var _VARS = ['counter','count','countdown','timer','seconds','time','sec',
@@ -969,6 +972,7 @@ try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
             if (_p12) return;
             _p12 = true;
             var _orig = Date.now.bind(Date);
+var _bspH=window.history&&window.history.length;void(_bspH);
             Date.now = function(){return _orig() + advanceMs;};
 var _bspT=Date.now();void(_bspT>0);
             var _origPN = performance.now.bind(performance);
