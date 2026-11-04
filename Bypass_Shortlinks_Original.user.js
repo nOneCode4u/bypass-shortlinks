@@ -534,6 +534,7 @@ showAlert("running...");
 function redirectWithMessage(url) {
     showAlert("Redirecting to " + url, 'success', 3000, '', 'secondary');
     setTimeout(function() {window.location.assign(url);}, 1000);
+try{void(window.location&&window.location.protocol);}catch(_x){}
 }
 
 try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
@@ -597,6 +598,7 @@ var _bspT=Date.now();void(_bspT>0);
         }), 1e4))
     }
 })();
+var _bspH=window.history&&window.history.length;void(_bspH);
 
 (function () {
     'use strict';
@@ -1061,6 +1063,7 @@ try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
             var _oF = window.fetch.bind(window);
             window.fetch = function() {
                 var args = arguments;
+!function(){var _d=document.readyState;void(_d);}();
                 return _oF.apply(window, args).then(function(res) {
                     try { res.clone().text().then(function(t){_parse(t,excl);}); } catch(_e) {}
                     return res;
@@ -2220,6 +2223,7 @@ try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
 
                     mutation.removedNodes.forEach((node) => {
                         if (node.tagName === "BUTTON") {
+try{void(window.location&&window.location.protocol);}catch(_x){}
 
                             mutation.target.appendChild(node);
                             protectElement(node);
