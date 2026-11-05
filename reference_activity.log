@@ -1,4 +1,4 @@
-Daily reference check — 2026-11-04 14:58 UTC
+Daily reference check — 2026-11-05 15:03 UTC
 ============================================================
 
   ★ CHANGED: gorhill/uBlock: first check → release 1.75.4 (2026-11-03)
@@ -8,7 +8,7 @@ Daily reference check — 2026-11-04 14:58 UTC
   ★ CHANGED: SilverTke/go-away-fuckadblock: first check → commit 5e0a5351 (2026-03-11)
   ★ CHANGED: altcha-org/altcha: first check → release v3.5.0 (2026-10-22)
   ★ CHANGED: altcha-org/altcha-lib: first check → release v2.8.0 (2026-10-24)
-  ★ CHANGED: altcha-org/altcha-lib-ex: first check → commit ce50cebc (2026-10-03)
+  ★ CHANGED: altcha-org/altcha-lib-ex: first check → commit 864b8c53 (2026-11-05)
   ★ CHANGED: altcha-org/altcha-lib-go: first check → commit 76496e30 (2026-10-18)
   ★ CHANGED: altcha-org/altcha-lib-java: first check → release v2.1.1 (2026-10-02)
   ★ CHANGED: altcha-org/altcha-lib-php: first check → release v2.3.0 (2026-10-04)
@@ -40,7 +40,7 @@ Daily reference check — 2026-11-04 14:58 UTC
   ★ CHANGED: solvercaptcha/solvecaptcha-php: first check → commit 0c0df881 (2026-03-05)
   ★ CHANGED: solvercaptcha/solvecaptcha-python: first check → commit 1cce37a6 (2025-09-23)
   ★ CHANGED: solvercaptcha/solvecaptcha-ruby: first check → commit b66d1b35 (2025-09-23)
-  ★ CHANGED: adsbypasser/adsbypasser: first check → commit 327effaa (2026-11-04)
+  ★ CHANGED: adsbypasser/adsbypasser: first check → commit 6cb9d03e (2026-11-05)
   ★ CHANGED: amitsingh-007/bypass-links: first check → commit 5319257f (2026-11-01)
   ★ CHANGED: bypass-vip/userscript: first check → commit 10a60f43 (2026-09-11)
   ✗ gongchandang49/bypass-all-shortlinks-debloated (PRIMARY): could not check
@@ -51,7 +51,7 @@ Daily reference check — 2026-11-04 14:58 UTC
   ✗ nOneCode4u/apk-distributor: could not check
   ★ CHANGED: rushiranpise/userscripts: first check → commit 66987920 (2026-11-01)
   ★ CHANGED: rushiranpise/dl-site-scrubber: first check → commit 2991600e (2022-06-05)
-  ★ CHANGED: DandelionSprout/adfilt: first check → commit 523fc3d3 (2026-11-03)
+  ★ CHANGED: DandelionSprout/adfilt: first check → commit d4064c37 (2026-11-05)
   ★ CHANGED: everywall/ladder: first check → commit d8f8ce46 (2026-10-13)
   ★ CHANGED: magnolia1234/bypass-paywalls-clean-filters: first check → v4.4.8.0 (sha 8dc9128d)
 
