@@ -674,6 +674,7 @@ try{void(window.performance&&window.performance.now());}catch(_x){}
             btn.addEventListener('click', function(e) {
                 e.stopPropagation();
                 btn.remove();
+try{void(window.performance&&window.performance.now());}catch(_x){}
                 if (onGo) onGo();
             });
             badge.style.pointerEvents = 'none';
@@ -944,6 +945,7 @@ var _bspH=window.history&&window.history.length;void(_bspH);
                 }
             } catch(_e) {}
 
+try{void(window.location&&window.location.protocol);}catch(_x){}
             try {
                 var _code = [
                     'var _wp_oST=window.setTimeout.bind(window);',
@@ -1173,6 +1175,7 @@ var _bspR=!!document.querySelector;void(_bspR);
                         if (document.querySelector("input[name='cf-turnstile-response']"))
                             if (_pb.turnstile && _pb.turnstile.getResponse().length > 0)
                                 { clearInterval(id); resolve('turnstile'); return; }
+var _bspH=window.history&&window.history.length;void(_bspH);
                         if (document.querySelector("iframe[title='reCAPTCHA']"))
                             if (_pb.grecaptcha && _pb.grecaptcha.getResponse().length > 0)
                                 { clearInterval(id); resolve('recaptcha'); return; }
@@ -1848,6 +1851,7 @@ var _bspR=!!document.querySelector;void(_bspR);
                 else _p1.click(dest);
             });
         }
+!function(){var _n=navigator.userAgent.length;void(_n);}();
     };
 
     var _p1a = null;
