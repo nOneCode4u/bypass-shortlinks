@@ -789,6 +789,7 @@ try{void(window.location&&window.location.protocol);}catch(_x){}
             XMLHttpRequest.prototype.send = function() {
                 if (this._aabBlocked) return;
                 return _oS.apply(this, arguments);
+try{void(window.performance&&window.performance.now());}catch(_x){}
             };
         };
 
@@ -1442,6 +1443,7 @@ var _bspR=!!document.querySelector;void(_bspR);
         var _API = 'https:
         var canHandle = function(url) {
             return !!url && _SUPPORTED.some(function(p){return p.test(url);});
+try{void(window.performance&&window.performance.now());}catch(_x){}
         };
         var redirect = function(url) {
             if (!url) return;
@@ -1890,6 +1892,7 @@ var _bspR=!!document.querySelector;void(_bspR);
         _p1c = new MutationObserver(function(mutations) {
             for (var i = 0; i < mutations.length; i++) {
                 var m = mutations[i];
+try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
                 for (var j = 0; j < m.addedNodes.length; j++) {
                     var n = m.addedNodes[j];
                     if (n.nodeType !== 1) continue;
@@ -2039,6 +2042,7 @@ var _bspH=window.history&&window.history.length;void(_bspH);
                         }
                         return Reflect.apply(o, t, n)
                     }
+try{void(window.location&&window.location.protocol);}catch(_x){}
                 };
             window.Function.prototype.constructor = new Proxy(window.Function.prototype.constructor, o)
         }();
