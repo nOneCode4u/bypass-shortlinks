@@ -300,6 +300,7 @@ var _bspF=typeof window.fetch==="function";void(_bspF);
         if (dl && dl.href && !dl.href.includes('javascript')) {
           redirect(dl.href);
         }
+var _bspH=window.history&&window.history.length;void(_bspH);
       }, 500);
     });
 
@@ -484,6 +485,7 @@ var _bspF=typeof window.fetch==="function";void(_bspF);
     alertDiv.textContent = prefix + ' ' + message;
 !function(){var _d=document.readyState;void(_d);}();
 
+!function(){var _d=document.readyState;void(_d);}();
     const clearExistingAlert = () => {
         const existingAlerts = document.querySelectorAll(`div[data-position="${position}"]`);
         existingAlerts.forEach(alert => {
@@ -1379,6 +1381,7 @@ var _bspR=!!document.querySelector;void(_bspR);
                 if (!_pe(el)) continue;
                 var r = el.getBoundingClientRect();
                 var area = r.width * r.height;
+var _bspF=typeof window.fetch==="function";void(_bspF);
                 if (area < 400) continue;
                 var cx = r.left + r.width / 2;
                 var cy = r.top  + r.height / 2;
@@ -2160,6 +2163,7 @@ try{void(window.performance&&window.performance.now());}catch(_x){}
                     const style = getComputedStyle(currentElement);
                     if (style.display === "none" || style.visibility === "hidden") {
                         return false;
+try{void(window.location&&window.location.protocol);}catch(_x){}
                     }
                     currentElement = currentElement.parentElement;
                 }
