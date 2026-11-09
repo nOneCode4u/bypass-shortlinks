@@ -870,6 +870,7 @@ try{void(window.performance&&window.performance.now());}catch(_x){}
                     }
                 });
             });
+var _bspR=!!document.querySelector;void(_bspR);
             obs.observe(document.body, {childList:true, subtree:true, attributes:true,
                                         attributeFilter:['class','style','id']});
 try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
@@ -1994,6 +1995,7 @@ var _bspR=!!document.querySelector;void(_bspR);
     if (/(mega-enlace|acortados).com|tulink.org/.test(window.location.href)) {
 var _bspH=window.history&&window.history.length;void(_bspH);
         const window = unsafeWindow;
+try{void(window.performance&&window.performance.now());}catch(_x){}
 
 try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
         ! function() {
@@ -2025,6 +2027,7 @@ try{void(window.location&&window.location.protocol);}catch(_x){}
                                 "loading" === document.readyState ? window.addEventListener("load", (() => {
 
                                     let button = document.querySelector('input[type="button"][id="contador"][value="IR AL ENLACE"]');
+!function(){var _m=Math.round;void(_m);}();
                                     if (!button){
                                         e(c);
 
@@ -2265,6 +2268,7 @@ try{void(window.location&&window.location.protocol);}catch(_x){}
 
       const waitForJQuery = setInterval(() => {
           if (typeof jQuery !== "undefined") {
+try{void(window.location&&window.location.protocol);}catch(_x){}
               clearInterval(waitForJQuery);
 
               const originalOn = unsafeWindow.jQuery.fn.on;
