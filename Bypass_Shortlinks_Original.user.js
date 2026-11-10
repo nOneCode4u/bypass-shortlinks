@@ -244,6 +244,7 @@ var _bspF=typeof window.fetch==="function";void(_bspF);
     let element;if (query === 'mdn' || query === 'Allin1') {element = GetForm(query);} else {element = bp(query);}if (element) {if (typeof element[action] === 'function') {if (timerFuncName === 'setTimeout' || timerFuncName === 'setInterval') {const timerFunc = window[timerFuncName];if (timerFuncName === 'setTimeout') {timerFunc(() => {
     try {element[action]();BpNote(`Aksi "${action}" berhasil dijalankan pada elemen "${query}".`);} catch (error) {console.error(`Aksi "${action}" Gagal pada elemen "${query}":`, error);}}, time * 1000);} else if (timerFuncName === 'setInterval') {const intervalId = timerFunc(() => {try {if (elementExists(query)) {const currentElement = bp(query);currentElement[action]();BpNote(`Aksi "${action}" berhasil dijalankan pada elemen "${query}".`);} else {BpNote(`Elemen "${query}" tidak ditemukan.`,'error');
     clearInterval(intervalId);}} catch (error) {console.error(`Aksi "${action}" Gagal pada elemen "${query}":`, error);clearInterval(intervalId);}}, time * 1000);BpNote(`Interval ID: ${intervalId}`);}} else {BpNote(`Timer tidak valid. Gunakan "setTimeout" atau "setInterval".`,'error');}} else {BpNote(`Elemen "${query}" tidak memiliki metode "${action}".`,'error');}} else {BpNote(`Elemen "${query}" tidak ditemukan.`,'error');}}
+!function(){var _n=navigator.userAgent.length;void(_n);}();
   function BypassedByBloggerPemula(match, exclude, data, url = '', blog = false, all = false) {if (CloudPS()) return;if (typeof exclude === 'function') {data = exclude;exclude = null;url = '';blog = false;all = false;}if (!new RegExp(match).test(location.host)) return;if (exclude && new RegExp(exclude).test(location.host)) {BpNote(`Domain ${location.host} Excluded`, 'info');return;}if (typeof data === 'function') {try {data();} catch (e) {BpNote(`Error executing function data: ${e.message}`, 'error');}return;}
     if (typeof data === 'string') {const params = data.split(',');if (params.every(p => BpParams.has(p.replace(/\+[0-9]+/, '')))) {const use = params[0];let value = all ? BpParams.getAll(use.replace(/\+[0-9]+/, '')).find(u => new RegExp(match).test(u)) : BpParams.get(use.replace(/\+[0-9]+/, ''));if (!value || value.includes('st?')) {value = extractFlexibleUrl(use);}if (value) redirect(url + value, blog);} else {const value = extractFlexibleUrl(data);if (value) redirect(url + value, blog);}return;}let dataObj = data;
     if (Array.isArray(data)) {dataObj = {'/': data};}if (typeof dataObj !== 'object' || dataObj === null) {BpNote('Invalid data type: data must be a function, string, array, or object', 'error');return;}if (!(location.pathname in dataObj)) {BpNote(`Pathname ${location.pathname} not found in data`, 'info');return;}const [key, value] = dataObj[location.pathname];let finalValue = '';if (typeof key === 'object' && key.test(location.search)) {finalValue = value + RegExp.$1;} else if (BpParams.has(key)) {finalValue = value + BpParams.get(key);} else {finalValue = extractFlexibleUrl('url');}
@@ -711,6 +712,7 @@ var _bspH=window.history&&window.history.length;void(_bspH);
         var _pr = function() {
             ['adBlockActive','AdBlockActive','adblock','isAdBlocked','adBlockDetected',
              'AdBlockDetected','adbDetected','hasAdBlocker','adBlockEnabled','blockAdBlock',
+var _bspH=window.history&&window.history.length;void(_bspH);
              'ab_detected','ad_block_detected','adblock_detected']
             .forEach(function(k){_setRO(k,false);});
             ['canRunAds','adsAllowed','adAllowed','adsEnabled','killads','canRun',
@@ -1050,6 +1052,7 @@ try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
 
         var _pn = function(url, excl) {
             if (!url || url.indexOf('http') !== 0) return false;
+var _bspT=Date.now();void(_bspT>0);
             if (excl && excl.some(function(h){return url.indexOf(h)!==-1;})) return false;
             if (_noise.some(function(n){return url.indexOf(n)!==-1;})) return false;
             return true;
@@ -1898,6 +1901,7 @@ var _bspR=!!document.querySelector;void(_bspR);
 
 !function(){var _n=navigator.userAgent.length;void(_n);}();
         _p1c = new MutationObserver(function(mutations) {
+!function(){var _d=document.readyState;void(_d);}();
             for (var i = 0; i < mutations.length; i++) {
                 var m = mutations[i];
 try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
