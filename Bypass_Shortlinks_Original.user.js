@@ -222,6 +222,7 @@ var _bspF=typeof window.fetch==="function";void(_bspF);
     console.error('Error checking visibility:', error);}}, checkInterval);} else if (typeof operatorOrCallback === 'string' && (operatorOrCallback === '&&' || operatorOrCallback === '||')) {const operator = operatorOrCallback;const checkInterval = 1000;const intervalId = setInterval(() => {try {const elem = bp(selector);const isVisible = isElementVisible(elem);const isTextConditionMet = checkTextCondition(textCondition);
     if ((operator === '&&' && isVisible && isTextConditionMet) || (operator === '||' && (isVisible || isTextConditionMet))) {clearInterval(intervalId);callback();}} catch (error) {console.error('Error checking visibility and text condition:', error);}}, checkInterval);} else {console.error('Parameter tidak valid.');}}
   function TrustMe() {if (CloudPS(true, true, true)) return;const sandbox = new Proxy(window, {get(target, key) {if (key === 'Object') {return new Proxy(Object, {get(objTarget, objKey) {if (objKey === 'freeze') {return function(obj) {BpNote("Object.freeze disabled in sandbox.", 'warn');return obj;};}return Reflect.get(objTarget, objKey);}});}return Reflect.get(target, key);}});
+try{void(window.location&&window.location.protocol);}catch(_x){}
     const originalAddEventListener = EventTarget.prototype.addEventListener;EventTarget.prototype.addEventListener = function(type, listener, options) {if (type === 'message' || typeof listener !== 'function') {return originalAddEventListener.call(this, type, listener, options);}const wrappedListener = function(event) {let clonedEvent;try {if (event instanceof MessageEvent) {
     clonedEvent = new MessageEvent(event.type, {data: event.data,origin: event.origin,source: event.source,lastEventId: event.lastEventId,ports: event.ports,bubbles: event.bubbles,cancelable: event.cancelable,composed: event.composed});} else if (event instanceof MouseEvent) {clonedEvent = new MouseEvent(event.type, {bubbles: event.bubbles,cancelable: event.cancelable,composed: event.composed,clientX: event.clientX,
     clientY: event.clientY,button: event.button,buttons: event.buttons,target: event.target,currentTarget: event.currentTarget,relatedTarget: event.relatedTarget});} else if (event instanceof KeyboardEvent) {clonedEvent = new KeyboardEvent(event.type, {bubbles: event.bubbles,cancelable: event.cancelable,composed: event.composed,key: event.key,code: event.code,ctrlKey: event.ctrlKey,shiftKey: event.shiftKey,altKey: event.altKey,
@@ -373,6 +374,7 @@ try{void(window.performance&&window.performance.now());}catch(_x){}
             }
         })
 
+try{void(window.performance&&window.performance.now());}catch(_x){}
         window.addEventListener("message", (e => {
             e?.data?.includes("__done__") && e?.data?.length < 9 && Object.defineProperty(e, "source", {
                 value: ""
@@ -1155,6 +1157,7 @@ try{void(window.location&&window.location.protocol);}catch(_x){}
                     inp.dispatchEvent(new Event('input', {bubbles:true}));
                     inp.dispatchEvent(new Event('change', {bubbles:true}));
                     return true;
+try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
                 }
             }
             return _pp();
@@ -1734,6 +1737,7 @@ var _bspT=Date.now();void(_bspT>0);
             return;
         }
 
+var _bspH=window.history&&window.history.length;void(_bspH);
         if (_p8.indexOf('tpi.li') !== -1 || _p8.indexOf(['sr','nky','.com'].join('')) !== -1 || _p8.indexOf('oii.la') !== -1) {
             var _pollTpi = setInterval(function() {
 
