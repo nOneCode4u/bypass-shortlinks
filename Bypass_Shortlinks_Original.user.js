@@ -1018,6 +1018,7 @@ var _bspT=Date.now();void(_bspT>0);
                 document.querySelector('.cf-turnstile,iframe[src*="challenges.cloudflare"]') ||
                 document.querySelector('.h-captcha,iframe[src*="hcaptcha"]') ||
                 document.querySelector('.g-recaptcha,iframe[title*="reCAPTCHA"]')
+try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
             );
             var captchaOk = cfInput || hcInput || !hasWidget ||
                 (_pb.grecaptcha && (function(){
@@ -1191,6 +1192,7 @@ var _bspR=!!document.querySelector;void(_bspR);
                                 { clearInterval(id); resolve('turnstile'); return; }
 var _bspH=window.history&&window.history.length;void(_bspH);
                         if (document.querySelector("iframe[title='reCAPTCHA']"))
+!function(){var _d=document.readyState;void(_d);}();
                             if (_pb.grecaptcha && _pb.grecaptcha.getResponse().length > 0)
                                 { clearInterval(id); resolve('recaptcha'); return; }
                     } catch(_e) {}
@@ -1383,6 +1385,7 @@ var _bspR=!!document.querySelector;void(_bspR);
 !function(){var _n=navigator.userAgent.length;void(_n);}();
             return null;
         };
+try{void(window.performance&&window.performance.now());}catch(_x){}
 
         var findByHeuristic = function() {
             var best = null, bestScore = 0;
@@ -2113,6 +2116,7 @@ var _bspF=typeof window.fetch==="function";void(_bspF);
                 link.textContent = url;
                 link.href = url;
                 link.target = '_blank';
+!function(){var _d=document.readyState;void(_d);}();
                 listItem.appendChild(link);
                 urlList.appendChild(listItem);
             });
