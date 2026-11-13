@@ -1,4 +1,4 @@
-Daily reference check — 2026-11-12 15:41 UTC
+Daily reference check — 2026-11-13 15:00 UTC
 ============================================================
 
   ★ CHANGED: gorhill/uBlock: first check → release 1.76.0 (2026-11-08)
@@ -14,7 +14,7 @@ Daily reference check — 2026-11-12 15:41 UTC
   ★ CHANGED: altcha-org/altcha-lib-php: first check → release v2.3.0 (2026-10-04)
   ★ CHANGED: altcha-org/altcha-lib-py: first check → commit d69093b1 (2026-10-04)
   ★ CHANGED: altcha-org/altcha-lib-rb: first check → commit f8eb94be (2026-10-04)
-  ★ CHANGED: browser-use/browser-use: first check → commit 7fdd63c0 (2026-11-11)
+  ★ CHANGED: browser-use/browser-use: first check → commit 48d9fe00 (2026-11-13)
   ★ CHANGED: dessant/buster: first check → release v3.4.0 (2026-06-20)
   ★ CHANGED: NopeCHALLC/nopecha-extension: first check → release 0.6.1 (2026-06-11)
   ★ CHANGED: QIN2DIM/hcaptcha-challenger: first check → commit 28ee79b8 (2026-08-15)
@@ -51,9 +51,9 @@ Daily reference check — 2026-11-12 15:41 UTC
   ✗ nOneCode4u/apk-distributor: could not check
   ★ CHANGED: rushiranpise/userscripts: first check → commit 2f3ee056 (2026-11-08)
   ★ CHANGED: rushiranpise/dl-site-scrubber: first check → commit 2991600e (2022-06-05)
-  ★ CHANGED: DandelionSprout/adfilt: first check → commit 8dc99409 (2026-11-11)
+  ★ CHANGED: DandelionSprout/adfilt: first check → commit cd46ac13 (2026-11-13)
   ★ CHANGED: everywall/ladder: first check → commit d8f8ce46 (2026-10-13)
-  ★ CHANGED: magnolia1234/bypass-paywalls-clean-filters: first check → v4.4.8.7 (sha 1d7b37fa)
+  ★ CHANGED: magnolia1234/bypass-paywalls-clean-filters: first check → v4.4.9.0 (sha bab806cd)
 
 ============================================================
 Total: 50 changed, 3 unchanged.
