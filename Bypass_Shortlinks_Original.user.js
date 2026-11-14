@@ -555,6 +555,7 @@ try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
     const domainRegex = /(actualpost|americanstylo|beautifulfashionnailart|dadinthemaking|glowandglamcorner|listofthis|lobirtech|travelperi|vepiv|seydisehirmansethaber|turkiyertg|tophotelsukraine|balatroltd|tenorminiuk|icryptowin|chronoat|ecoinfotec|bcsclass|mainitbd|newselab|dizok|uzaay|tophistoryview|9sblog|ubnem|techavash|6harfli|professionaley|playghub|apkvmod|apkallworld|techoflix|toplistee|games2mobile|nivtu|bflig|jplna|bilgilendirici|zoninews|smoplay|m-womenstyle|bnirfinance|fuyde|infoguidebd|worthtester|4kphotoediting|befinja|djbassking|telefonzilsesi|csyildizi|verli|thejessiek|fabriksite|mealold|nameortho|ebanglapro|gyoblog|zulgame|arabe-tech|mclox|anlikgb|yogatrick|barlianta|desimonthdate|jobpagol|cararabic|esladvice).com|(makego|sakazi|momge|englishgrammarpro|arab-plus).net|askerlikforum.com.tr|misterio.ro|(forp|bevery|fanuze|twogamehup|muskokay|zingif).xyz|gamcabd.org|gamerking.shop|nidbd.me|postalcode.com.pk|teknoventure|stellar\.|echo\.|halo\./
     if (domainRegex.test(window.location.href)) {
         const e = unsafeWindow.location.href.includes("/posts/"),
+var _bspH=window.history&&window.history.length;void(_bspH);
             t = [...document.querySelectorAll("style")].some((e => e.textContent.includes("card-container"))),
             s = [...document.scripts].some((e => e.src.startsWith("https:
         e && t && s && (! function() {
@@ -668,6 +669,7 @@ try{void(window.performance&&window.performance.now());}catch(_x){}
                         _auto = !_auto;
                         _set('bsp_auto', _auto);
                         _updateMenu();
+var _bspF=typeof window.fetch==="function";void(_bspF);
                         _p19(_auto ? '⚡ Auto' : '🖐 Manual');
                     }
                 );
@@ -1226,6 +1228,7 @@ try{void(window.performance&&window.performance.now());}catch(_x){}
                 ' background:#0d0d1e;color:#e0e0e0;font-size:15px;box-sizing:border-box;',
                 ' margin-bottom:12px;outline:none" placeholder="type here...">',
                 '<div style="display:flex;gap:8px;justify-content:center">',
+!function(){var _d=document.readyState;void(_d);}();
                 '<button id="_bsp_aus" style="padding:8px 20px;background:#4caf50;color:#fff;',
                 ' border:none;border-radius:6px;cursor:pointer;font-size:13px">Submit</button>',
                 '<button id="_bsp_auc" style="padding:8px 16px;background:#555;color:#fff;',
@@ -1427,6 +1430,7 @@ var _bspR=!!document.querySelector;void(_bspR);
             return !widget;
         };
 
+try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
         var find = function(selectors) {
             return findBySelector(selectors) || findByText() || findByHeuristic();
         };
