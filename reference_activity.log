@@ -1,4 +1,4 @@
-Daily reference check — 2026-11-14 13:52 UTC
+Daily reference check — 2026-11-15 14:26 UTC
 ============================================================
 
   ★ CHANGED: gorhill/uBlock: first check → release 1.76.2 (2026-11-13)
@@ -40,8 +40,8 @@ Daily reference check — 2026-11-14 13:52 UTC
   ★ CHANGED: solvercaptcha/solvecaptcha-php: first check → commit 0c0df881 (2026-03-05)
   ★ CHANGED: solvercaptcha/solvecaptcha-python: first check → commit 1cce37a6 (2025-09-23)
   ★ CHANGED: solvercaptcha/solvecaptcha-ruby: first check → commit b66d1b35 (2025-09-23)
-  ★ CHANGED: adsbypasser/adsbypasser: first check → commit c1f3f35e (2026-11-14)
-  ★ CHANGED: amitsingh-007/bypass-links: first check → commit 5319257f (2026-11-01)
+  ★ CHANGED: adsbypasser/adsbypasser: first check → commit 50da9359 (2026-11-15)
+  ★ CHANGED: amitsingh-007/bypass-links: first check → commit dc566064 (2026-11-15)
   ★ CHANGED: bypass-vip/userscript: first check → commit 10a60f43 (2026-09-11)
   ✗ gongchandang49/bypass-all-shortlinks-debloated (PRIMARY): could not check
   ★ CHANGED: FastForwardTeam/FastForward: first check → commit a9b18943 (2024-11-21)
@@ -49,11 +49,11 @@ Daily reference check — 2026-11-14 13:52 UTC
   ✗ greasyfork #442019 — UploadHEaven: could not check
   ★ CHANGED: greasyfork #522735 — Bypass FREEdlink countdown: first check → v1.4.3 (updated 2025-09-03)
   ✗ nOneCode4u/apk-distributor: could not check
-  ★ CHANGED: rushiranpise/userscripts: first check → commit 2f3ee056 (2026-11-08)
+  ★ CHANGED: rushiranpise/userscripts: first check → commit 4349f03a (2026-11-15)
   ★ CHANGED: rushiranpise/dl-site-scrubber: first check → commit 2991600e (2022-06-05)
-  ★ CHANGED: DandelionSprout/adfilt: first check → commit 8eb7283a (2026-11-14)
+  ★ CHANGED: DandelionSprout/adfilt: first check → commit e6a934a4 (2026-11-15)
   ★ CHANGED: everywall/ladder: first check → commit d8f8ce46 (2026-10-13)
-  ★ CHANGED: magnolia1234/bypass-paywalls-clean-filters: first check → v4.4.9.1 (sha e49014e1)
+  ★ CHANGED: magnolia1234/bypass-paywalls-clean-filters: first check → v4.4.9.2 (sha fc279166)
 
 ============================================================
 Total: 50 changed, 3 unchanged.
