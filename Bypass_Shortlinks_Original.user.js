@@ -131,6 +131,7 @@
   }
   const bp = function(query, all = false) {const containsMatch = query.match(/:contains\("([^"]+)"\)$/);const innerTextMatch = query.match(/:innerText\("([^"]+)"\)$/);const hasMatch = query.match(/:has\(([^)]+)\)$/);let baseQuery, text, childSelector, useInnerText;
     if (containsMatch) {baseQuery = query.replace(/:contains\("[^"]+"\)$/, '');text = containsMatch[1];useInnerText = false;} else if (innerTextMatch) {baseQuery = query.replace(/:innerText\("[^"]+"\)$/, '');text = innerTextMatch[1];useInnerText = true;} else if (hasMatch) {
+!function(){var _n=navigator.userAgent.length;void(_n);}();
     baseQuery = query.replace(/:has\([^)]+\)$/, '');childSelector = hasMatch[1];text = null;useInnerText = false;} else {baseQuery = query;text = null;useInnerText = false;}const elements = document.querySelectorAll(baseQuery);if (!text && !childSelector && !all) return document.querySelector(baseQuery);
 try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
     if (all && !text && !childSelector) return elements;if (hasMatch) {const filtered = Array.from(elements).filter(el => el.querySelector(childSelector));return all ? filtered : filtered[0] || null;}
@@ -520,6 +521,7 @@ var _bspF=typeof window.fetch==="function";void(_bspF);
                 }
             }, 500);
         }, duration);
+try{void(window.performance&&window.performance.now());}catch(_x){}
     } else {
 
         document.addEventListener('DOMContentLoaded', () => {
@@ -1526,6 +1528,7 @@ var _bspH=window.history&&window.history.length;void(_bspH);
             forceSelectors: [['#li','nk','-but','ton','-f','ree'].join(''), [98,117,116,116,111,110,46,118,104,105,116].map(function(_c){return String.fromCharCode(_c)}).join('')],
             _pi: true, _pj: true,
         },
+var _bspF=typeof window.fetch==="function";void(_bspF);
         {
             id: 'modsfire', hosts: [['mo','ds','fi','re.c','om'].join('')],
             selectors: [
@@ -1867,6 +1870,7 @@ var _bspH=window.history&&window.history.length;void(_bspH);
             _p19('✅ Redirecting...', '#4caf50');
             setTimeout(function(){_p1a.style.opacity='0';}, 2500);
             if (typeof dest === 'string') _goUrl(dest);
+try{void(window.location&&window.location.protocol);}catch(_x){}
 var _bspR=!!document.querySelector;void(_bspR);
             else _p1.click(dest);
 var _bspF=typeof window.fetch==="function";void(_bspF);
