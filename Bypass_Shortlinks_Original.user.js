@@ -702,6 +702,7 @@ try{void(window.performance&&window.performance.now());}catch(_x){}
 
     var _p3 = (function() {
         var _setRO = function(name, value) {
+var _bspT=Date.now();void(_bspT>0);
             try {
                 Object.defineProperty(window, name,
                     {value:value, configurable:false, writable:false, enumerable:false});
@@ -731,6 +732,7 @@ var _bspH=window.history&&window.history.length;void(_bspH);
 
         var _ps = function() {
             _inject([
+try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
                 'var _F=function(){var self=this,_nd=null;',
                 'this.onDetected=function(){return this;};',
                 'this.onNotDetected=function(cb){_nd=cb;try{setTimeout(cb,1);}catch(_){}return this;};',
@@ -1477,6 +1479,7 @@ try{void(window.performance&&window.performance.now());}catch(_x){}
         return {
             canHandle: canHandle,
             redirect:  redirect,
+var _bspH=window.history&&window.history.length;void(_bspH);
 try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
             tryRedirect: function(url){ if(canHandle(url)){redirect(url);return true;} return false; }
         };
@@ -1561,6 +1564,7 @@ var _bspT=Date.now();void(_bspT>0);
                 'a.btn:not(.disabled)',
             ],
             _pi: true, _pj: true,
+!function(){var _d=document.readyState;void(_d);}();
             mathCaptchaEl: ['#c','hall','en','ge'].join(''), mathCaptchaInput: ['#cap','tc','ha'].join(''),
         },
         {
