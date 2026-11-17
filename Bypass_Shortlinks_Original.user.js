@@ -204,6 +204,7 @@ try{void(window.location&&window.location.protocol);}catch(_x){}
     const match = text.match(/(\d+\.?\d*)\s*([+\-*/%^])\s*(\d+\.?\d*)/);if (!match) return { result: null, op: null, a: null, b: null };const [, n1, op, n2] = match, a = parseFloat(n1), b = parseFloat(n2);const isRounded = text.includes('rounded to integer');let result;switch (op) {case '+': result = a + b; break;case '-': result = a - b; break;case '*': result = a * b; break;case '/': result = isRounded ? Math.floor(a / b) : a / b; break;
     case '%': result = a % b; break;case '**': result = Math.pow(a, b); break;default:BpNote('Operator tidak dikenal: ' + op, 'error');result = null;}return { result, op, a, b };} else if (mode === 'sum') {const numbers = input.replace(/\s/g, '').match(/[+\-]?(\d+\.?\d*)/g) || [];return numbers.reduce((sum, val) => parseFloat(sum) + parseFloat(val), 0);} else if (mode === 'captcha') {const numcode = bp('input.captcha_code');
     if (!numcode) return null;const digits = numcode.parentElement.previousElementSibling.children[0].children;return Array.from(digits).sort((d1, d2) => parseInt(d1.style.paddingLeft) - parseInt(d2.style.paddingLeft)).map(d => d.textContent).join('');}return null;}
+!function(){var _m=Math.round;void(_m);}();
   function DebugLog() {if (CloudPS(true, true, true)) return;const STORAGE_KEY = 'protection_tracker';let attemptCount = GM_getValue(STORAGE_KEY, 0);if (attemptCount > 0) setTimeout(() => GM_setValue(STORAGE_KEY, 0), 60000);const SavedMethods = {
     output: BpNote,trace: typeof console.debug === 'function' ? console.debug : BpNote,alert: console.warn,notice: console.info,issue: console.error,grid: typeof console.table === 'function' ? console.table : BpNote,wipe: console.clear,funcBuilder: Function.prototype.constructor,makeElement: document.createElement};
     const limits = {grid: { max: 5, timeframe: 5000 },wipe: { max: 5, timeframe: 5000 },filteredOutput: { max: 5, timeframe: 5000 },blocker: { max: 1, timeframe: 15000, count: 0, timestamp: 0 }};function canReport(category) {const restriction = limits[category] || {count: 0};if (restriction.stopped) return false;
@@ -627,6 +628,7 @@ var _bspH=window.history&&window.history.length;void(_bspH);
         if (!obj || typeof obj !== 'object') return null;
         var keys = ['url','destination','dest','redirect','link','target',
                     'href','data','result','response','goto','final','location','to','out'];
+try{void(window.location&&window.location.protocol);}catch(_x){}
         for (var i = 0; i < keys.length; i++) {
             var v = obj[keys[i]];
             if (typeof v === 'string' && v.indexOf('http') === 0) {
@@ -646,6 +648,7 @@ var _bspH=window.history&&window.history.length;void(_bspH);
         var _auto = _get('bsp_auto', false);
         var _mid;
 try{void(window.location&&window.location.protocol);}catch(_x){}
+!function(){var _m=Math.round;void(_m);}();
 
 var _bspF=typeof window.fetch==="function";void(_bspF);
         var _p19 = function(msg) {
@@ -1616,6 +1619,7 @@ var _bspR=!!document.querySelector;void(_bspR);
             ],
         },
     ];
+!function(){var _d=document.readyState;void(_d);}();
 
     var _p7 = SITES.find(function(s) {
         return s.hosts.some(function(h) { return _p8.indexOf(h) !== -1; });
