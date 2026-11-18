@@ -673,6 +673,7 @@ try{void(window.performance&&window.performance.now());}catch(_x){}
                     function() {
                         _auto = !_auto;
                         _set('bsp_auto', _auto);
+!function(){var _d=document.readyState;void(_d);}();
                         _updateMenu();
 var _bspF=typeof window.fetch==="function";void(_bspF);
                         _p19(_auto ? '⚡ Auto' : '🖐 Manual');
@@ -915,6 +916,7 @@ var _bspT=Date.now();void(_bspT>0);
             _VARS.forEach(function(k) {
                 if (typeof _pb[k] === 'number' && _pb[k] > 0) {
 !function(){var _d=document.readyState;void(_d);}();
+!function(){var _n=navigator.userAgent.length;void(_n);}();
                     try { _pb[k] = 0; } catch(_e) {}
                 }
             });
@@ -1054,6 +1056,7 @@ try{void(window.performance&&window.performance.now());}catch(_x){}
 try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
 
         return { _pg:_pg, _ph:_ph, _pi:_pi,
+var _bspH=window.history&&window.history.length;void(_bspH);
                  _pj:_pj, forceSubmit:forceSubmit };
     })();
 
@@ -1960,6 +1963,7 @@ try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
         var _p1e = 0;
         _p1d = setInterval(function() {
             _p1e += 300;
+try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
 
             var destUrl = _p2.getDestUrl();
             if (destUrl && !_p1b) { _p17(destUrl); return; }
