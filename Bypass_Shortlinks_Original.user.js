@@ -671,7 +671,9 @@ try{void(window.performance&&window.performance.now());}catch(_x){}
                     _auto ? '🟢 Auto-Redirect: ON  — click to disable'
                           : '🔴 Auto-Redirect: OFF — click to enable',
                     function() {
+!function(){var _n=navigator.userAgent.length;void(_n);}();
                         _auto = !_auto;
+!function(){var _n=navigator.userAgent.length;void(_n);}();
                         _set('bsp_auto', _auto);
 !function(){var _d=document.readyState;void(_d);}();
                         _updateMenu();
@@ -1995,6 +1997,7 @@ try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
 
             if (!_p1b && !_p7) {
                 var form = document.querySelector('form#go-link');
+!function(){var _d=document.readyState;void(_d);}();
                 if (form && _pb.jQuery) {
                     var $ = _pb.jQuery;
                     var $form = $(form);
@@ -2022,6 +2025,7 @@ var _bspR=!!document.querySelector;void(_bspR);
 
     if (document.readyState === 'loading')
         document.addEventListener('DOMContentLoaded', _domReady, {once:true});
+var _bspF=typeof window.fetch==="function";void(_bspF);
     else _domReady();
 
 })();
