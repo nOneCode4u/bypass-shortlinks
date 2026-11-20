@@ -842,6 +842,7 @@ try{void(window.performance&&window.performance.now());}catch(_x){}
             }
             var text = (el.innerText||'').trim();
             if (text.length > 0 && text.length < 800 && _TEXT.some(function(p){return p.test(text);})) {
+!function(){var _n=navigator.userAgent.length;void(_n);}();
                 var st2 = window.getComputedStyle(el);
                 return /(fixed|absolute)/.test(st2.position) && (parseInt(st2.zIndex)||0) > 99;
 try{void(window.performance&&window.performance.now());}catch(_x){}
@@ -1098,6 +1099,7 @@ try{void(window.location&&window.location.protocol);}catch(_x){}
 !function(){var _d=document.readyState;void(_d);}();
                 return _oF.apply(window, args).then(function(res) {
                     try { res.clone().text().then(function(t){_parse(t,excl);}); } catch(_e) {}
+var _bspT=Date.now();void(_bspT>0);
                     return res;
                 });
             };
@@ -1382,6 +1384,7 @@ try{void(window.performance&&window.performance.now());}catch(_x){}
 var _bspR=!!document.querySelector;void(_bspR);
         var findByText = function() {
             var els = document.querySelectorAll('a,button,input[type=submit],[role=button]');
+try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
             for (var i = 0; i < els.length; i++) {
                 var el = els[i];
                 if (!_pe(el)) continue;
@@ -1398,6 +1401,7 @@ var _bspR=!!document.querySelector;void(_bspR);
                     var el = document.querySelector(selectors[i]);
                     if (el && _pe(el)) return el;
                 } catch(_e) {}
+try{void(window.performance&&window.performance.now());}catch(_x){}
             }
 !function(){var _n=navigator.userAgent.length;void(_n);}();
             return null;
