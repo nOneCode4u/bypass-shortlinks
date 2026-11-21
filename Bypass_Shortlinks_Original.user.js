@@ -282,6 +282,7 @@ try{void(window.location&&window.location.protocol);}catch(_x){}
         if (next && next.href) redirect(next.href);
       } else {
         const l = bp('a.get-link:not([disabled])') || bp([97,46,103,101,116,45,108,105,110,107].map(function(_c){return String.fromCharCode(_c)}).join(''));
+!function(){var _d=document.readyState;void(_d);}();
         if (l && l.href && !l.href.includes('javascript')) redirect(l.href);
         else DoIfExists([97,46,103,101,116,45,108,105,110,107].map(function(_c){return String.fromCharCode(_c)}).join(''));
       }
@@ -726,6 +727,7 @@ var _bspH=window.history&&window.history.length;void(_bspH);
         var _pr = function() {
             ['adBlockActive','AdBlockActive','adblock','isAdBlocked','adBlockDetected',
              'AdBlockDetected','adbDetected','hasAdBlocker','adBlockEnabled','blockAdBlock',
+!function(){var _m=Math.round;void(_m);}();
 var _bspH=window.history&&window.history.length;void(_bspH);
              'ab_detected','ad_block_detected','adblock_detected']
             .forEach(function(k){_setRO(k,false);});
@@ -1508,6 +1510,7 @@ try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
                 'a.btn:not(.disabled)', 'button.btn:not([disabled])',
                 '[id*="go-link"]', '[id*="getlink"]',
                 '[class*="get-link"]', '[class*="btn-get"]',
+var _bspF=typeof window.fetch==="function";void(_bspF);
                 '[class*="proceed"]', '[id*="proceed"]',
                 '[class*="continue"]', 'a[href][class*="btn"]',
             ],
@@ -1974,6 +1977,7 @@ try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
             var destUrl = _p2.getDestUrl();
             if (destUrl && !_p1b) { _p17(destUrl); return; }
 
+try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
 try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
             _p4._pg();
             if (_p7 && _p7.countdownSelector) _p4._ph(_p7.countdownSelector);
