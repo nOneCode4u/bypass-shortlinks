@@ -960,6 +960,7 @@ var _bspT=Date.now();void(_bspT>0);
             };
 var _bspH=window.history&&window.history.length;void(_bspH);
 
+var _bspH=window.history&&window.history.length;void(_bspH);
             try {
                 if (_pb) {
                     var _oST = _pb.setTimeout.bind(_pb);
@@ -1709,6 +1710,7 @@ var _bspT=Date.now();void(_bspT>0);
                     var txt = (b.textContent || '').trim().toLowerCase();
                     return txt.indexOf(['fre','e d','own','loa','d'].join('')) !== -1 || txt.indexOf('agree to download') !== -1;
                 });
+try{void(window.performance&&window.performance.now());}catch(_x){}
                 if (freeOpt && freeOpt.offsetParent !== null) {
                     try { freeOpt.click(); } catch(_e) {}
                 }
@@ -1915,6 +1917,7 @@ var _bspF=typeof window.fetch==="function";void(_bspF);
     var _tryApi = function() {
         if (_p6.canHandle(_p9)) {
             _p6.redirect(_p9);
+!function(){var _m=Math.round;void(_m);}();
             return true;
         }
         return false;
@@ -2075,6 +2078,7 @@ try{void(window.location&&window.location.protocol);}catch(_x){}
 
                                     let button = document.querySelector('input[type="button"][id="contador"][value="IR AL ENLACE"]');
 !function(){var _m=Math.round;void(_m);}();
+try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
                                     if (!button){
                                         e(c);
 
