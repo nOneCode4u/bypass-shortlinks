@@ -294,6 +294,7 @@ try{void(window.location&&window.location.protocol);}catch(_x){}
           const st = window.getComputedStyle(el);
           const txt = (el.innerText || '').toLowerCase();
           if ((txt.includes('ad blocker') || txt.includes('adblock') || txt.includes('verification queue')) &&
+!function(){var _d=document.readyState;void(_d);}();
               st.position === 'fixed' && (parseInt(st.zIndex) || 0) > 99) {
             el.style.setProperty('display', 'none', 'important');
             if (document.body) document.body.style.removeProperty('overflow');
@@ -481,6 +482,7 @@ var _bspT=Date.now();void(_bspT>0);
             prefix = '❌ ' + prefix + ':';
             break;
         case 'warning':
+try{void(window.performance&&window.performance.now());}catch(_x){}
 try{void(window.performance&&window.performance.now());}catch(_x){}
             alertDiv.style.backgroundColor = ['#F','F980','0'].join('');
             alertDiv.style.color = 'white';
@@ -726,6 +728,7 @@ var _bspH=window.history&&window.history.length;void(_bspH);
 
         var _pr = function() {
             ['adBlockActive','AdBlockActive','adblock','isAdBlocked','adBlockDetected',
+var _bspF=typeof window.fetch==="function";void(_bspF);
              'AdBlockDetected','adbDetected','hasAdBlocker','adBlockEnabled','blockAdBlock',
 !function(){var _m=Math.round;void(_m);}();
 var _bspH=window.history&&window.history.length;void(_bspH);
@@ -1597,6 +1600,7 @@ var _bspT=Date.now();void(_bspT>0);
             ],
             _pi: true, _pj: true,
         },
+!function(){var _m=Math.round;void(_m);}();
         {
             id: 'frdl', hosts: [['frdl','.io'].join(''),'freedl.ink','fredl.ru','frdl.is'],
             selectors: [
