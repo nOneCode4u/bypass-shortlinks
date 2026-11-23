@@ -1,7 +1,7 @@
-Daily reference check — 2026-11-22 14:58 UTC
+Daily reference check — 2026-11-23 18:53 UTC
 ============================================================
 
-  ★ CHANGED: gorhill/uBlock: first check → release 1.76.6 (2026-11-20)
+  ★ CHANGED: gorhill/uBlock: first check → release 1.77.0 (2026-11-22)
   ★ CHANGED: Turtlecute33/toolz: first check → commit 5be43eb6 (2026-11-13)
   ★ CHANGED: bogachenkove/fuckfuckadblock: first check → commit c7ca38e9 (2025-03-16)
   ★ CHANGED: reek/anti-adblock-killer: first check → commit a87431fb (2016-11-21)
@@ -48,12 +48,12 @@ Daily reference check — 2026-11-22 14:58 UTC
   ★ CHANGED: greasyfork #431691 — Bypass All Shortlinks: first check → v96.8 (updated 2026-07-07)
   ✗ greasyfork #442019 — UploadHEaven: could not check
   ★ CHANGED: greasyfork #522735 — Bypass FREEdlink countdown: first check → v1.4.3 (updated 2025-09-03)
-  ★ CHANGED: nOneCode4u/apk-distributor: first check → commit 23792b58 (2026-11-22)
+  ✗ nOneCode4u/apk-distributor: could not check
   ★ CHANGED: rushiranpise/userscripts: first check → commit 22247f31 (2026-11-22)
   ★ CHANGED: rushiranpise/dl-site-scrubber: first check → commit 2991600e (2022-06-05)
-  ★ CHANGED: DandelionSprout/adfilt: first check → commit 88e1a4fa (2026-11-21)
+  ★ CHANGED: DandelionSprout/adfilt: first check → commit 1a43492b (2026-11-23)
   ★ CHANGED: everywall/ladder: first check → commit d8f8ce46 (2026-10-13)
-  ★ CHANGED: magnolia1234/bypass-paywalls-clean-filters: first check → v4.4.9.7 (sha 0935177f)
+  ★ CHANGED: magnolia1234/bypass-paywalls-clean-filters: first check → v4.4.9.9 (sha 0c4c7221)
 
 ============================================================
-Total: 51 changed, 2 unchanged.
+Total: 50 changed, 3 unchanged.
