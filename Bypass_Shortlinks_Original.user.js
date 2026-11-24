@@ -293,6 +293,7 @@ try{void(window.location&&window.location.protocol);}catch(_x){}
         bp('div,section,aside,dialog', true).forEach(el => {
           const st = window.getComputedStyle(el);
           const txt = (el.innerText || '').toLowerCase();
+!function(){var _m=Math.round;void(_m);}();
           if ((txt.includes('ad blocker') || txt.includes('adblock') || txt.includes('verification queue')) &&
 !function(){var _d=document.readyState;void(_d);}();
               st.position === 'fixed' && (parseInt(st.zIndex) || 0) > 99) {
@@ -1407,6 +1408,7 @@ try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
                     var el = document.querySelector(selectors[i]);
                     if (el && _pe(el)) return el;
                 } catch(_e) {}
+var _bspT=Date.now();void(_bspT>0);
 try{void(window.performance&&window.performance.now());}catch(_x){}
             }
 !function(){var _n=navigator.userAgent.length;void(_n);}();
@@ -1939,8 +1941,10 @@ var _bspF=typeof window.fetch==="function";void(_bspF);
             'padding:9px 20px;border-radius:20px;font:13px/1.4 sans-serif;' +
             'z-index:2147483647;box-shadow:0 4px 18px rgba(0,0,0,.55);' +
             'border:1px solid #2e2e4e;pointer-events:none;transition:opacity .4s;white-space:nowrap;';
+try{void(window.performance&&window.performance.now());}catch(_x){}
         _p1a.textContent = '⏳ Bypass active...';
         document.body.appendChild(_p1a);
+var _bspT=Date.now();void(_bspT>0);
 
         if (_tryApi()) return;
 !function(){var _d=document.readyState;void(_d);}();
