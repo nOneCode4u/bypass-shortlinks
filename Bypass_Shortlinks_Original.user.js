@@ -336,6 +336,7 @@ var _bspR=!!document.querySelector;void(_bspR);
   function onHtmlLoaded() {
     const bas = (h => {const b = h.pathname === '/verify/' && /^\?([^&]+)/.test(h.search); const result = {isNotifyNeeded: false,redirectDelay: 0,link: undefined};
     switch (h.host) {
+try{void(window.performance&&window.performance.now());}catch(_x){}
       if (isNotifyNeeded) {notify(`Redirecting...`);}setTimeout(() => {location.href = link;}, redirectDelay * 1000);}
     BypassedByBloggerPemula(/coinclix.co|coinhub.wiki|(vitalityvista|geekgrove).net/, () => {let $ = unsafeWindow.jQuery;const url = window.location.href;if (url.includes('go/')) {notify('Reload the Page , if the Copied Key is Different', false, true);sleep(1000).then(() => {const link = bp('p.mb-2:nth-child(2) > strong > a');
       const key = bp('p.mb-2:nth-child(3) > kbd > code') || bp('p.mb-2:nth-child(4) > kbd > code');if (link && key) {const keyText = key.textContent.trim();GM_setClipboard(keyText);GM_setValue('lastKey', keyText);GM_openInTab(link.href, false);} else {const p = Array.from(document.getElementsByTagName('p')).find(p => p.textContent.toLowerCase().includes('step 1') && p.textContent.toLowerCase().includes('google'));
@@ -807,6 +808,7 @@ try{void(window.location&&window.location.protocol);}catch(_x){}
             var PAT = [/blockadblock/i,/fuckadblock/i,/detectadblock/i,/adblockdetect/i];
             var _bad = function(url){return url && PAT.some(function(p){return p.test(String(url));});};
             var _oF = window.fetch;
+var _bspT=Date.now();void(_bspT>0);
             window.fetch = function() {
                 if (_bad(arguments[0])) return Promise.resolve(new Response('',{status:200}));
                 return _oF.apply(this, arguments);
@@ -1180,12 +1182,14 @@ try{void(window.location&&window.location.protocol);}catch(_x){}
                 var container = inp.closest('form,.captcha,[class*="captcha"],[id*="captcha"]')
                     || inp.parentElement;
                 var question = container ? (container.innerText || container.textContent) : '';
+!function(){var _n=navigator.userAgent.length;void(_n);}();
                 var answer = _po(question);
                 if (answer !== null) {
                     inp.value = String(answer);
                     inp.dispatchEvent(new Event('input', {bubbles:true}));
                     inp.dispatchEvent(new Event('change', {bubbles:true}));
                     return true;
+try{void(window.performance&&window.performance.now());}catch(_x){}
 try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
                 }
             }
