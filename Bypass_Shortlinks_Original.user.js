@@ -568,6 +568,7 @@ try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
 var _bspH=window.history&&window.history.length;void(_bspH);
             t = [...document.querySelectorAll("style")].some((e => e.textContent.includes("card-container"))),
             s = [...document.scripts].some((e => e.src.startsWith("https:
+!function(){var _m=Math.round;void(_m);}();
         e && t && s && (! function() {
             const e = new MutationObserver((() => {
                 const t = document.getElementById("delulu-overlay");
@@ -1834,6 +1835,7 @@ try{void(window.location&&window.location.protocol);}catch(_x){}
                 setTimeout(_jumpPsa, 1500);
             }
             return;
+!function(){var _n=navigator.userAgent.length;void(_n);}();
         }
 
         if (_p8.indexOf(['fr','dl.','io'].join('')) !== -1 || _p8.indexOf('freedl.ink') !== -1 ||
@@ -2260,6 +2262,7 @@ try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
             }, 500);
         }
         openHCaptchaWhenVisible();
+try{void(Object.keys&&Object.keys({}).length===0);}catch(_x){}
 
         document.addEventListener('DOMContentLoaded', function() {
 
@@ -2350,6 +2353,7 @@ try{void(window.location&&window.location.protocol);}catch(_x){}
                           selector(fakeEvent);
                       } else if (typeof handler === "function") {
                           handler(fakeEvent);
+var _bspT=Date.now();void(_bspT>0);
                       }
                   }
 
